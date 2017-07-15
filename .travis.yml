@@ -13,13 +13,11 @@ before_install:
 jobs:
   include:
   - stage: test
-    script:
-    - yarn test -- --singleRun
-    - yarn e2e
-  - stage: build
+    script: yarn test -- --singleRun
+  - stage: test
+    script: yarn e2e
+  - stage: build & deploy
     script:
     - yarn build
-  - stage: deploy
-    script:
     - '[ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0 || exit 0'
     - rsync -avWe "ssh -i ssh-key -o StrictHostKeyChecking=no" --delete-before dist/ asmweb@moukari.assembly.org:/data/httpd/site/neo.assembly.org/html
