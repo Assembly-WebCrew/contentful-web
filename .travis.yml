@@ -10,6 +10,7 @@ cache: yarn
 before_install:
 - openssl aes-256-cbc -K $encrypted_b9133dc7101e_key -iv $encrypted_b9133dc7101e_iv
   -in ssh-key.enc -out ssh-key -d
+- mv ssh-key ~/.ssh/id_rsa
 jobs:
   include:
   - stage: test
@@ -20,4 +21,4 @@ jobs:
     script:
     - yarn build
     - '[ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0 || :'
-    - rsync -avWe "ssh -i ssh-key -o StrictHostKeyChecking=no" --delete-before dist/ asmweb@moukari.assembly.org:/data/httpd/site/neo.assembly.org/html
+    - rsync -avWe "ssh -o StrictHostKeyChecking=no" --delete-before dist/ asmweb@moukari.assembly.org:/data/httpd/site/neo.assembly.org/html
