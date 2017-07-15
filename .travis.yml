@@ -1,22 +1,25 @@
 dist: trusty
 language: node_js
-
 node_js:
-  - "8"
-
+- '8'
 addons:
   chrome: stable
-
 env:
-  - CHROME_BIN=google-chrome-stable
-
+- CHROME_BIN=google-chrome-stable
 cache: yarn
-
+before_install:
+- openssl aes-256-cbc -K $encrypted_b9133dc7101e_key -iv $encrypted_b9133dc7101e_iv
+  -in ssh-key.enc -out ssh-key -d
 jobs:
   include:
-    - script: yarn test -- --singleRun
-    - script: yarn e2e
-    - stage: build
-      script: yarn build
-    - stage: deploy
-      script: echo "Deploying!"
+  - stage: test
+    script:
+    - yarn test -- --singleRun
+    - yarn e2e
+  - stage: build
+    script:
+    - yarn build
+  - stage: deploy
+    script:
+    - [ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0
+    - rsync -avWe "ssh -i ssh-key" --delete-before dist/ asmweb@moukari.assembly.org:/data/httpd/site/neo.assembly.org/html
