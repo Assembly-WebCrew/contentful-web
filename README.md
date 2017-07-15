@@ -1,4 +1,4 @@
-# ContentfulWeb [![Build Status](https://travis-ci.org/Assembly-WebCrew/contentful-web.svg?branch=master)](https://travis-ci.org/Assembly-WebCrew/contentful-web)
+# ContentfulWeb [![Build Status](https://travis-ci.org/Assembly-WebCrew/contentful-web.svg?branch=master)](https://travis-ci.org/Assembly-WebCrew/contentful-web) ![Dependencies Status](https://david-dm.org/assembly-webcrew/contentful-web.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
