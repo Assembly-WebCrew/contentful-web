@@ -1,0 +1,6 @@
+@import '../../mixins';
+:host {
+  @include component;
+  min-height: 70vh;
+  border: 1px solid #aaa;
+}
