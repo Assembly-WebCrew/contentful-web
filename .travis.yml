@@ -14,7 +14,7 @@ cache: yarn
 
 jobs:
   include:
-    - script: yarn test
+    - script: yarn test -- --singleRun
     - script: yarn e2e
     - stage: build
       script: yarn build
