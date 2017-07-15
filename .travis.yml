@@ -15,7 +15,9 @@ before_install:
 jobs:
   include:
   - stage: test
-    script: yarn test -- --singleRun
+    script:
+      - yarn test -- --singleRun
+      - cat coverage/lcov.info | ./node_modules/.bin/coveralls
   - stage: test
     script: yarn e2e
   - stage: build & deploy
