@@ -6,6 +6,9 @@ node_js:
 addons:
   chrome: stable
 
+env:
+  - CHROME_BIN=google-chrome-stable
+
 cache: yarn
 
 jobs:
