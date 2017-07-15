@@ -1,4 +1,4 @@
-# ContentfulWeb [![Build Status](https://travis-ci.org/Assembly-WebCrew/contentful-web.svg?branch=master)](https://travis-ci.org/Assembly-WebCrew/contentful-web) ![Dependencies Status](https://david-dm.org/assembly-webcrew/contentful-web.svg) [![Coverage Status](https://coveralls.io/repos/github/Assembly-WebCrew/contentful-web/badge.svg)](https://coveralls.io/github/Assembly-WebCrew/contentful-web)
+# ContentfulWeb [![Build Status](https://travis-ci.org/Assembly-WebCrew/contentful-web.svg?branch=master)](https://travis-ci.org/Assembly-WebCrew/contentful-web) [![Coverage Status](https://coveralls.io/repos/github/Assembly-WebCrew/contentful-web/badge.svg)](https://coveralls.io/github/Assembly-WebCrew/contentful-web) ![Dependencies Status](https://david-dm.org/assembly-webcrew/contentful-web.svg) [![NSP Status](https://nodesecurity.io/orgs/assembly-webcrew/projects/c968ec1a-9fa5-40b2-ad61-d91ee6f2260c/badge)](https://nodesecurity.io/orgs/assembly-webcrew/projects/c968ec1a-9fa5-40b2-ad61-d91ee6f2260c)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
