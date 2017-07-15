@@ -7,15 +7,13 @@ import { CommonModule } from '@angular/common';
 export const contentComponents = new Map([
   ['Frontpage', FrontpageComponent],
   ['Article', ArticleComponent]
-])
+]);
 
 const contentComponentsArray = Array.from(contentComponents.values());
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [
-    ...contentComponentsArray
-  ],
+  declarations: contentComponentsArray,
   entryComponents: contentComponentsArray
 })
 export class ContentTypesModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ChangeDetectionStrategy, ViewChild } from '@angular/core';
-import { ActivatedRoute,ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { contentComponents } from '../content-types/content-types.module';
 
@@ -14,14 +14,16 @@ export class ContentComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private cfResolver: ComponentFactoryResolver,
-    private title:Title) {}
+    private title: Title) {}
 
   ngOnInit() {
     // Read the content from the route snapshot ('content' is the name of the resolve)
-    const content = this.activatedRoute.snapshot.data['content'];
+    const content = this.activatedRoute.snapshot.data['content'] || {};
 
     // Find the ComponentClass of the desired pageComponent (based on template)
-    const ComponentClass =  contentComponents.get(content['type']);
+    const ComponentClass = contentComponents.get(content['type']);
+
+    if (!ComponentClass) return;
 
     this.title.setTitle(content.title);
 

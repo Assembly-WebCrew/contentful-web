@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+		"plugins": [
+      { "name": "tslint-language-service"}
+    ],
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
