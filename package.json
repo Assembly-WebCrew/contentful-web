@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@angular/cli": "^1.2.1"
+  },
+  "name": "contentful-web",
+  "description": "Angular frontend for our Contentful website",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Assembly-WebCrew/contentful-web.git"
+  },
+  "author": "Assembly Webcrew <web@assembly.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Assembly-WebCrew/contentful-web/issues"
+  },
+  "homepage": "https://github.com/Assembly-WebCrew/contentful-web#readme"
+}
