@@ -7,21 +7,21 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '**',
-		component: ContentComponent,
-		data: {
-			content: {
-				type: 'Frontpage',
-				title: 'Frontpage'
-			}
-		}
+    component: ContentComponent,
+    data: {
+      content: {
+        type: 'Frontpage',
+        title: 'Frontpage'
+      }
+    }
   }
 ];
 
 @NgModule({
   imports: [
-		RouterModule.forRoot(routes),
-		ContentTypesModule
-	],
+    RouterModule.forRoot(routes),
+    ContentTypesModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

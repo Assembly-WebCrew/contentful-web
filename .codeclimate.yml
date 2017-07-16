@@ -1,0 +1,20 @@
+---
+engines:
+  shellcheck:
+    enabled: true
+  scss-lint:
+    enabled: true
+  fixme:
+    enabled: true
+  tslint:
+    enabled: true
+    channel: beta
+ratings:
+  paths:
+  - "**.scss"
+  - "**.ts"
+  - "**.sh"
+exclude_paths:
+- node_modules/
+- coverage/
+- dist/

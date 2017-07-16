@@ -1,0 +1,4 @@
+# For Code Climate
+linters:
+  PropertySortOrder:
+    enabled: false

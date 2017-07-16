@@ -18,7 +18,7 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     // Read the content from the route snapshot ('content' is the name of the resolve)
-    const content = this.activatedRoute.snapshot.data['content'] || {};
+    const content = this.activatedRoute.snapshot.data['content'] || {};
 
     // Find the ComponentClass of the desired pageComponent (based on template)
     const ComponentClass = contentComponents.get(content['type']);
