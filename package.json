@@ -21,7 +21,9 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "apollo-client": "^1.9.0-0",
     "core-js": "^2.4.1",
+    "graphql-tag": "^2.4.2",
     "normalize-scss": "^7.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
@@ -32,6 +34,7 @@
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
+    "@types/lodash": "^4.14.69",
     "@types/node": "~6.0.60",
     "codeclimate-test-reporter": "^0.5.0",
     "codelyzer": "~3.0.1",

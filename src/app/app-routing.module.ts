@@ -1,5 +1,5 @@
 import { ContentTypesModule } from './content-types/content-types.module';
-import { ContentComponent } from './content/content.component';
+import { ContentComponent, ContentResolve } from './content/content.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -8,11 +8,8 @@ const routes: Routes = [
   {
     path: '**',
     component: ContentComponent,
-    data: {
-      content: {
-        type: 'Frontpage',
-        title: 'Frontpage'
-      }
+    resolve: {
+      content: ContentResolve
     }
   }
 ];
@@ -22,6 +19,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ContentTypesModule
   ],
+  providers: [ContentResolve],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

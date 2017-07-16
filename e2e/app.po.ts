@@ -6,6 +6,6 @@ export class ContentfulWebPage {
   }
 
   getParagraphText() {
-    return element(by.css('asm-frontpage')).getText();
+    return element(by.css('asm-header')).getText();
   }
 }
