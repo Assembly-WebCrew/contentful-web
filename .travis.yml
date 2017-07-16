@@ -1,27 +1,30 @@
 dist: trusty
 language: node_js
 node_js:
-- '8'
+  - '8'
 addons:
   chrome: stable
+  ssh_known_hosts: moukari.assembly.org
 env:
-- CHROME_BIN=google-chrome-stable
+  - CHROME_BIN=google-chrome-stable
 cache: yarn
 before_install:
-- openssl aes-256-cbc -K $encrypted_b9133dc7101e_key -iv $encrypted_b9133dc7101e_iv
-  -in ssh-key.enc -out ssh-key -d
-- mv ssh-key ~/.ssh/id_rsa
-- chmod 600 ~/.ssh/id_rsa
+  - openssl aes-256-cbc -K $encrypted_b9133dc7101e_key -iv $encrypted_b9133dc7101e_iv
+    -in deploy.tar.gz.enc -out deploy.tar.gz -d
+  - tar zxvf deploy.tar.gz
+  - mv deploy/ssh_config ~/.ssh/config
+  - mv deploy/deployment_key ~/.ssh/id_rsa
+  - chmod 0600 ~/.ssh/*
 jobs:
   include:
-  - stage: test
-    script:
-      - yarn test -- --singleRun
-      - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
-  - stage: test
-    script: yarn e2e
-  - stage: build & deploy
-    script:
-    - yarn build
-    - '[ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0 || :'
-    - rsync -avWe "ssh -o StrictHostKeyChecking=no" --delete-before dist/ asmweb@moukari.assembly.org:/data/httpd/site/neo.assembly.org/html
+    - stage: test
+      script:
+        - yarn test -- --singleRun
+        - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
+    - stage: test
+      script: yarn e2e
+    - stage: build & deploy
+      script:
+        - yarn build
+        - '[ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0 || :'
+        - "rsync -avW --delete-before dist/ ${TRAVIS_BRANCH}:/srv/staging"
