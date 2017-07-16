@@ -9,7 +9,10 @@ export const contentComponents = new Map([
   ['Article', ArticleComponent]
 ]);
 
-const contentComponentsArray = Array.from(contentComponents.values());
+const contentComponentsArray = [
+  FrontpageComponent,
+  ArticleComponent
+];
 
 @NgModule({
   imports: [CommonModule],
