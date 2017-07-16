@@ -27,4 +27,4 @@ jobs:
       script:
         - yarn build
         - '[ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0 || :'
-        - "rsync -avWe 'ssh' --delete-before dist/ ${TRAVIS_BRANCH}:/srv/staging"
+        - "rsync -avW --delete-before dist/ ${TRAVIS_BRANCH}:/srv/staging"
