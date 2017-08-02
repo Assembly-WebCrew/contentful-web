@@ -25,6 +25,8 @@ jobs:
       script: yarn e2e
     - stage: build & deploy
       script:
-        - yarn build
+        - yarn build:ci
         - '[ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0 || :'
-        - "rsync -avW --delete-before dist/ ${TRAVIS_BRANCH}:/srv/staging"
+        - "rsync -avW --delete-before dev/ ${TRAVIS_BRANCH}:/srv/dev"
+        - "rsync -avW --delete-before stg/ ${TRAVIS_BRANCH}:/srv/staging"
+        - "rsync -avW --delete-before prod/ ${TRAVIS_BRANCH}:/srv/prod"
