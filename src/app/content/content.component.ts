@@ -73,9 +73,40 @@ export class ContentResolve implements Resolve<any> {
         {
           pages(q: "fields.slug=${encodeURIComponent(pageSlug)}&limit=1") {
             slug
-            type
             title
-            body
+            contentBlocks{
+              ... on BlockPageHeader {
+                title
+                callToAction {
+                  ... on CallToAction {
+                    title
+                    url
+                    linkLabel
+                  }
+                }
+              }
+              ... on BlockZipper {
+                title
+                topics {
+                  title
+                  body
+                }
+              }
+              ... on BlockWysiwyg {
+                title
+                body
+              }
+            }
+            subPages {
+              ... on Page {
+                title
+                slug
+              }
+              ... on Article {
+                title
+                slug
+              }
+            }
           }
         }`
       });
