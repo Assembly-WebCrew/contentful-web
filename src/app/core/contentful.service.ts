@@ -12,9 +12,7 @@ export class ContentfulService {
     private http: HttpClient) {}
 
   private async getContentfulSchema(event): Promise<any> {
-    const response = await this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise();
-    console.log(response);
-    return response;
+    return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise();
   }
 
   async getEventMetadata(name?: string): Promise<any> {
@@ -31,7 +29,7 @@ export class ContentfulService {
 
     const client = new ApolloClient({
       networkInterface: createNetworkInterface({
-        uri: `${environment.apiUrl}/${event.name}/graphql`
+        uri: `${environment.apiUrl}/en/${event.name}/graphql`
       }),
       fragmentMatcher
     });

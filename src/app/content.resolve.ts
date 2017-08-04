@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { ContentfulService } from './core/contentful.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { get } from 'lodash';
+import { get, last } from 'lodash';
 
 @Injectable()
 export class ContentResolve implements Resolve<any> {
@@ -12,7 +12,7 @@ export class ContentResolve implements Resolve<any> {
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Promise<any> {
 
-    const slug = route.params.slug || 'frontpage';
+    const slug = get(last(route.url), 'path', 'frontpage');
 
     const client: ApolloClient = route.parent.data.apiClient;
     const response = await client.query<any>({

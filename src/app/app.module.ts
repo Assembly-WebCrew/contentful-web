@@ -1,10 +1,13 @@
+import { ContentBlocksModule } from './content-blocks/content-blocks.module';
+import { ContentBlockComponent } from './content-block/content-block.component';
+// import { ContentBlocksModule } from './content-blocks/content-blocks.module';
 import { ApiClientResolve } from './api-client.resolve';
 import { RouteReuseStrategy } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { CoreModule } from './core/core/core.module';
+import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -26,6 +29,7 @@ import { EventComponent } from './event/event.component';
     BrowserModule,
     HttpClientModule,
     CoreModule,
+    ContentBlocksModule,
     AppRoutingModule
   ],
   providers: [

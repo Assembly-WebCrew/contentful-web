@@ -1,0 +1,5 @@
+<a class="cta"
+    *ngFor="let cta of content.callToAction"
+    [href]="cta.url">
+  {{ cta.linkLabel }}
+</a>
