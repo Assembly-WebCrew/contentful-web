@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FrontpageComponent } from './frontpage.component';
+import { EventComponent } from './event.component';
 
-describe('FrontpageComponent', () => {
-  let component: FrontpageComponent;
-  let fixture: ComponentFixture<FrontpageComponent>;
+describe('EventComponent', () => {
+  let component: EventComponent;
+  let fixture: ComponentFixture<EventComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FrontpageComponent ]
+      declarations: [ EventComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FrontpageComponent);
+    fixture = TestBed.createComponent(EventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,16 +1,16 @@
 import { ArticleComponent } from './article/article.component';
-import { FrontpageComponent } from './frontpage/frontpage.component';
+// import { FrontpageComponent } from './frontpage/frontpage.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export const contentComponents = new Map([
-  ['Frontpage', FrontpageComponent],
+//  ['Frontpage', FrontpageComponent],
   ['Article', ArticleComponent]
 ]);
 
 const contentComponentsArray = [
-  FrontpageComponent,
+//  FrontpageComponent,
   ArticleComponent
 ];
 
