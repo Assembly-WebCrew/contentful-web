@@ -27,6 +27,9 @@ jobs:
       script:
         - yarn build:ci
         - '[ "$TRAVIS_BRANCH" != "master" ] && travis_terminate 0 || :'
-        - "rsync -avW --delete-before dev/ ${TRAVIS_BRANCH}:/srv/dev"
-        - "rsync -avW --delete-before stg/ ${TRAVIS_BRANCH}:/srv/staging"
-        - "rsync -avW --delete-before prod/ ${TRAVIS_BRANCH}:/srv/prod"
+        - rsync -avW --delete-before dev/ ${TRAVIS_BRANCH}:/srv/dev
+        - rsync -avW --delete-before stg/ ${TRAVIS_BRANCH}:/srv/staging
+        - rsync -avW --delete-before prod/ ${TRAVIS_BRANCH}:/srv/prod
+notifications:
+  slack:
+    secure: I2PG6HIf6JvcqW+RMPwDJSdByQi5YHH0S47uZVX2Ni0TYWwNSZDMnbSBtPhKsdbnrK2z9KPXpVe6h3zuqHRdLSbOomfJT989EwWBh86IleH121DKAZ6j3Ui3X4nS+CrhSi+v51ZJH71c/EncbnsOh1O8WsJfSBx3c8g3e/wrkeQu2xjdrtZX4kk+FTwrR/C+y8rwtroPyQXTXHvhA29tSmIOEY6LMUt2bbV90RPTqF8zbNVWj+8ISZIvobFV855ky+71CvUR+/QSWk2A7ACS2eS02j6VX8gI0kugodNP17pNTVchQGNQhpGlzbml4Ta0eB/AtF+qixML1BfDuJbExMXSrR8RjyKKFJtF2w5xbTLq/d7xjwME1NAdX0XlAp+/bU6rkMMxCwHXN0eIPQcBIWzEGVv2RDQ+8eRcgnkCOgkA35De1S8+0HzPXM7oWu8vVmwEPwpK4SNnbMZneplRQ+rwuWUeueDt0Xdlj6bD/9ZIY4T+AJPq1MrzSS/XjAvGuoVMKCTSlCn66fWAGu7qCHHH4D/lRT9dap46yAFvK+hRsDnJIRwkHFvTB/bJDtctoe3OU7011E4qr26oRPj6mtRreauwjjpmXJdoWeZXPGzwt8FJbhulQtHbb0yIdAoZCA/pS2kHbQakg989c8u1YDQYlNKRbWfEltLy9YWbtYU=
