@@ -26,7 +26,7 @@ jobs:
     - stage: build & deploy
       script:
         - yarn build:ci
-        - '[ "$TRAVIS_BRANCH" != "master" ] || [ "$TRAVIS_PULL_REQUEST" = true ] && travis_terminate 0 || :'
+        - '[ "${TRAVIS_BRANCH}" != "master" ] || [ "${TRAVIS_PULL_REQUEST}" = "true" ] && travis_terminate 0 || :'
         - rsync -avW --delete-before dev/ ${TRAVIS_BRANCH}:/srv/dev
         - rsync -avW --delete-before stg/ ${TRAVIS_BRANCH}:/srv/staging
         - rsync -avW --delete-before prod/ ${TRAVIS_BRANCH}:/srv/prod
