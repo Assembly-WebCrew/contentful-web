@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { ActivatedRouteSnapshot } from '@angular/router';
@@ -47,5 +48,10 @@ export class ContentfulService {
     if (!this.client) throw new Error(
       'Make sure that ContentfulService has been initialized before calling .query');
     return this.client.query<T>(options);
+  }
+
+  query$<T>(options: WatchQueryOptions): Observable<T> {
+    return Observable.fromPromise<T>(this.query<T>(options)
+      .then(result => result.data));
   }
 }

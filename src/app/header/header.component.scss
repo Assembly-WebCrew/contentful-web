@@ -2,6 +2,17 @@
 
 :host {
   @include component;
-  height: 60px;
   border: 1px solid #aaa;
+  background-color: #000;
+  color: #fff;
+}
+
+h1 {
+  display: inline-block;
+}
+
+.logo {
+  width: 180px;
+  padding-top: 10px;
+  padding-left: 8px;
 }

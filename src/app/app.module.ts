@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { CustomReuseStrategy } from './router-reuse-strategy';
 import { EventComponent } from './event/event.component';
+import { SkeletorComponent } from './skeletor/skeletor.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EventComponent } from './event/event.component';
     HeaderComponent,
     FooterComponent,
     EventComponent,
-    ContentComponent
+    ContentComponent,
+    SkeletorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,11 +35,11 @@ import { EventComponent } from './event/event.component';
     AppRoutingModule
   ],
   providers: [
-    ApiClientResolve,
-    {
+    ApiClientResolve
+    /* {
       provide: RouteReuseStrategy,
       useClass: CustomReuseStrategy
-    }
+    } */
   ],
   bootstrap: [AppComponent]
 })

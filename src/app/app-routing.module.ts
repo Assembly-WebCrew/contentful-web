@@ -1,3 +1,4 @@
+import { SkeletorComponent } from './skeletor/skeletor.component';
 import { EventResolve } from './event.resolve';
 import { ContentResolve } from './content.resolve';
 import { ApiClientResolve } from './api-client.resolve';
@@ -17,8 +18,10 @@ const routes: Routes = [
   // If the event is known, we will load the page.
   {
     path: ':event',
+    component: SkeletorComponent,
     resolve: {
-      apiClient: ApiClientResolve
+      apiClient: ApiClientResolve,
+      event: EventResolve
     },
     children: [
       {
