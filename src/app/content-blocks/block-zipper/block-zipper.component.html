@@ -1,6 +1,5 @@
-<p>
-  block-zipper works!
-</p>
-<div *ngFor="let content of content.topics">
-  <asm-content-block [content]="content"></asm-content-block>
-</div>
+<asm-content-block
+    *ngFor="let content of content.topics"
+    class="zip-content"
+    [content]="content">
+</asm-content-block>
