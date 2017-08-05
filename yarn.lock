@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@angular/animations@^5.0.0":
+"@angular/animations@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-5.0.0-beta.2.tgz#e978fd23dab7b5732582ed84f600d4b200ab45f2"
   dependencies:
@@ -76,13 +76,13 @@
   optionalDependencies:
     node-sass "^4.3.0"
 
-"@angular/common@^5.0.0":
+"@angular/common@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.0.0-beta.2.tgz#1c54356c1ce70de6c81f4e528fbc4e03c08a5ce1"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@^5.0.0":
+"@angular/compiler-cli@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.0.0-beta.2.tgz#010839b069c418bae21c0d2bfbf3011a8fa39655"
   dependencies:
@@ -90,47 +90,47 @@
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
 
-"@angular/compiler@^5.0.0":
+"@angular/compiler@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.0.0-beta.2.tgz#a6450e89cdfde4e6af2f24ae751859780c264e53"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^5.0.0":
+"@angular/core@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.0.0-beta.2.tgz#86994c65fd0b268bea63f45b2d54b248fb97d8b0"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/forms@^5.0.0":
+"@angular/forms@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.0.0-beta.2.tgz#c0944a799e87f4b2608897dc2f8e970893c1819c"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/http@^5.0.0":
+"@angular/http@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/http/-/http-5.0.0-beta.2.tgz#9836fe082089929c3e422ec01cc8a28158353267"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/language-service@^5.0.0":
+"@angular/language-service@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.0.0-beta.2.tgz#3aa9f1d48213091d0f6db1d3515fb5d75c2e8a2e"
 
-"@angular/platform-browser-dynamic@^5.0.0":
+"@angular/platform-browser-dynamic@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.0.0-beta.2.tgz#27cfbc20ae62028315c4b6badd5917d429c5ca9e"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^5.0.0":
+"@angular/platform-browser@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.0.0-beta.2.tgz#00cca84329135eb917f6cc18d3cb3d2498a86790"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/router@^5.0.0":
+"@angular/router@5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-5.0.0-beta.2.tgz#e2d63ac5602fcc88c00c683b143b3f954b37b295"
   dependencies:
