@@ -1,0 +1,5 @@
+<h1>{{content.title}}</h1>
+
+<div *ngFor="let content of content.contentBlocks">
+  <asm-content-block [content]="content"></asm-content-block>
+</div>

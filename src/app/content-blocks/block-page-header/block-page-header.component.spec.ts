@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArticleComponent } from './article.component';
+import { BlockPageHeaderComponent } from './block-page-header.component';
 
-describe('ArticleComponent', () => {
-  let component: ArticleComponent;
-  let fixture: ComponentFixture<ArticleComponent>;
+describe('BlockPageHeaderComponent', () => {
+  let component: BlockPageHeaderComponent;
+  let fixture: ComponentFixture<BlockPageHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArticleComponent ]
+      declarations: [ BlockPageHeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArticleComponent);
+    fixture = TestBed.createComponent(BlockPageHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

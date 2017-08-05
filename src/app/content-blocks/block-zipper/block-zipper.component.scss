@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  contain: content;
+  background-color: #000;
+  color: #fff;
+}
+
+.zip-content {
+  float: right;
+  width: 80%;
+  display: block;
+}
+
+.zip-content:nth-child(odd) {
+  float: left;
+}

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FrontpageComponent } from './frontpage.component';
+import { BlockMarkdownComponent } from './block-markdown.component';
 
-describe('FrontpageComponent', () => {
-  let component: FrontpageComponent;
-  let fixture: ComponentFixture<FrontpageComponent>;
+describe('BlockMarkdownComponent', () => {
+  let component: BlockMarkdownComponent;
+  let fixture: ComponentFixture<BlockMarkdownComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FrontpageComponent ]
+      declarations: [ BlockMarkdownComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FrontpageComponent);
+    fixture = TestBed.createComponent(BlockMarkdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
