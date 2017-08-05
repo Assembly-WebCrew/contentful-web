@@ -4,7 +4,7 @@ import { Converter } from 'showdown';
 @Directive({
   selector: '[asmMarkdown]'
 })
-export class MarkdownDirective implements AfterViewInit{
+export class MarkdownDirective implements AfterViewInit {
   private converter: Converter;
 
   constructor(private el: ElementRef) {
