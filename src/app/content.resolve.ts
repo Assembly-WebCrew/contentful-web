@@ -7,6 +7,7 @@ import { get, last } from 'lodash';
 
 @Injectable()
 export class ContentResolve implements Resolve<any> {
+  constructor(private contentful: ContentfulService) {}
 
   public async resolve(
       route: ActivatedRouteSnapshot,
@@ -14,8 +15,7 @@ export class ContentResolve implements Resolve<any> {
 
     const slug = get(last(route.url), 'path', 'frontpage');
 
-    const client: ApolloClient = route.parent.data.apiClient;
-    const response = await client.query<any>({
+    const response = await this.contentful.query<any>({
       query: gql`
         {
           pages(q: "fields.slug=${encodeURIComponent(slug)}&limit=1") {
