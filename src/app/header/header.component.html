@@ -1,5 +1,5 @@
-<img class="logo" [src]="event.logo.fields.file.url" alt="{{event.logo.fields.title}}">
-<h1>{{ event.eventTitle }}</h1>
+<img class="logo" [src]="event?.logo?.fields?.file?.url" alt="{{event?.logo?.fields?.title}}">
+<h1>{{ event?.eventTitle }}</h1>
 
 <span *ngFor="let item of (header$ | async)?.items">
   <a [href]="getUrl(item)">{{item.title}}</a>

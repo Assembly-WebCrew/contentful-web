@@ -4,6 +4,7 @@ import { ContentfulService } from '../core/contentful.service';
 import { Component, OnInit } from '@angular/core';
 import * as qs from 'qs';
 import { get } from 'lodash';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'asm-header',
@@ -11,7 +12,7 @@ import { get } from 'lodash';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  header$: any;
+  header$: Observable<any>;
   event: any;
 
   constructor(
@@ -38,7 +39,7 @@ export class HeaderComponent implements OnInit {
     }` }).map(data => data.menus[0]);
   }
 
-  getUrl(item) {
+   getUrl(item) {
     if (item.page) {
       return `/${this.event.name}/${item.page.slug}`;
     } else {
