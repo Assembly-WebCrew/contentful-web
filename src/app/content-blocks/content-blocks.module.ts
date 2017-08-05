@@ -5,6 +5,7 @@ import { BlockPageHeaderComponent } from './block-page-header/block-page-header.
 import { BlockMarkdownComponent } from './block-markdown/block-markdown.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MarkdownDirective } from './directives/markdown.directive';
 
 export const contentComponents = [
   BlockMarkdownComponent,
@@ -14,7 +15,11 @@ export const contentComponents = [
 
 @NgModule({
   imports: [CommonModule, CoreModule],
-  declarations: [ContentBlockComponent, ...contentComponents],
+  declarations: [
+    ContentBlockComponent,
+    ...contentComponents,
+    MarkdownDirective
+  ],
   entryComponents: contentComponents,
   exports: [ContentBlockComponent]
 })
