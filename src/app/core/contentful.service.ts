@@ -4,8 +4,6 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ApolloClient, createNetworkInterface, IntrospectionFragmentMatcher, NetworkStatus } from 'apollo-client';
 import { environment } from '../../environments/environment';
-import { get } from 'lodash';
-import gql from 'graphql-tag';
 
 @Injectable()
 export class ContentfulService {
@@ -24,7 +22,7 @@ export class ContentfulService {
     return event;
   }
 
-  async initializeClient(eventName?: string) {
+  async initialize(eventName?: string) {
     if (this.client) return;
 
     const event = await this.getEventMetadata(eventName),
@@ -38,16 +36,16 @@ export class ContentfulService {
       }),
       fragmentMatcher
     });
-
-    return this.client;
   }
 
-  /* async query<T>(options: WatchQueryOptions): Promise<{
+  async query<T>(options: WatchQueryOptions): Promise<{
     data: T;
     loading: boolean;
     networkStatus: NetworkStatus;
     stale: boolean;
   }> {
-    return;
-  } */
+    if (!this.client) throw new Error(
+      'Make sure that ContentfulService has been initialized before calling .query');
+    return this.client.query<T>(options);
+  }
 }

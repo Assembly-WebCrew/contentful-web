@@ -8,7 +8,7 @@ export class ApiClientResolve implements Resolve<any> {
 
   public async resolve(
       route: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot): Promise<any> {
-    return this.contentful.initializeClient(route.params.event);
+      state: RouterStateSnapshot): Promise<void> {
+    await this.contentful.initialize(route.params.event);
   }
 }
