@@ -14,7 +14,7 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
-  content: any;
+  content: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +22,7 @@ export class ContentComponent implements OnInit {
     private title: Title) {}
 
   ngOnInit() {
-    this.content = this.route.snapshot.data.content;
+    this.content = this.route.snapshot.data.content || {};
     this.title.setTitle(this.content.title);
   }
 }

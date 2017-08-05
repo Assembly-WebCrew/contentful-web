@@ -8,7 +8,7 @@ describe('ContentBlockComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentBlockComponent ]
+      declarations: [ContentBlockComponent]
     })
     .compileComponents();
   }));
@@ -16,6 +16,7 @@ describe('ContentBlockComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ContentBlockComponent);
     component = fixture.componentInstance;
+    // component.content = { __typename: 'BlockTest' };
     fixture.detectChanges();
   });
 
