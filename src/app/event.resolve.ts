@@ -11,8 +11,9 @@ export class EventResolve implements Resolve<any> {
   public async resolve(
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Promise<any> {
-    const event = await this.contentful.getEventMetadata();
-    this.router.navigate([`/${event.name}`]);
-    return false;
+    const event = await this.contentful.getEventMetadata(route.params.event);
+    if (!route.params.event)
+      this.router.navigate([`/${event.name}`]);
+    return event;
   }
 }
