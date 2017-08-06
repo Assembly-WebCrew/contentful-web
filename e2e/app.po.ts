@@ -2,10 +2,12 @@ import { browser, by, element } from 'protractor';
 
 export class ContentfulWebPage {
   navigateTo() {
-    return browser.get('/');
+    const navigationPromise = browser.get('/');
+    browser.driver.sleep(4000);
+    return navigationPromise;
   }
 
-  getParagraphText() {
-    return element(by.css('asm-header')).getText();
+  getTitle() {
+    return element(by.css('asm-header h1')).getText();
   }
 }

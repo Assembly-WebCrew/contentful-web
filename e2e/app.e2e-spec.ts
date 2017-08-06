@@ -7,8 +7,8 @@ describe('contentful-web App', () => {
     page = new ContentfulWebPage();
   });
 
-  it('should display welcome message', () => {
+  it('should contain ASSEMBLY title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('header works!');
+    expect(page.getTitle()).toContain('ASSEMBLY');
   });
 });
