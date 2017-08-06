@@ -9,7 +9,7 @@
     "build:ci": "ng build -e srvdev -op ./dev && ng build -e stg -op ./stg && ng build -e prod -op ./prod",
     "test": "ng test -cc",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e -e srvdev"
   },
   "private": true,
   "dependencies": {
