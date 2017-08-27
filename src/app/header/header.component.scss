@@ -1,18 +1,248 @@
 @import '../../mixins';
+@import url('https://fonts.googleapis.com/css?family=Muli:900');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.centered-block{
+  width: 1080px;
+  margin: 0px auto;
+}
+
+$blue: #266eff;
+$yellow: #ffff00;
 
 :host {
   @include component;
-  border: 1px solid #aaa;
-  background-color: #000;
   color: #fff;
+}
+
+.black-gradient{
+      background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,1,0.2) 1%, rgba(0,11,24,0.34) 47%, rgba(0,11,25,0.35) 48%, rgba(0,11,25,0.97) 100%);
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,1,0.2) 1%,rgba(0,11,24,0.34) 47%,rgba(0,11,25,0.35) 48%,rgba(0,11,25,0.97) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,1,0.2) 1%,rgba(0,11,24,0.34) 47%,rgba(0,11,25,0.35) 48%,rgba(0,11,25,0.97) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#f7000b19',GradientType=0 );
+}
+.asm-header{
+  margin-top: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  .header-left, .header-right{
+    display: table-cell;
+    height: 83px;
+  }
+  .header-left{
+    background-image:url('images/header-left.png');
+  }
+  .header-right{
+    background-image:url('images/header-right.png');
+  }
+  .header-center{
+    width: 1080px;  
+    display: table-cell;
+    background-image:url('images/header-middle2.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+  .logo {
+    width: 160px;
+    margin-left: 18px;
+    margin-top: 20px;
+    margin-bottom: 17px;
+    margin-right: 20px;
+  }
+  .logo-container{
+   height: 83px; 
+    float: left;
+    .logo-left{
+      background-image:url('images/header-left.png');
+      height: 83px;
+      display: inline-block;
+    }
+    .logo-right{
+      position: relative;
+    left: -4px;
+      background-image:url('images/header-middle.png');
+      display: inline-block;
+      height: 83px;
+      width: 26px;
+    }
+  }
+  .header-lower{
+    margin-top: -12px;
+    background-image:url('images/header-bg.png');
+    margin-left: 224px;
+    height: 41px;
+    width: 821px;
+    a{
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 20px;
+      margin-right: 45px;
+      margin-top: 8px;
+      display: inline-block;
+    }
+    .some{
+      display: inline-block;
+      a{
+        background-repeat: no-repeat;
+        width: 20px;
+        cursor: pointer;
+        height: 20px;
+        display: inline-block;
+        background-size: contain;
+        margin: 0px;
+        margin-left: 4px;
+      }
+      .twitter{
+        background-image:url('images/twitter.png');
+      }
+      .fb{
+        background-image:url('images/fb.png');
+      }
+      .twitch{
+        background-image:url('images/twitch.png');
+      }
+      .youtube{
+        background-image:url('images/youtube.png');
+      }
+      .instagram{
+        background-image:url('images/instagram.png');
+      }
+    }
+  }
+  .search-button{
+    background-color: $blue;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 2px;
+    left: 319px;
+    p{
+      margin-top: 13px;
+      margin-left: 12px;
+      width: 15px;
+      height: 15px;
+      background-size: contain;
+      background-image:url('images/search.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  .language-button{
+    position: absolute;
+    background-color: $blue;
+    height: 28px;
+    width: 30px;
+    padding-top: 10px;
+    padding-left: 8px;
+    top: 2px;
+    left: 360px;
+  }
+  .search-bar{
+    background-image:url('images/header-bg.png');
+    width: 374px;
+    height: 41px;
+    display: inline-block;
+    float: left;
+    p{
+      position: relative;
+      top: -16px;
+      left: 14px;
+      background-image:url('images/search-right.png');
+      height: 41px;
+      width: 14px;
+      float: right;
+    }
+  }
+  .skewed{
+    -ms-transform: skewX(-14deg); /* IE 9 */
+    -webkit-transform: skewX(-14deg); /* Safari */
+    transform: skewX(-14deg); /* Standard syntax */
+    -webkit-backface-visibility: hidden;
+    outline: 1px solid transparent;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px; 
+    *{
+      -ms-transform: skewX(14deg); /* IE 9 */
+      -webkit-transform: skewX(14deg); /* Safari */
+      transform: skew(14deg); /* Standard syntax */
+    }
+  }
+  .header-upper{
+    position: relative;
+    .esports, .casual{
+      background-image: url('images/header-button.png');
+      display: inline-block;
+      height: 42px;
+      color: $blue;
+      text-transform: uppercase;
+      font-style: italic; 
+      font-size: 20px;
+      width: 155px;
+      position: relative;
+      top: -13px;
+      left: -10px; 
+      p{
+        background-repeat: no-repeat;
+        background-position: 14% 62%;
+        background-size: 15px;
+        padding-left: 60px;
+        margin: 0px;
+        padding-top: 9px;
+
+      }
+    }
+    .esports{
+      p{
+        background-image:url('images/esports-icon.png');
+      }
+    }
+    .casual{
+      left: -18px;
+      p{
+        background-image:url('images/casual-icon.png');
+        background-size: 17px;
+        padding-left: 65px;
+      }
+    }
+    .search-container{
+      position: relative;
+      left: -30px;
+      padding-left: 15px;
+      background-image:url('images/search-left.png');
+      background-repeat: no-repeat;
+      background-position: left top;
+      width: 440px;
+      display: inline-block;
+      margin-left: 3px;
+      height: 41px;
+    }
+    .tickets{
+      background-image:url('images/tickets.png');
+      width: 155px;
+      height: 42px;
+      position: absolute;
+      display: block;
+      background-size: contain;
+      top: -1px;
+      right: 8px;
+      p{
+        font-style: italic;
+        color: $yellow;
+        text-transform: uppercase;
+        margin-left: 69px;
+        margin-top: 8px;
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 h1 {
   display: inline-block;
 }
 
-.logo {
-  width: 180px;
-  padding-top: 10px;
-  padding-left: 8px;
-}
