@@ -1,3 +1,33 @@
-<p>
-  footer works!
-</p>
+<footer class="asm-footer">
+  <div class="footer-upper">
+    <div class="centered-block">
+      <div class="menublock" *ngFor="let title of ['Assembly winter 2018', 'Program', 'Manual', 'About']">
+        <h4>{{title}}</h4>
+        <p *ngFor="let item of ['asdf', 'fdsgs', 'adskjgfls', 'sdifjurioj', 'sdf']">  
+          <a>{{item}}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-lower">
+    <div class="centered-block">
+       <p class="copyright">
+        &copy; 1992-2017 assembly organizing
+      </p>     
+      <div class="some">
+          <a class="twitter"></a>
+          <a class="fb"></a>
+          <a class="twitch"></a>
+          <a class="youtube"></a>
+          <a class="instagram"></a>
+      </div>
+      <div class="site">
+        <span>select event</span>
+        <select>
+          <option>asdf</option>
+          <option>lkdj</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</footer>

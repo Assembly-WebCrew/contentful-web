@@ -1,7 +1,93 @@
 @import '../../mixins';
-
+@import '../../styles';
 :host {
   @include component;
-  height: 200px;
-  border: 1px solid #aaa;
+//  height: 200px;
+}
+
+.asm-footer{
+  font-family: 'Muli', sans-serif;
+  .footer-upper{
+    background-color: #000000;
+    padding: 65px 0px;
+    overflow: hidden;
+    color: white;
+    .menublock{
+      float: left; 
+      width: 255px;
+      margin-right: 20px;
+      h4{
+        font-family: 'Oswald', sans-serif;
+        border-bottom: $footer-blue 1px solid;
+        text-transform: uppercase;
+        font-size: 23px;
+        padding-bottom:16px;
+      }
+      p {
+        margin: 0px;
+        margin-top: 21px;
+      }
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+  }
+  .footer-lower{
+    background-color: $bg;
+    height: 40px;
+    padding: 30px 0px;
+    width: 100%;
+    .copyright{
+      float: right;
+      margin: 0px;
+      color: white;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+    .site{
+      color: white;
+      text-align: center;
+      position: relative;
+      select{
+        background-color: transparent;
+        padding: 3px;
+        border: $footer-blue 2px solid;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        margin-left: 3px;
+        color: white;
+      }
+    }
+/*copied from header*/
+    .some{
+      display: inline-block;
+      float: left;
+      a{
+        background-repeat: no-repeat;
+        width: 20px;
+        cursor: pointer;
+        height: 20px;
+        display: inline-block;
+        background-size: contain;
+        margin: 0px;
+        margin-left: 4px;
+      }
+      .twitter{
+        background-image:url('../header/images/twitter.png');
+      }
+      .fb{
+        background-image:url('../header/images/fb.png');
+      }
+      .twitch{
+        background-image:url('../header/images/twitch.png');
+      }
+      .youtube{
+        background-image:url('../header/images/youtube.png');
+      }
+      .instagram{
+        background-image:url('../header/images/instagram.png');
+      }
+    }
+  }
 }
