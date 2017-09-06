@@ -1,2 +1,17 @@
 @import '~normalize-scss';
 @include normalize;
+
+@import url('https://fonts.googleapis.com/css?family=Muli:900');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+
+$blue: #266eff;
+$yellow: #ffff00;
+
+$bg: #000b19;
+$footer-blue: #3683ff;
+
+.centered-block{
+  width: 1080px;
+  margin: 0px auto;
+}
