@@ -7,7 +7,7 @@ export class ContentfulWebPage {
     return navigationPromise;
   }
 
-  getTitle() {
-    return element(by.css('asm-header h1')).getText();
+  hasLogo() {
+    return element(by.css('asm-header .logo')).isPresent();
   }
 }
