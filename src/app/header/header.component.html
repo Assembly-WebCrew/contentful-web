@@ -1,49 +1,48 @@
 <div class="asm-header">
   <div class="header-left"></div>
   <div class="header-center">
-  <div class="logo-container">
-    <div class="logo-left">
-      <img class="logo" [src]="event?.logo?.fields?.file?.url" alt="{{event?.logo?.fields?.title}}">
+    <div class="logo-container">
+      <div class="logo-left">
+        <img class="logo" [src]="event?.logo?.fields?.file?.url" alt="{{event?.logo?.fields?.title}}">
+      </div>
+      <div class="logo-right"></div>
     </div>
-    <div class="logo-right"></div>
-  </div>
-  <!---<h1>{{ event?.eventTitle }}</h1>-->
-  <div class="header-inner">
-    <div class="header-upper">
-      <div class="esports">
-        <p>esports</p>
-      </div>
-      <div class="casual">
-        <p>Casual</p>
-      </div>
-      <div class="search-container">
-        <div class="search-bar">
-          <p></p>
+    <div class="header-inner">
+      <div class="header-upper">
+        <div class="esports">
+          <p>esports</p>
         </div>
-        <div class="search-button skewed">
-          <p></p>
+        <div class="casual">
+          <p>Casual</p>
         </div>
-        <div class="language-button skewed">
-          ENG
+        <div class="search-container">
+          <div class="search-bar">
+            <p></p>
+          </div>
+          <div class="search-button skewed">
+            <p></p>
+          </div>
+          <div class="language-button skewed">
+            ENG
+          </div>
+        </div>
+        <div class="tickets">
+          <p>Tickets</p>
         </div>
       </div>
-      <div class="tickets">
-        <p>Tickets</p>
-      </div>
-    </div>
-    <div class="header-lower">
-      <span *ngFor="let item of (header$ | async)?.items">  
+      <div class="header-lower">
+      <span *ngFor="let item of (header$ | async)?.items">
         <a [href]="getUrl(item)">{{item.title}}</a>
       </span>
-      <div class="some">
-        <a class="twitter"></a>
-        <a class="fb"></a>
-        <a class="twitch"></a>
-        <a class="youtube"></a>
-        <a class="instagram"></a>
+        <div class="some">
+          <a class="twitter"></a>
+          <a class="fb"></a>
+          <a class="twitch"></a>
+          <a class="youtube"></a>
+          <a class="instagram"></a>
+        </div>
       </div>
     </div>
-  </div>
   </div>
   <div class="header-right"></div>
 </div>
