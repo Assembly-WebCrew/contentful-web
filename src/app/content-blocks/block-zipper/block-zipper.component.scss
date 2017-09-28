@@ -15,26 +15,11 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  h2{
 
-  }
-  &>*{/*why none of these work*/
-    background-color: red!important;
-  }
-  asm-block-markdown{
-    background-color: red;
-  }
-  [_nghost-c8]{
-    background-color: transparent;
-  }
-  _nghost-c8{
-    background-color: transparent;
-  }
-  [_nghost-c8] {
-    background-color: red!important;
-  }
 }
-
+  h2{
+    text-transform: uppercase;
+  }
 .zip-content:nth-child(odd) {
   float: left;
 }
