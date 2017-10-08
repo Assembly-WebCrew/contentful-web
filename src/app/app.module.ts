@@ -17,6 +17,7 @@ import { ContentComponent } from './content/content.component';
 import { CustomReuseStrategy } from './router-reuse-strategy';
 import { EventComponent } from './event/event.component';
 import { SkeletorComponent } from './skeletor/skeletor.component';
+import { LearnMoreBlockComponent } from './content-blocks/learn-more-block/learn-more-block.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SkeletorComponent } from './skeletor/skeletor.component';
     FooterComponent,
     EventComponent,
     ContentComponent,
-    SkeletorComponent
+    SkeletorComponent,
+    LearnMoreBlockComponent
   ],
   imports: [
     BrowserModule,
