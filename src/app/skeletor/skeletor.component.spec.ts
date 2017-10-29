@@ -6,6 +6,7 @@ import { HeaderComponent } from '../header/header.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SkeletorComponent } from './skeletor.component';
+import { SocialMediaComponent } from '../social-media/social-media.component';
 
 describe('SkeletorComponent', () => {
   let component: SkeletorComponent;
@@ -17,7 +18,8 @@ describe('SkeletorComponent', () => {
       declarations: [
         SkeletorComponent,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        SocialMediaComponent
       ],
       providers: [ContentfulService]
     })

@@ -1,6 +1,11 @@
+@import '../../mixins';
+:host {
+  @include component;
+}
 .some{
     display: inline-flex;
     flex-shrink: 0;
+    z-index: 5;
 
     a{
         color: white;
