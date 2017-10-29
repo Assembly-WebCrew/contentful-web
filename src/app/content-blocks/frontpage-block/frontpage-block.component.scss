@@ -1,0 +1,83 @@
+@import '../../../styles.scss';
+:host {
+  display: block;
+  contain: content;
+  background-color: #000b19;
+  color: #fff;
+  padding-top: 30px;
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+}
+.logo{
+  width: 730px;
+  height: 183px;
+  background-image: url('logow2018.png');
+  margin-top: 190px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; 
+}
+.details{
+  padding-top: 30px;
+  overflow: hidden;
+  text-align: center;
+  span{
+    padding-left: 25px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: $blue;
+    font-size: 25px;
+    text-transform: uppercase;
+    span{
+      color: white;
+      font-family: 'Oswald', sans-serif;
+    }
+  }
+  .dates{
+    margin-right: 40px;
+   }
+}
+.counter{
+  padding-top: 64px;
+  color: $blue;
+  font-family: 'Oswald', sans-serif;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 360px;
+  padding-bottom: 50px;
+  div p{
+    margin: 0px;
+    color: white;
+    font-size: 75px;
+  }
+  div{
+    font-size: 23px;
+    text-transform: uppercase;
+    width: 90px;
+    text-align: center;
+    float: left;
+  }
+}
+.sponsors{
+  height: 215px;
+  width: 100%;
+  background: rgba(231,56,39,0);
+  background: -moz-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(0,11,25,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(231,56,39,0)), color-stop(100%, rgba(0,11,25,1)));
+  background: -webkit-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(0,11,25,1) 100%);
+  background: -o-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(0,11,25,1) 100%);
+  background: -ms-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(0,11,25,1) 100%);
+  background: linear-gradient(to bottom, rgba(231,56,39,0) 0%, rgba(0,11,25,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73827', endColorstr='#000b19', GradientType=0 );
+  .sponsor{
+    height: 190px;
+    background-size: contain;
+    float: left;
+    width: 20%;
+    margin: 0% 2.5%;
+    background-color: red;
+  }
+}
