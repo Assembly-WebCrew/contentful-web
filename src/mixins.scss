@@ -3,9 +3,13 @@
   display: $display;
 }
 
-@mixin gradient-bg($color) {
+@mixin gradient-top($color, $secondary: $bg) {
+  @include gradient(rgba($color, 0.5), rgba($secondary, 0.1));
+}
+
+@mixin gradient($color: $blue, $secondary: $darker-blue) {
   background: $color;
-  background: linear-gradient(rgba($color, 0.5), $color);
+  background: linear-gradient($color, $secondary);
 }
 
 @mixin skewed {

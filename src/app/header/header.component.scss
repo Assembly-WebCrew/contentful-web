@@ -6,24 +6,20 @@
   position: fixed;
   top: 0;
   z-index: 100;
+  width: 100%;
 }
 
-.black-gradient{
-      background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,1,0.2) 1%, rgba(0,11,24,0.34) 47%, rgba(0,11,25,0.35) 48%, rgba(0,11,25,0.97) 100%);
-      background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,1,0.2) 1%,rgba(0,11,24,0.34) 47%,rgba(0,11,25,0.35) 48%,rgba(0,11,25,0.97) 100%);
-      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,1,0.2) 1%,rgba(0,11,24,0.34) 47%,rgba(0,11,25,0.35) 48%,rgba(0,11,25,0.97) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#f7000b19',GradientType=0 );
-}
 .asm-header{
   margin-top: 20px;
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
-  display: table;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  table-layout: fixed;
+
   .header-left, .header-right{
-    display: table-cell;
     height: 83px;
+    flex-grow: 1;
   }
   .header-left{
     background-image:url('images/header-left.png');
@@ -33,196 +29,227 @@
   }
   .header-center{
     width: 1080px;  
-    display: table-cell;
+    flex-shrink: 0;
+    display: flex;
     background-image:url('images/header-middle2.png');
     background-repeat: no-repeat;
     background-position: right center;
-  }
-  .logo {
-    width: 160px;
-    margin-left: 18px;
-    margin-top: 20px;
-    margin-bottom: 17px;
-    margin-right: 20px;
-  }
-  .logo-container{
-   height: 83px; 
-    float: left;
-    .logo-left{
-      background-image:url('images/header-left.png');
-      height: 83px;
-      display: inline-block;
-      position: relative; 
-    }
-    .logo-right{
-      position: relative;
-    left: -4px;
-      background-image:url('images/header-middle.png');
-      display: inline-block;
-      height: 83px;
-      width: 26px;
-    }
-  }
-  .header-lower{
-    margin-top: -12px;
-    background-image:url('images/header-bg.png');
-    margin-left: 224px;
-    height: 41px;
-    width: 821px;
-    a{
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 20px;
-      margin-right: 45px;
-      margin-top: 8px;
-      display: inline-block;
-    }
-    .some{
-      display: inline-block;
-      a{
-        background-repeat: no-repeat;
-        width: 20px;
-        cursor: pointer;
-        height: 20px;
-        display: inline-block;
-        background-size: contain;
-        margin: 0px;
-        margin-left: 4px;
-      }
-      .twitter{
-        background-image:url('images/twitter.png');
-      }
-      .fb{
-        background-image:url('images/fb.png');
-      }
-      .twitch{
-        background-image:url('images/twitch.png');
-      }
-      .youtube{
-        background-image:url('images/youtube.png');
-      }
-      .instagram{
-        background-image:url('images/instagram.png');
-      }
-    }
-  }
-  .search-button{
-    background-color: $blue;
-    width: 38px;
-    height: 38px;
-    position: absolute;
-    top: 2px;
-    left: 319px;
-    p{
-      margin-top: 13px;
-      margin-left: 12px;
-      width: 15px;
-      height: 15px;
-      background-size: contain;
-      background-image:url('images/search.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-  }
-  .language-button{
-    position: absolute;
-    background-color: $blue;
-    height: 28px;
-    width: 30px;
-    padding-top: 10px;
-    padding-left: 8px;
-    top: 2px;
-    left: 360px;
-  }
-  .search-bar{
-    background-image:url('images/header-bg.png');
-    width: 374px;
-    height: 41px;
-    display: inline-block;
-    float: left;
-    p{
-      position: relative;
-      top: -16px;
-      left: 14px;
-      background-image:url('images/search-right.png');
-      height: 41px;
-      width: 14px;
-      float: right;
-    }
-  }
-  .header-upper{
-    position: relative;
-    margin-left: 215px;
-    .esports, .casual{
-      background-image: url('images/header-button.png');
-      display: inline-block;
-      height: 42px;
-      color: $blue;
-      text-transform: uppercase;
-      font-style: italic; 
-      font-size: 20px;
-      width: 155px;
-      position: relative;
-      top: -13px;
-      left: -10px; 
-      p{
-        background-repeat: no-repeat;
-        background-position: 14% 62%;
-        background-size: 15px;
-        padding-left: 60px;
-        margin: 0px;
-        padding-top: 9px;
 
+    .logo-container{
+      height: 83px; 
+      display: flex;
+      align-items: center;
+      
+      .logo {
+        width: 160px;
       }
-    }
-    .esports{
-      p{
-        background-image:url('images/esports-icon.png');
+      .logo-left{
+        background-image:url('images/header-left.png');
+        height: 83px;
+        display: flex;
+        align-items: center;
+        position: relative; 
       }
-    }
-    .casual{
-      left: -18px;
-      p{
-        background-image:url('images/casual-icon.png');
-        background-size: 17px;
-        padding-left: 65px;
+      .logo-right{
+        position: relative;
+        background-image:url('images/header-middle.png');
+        display: inline-block;
+        height: 83px;
+        width: 26px;
       }
     }
     .search-container{
+      border-radius: 5px;
       position: relative;
-      left: -30px;
       padding-left: 15px;
-      background-image:url('images/search-left.png');
-      background-repeat: no-repeat;
-      background-position: left top;
-      width: 440px;
-      display: inline-block;
+      background-image:url('images/header-bg.png');
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
       margin-left: 3px;
       height: 41px;
+      transform: skew(-15deg);
+
+      .button {
+        color: $blue;
+        border-radius: 5px;
+        width: 37px;
+        height: 37px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 2px;
+        transform: skew(0deg);
+        cursor: pointer;
+        transition: background-color .1s ease-in-out;
+        text-shadow: 0 -2px rgba(0, 11, 25, 0.2);
+
+        &:hover {
+          background-color: $blue;
+          color: white;
+          transition: background-color .1s ease-in-out;
+        }
+        
+        * {
+          transform: skew(15deg);
+        }
+      }
+      .search-bar{
+        height: 100%;
+        display: inline-block;
+        flex-grow: 1;
+      }
     }
-    .tickets{
-      background-image:url('images/tickets.png');
-      width: 155px;
-      height: 42px;
-      position: absolute;
-      display: block;
-      background-size: contain;
-      top: -1px;
-      right: 8px;
-      p{
-        font-style: italic;
-        color: $yellow;
-        text-transform: uppercase;
-        margin-left: 69px;
-        margin-top: 8px;
-        font-size: 20px;
+    .header-inner {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .header-upper{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-left: -6px;
+
+        .highlight-button {
+          display: flex;
+          align-items: center;
+          height: 41px;
+          background-image:url('images/header-bg.png');
+          border-radius: 5px;
+          border: 2px solid $bg;
+          color: $blue;
+          box-sizing: border-box;
+          font-size: 18px;
+          cursor: pointer;
+          @include skewed;
+
+          .button-inner-wrapper {
+            border: 1px solid rgba($blue, 0.6);
+            display: flex;
+            align-items: center;
+            height: 100%;
+            transform: skew(0deg);
+            border-radius: 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-shadow: 0 -2px rgba(0, 11, 25, 0.2);
+            position: relative;
+
+            .icon {
+              @include gradient-top($blue);
+              height: 100%;
+              width: 40px;
+              transform: skew(0deg);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              i {
+                margin-bottom: 1px;
+              }
+            }
+            .title {
+              padding: 0 20px;
+              font-style: italic;
+              text-transform: uppercase;
+              margin-bottom: 1px;
+            }
+            &:before {
+              display: none;
+              text-align: center;
+              text-shadow: 0 -1px rgba(0, 11, 25, 0.4);
+              font-family: FontAwesome;
+              position: absolute;
+              align-items: center;
+              justify-content: center;
+              top: 0;
+              bottom: 0;
+              left: -15px;
+              right: -15px;
+              color: white;
+              transition: background .1s .1s ease-in-out;
+              transform: skew(15deg);
+            }
+          }
+
+          &:hover {
+            .button-inner-wrapper { 
+              &:before {
+                display: flex;
+                z-index: 1;
+                transition: background .1s .2s ease-in-out;
+                @include gradient;
+              }
+            }
+          }
+
+          &.tickets {
+            margin-right: 15px;
+            margin-left: 2px;
+            color: $yellow;
+            .button-inner-wrapper {
+              border-color: rgba($yellow, 0.6);
+              .icon {
+                @include gradient-top($yellow);
+              }
+              &:before {
+                @include gradient($yellow, $darker-yellow);
+              }
+            }
+          }
+        }
+      }
+      .header-lower{
+        background-image:url('images/header-bg.png');
+        height: 41px;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        margin-right: 35px;
+
+        .menu {
+          flex-grow: 1;
+        }
+        a{
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 20px;
+          display: inline-flex;
+          margin-right: 45px;
+          height: 100%;
+          align-items: center;
+        }
+        .some{
+          display: inline-block;
+          a{
+            background-repeat: no-repeat;
+            width: 20px;
+            cursor: pointer;
+            height: 20px;
+            display: inline-block;
+            background-size: contain;
+            margin: 0px;
+            margin-left: 4px;
+          }
+          .twitter{
+            background-image:url('images/twitter.png');
+          }
+          .fb{
+            background-image:url('images/fb.png');
+          }
+          .twitch{
+            background-image:url('images/twitch.png');
+          }
+          .youtube{
+            background-image:url('images/youtube.png');
+          }
+          .instagram{
+            background-image:url('images/instagram.png');
+          }
+        }
       }
     }
   }
 }
-
-h1 {
-  display: inline-block;
-}
-

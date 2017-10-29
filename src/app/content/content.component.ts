@@ -23,9 +23,11 @@ export class ContentComponent implements OnInit {
     private title: Title) {}
 
   ngOnInit() {
-    this.content = this.route.snapshot.data.content || {};
-    this.title.setTitle(this.content.title);
-    this.background = this.getBackground();
+    this.route.data.subscribe((data: { content: any }) => {
+      this.content = this.route.snapshot.data.content || {};
+      this.title.setTitle(this.content.title);
+      this.background = this.getBackground();
+    });
   }
 
   getBackground() {

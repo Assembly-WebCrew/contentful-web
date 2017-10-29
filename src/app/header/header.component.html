@@ -9,31 +9,40 @@
     </div>
     <div class="header-inner">
       <div class="header-upper">
-        <div class="esports">
-          <p>esports</p>
-        </div>
-        <div class="casual">
-          <p>Casual</p>
+        <div class="highlight-button" *ngFor="let item of getMenuItems((header$ | async)?.items, true)">
+          <div class="button-inner-wrapper {{item.icon}}">
+            <span class="icon">
+              <i class="fa {{item.icon}}"></i>
+            </span>
+            <span class="title">{{item.title}}</span>
+          </div>
         </div>
         <div class="search-container">
           <div class="search-bar">
             <p></p>
           </div>
-          <div class="search-button skewed">
-            <p></p>
+          <div class="button">
+            <i class="fa fa-search"></i>
           </div>
-          <div class="language-button skewed">
-            ENG
+          <div class="button">
+            <span>ENG</span>
           </div>
         </div>
-        <div class="tickets">
-          <p>Tickets</p>
+        <div class="highlight-button tickets">
+          <div class="button-inner-wrapper fa-ticket">
+            <span class="icon">
+              <i class="fa fa-ticket"></i>
+            </span>
+            <span class="title">Tickets</span>
+          </div>
         </div>
       </div>
       <div class="header-lower">
-      <span *ngFor="let item of (header$ | async)?.items">
-        <a [href]="getUrl(item)">{{item.title}}</a>
-      </span>
+        <div class="menu">
+          <span *ngFor="let item of getMenuItems((header$ | async)?.items)">
+            <a [routerLink]="getUrl(item)">{{item.title}}</a>
+          </span>
+        </div>
         <div class="some">
           <a class="twitter"></a>
           <a class="fb"></a>
@@ -46,5 +55,3 @@
   </div>
   <div class="header-right"></div>
 </div>
-
-

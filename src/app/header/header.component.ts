@@ -14,6 +14,8 @@ import { Observable } from 'rxjs/Observable';
 export class HeaderComponent implements OnInit {
   header$: Observable<any>;
   event: any;
+  highlightMenu: any[];
+  menu: any[];
 
   constructor(
     private contentful: ContentfulService,
@@ -30,6 +32,8 @@ export class HeaderComponent implements OnInit {
           ... on MenuItem {
             title
             url
+            isContentHighlight
+            icon
             page {
               slug
             }
@@ -37,6 +41,14 @@ export class HeaderComponent implements OnInit {
         }
       }
     }` }).map(data => data.menus[0]);
+  }
+
+  getMenuItems(items, isHighlight: boolean) {
+    if (!items)
+      return [];
+    return items.filter(item => {
+      return isHighlight ? item.isContentHighlight : !item.isContentHighlight;
+    });
   }
 
    getUrl(item) {
