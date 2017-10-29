@@ -9,14 +9,14 @@
     </div>
     <div class="header-inner">
       <div class="header-upper">
-        <div class="highlight-button" *ngFor="let item of getMenuItems((header$ | async)?.items, true)">
+        <a class="highlight-button" *ngFor="let item of getMenuItems((header$ | async)?.items, true)" [href]="getUrl(item)">
           <div class="button-inner-wrapper {{item.icon}}">
             <span class="icon">
               <i class="fa {{item.icon}}"></i>
             </span>
             <span class="title">{{item.title}}</span>
           </div>
-        </div>
+        </a>
         <div class="search-container">
           <div class="search-bar">
             <p></p>
@@ -28,14 +28,14 @@
             <span>ENG</span>
           </div>
         </div>
-        <div class="highlight-button tickets">
+        <a href="//tickets.assembly.org" class="highlight-button tickets" target="_blank">
           <div class="button-inner-wrapper fa-ticket">
             <span class="icon">
               <i class="fa fa-ticket"></i>
             </span>
             <span class="title">Tickets</span>
           </div>
-        </div>
+        </a>
       </div>
       <div class="header-lower">
         <div class="menu">
@@ -43,13 +43,7 @@
             <a [routerLink]="getUrl(item)">{{item.title}}</a>
           </span>
         </div>
-        <div class="some">
-          <a class="twitter"></a>
-          <a class="fb"></a>
-          <a class="twitch"></a>
-          <a class="youtube"></a>
-          <a class="instagram"></a>
-        </div>
+        <asm-social-media></asm-social-media>
       </div>
     </div>
   </div>

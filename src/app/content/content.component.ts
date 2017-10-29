@@ -16,6 +16,7 @@ import { environment } from '../../environments/environment';
 export class ContentComponent implements OnInit {
   content: any = {};
   background: string;
+  tags: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,9 +25,10 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data: { content: any }) => {
-      this.content = this.route.snapshot.data.content || {};
+      this.content = data.content || {};
       this.title.setTitle(this.content.title);
       this.background = this.getBackground();
+      this.tags = this.content.tags ? this.content.tags.map(tag => tag.title).join(" ") : "";
     });
   }
 

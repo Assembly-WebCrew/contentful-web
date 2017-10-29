@@ -18,6 +18,7 @@ import { CustomReuseStrategy } from './router-reuse-strategy';
 import { EventComponent } from './event/event.component';
 import { SkeletorComponent } from './skeletor/skeletor.component';
 import { LearnMoreBlockComponent } from './content-blocks/learn-more-block/learn-more-block.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LearnMoreBlockComponent } from './content-blocks/learn-more-block/learn
     EventComponent,
     ContentComponent,
     SkeletorComponent,
-    LearnMoreBlockComponent
+    LearnMoreBlockComponent,
+    SocialMediaComponent
   ],
   imports: [
     BrowserModule,

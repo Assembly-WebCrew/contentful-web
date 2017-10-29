@@ -1,25 +1,24 @@
+@import '../../../mixins';
+@import '../../../styles';
+
 :host {
-  display: block;
-  contain: content;
-  color: #fff;
-  padding-top: 30px;
+  @include component;
+  // display: block;
+  // contain: content;
+  // color: #fff;
+  // padding-top: 30px;
 }
 
 .zip-content {
   float: right;
   width: 97.5%;
   display: block;
-  border: 1px solid #0a2658;
-  background-color: #010b1b;
+  color: white;
+  border: 1px solid rgba($blue, 0.6);
+  background-color: $bg;
   margin-bottom: 29px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
-
 }
-  h2{
-    text-transform: uppercase;
-  }
 .zip-content:nth-child(odd) {
   float: left;
 }

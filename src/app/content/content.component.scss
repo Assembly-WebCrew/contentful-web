@@ -4,15 +4,19 @@
 :host {
   @include component;
   min-height: 70vh;
-}
-.page-background{
-  display: block;
-  background-image: url('/assets/background-picture.jpg');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: $page-background-width auto;
-  padding-top: 200px;
-  position: relative;
+  height: 100%;
+  .page-background{
+    display: flex;
+    background-image: url('/assets/background-picture.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: $page-background-width auto;
+    padding-top: 200px;
+    position: relative;
+    height: 100%;
+    min-height: 60vh;
+    flex-direction: column;
+  }
 }
 .page-title {
   display: flex;
@@ -28,6 +32,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    @include skewed;
 
     &:before {
       content:"";
@@ -51,8 +56,16 @@
 .page-content-wrapper {
   background: $bg;
   background: linear-gradient(rgba($bg, 0.4) 0, $bg 230px);
+  color: white;
+  display: flex;
+  flex-grow: 1;
 
   .page-content {
     @include page-width;
+  }
+
+  &.manual {
+    background: $manual-bg;
+    color: $manual-text;
   }
 }

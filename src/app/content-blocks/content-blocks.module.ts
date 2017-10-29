@@ -6,11 +6,13 @@ import { BlockMarkdownComponent } from './block-markdown/block-markdown.componen
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarkdownDirective } from './directives/markdown.directive';
+import { BlockSectionComponent } from './block-section/block-section.component';
 
 export const contentComponents = [
   BlockMarkdownComponent,
   BlockPageHeaderComponent,
-  BlockZipperComponent
+  BlockZipperComponent,
+  BlockSectionComponent
 ];
 
 @NgModule({

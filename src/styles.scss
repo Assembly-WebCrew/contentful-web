@@ -17,6 +17,9 @@ $bg: #000B19;
 $bg-image-overlay: #151440;
 $border: $blue;
 $footer-blue: #3683ff;
+$manual-bg: #CCCED1;
+$manual-text: $blue;
+
 $page-background-width: 1440px;
 $page-title-size: 46px;
 
@@ -26,6 +29,7 @@ body {
 
 .centered-block{
   width: 1080px;
+  max-width: 100%;
   margin: 0px auto;
 }
 

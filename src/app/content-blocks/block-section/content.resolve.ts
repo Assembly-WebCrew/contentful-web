@@ -23,9 +23,6 @@ export class ContentResolve implements Resolve<any> {
           pages(q: "${qs.stringify(params)}") {
             slug
             title
-            tags{
-              title
-            }
             featuredImage{
               title
               url
@@ -46,10 +43,6 @@ export class ContentResolve implements Resolve<any> {
                 topics {
                   title
                   body
-                  featuredImage{
-                    title
-                    url
-                  }
                 }
               }
               ... on BlockMarkdown {

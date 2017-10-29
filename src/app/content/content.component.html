@@ -1,9 +1,9 @@
 <div class="page-background" [style.background-image]="background">
   <div class="page-title">
-    <div class="title-border skewed"></div>
+    <div class="title-border"></div>
     <h1>{{content.title}}</h1>
   </div>
-  <div class="page-content-wrapper">
+  <div class="page-content-wrapper {{tags}}">
     <div class="page-content">
       <asm-content-block *ngFor="let content of content.contentBlocks" [content]="content"></asm-content-block>
     </div>

@@ -1,0 +1,17 @@
+.some{
+    display: inline-flex;
+    flex-shrink: 0;
+
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 2px;
+        cursor: pointer;
+        display: inline-block;
+        background-size: contain;
+        margin: 0px;
+        margin-left: 4px;
+        flex-shrink: 0;
+    }
+}
