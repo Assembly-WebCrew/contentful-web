@@ -30,7 +30,7 @@ import { FrontpageBlockComponent } from './content-blocks/frontpage-block/frontp
     ContentComponent,
     SkeletorComponent,
     LearnMoreBlockComponent,
-    SocialMediaComponent
+    SocialMediaComponent,
     FrontpageBlockComponent
   ],
   imports: [
