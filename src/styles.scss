@@ -1,17 +1,32 @@
 @import '~normalize-scss';
 @include normalize;
 
+$fa-font-path: "/assets/fonts";
+
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css?family=Muli:900');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-
+@import 'font-awesome/font-awesome';
 
 $blue: #266eff;
 $yellow: #ffff00;
 
-$bg: #000b19;
+$bg: #000B19;
+$bg-image-overlay: #151440;
+$border: $blue;
 $footer-blue: #3683ff;
+$page-background-width: 1440px;
+$page-title-size: 46px;
+
+body {
+  background: $bg;
+}
 
 .centered-block{
   width: 1080px;
   margin: 0px auto;
+}
+
+.skewed {
+ @include skewed;
 }

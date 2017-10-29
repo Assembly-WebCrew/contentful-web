@@ -2,9 +2,9 @@
   <div class="header-left"></div>
   <div class="header-center">
     <div class="logo-container">
-      <div class="logo-left">
+      <a class="logo-left" [href]="'/' + event?.name">
         <img class="logo" [src]="event?.logo?.fields?.file?.url" alt="{{event?.logo?.fields?.title}}">
-      </div>
+      </a>
       <div class="logo-right"></div>
     </div>
     <div class="header-inner">

@@ -15,6 +15,7 @@ import { environment } from '../../environments/environment';
 })
 export class ContentComponent implements OnInit {
   content: any = {};
+  background: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,5 +25,11 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.content = this.route.snapshot.data.content || {};
     this.title.setTitle(this.content.title);
+    this.background = this.getBackground();
+  }
+
+  getBackground() {
+    if (this.content && this.content.featuredImage)
+      return 'url(' + this.content.featuredImage.url + ')';
   }
 }

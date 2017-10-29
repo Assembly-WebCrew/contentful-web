@@ -1,11 +1,58 @@
 @import '../../mixins';
-h1{
-  color: white;
-  font-family: 'Muli', sans-serif;
-  font-style: italic;
-  text-transform: uppercase;
-}
+@import '../../styles';
+
 :host {
   @include component;
   min-height: 70vh;
+}
+.page-background{
+  display: block;
+  background-image: url('/assets/background-picture.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: $page-background-width auto;
+  padding-top: 200px;
+  position: relative;
+}
+.page-title {
+  display: flex;
+  align-items: center;
+  height: $page-title-size;
+  padding: 50px 0 100px;
+  @include page-width;
+
+  .title-border {
+    border-right: 2px solid rgba($border, 0.6);
+    margin-right: 10px;
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content:"";
+      width: 200px;
+      border-bottom: 2px solid rgba($border, 0.6);
+      display: block;
+    }
+  }
+  h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: $page-title-size;
+    line-height: $page-title-size;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+}
+.page-content-wrapper {
+  background: $bg;
+  background: linear-gradient(rgba($bg, 0.4) 0, $bg 230px);
+
+  .page-content {
+    @include page-width;
+  }
 }

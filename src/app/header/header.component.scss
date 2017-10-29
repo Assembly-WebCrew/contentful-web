@@ -3,6 +3,9 @@
 :host {
   @include component;
   color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
 .black-gradient{
@@ -49,6 +52,7 @@
       background-image:url('images/header-left.png');
       height: 83px;
       display: inline-block;
+      position: relative; 
     }
     .logo-right{
       position: relative;
@@ -147,23 +151,9 @@
       float: right;
     }
   }
-  .skewed{
-    -ms-transform: skewX(-14deg); /* IE 9 */
-    -webkit-transform: skewX(-14deg); /* Safari */
-    transform: skewX(-14deg); /* Standard syntax */
-    -webkit-backface-visibility: hidden;
-    outline: 1px solid transparent;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px; 
-    *{
-      -ms-transform: skewX(14deg); /* IE 9 */
-      -webkit-transform: skewX(14deg); /* Safari */
-      transform: skew(14deg); /* Standard syntax */
-    }
-  }
   .header-upper{
     position: relative;
+    margin-left: 215px;
     .esports, .casual{
       background-image: url('images/header-button.png');
       display: inline-block;

@@ -2,3 +2,22 @@
   contain: $contain;
   display: $display;
 }
+
+@mixin gradient-bg($color) {
+  background: $color;
+  background: linear-gradient(rgba($color, 0.5), $color);
+}
+
+@mixin skewed {
+  transform: skew(-15deg);
+  
+  * {
+    transform: skew(15deg);
+  }
+}
+
+@mixin page-width {
+  margin: 0 auto;
+  max-width: $page-background-width;
+  width: 100%;
+}
