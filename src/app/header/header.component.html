@@ -1,11 +1,10 @@
-<div class="asm-header">
+<div class="asm-header" [class.scroll]="scrolling">
   <div class="header-left"></div>
   <div class="header-center">
     <div class="logo-container">
-      <a class="logo-left" [href]="'/' + event?.name">
-        <img class="logo" [src]="event?.logo?.fields?.file?.url" alt="{{event?.logo?.fields?.title}}">
+      <a [href]="'/' + event?.name">
+        <img class="logo" [src]="getLogo()" alt="{{event?.logo?.fields?.title}}">
       </a>
-      <div class="logo-right"></div>
     </div>
     <div class="header-inner">
       <div class="header-upper">
@@ -40,7 +39,7 @@
       <div class="header-lower">
         <div class="menu">
           <span *ngFor="let item of getMenuItems((header$ | async)?.items)">
-            <a [routerLink]="getUrl(item)">{{item.title}}</a>
+            <a [href]="getUrl(item)" (click)="onNavigation(item, $event)">{{item.title}}</a>
           </span>
         </div>
         <asm-social-media></asm-social-media>
