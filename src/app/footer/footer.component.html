@@ -6,22 +6,20 @@
         <p *ngFor="let item of menu?.items">  
           <a [href]="getUrl(item)" (click)="onNavigation(item, $event)">{{item.title}}</a>
         </p>
-      </div>
+      </div>    
     </div>
   </div>
   <div class="footer-lower">
-    <div class="centered-block">
-      <asm-social-media></asm-social-media>
-      <div class="site">
-        <span>select event</span>
-        <select>
-          <option>asdf</option>
-          <option>lkdj</option>
-        </select>
-      </div>
-      <p class="copyright">
-        &copy; 1992-2017 ASSEMBLY Organizing
-      </p>     
+    <asm-social-media></asm-social-media>
+    <div class="site">
+      <span>select event</span>
+      <select>
+        <option>asdf</option>
+        <option>lkdj</option>
+      </select>
     </div>
+    <p class="copyright">
+      &copy; 1992-2017 ASSEMBLY Organizing
+    </p> 
   </div>
 </footer>

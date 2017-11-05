@@ -23,6 +23,7 @@ export class ContentResolve implements Resolve<any> {
           pages(q: "${qs.stringify(params)}") {
             slug
             title
+            isFrontpage
             tags{
               title
             }

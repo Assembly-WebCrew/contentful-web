@@ -7,12 +7,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarkdownDirective } from './directives/markdown.directive';
 import { BlockSectionComponent } from './block-section/block-section.component';
+import { BlockCountdownComponent } from './block-countdown/block-countdown.component';
+import { BlockEventInfoComponent } from './block-event-info/block-event-info.component';
+import { BlockSponsorsComponent } from './block-sponsors/block-sponsors.component';
 
 export const contentComponents = [
   BlockMarkdownComponent,
   BlockPageHeaderComponent,
   BlockZipperComponent,
-  BlockSectionComponent
+  BlockSectionComponent,
+  BlockSponsorsComponent
 ];
 
 @NgModule({
@@ -20,9 +24,15 @@ export const contentComponents = [
   declarations: [
     ContentBlockComponent,
     ...contentComponents,
+    BlockEventInfoComponent,
+    BlockCountdownComponent,
     MarkdownDirective
   ],
   entryComponents: contentComponents,
-  exports: [ContentBlockComponent]
+  exports: [
+    BlockEventInfoComponent,
+    BlockCountdownComponent,
+    ContentBlockComponent
+  ]
 })
 export class ContentBlocksModule { }

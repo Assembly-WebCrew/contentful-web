@@ -3,19 +3,13 @@
 
 :host {
   @include component;
-  // display: block;
-  // contain: content;
-  // color: #fff;
-  // padding-top: 30px;
 }
 
 .zip-content {
   float: right;
   width: 97.5%;
   display: block;
-  color: white;
-  border: 1px solid rgba($blue, 0.6);
-  background-color: $bg;
+  border: 1px solid $blue;
   margin-bottom: 29px;
   border-radius: 3px;
 }

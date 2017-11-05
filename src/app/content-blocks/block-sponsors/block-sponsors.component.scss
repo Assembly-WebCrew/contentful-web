@@ -1,0 +1,15 @@
+.sponsors{
+    height: 215px;
+    width: 100%;
+    background: rgba(231,56,39,0);
+    background: linear-gradient(to bottom, rgba(231,56,39,0) 0%, rgba(0,11,25,1) 100%);
+    
+    .sponsor{
+      height: 190px;
+      background-size: contain;
+      float: left;
+      width: 20%;
+      margin: 0% 2.5%;
+      background-color: red;
+    }
+  }

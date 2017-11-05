@@ -1,7 +1,6 @@
 @import "../../mixins";
 
 :host {
-    @include component;
-    contain: initial;
+    @include component(initial);
     height: 100%;
   }

@@ -1,3 +1,6 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
 @mixin component($contain: content, $display: block) {
   contain: $contain;
   display: $display;
@@ -24,4 +27,28 @@
   margin: 0 auto;
   max-width: $page-background-width;
   width: 100%;
+}
+
+@mixin centered-block {
+  width: 1080px;
+  max-width: 100%;
+  margin: 0px auto;
+}
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
 }

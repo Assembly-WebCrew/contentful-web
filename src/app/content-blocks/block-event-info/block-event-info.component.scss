@@ -1,0 +1,41 @@
+@import '../../../mixins';
+@import '../../../styles';
+
+:host {
+    @include component;
+    @include page-width;
+}
+
+.logo{
+    max-width: 700px;
+    width: 100%;
+    margin: 80px auto 0;
+    position: relative; 
+
+    img {
+        width: 100%;
+    }
+  }
+  .details{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span{
+        display: flex;
+        align-items: center;
+        color: $blue;
+        font-size: 25px;
+        text-transform: uppercase;
+
+      span{
+        padding-left: 15px;
+        color: white;
+        font-family: 'Oswald', sans-serif;
+      }
+    }
+    .dates{
+      margin-right: 45px;
+     }
+  }

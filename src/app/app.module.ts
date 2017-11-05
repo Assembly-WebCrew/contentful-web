@@ -19,7 +19,6 @@ import { EventComponent } from './event/event.component';
 import { SkeletorComponent } from './skeletor/skeletor.component';
 import { LearnMoreBlockComponent } from './content-blocks/learn-more-block/learn-more-block.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
-import { FrontpageBlockComponent } from './content-blocks/frontpage-block/frontpage-block.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { FrontpageBlockComponent } from './content-blocks/frontpage-block/frontp
     ContentComponent,
     SkeletorComponent,
     LearnMoreBlockComponent,
-    SocialMediaComponent,
-    FrontpageBlockComponent
+    SocialMediaComponent
   ],
   imports: [
     BrowserModule,
