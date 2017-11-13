@@ -1,0 +1,21 @@
+/**
+ * Add common styling used by components here. E.g. variables. 
+ * Import this file to component styles.
+ */ 
+ 
+@import 'mixins';
+
+$blue: #266eff;
+$darker-blue: #133d8c;
+$yellow: #ffff00;
+$darker-yellow: #80850c;
+
+$bg: #000B19;
+$bg-image-overlay: #151440;
+$border: $blue;
+$footer-blue: #3683ff;
+$manual-bg: #CCCED1;
+$manual-text: $blue;
+
+$page-background-width: 1440px;
+$page-title-size: 46px;

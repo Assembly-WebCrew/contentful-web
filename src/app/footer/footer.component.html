@@ -2,7 +2,7 @@
   <div class="footer-upper">
     <div class="centered-block">
       <div class="menublock" *ngFor="let menu of (footer$ | async)?.items">
-        <h4>{{menu.title}}</h4>
+        <h4>{{menu.label}}</h4>
         <p *ngFor="let item of menu?.items">  
           <a [href]="getUrl(item)" (click)="onNavigation(item, $event)">{{item.title}}</a>
         </p>

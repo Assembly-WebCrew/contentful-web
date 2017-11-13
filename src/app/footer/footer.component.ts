@@ -30,7 +30,7 @@ export class FooterComponent implements OnInit {
         title
         items {
           ... on Menu {
-            title
+            label
             items {
               ... on MenuItem {
                 title

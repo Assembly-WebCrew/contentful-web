@@ -1,4 +1,4 @@
-@import "../../mixins";
+@import '../../common';
 
 :host {
     @include component(initial);

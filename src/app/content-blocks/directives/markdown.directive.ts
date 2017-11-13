@@ -8,7 +8,7 @@ export class MarkdownDirective implements AfterViewInit {
   private converter: Converter;
 
   constructor(private el: ElementRef) {
-    this.converter = new Converter();
+    this.converter = new Converter({tables: true});
   }
 
   ngAfterViewInit() {
