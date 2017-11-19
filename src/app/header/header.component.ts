@@ -10,16 +10,11 @@ import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'asm-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  host: {
-    "(window.scroll)": "onScrollEvent($event)"
-  }
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   header$: Observable<any>;
   event: any;
-  highlightMenu: any[];
-  menu: any[];
   scrolling: boolean = false;
 
   constructor(
@@ -31,23 +26,78 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.event = this.route.snapshot.data.event;
     const params = { 'fields.title': 'Main Menu' };
-    this.header$ = this.contentful.query$<any>({ query: gql`
+    this.header$ = this.contentful.query$<any>({
+      query: gql`
     {
       menus(q: "${qs.stringify(params)}") {
         title
-        items {
-          ... on MenuItem {
+        highlights {
+          title
+          icon
+          item {
             title
             url
-            isContentHighlight
-            icon
             page {
               slug
             }
           }
         }
+        page {
+          title
+          url
+          page {
+            slug
+          }
+        }
+        items {
+          ... on MenuItem {
+            title
+            url
+            page {
+              slug
+            }
+          }
+          ... on Menu {
+            label
+            page {
+              title
+              url
+              page {
+                slug
+              }
+            }
+            items {
+              ... on MenuItem {
+                title
+                url
+                page {
+                  slug
+                }
+              }
+              ... on Menu {
+                label
+                page {
+                  title
+                  url
+                  page {
+                    slug
+                  }
+                }
+                items {
+                  ... on MenuItem {
+                    title
+                    url
+                    page {
+                      slug
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
-    }` }).map(data => data.menus[0]);
+    }` }).map(data => { console.log(data.menus[0]); return data.menus[0] });
   }
 
   getLogo() {
@@ -58,33 +108,15 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  getMenuItems(items, isHighlight: boolean) {
-    if (!items)
-      return [];
-    return items.filter(item => {
-      return isHighlight ? item.isContentHighlight : !item.isContentHighlight;
-    });
-  }
-
-   getUrl(item) {
-    if (item.page) {
-      return `/${this.event.name}/${item.page.slug}`;
-    } else {
-      if (item.url && item.url[0] === '/')
-        return `/${this.event.name}${item.url}`;
-
-      return item.url;
-    }
-  }
-
-  onNavigation(item, event : Event) {
-    let url : string = this.getUrl(item);
-
-    if (url.startsWith("/")) {
-      event.preventDefault();
-      this.router.navigate([url]);
-      return false;
-    }
+  getUrl(item) {
+      if (item.page) {
+        return `/${this.event.name}/${item.page.slug}`;
+      } else {
+        if (item.url && item.url[0] === '/')
+          return `/${this.event.name}${item.url}`;
+  
+        return item.url;
+      }
   }
 
   @HostListener("window:scroll", [])
@@ -95,9 +127,5 @@ export class HeaderComponent implements OnInit {
     } else if (this.scrolling && number < 10) {
       this.scrolling = false;
     }
-  }
-
-  onScrollEvent(event) {
-
   }
 }

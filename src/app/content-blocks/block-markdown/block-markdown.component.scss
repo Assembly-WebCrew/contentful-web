@@ -1,9 +1,17 @@
+@import '../../../common';
+
 :host {
-  display: block;
-  contain: content;
+  @include component;
+  @include centered-block;
   padding: 10px;
-  margin: 10px;
   font-family: 'Muli', sans-serif;
   font-weight: normal;
 }
 
+h2 {
+  margin-left: 80px;
+}
+
+.markdown-content {
+  @include content;
+}

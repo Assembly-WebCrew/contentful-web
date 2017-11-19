@@ -19,52 +19,12 @@ body {
   @include skewed;
 }
 
-ul {
-  list-style-type: none;
-  padding: 15px 25px;
-  margin: 0;
-  
-  li {
-    padding-left: 25px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 30px;
-    overflow-y: hidden;
-
-    &:before {
-      content: "";
-      border-bottom: 1px solid $border;
-      border-left: 1px solid $border;
-      display: block;
-      width: 10px;
-      height: 100%;
-      position: absolute;
-      bottom: 45%;
-      left: 0;
-    }
-    
-    &:after {
-      content: "";
-      border-left: 1px solid $border;
-      display: block;
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    &:first-child {
-      padding-top: 5px;
-    }
-
-    &:last-child { 
-      &:after {
-        border: none;
-      }
-    }
+.markdown-content {
+  ul {
+    @include list-styling;
   }
 }
+
 
 table {
   column-gap: 0;

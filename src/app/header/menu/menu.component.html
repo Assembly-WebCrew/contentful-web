@@ -1,0 +1,30 @@
+<ul class="menu">
+  <li class="menu-item" *ngFor="let item of menu">
+    <ng-container *ngIf="item.__typename === 'Menu'; else normalMenu">
+      <a [href]="getUrl(item.page)" (click)="onNavigation(item.page, $event)">{{item.label}}</a>
+      <ul class="menu-dropdown" [class.sectioned]="isMenuSectioned(item)">
+        <li *ngFor="let subitem of item.items" [class.sectioned]="subitem.__typename === 'Menu'">
+          <ng-container *ngIf="subitem.__typename === 'Menu'; else normalSubMenu">
+            <ng-container *ngIf="subitem.page; else noLink">
+              <a class="title" [href]="getUrl(subitem.page)" (click)="onNavigation(subitem.page, $event)">{{subitem.label}}</a>
+            </ng-container>
+            <ng-template #noLink>
+              <span class="title">{{subitem.label}}</span>
+            </ng-template>
+            <ul class="submenu-section">
+              <li *ngFor="let sectionitem of subitem.items">
+                <a [href]="getUrl(sectionitem)" (click)="onNavigation(sectionitem, $event)">{{sectionitem.title}}</a>
+              </li>
+            </ul>
+          </ng-container>
+          <ng-template #normalSubMenu>
+            <a [href]="getUrl(subitem)" (click)="onNavigation(subitem, $event)">{{subitem.title}}</a>
+          </ng-template>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #normalMenu>
+      <a [href]="getUrl(item)" (click)="onNavigation(item, $event)">{{item.title}}</a>
+    </ng-template>
+  </li>
+</ul>

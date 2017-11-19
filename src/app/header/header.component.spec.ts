@@ -6,6 +6,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { Observable } from 'rxjs/Observable';
 import { SocialMediaComponent } from '../social-media/social-media.component';
+import { MenuComponent } from './menu/menu.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -14,11 +15,11 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, RouterTestingModule],
-      declarations: [HeaderComponent, SocialMediaComponent],
+      declarations: [HeaderComponent, SocialMediaComponent, MenuComponent],
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ menus: [{}] }) }
+          useValue: { query$: () => Observable.of({ menus: [{title: "Main Menu", items: []}] }) }
         }
       ]
     })

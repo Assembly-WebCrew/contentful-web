@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   height: $page-title-size;
-  padding: 50px 0 100px;
+  padding: 20px 0 100px;
   @include page-width;
 
   .title-border {
@@ -36,7 +36,7 @@
 
     &:before {
       content:"";
-      width: 200px;
+      width: 180px;
       border-bottom: 2px solid rgba($border, 0.6);
       display: block;
     }
@@ -45,7 +45,7 @@
     color: white;
     font-family: 'Oswald', sans-serif;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     font-size: $page-title-size;
     line-height: $page-title-size;
