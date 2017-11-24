@@ -1,6 +1,6 @@
 <div class="sponsors">
     <div class="sponsor" *ngFor="let sponsor of sponsors$ | async">
-        <img [src]="sponsor.logo.url" [alt]="sponsor.title">
+        <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
     </div>
 </div>
   

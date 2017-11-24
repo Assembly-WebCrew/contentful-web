@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlockSponsorsComponent } from './block-sponsors.component';
+import { ContentfulService } from '../../core/contentful.service';
+import { Observable } from 'rxjs/Observable';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('BlockSponsorsComponent', () => {
   let component: BlockSponsorsComponent;
@@ -8,7 +11,14 @@ describe('BlockSponsorsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockSponsorsComponent ]
+      declarations: [ BlockSponsorsComponent ],
+      imports: [HttpClientModule],
+      providers: [
+        {
+          provide: ContentfulService,
+          useValue: { query$: () => Observable.of({ sponsors: [{}]}) }
+        }
+      ]
     })
     .compileComponents();
   }));
