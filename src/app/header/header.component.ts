@@ -97,7 +97,7 @@ export class HeaderComponent implements OnInit {
           }
         }
       }
-    }` }).map(data => { console.log(data.menus[0]); return data.menus[0] });
+    }` }).map(data => data.menus[0]);
   }
 
   getLogo() {
