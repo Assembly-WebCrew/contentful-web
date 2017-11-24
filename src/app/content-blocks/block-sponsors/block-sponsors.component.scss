@@ -1,17 +1,31 @@
 @import '../../../common';
 
-.sponsors{
-    height: 215px;
-    width: 100%;
-    background: rgba(231,56,39,0);
-    background: linear-gradient(to bottom, rgba(231,56,39,0) 0%, rgba(0,11,25,1) 100%);
+:host {
+  @include component;
+}
 
-    .sponsor{
-      height: 190px;
-      background-size: contain;
-      float: left;
-      width: 20%;
-      margin: 0% 2.5%;
-      background-color: red;
+.sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @include centered-block;
+
+  .sponsor {
+    height: 190px;
+    min-width: 230px;
+    width: 25%;
+    margin: 0 10px;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    img {
+      max-width: 100%;
+      min-width: 200px;
     }
   }
+}

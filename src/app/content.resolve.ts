@@ -78,6 +78,9 @@ export class ContentResolve implements Resolve<any> {
                   url
                 }
               }
+              ... on BlockSponsors {
+                title
+              }
             }
           }
         }`

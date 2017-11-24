@@ -11,6 +11,7 @@
   </ng-template>
   <div class="page-content-wrapper {{tags}}">
     <div class="page-content">
+      <asm-block-sponsors></asm-block-sponsors>
       <asm-content-block *ngFor="let content of content.contentBlocks" [content]="content"></asm-content-block>
     </div>
   </div>

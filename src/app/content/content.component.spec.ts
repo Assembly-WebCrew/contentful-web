@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ContentBlockComponent } from '../content-block/content-block.component';
 import { BlockCountdownComponent } from '../content-blocks/block-countdown/block-countdown.component';
 import { BlockEventInfoComponent } from '../content-blocks/block-event-info/block-event-info.component';
+import { BlockSponsorsComponent } from '../content-blocks/block-sponsors/block-sponsors.component';
 
 describe('ContentComponent', () => {
   let component: ContentComponent;
@@ -13,7 +14,7 @@ describe('ContentComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ContentBlockComponent, ContentComponent, BlockCountdownComponent, BlockEventInfoComponent]
+      declarations: [ContentBlockComponent, ContentComponent, BlockCountdownComponent, BlockEventInfoComponent, BlockSponsorsComponent]
     })
     .compileComponents();
   }));
