@@ -15,6 +15,9 @@ before_install:
   - mv deploy/ssh_config ~/.ssh/config
   - mv deploy/deployment_key ~/.ssh/id_rsa
   - chmod 0600 ~/.ssh/*
+  - yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 jobs:
   include:
     - stage: test
