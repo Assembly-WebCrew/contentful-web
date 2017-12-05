@@ -77,3 +77,11 @@ h3 {
   font-size: 24px;
   margin: 30px 0 10px;
 }
+
+a:link {
+  color: $blue;
+}
+
+a:visited {
+  color: $purple;
+}
