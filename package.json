@@ -1,6 +1,6 @@
 {
   "name": "contentful-web",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.0.0-beta.2",
+    "@angular/animations": "^5.0.5",
     "@angular/common": "^5.0.0-beta.2",
     "@angular/compiler": "^5.0.0-beta.2",
     "@angular/core": "^5.0.0-beta.2",
