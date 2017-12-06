@@ -33,7 +33,8 @@ export const contentComponents = [
     BlockEventInfoComponent,
     BlockCountdownComponent,
     ContentBlockComponent,
-    BlockSponsorsComponent
+    BlockSponsorsComponent,
+    MarkdownDirective
   ]
 })
 export class ContentBlocksModule { }

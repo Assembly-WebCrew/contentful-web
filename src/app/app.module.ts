@@ -20,6 +20,7 @@ import { SkeletorComponent } from './skeletor/skeletor.component';
 import { LearnMoreBlockComponent } from './content-blocks/learn-more-block/learn-more-block.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { MenuComponent } from './header/menu/menu.component';
+import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MenuComponent } from './header/menu/menu.component';
     SkeletorComponent,
     LearnMoreBlockComponent,
     SocialMediaComponent,
-    MenuComponent
+    MenuComponent,
+    SponsorsPageComponent
   ],
   imports: [
     BrowserModule,
