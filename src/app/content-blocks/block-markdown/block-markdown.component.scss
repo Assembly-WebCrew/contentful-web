@@ -4,7 +4,7 @@
   @include component;
   @include centered-block;
   padding: 10px;
-  font-family: 'Muli', sans-serif;
+  font-family: $text-font;
   font-weight: normal;
 }
 

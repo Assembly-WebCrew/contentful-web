@@ -2,17 +2,17 @@
 
 .counter {
   padding-top: 64px;
-  font-family: 'Oswald', sans-serif;
+  font-family: $title-font;
   overflow: hidden;
   text-align: center;
   position: relative;
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
-  
+
   div {
     margin: 0;
-    color: #ffffff;
+    color: $text-color;
     text-transform: uppercase;
     width: 90px;
     text-align: center;
@@ -22,12 +22,12 @@
 
     p {
       margin: 0;
-      color: #ffffff;
+      color: $text-color;
       font-size: 70px;
     }
-    
+
     span {
-      color: $blue;
+      color: $accent-color;
       font-size: 23px;
     }
   }
