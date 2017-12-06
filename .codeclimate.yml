@@ -1,5 +1,6 @@
 ---
-engines:
+version: "2"
+plugins:
   shellcheck:
     enabled: true
   scss-lint:
@@ -10,12 +11,8 @@ engines:
     enabled: true
     channel: beta
     config: tslint.codeclimate.json
-ratings:
-  paths:
-  - "**.scss"
-  - "**.ts"
-  - "**.sh"
-exclude_paths:
-- node_modules/
-- coverage/
-- dist/
+exclude_patterns:
+- "**/node_modules/"
+- "coverage/"
+- "dist/"
+- "**/font_awesome/"

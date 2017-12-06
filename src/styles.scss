@@ -9,7 +9,7 @@ $fa-font-path: '/assets/fonts';
 
 body {
   background: $bg;
-  font-family: 'Muli', sans-serif;
+  font-family: $text-font;
 }
 
 .centered-block {
@@ -28,24 +28,24 @@ body {
 
 table {
   column-gap: 0;
-  border: 1px solid $blue;
+  border: 1px solid $text-color;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 5px;
 
   th {
-    font-family: 'Oswald', sans-serif;
+    font-family: $title-font;
     text-transform: uppercase;
     font-size: 18px;
   }
-  
-  td, 
+
+  td,
   th {
     padding: 10px 20px;
-    border-right: 1px solid $blue;
-    border-bottom: 1px solid $blue;
+    border-right: 1px solid $text-color;
+    border-bottom: 1px solid $text-color;
 
-    &:last-child { 
+    &:last-child {
       border-right: none;
     }
   }
@@ -59,12 +59,12 @@ table {
 
 h2 {
   font-size: 50px;
-  font-family: 'Oswald', sans-serif;
+  font-family: $title-font;
   text-transform: uppercase;
   position: relative;
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0;
@@ -106,7 +106,7 @@ a:visited {
     height: $page-title-size;
     padding: 20px 0 100px;
     @include page-width;
-  
+
     .title-border {
       border-right: 2px solid rgba($border, .6);
       margin-right: 10px;
@@ -115,15 +115,15 @@ a:visited {
       display: flex;
       align-items: center;
       @include skewed;
-  
+
       &:before {
-        content: "";
+        content: '';
         width: 180px;
         border-bottom: 2px solid rgba($border, .6);
         display: block;
       }
     }
-    
+
     h1 {
       color: white;
       font-family: 'Oswald', sans-serif;
@@ -136,19 +136,19 @@ a:visited {
       margin-bottom: 4px;
     }
   }
-  
+
   .page-content-wrapper {
     background: $bg;
     background: linear-gradient(rgba($bg, .4) 0, $bg 230px);
     color: #ffffff;
     display: flex;
     flex-grow: 1;
-  
+
     .page-content {
       @include page-width;
       padding-bottom: 50px;
     }
-  
+
     &.manual {
       background: $manual-bg;
       color: $manual-text;

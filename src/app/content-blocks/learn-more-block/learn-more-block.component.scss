@@ -3,10 +3,10 @@ $border: #266eff;
 :host {
   display: block;
   contain: content;
-  background-color: #000b19;
-  color: #fff;
+  background-color: $bg;
+  color: $text-color;
   padding-top: 30px;
-  font-family: 'Muli', sans-serif;
+  font-family: $text-font;
   overflow: hidden;
 }
 
@@ -16,7 +16,7 @@ $border: #266eff;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  
+
   a {
     display: block;
     width: 100%;
@@ -30,7 +30,7 @@ $border: #266eff;
     text-decoration: none;
     font-weight: bold;
     clear: both;
-    
+
     span {
       background-image: url('nuoli.png');
       background-position: right center;
@@ -38,7 +38,7 @@ $border: #266eff;
       padding-right: 28px;
     }
   }
-  
+
   h2 {
     text-transform: uppercase;
     border-bottom: $border 1px solid;
@@ -47,7 +47,7 @@ $border: #266eff;
     padding: 0;
     margin: 0;
   }
-  
+
   img {
     margin: 16px;
     display: block;
@@ -58,7 +58,7 @@ $border: #266eff;
     background-position: center;
       background-repeat: no-repeat;
   }
-  
+
   .icon {
     background-image: url('pokali.png');
     background-position: center;
@@ -68,9 +68,9 @@ $border: #266eff;
     float: left;
     margin-right: 20px;
   }
-  
+
   .icon:after {
-    content: " ";
+    content: '';
     position: relative;
     display: block;
     width: 10px;
@@ -90,16 +90,16 @@ $border: #266eff;
 .two-blocks {
   width: 48.5%;
   float: left;
-  
+
   img {
     float: left;
     max-width: 170px;
   }
-  
+
   p {
     line-height: 1.4em;
   }
-  
+
   h2 {
     font-style: italic;
     font-size: 25px;
@@ -114,7 +114,7 @@ $border: #266eff;
   width: 31.6%;
   float: left;
   margin-right: 2%;
-  
+
   h2 {
     text-align: center;
   }

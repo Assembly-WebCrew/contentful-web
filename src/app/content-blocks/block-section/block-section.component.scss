@@ -20,7 +20,7 @@
     flex-grow: 1;
     @include skewed;
   }
-  
+
   .title-border-left {
     border-right: 2px solid rgba($border, .6);
     margin-right: 10px;
@@ -32,7 +32,7 @@
       display: block;
     }
   }
-  
+
   .title-border-right {
     border-left: 2px solid rgba($border, .6);
     margin-left: 20px;
@@ -44,10 +44,10 @@
       display: block;
     }
   }
-  
+
   h2 {
-    color: #ffffff;
-    font-family: 'Oswald', sans-serif;
+    color: $text-color;
+    font-family: $title-font;
     font-style: italic;
     font-weight: 600;
     text-transform: uppercase;

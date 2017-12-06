@@ -2,7 +2,7 @@
 
 :host {
   @include component(initial);
-  color: #fff;
+  color: $text-color;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -11,7 +11,7 @@
 
 .asm-header {
   margin-top: 20px;
-  font-family: 'Oswald', sans-serif;
+  font-family: $title-color;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@
       position: relative;
       border-radius: 0 5px 5px 0;
       overflow: hidden;
-      color: #fff;
+      color: $text-color;
       padding: 0 20px 0 0;
       flex-shrink: 0;
 
@@ -99,14 +99,14 @@
           background-image: url('/assets/images/header-bg-small.png');
           border-radius: 5px;
           border: 2px solid $bg;
-          color: $blue;
+          color: $accent-color;
           box-sizing: border-box;
           font-size: 18px;
           cursor: pointer;
           @include skewed;
 
           .button-inner-wrapper {
-            border: 1px solid rgba($blue, 0.6);
+            border: 1px solid rgba($accent-color, .6);
             display: flex;
             align-items: center;
             height: 100%;
@@ -114,11 +114,11 @@
             border-radius: 5px;
             box-sizing: border-box;
             overflow: hidden;
-            text-shadow: 0 -2px rgba(0, 11, 25, 0.2);
+            text-shadow: 0 -2px rgba($bg .2);
             position: relative;
 
             .icon {
-              @include gradient-top($blue);
+              @include gradient-top($accent-color);
               height: 100%;
               width: 40px;
               transform: skew(0deg);
@@ -142,7 +142,7 @@
             &:before {
               display: none;
               text-align: center;
-              text-shadow: 0 -1px rgba(0, 11, 25, 0.4);
+              text-shadow: 0 -1px rgba($bg, .4);
               font-family: FontAwesome;
               position: absolute;
               align-items: center;
@@ -171,18 +171,18 @@
           &.tickets {
             margin-right: 16px;
             margin-left: 2px;
-            color: $yellow;
+            color: $ticket-color;
 
             .button-inner-wrapper {
-              border-color: rgba($yellow, 0.6);
+              border-color: rgba($ticket-color, .6);
 
               .icon {
-                @include gradient-top($yellow);
+                @include gradient-top($ticket-color);
               }
 
               &:before {
-                @include gradient($yellow,
-                  $darker-yellow);
+                @include gradient($ticket-color,
+                  $ticket-alt-color);
               }
             }
           }
@@ -212,11 +212,11 @@
             transform: skew(0deg);
             cursor: pointer;
             transition: background-color .1s ease-in-out;
-            text-shadow: 0 -2px rgba(0, 11, 25, 0.2);
+            text-shadow: 0 -2px rgba($bg, 0.2);
 
             &:hover {
               background-color: $blue;
-              color: white;
+              color: $text-color;
               transition: background-color .1s ease-in-out;
             }
 

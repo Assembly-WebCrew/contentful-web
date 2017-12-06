@@ -25,17 +25,17 @@
   span {
     display: flex;
     align-items: center;
-    color: $blue;
+    color: $accent-color;
     font-size: 25px;
     text-transform: uppercase;
 
     span {
       padding-left: 15px;
-      color: #ffffff;
-      font-family: 'Oswald', sans-serif;
+      color: $text-color;
+      font-family: $title-font;
     }
   }
-  
+
   .dates {
     margin-right: 45px;
    }

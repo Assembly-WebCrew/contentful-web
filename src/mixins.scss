@@ -10,7 +10,7 @@ $desktop-width: 1024px;
   @include gradient(rgba($color, .5), rgba($secondary, .1));
 }
 
-@mixin gradient($color: $blue, $secondary: $darker-blue) {
+@mixin gradient($color: $text-color, $secondary: $accent-color) {
   background: $color;
   background: linear-gradient($color, $secondary);
 }
