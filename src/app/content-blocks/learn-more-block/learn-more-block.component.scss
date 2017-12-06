@@ -1,4 +1,5 @@
 $border: #266eff;
+
 :host {
   display: block;
   contain: content;
@@ -8,13 +9,15 @@ $border: #266eff;
   font-family: 'Muli', sans-serif;
   overflow: hidden;
 }
-.block{
+
+.block {
   margin-bottom: 24px;
   border: $border 1px solid;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  a{
+  
+  a {
     display: block;
     width: 100%;
     text-align: center;
@@ -27,23 +30,25 @@ $border: #266eff;
     text-decoration: none;
     font-weight: bold;
     clear: both;
-    span{
+    
+    span {
       background-image: url('nuoli.png');
       background-position: right center;
       background-repeat: no-repeat;
       padding-right: 28px;
     }
-
   }
-  h2{
+  
+  h2 {
     text-transform: uppercase;
     border-bottom: $border 1px solid;
     height: 70px;
     line-height: 70px;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
   }
-  img{
+  
+  img {
     margin: 16px;
     display: block;
     background-image: url('testpic.png');
@@ -53,7 +58,8 @@ $border: #266eff;
     background-position: center;
       background-repeat: no-repeat;
   }
-  .icon{
+  
+  .icon {
     background-image: url('pokali.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -62,6 +68,7 @@ $border: #266eff;
     float: left;
     margin-right: 20px;
   }
+  
   .icon:after {
     content: " ";
     position: relative;
@@ -79,33 +86,40 @@ $border: #266eff;
     transform: skew(-18deg, 0deg);
   }
 }
-.two-blocks{
+
+.two-blocks {
   width: 48.5%;
   float: left;
-  img{
+  
+  img {
     float: left;
     max-width: 170px;
   }
-  p{
+  
+  p {
     line-height: 1.4em;
   }
-  h2{
+  
+  h2 {
     font-style: italic;
     font-size: 25px;
   }
 }
-.two-blocks:nth-child(odd){
+
+.two-blocks:nth-child(odd) {
   margin-right: 2%;
 }
-.three-blocks{
+
+.three-blocks {
   width: 31.6%;
   float: left;
   margin-right: 2%;
-  h2{
+  
+  h2 {
     text-align: center;
   }
 }
-.three-blocks:nth-child(3n+2){
-  margin-right: 0%;
-}
 
+.three-blocks:nth-child(3n+2) {
+  margin-right: 0;
+}
