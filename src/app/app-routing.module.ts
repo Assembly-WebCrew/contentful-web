@@ -7,6 +7,7 @@ import { ContentComponent } from './content/content.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 
 const routes: Routes = [
   // If no event is specified, we will load default event.
@@ -24,6 +25,10 @@ const routes: Routes = [
       event: EventResolve
     },
     children: [
+      {
+        path: 'sponsors',
+        component: SponsorsPageComponent
+      },
       {
         path: '**',
         component: ContentComponent,
