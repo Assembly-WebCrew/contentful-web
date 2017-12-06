@@ -1,6 +1,6 @@
 @import '../../common';
 
 :host {
-    @include component(initial);
-    height: 100%;
-  }
+  @include component(initial);
+  height: 100%;
+}

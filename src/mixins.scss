@@ -7,7 +7,7 @@ $desktop-width: 1024px;
 }
 
 @mixin gradient-top($color, $secondary: $bg) {
-  @include gradient(rgba($color, 0.5), rgba($secondary, 0.1));
+  @include gradient(rgba($color, .5), rgba($secondary, .1));
 }
 
 @mixin gradient($color: $blue, $secondary: $darker-blue) {
@@ -17,7 +17,7 @@ $desktop-width: 1024px;
 
 @mixin skewed {
   transform: skew(-15deg);
-  
+
   * {
     transform: skew(15deg);
   }
@@ -32,7 +32,7 @@ $desktop-width: 1024px;
 @mixin centered-block {
   width: 1080px;
   max-width: 100%;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
 @mixin content {
@@ -44,7 +44,7 @@ $desktop-width: 1024px;
   list-style-type: none;
   padding: 15px 25px;
   margin: 0;
-  
+
   li {
     position: relative;
     display: flex;
@@ -53,7 +53,7 @@ $desktop-width: 1024px;
     overflow-y: hidden;
 
     &:before {
-      content: "";
+      content: '';
       border-bottom: 1px solid $border;
       border-left: 1px solid $border;
       display: block;
@@ -63,9 +63,9 @@ $desktop-width: 1024px;
       bottom: 45%;
       left: 0;
     }
-    
+
     &:after {
-      content: "";
+      content: '';
       border-left: 1px solid $border;
       display: block;
       height: 100%;
@@ -78,9 +78,9 @@ $desktop-width: 1024px;
       padding-top: 5px;
     }
 
-    &:last-child { 
+    &:last-child {
       &:after {
-        border: none;
+        border: 0;
       }
     }
   }

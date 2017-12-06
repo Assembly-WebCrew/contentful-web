@@ -18,7 +18,8 @@ $lineWidth: 80px;
       }
     }
   }
-  .main-partners, .other-sponsors {
+  .main-partners,
+  .other-sponsors {
     padding: 20px 0;
   }
 
@@ -45,7 +46,7 @@ $lineWidth: 80px;
           bottom: 50%;
           left: -100px;
         }
-        
+
         &:after {
           content: "";
           border-left: 1px solid $border;
@@ -68,6 +69,7 @@ $lineWidth: 80px;
       }
     }
   }
+  
   .other-sponsors {
     display: flex;
     flex-wrap: wrap;
