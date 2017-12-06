@@ -11,7 +11,7 @@
 
 .asm-header {
   margin-top: 20px;
-  font-family: $title-color;
+  font-family: $title-font;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -201,7 +201,7 @@
           transform: skew(-15deg);
 
           .button {
-            color: $blue;
+            color: $accent-color;
             border-radius: 5px;
             width: 37px;
             height: 37px;
@@ -215,7 +215,7 @@
             text-shadow: 0 -2px rgba($bg, 0.2);
 
             &:hover {
-              background-color: $blue;
+              background-color: $accent-color;
               color: $text-color;
               transition: background-color .1s ease-in-out;
             }

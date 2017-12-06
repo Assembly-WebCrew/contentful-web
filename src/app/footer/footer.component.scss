@@ -35,7 +35,7 @@
       flex-grow: 1;
 
       h4 {
-        font-family: $title-color;
+        font-family: $title-font;
         border-bottom: $accent-light-color 1px solid;
         color: $accent-light-color;
         text-transform: uppercase;
@@ -93,7 +93,7 @@
         font-family: $title-font;
         background-color: transparent;
         padding: 3px 5px;
-        border: $footer-blue 2px solid;
+        border: $accent-light-color 2px solid;
         border-radius: 3px;
         margin-left: 5px;
         color: #ffffff;
