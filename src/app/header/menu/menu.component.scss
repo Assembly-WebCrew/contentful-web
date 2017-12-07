@@ -18,12 +18,12 @@ ul {
 .menu {
   font-weight: normal;
   width: 100%;
-  
+
   li {
     margin: 0;
     padding: 0;
   }
-  
+
   .menu-item {
     display: inline-block;
     position: relative;
@@ -42,7 +42,7 @@ ul {
       align-items: center;
       padding: 0 10px;
     }
-    
+
     .menu-dropdown {
       font-family: 'Muli', sans-serif;
       opacity: 0;
@@ -56,12 +56,12 @@ ul {
       margin-left: -100px;
       width: 200px;
       transition: opacity.3s .1s, top .3s .1s, visibility .1s .2s;
-      border: 1px solid rgba($blue, .6);
+      border: 1px solid rgba($accent-color, .6);
       border-radius: 5px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
       box-sizing: border-box;
       z-index: -1;
-      
+
       &:after {
         content: '';
         border: 9px solid $bg;
@@ -74,10 +74,10 @@ ul {
         margin-left: -8px;
         z-index: 1;
       }
-      
+
       &:before {
         content: '';
-        border: 10px solid rgba($blue, .6);
+        border: 10px solid rgba($accent-color, .6);
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
@@ -86,35 +86,35 @@ ul {
         left: 50%;
         margin-left: -9px;
       }
-      
+
       li {
         position: relative;
         text-transform: none;
-        
+
         a, span {
           height: auto;
           font-size: 16px;
           padding: 10px;
           display: block;
           transition: color .1s;
-          
+
           &:hover {
-            color: $blue;
+            color: $accent-color;
           }
         }
       }
-      
+
       &.sectioned {
         width: auto;
         min-width: $menu-section-width;
         display: flex;
         margin-left: -$menu-section-width;
-        
+
         &:after,
         &:before {
           left: $menu-section-width;
         }
-        
+
         li.sectioned {
           display: inline-block;
           width: $menu-section-width;
@@ -127,32 +127,32 @@ ul {
           .title {
             text-transform: uppercase;
             color: $border;
-            font-family: 'Oswald', sans-serif;
+            font-family: $title-font;
             border-bottom: 1px solid $border;
             padding: 15px 0;
             margin: 0 10px;
-            
+
             &[href]:hover {
               color: #ffffff;
             }
           }
-          
+
           .submenu-section {
             @include list-styling;
             padding: 0 0 0 10px;
-            
+
             li {
               padding: 0;
               padding-left: 30px;
-              
+
               &:first-child {
                 padding-top: 0;
               }
-              
+
               &:before {
                 bottom: 35%;
               }
-              
+
               a {
                 padding: 15px 0 5px;
               }
@@ -161,7 +161,7 @@ ul {
         }
       }
     }
-    
+
     &:hover {
       >.menu-dropdown {
         opacity: 1;
