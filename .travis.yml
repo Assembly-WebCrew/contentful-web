@@ -12,12 +12,6 @@ env:
   - CHROME_BIN=google-chrome-stable
 cache: yarn
 before_install:
-  - openssl aes-256-cbc -K $encrypted_b9133dc7101e_key -iv $encrypted_b9133dc7101e_iv
-    -in deploy.tar.gz.enc -out deploy.tar.gz -d
-  - tar zxvf deploy.tar.gz
-  - mv deploy/ssh_config ~/.ssh/config
-  - mv deploy/deployment_key ~/.ssh/id_rsa
-  - chmod 0600 ~/.ssh/*
 jobs:
   include:
     - stage: test
@@ -28,6 +22,12 @@ jobs:
       script: yarn e2e
     - stage: build & deploy
       script:
+        - openssl aes-256-cbc -K $encrypted_b9133dc7101e_key -iv $encrypted_b9133dc7101e_iv
+          -in deploy.tar.gz.enc -out deploy.tar.gz -d
+        - tar zxvf deploy.tar.gz
+        - mv deploy/ssh_config ~/.ssh/config
+        - mv deploy/deployment_key ~/.ssh/id_rsa
+        - chmod 0600 ~/.ssh/*
         - yarn build:ci
         - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] && travis_terminate 0 || :'
         - '[ "${TRAVIS_BRANCH}" != "master" ] && travis_terminate 0 || :'
