@@ -46,11 +46,13 @@ export class ContentResolve implements Resolve<any> {
                 title
                 topics {
                   title
-                  body
-                  featuredImage{
+                  content
+                  image{
                     title
                     url
                   }
+                  icon
+                  learnMoreLink
                 }
               }
               ... on BlockMarkdown {

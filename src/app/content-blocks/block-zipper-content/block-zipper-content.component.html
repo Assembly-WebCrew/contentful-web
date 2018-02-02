@@ -1,0 +1,8 @@
+<div class="zipper-inner">
+  <h2><span class="fa {{content.icon}}"></span>{{content.title}}</h2>
+  <div class="zipper-content" [innerHTML]="content.content" asmMarkdown></div>
+  <a class="zipper-link" href="{{content.learnMoreLink}}">Learn more</a>
+</div>
+<div class="image" *ngIf="content.image">
+    <img [src]="content.image.url">
+</div>
