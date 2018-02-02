@@ -5,6 +5,9 @@ node_js:
 addons:
   chrome: stable
   ssh_known_hosts: moukari.assembly.org
+before_script:
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 env:
   - CHROME_BIN=google-chrome-stable
 cache: yarn
