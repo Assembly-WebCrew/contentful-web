@@ -1,0 +1,17 @@
+@import '../../../common';
+
+:host {
+  @include component;
+  @include centered-block;
+  padding: 10px;
+  font-family: $text-font;
+  font-weight: normal;
+}
+
+h2 {
+  margin-left: 80px;
+}
+
+.markdown-content {
+  @include content;
+}
