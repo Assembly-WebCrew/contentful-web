@@ -15,8 +15,8 @@ import { WINDOW } from '../core/window.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private resizeSubject: Subject<number> = new Subject<number>();
-  private resizeObservable: Observable<number> = this.resizeSubject.asObservable().throttleTime(200);
+  resizeSubject: Subject<number> = new Subject<number>();
+  resizeObservable: Observable<number> = this.resizeSubject.asObservable().throttleTime(200);
   header$: Observable<any>;
   event: any;
   scrolling: boolean = false;

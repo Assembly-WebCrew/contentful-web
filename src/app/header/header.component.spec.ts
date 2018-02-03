@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import { SocialMediaComponent } from '../social-media/social-media.component';
 import { MenuComponent } from './menu/menu.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
+import { WINDOW_PROVIDERS } from '../core/window.service';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -21,7 +22,8 @@ describe('HeaderComponent', () => {
         {
           provide: ContentfulService,
           useValue: { query$: () => Observable.of({ menus: [{title: "Main Menu", items: []}] }) }
-        }
+        },
+        WINDOW_PROVIDERS 
       ]
     })
     .compileComponents();
