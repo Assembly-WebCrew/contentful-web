@@ -3,15 +3,93 @@
 :host {
   @include component;
   @include centered-block;
-  padding: 10px;
   font-family: $text-font;
   font-weight: normal;
 }
 
 h2 {
   margin-left: 80px;
+  border-bottom: 1px $accent-color solid;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  height: 80px;
+  position: initial;
+  .title{
+    line-height: 80px;
+    height: 80px;
+    padding-left: 30px;
+    font-weight: normal;
+    font-style: italic;
+  }
+  .icon{
+
+    border-right: 1px solid $accent-color;
+    color: $accent-color;
+    font-size: 25px;
+    height: 83px;
+    line-height: 80px;
+    padding: 0px 30px;
+    position: relative;
+    top: -16px;
+    border-bottom: none;
+    transform: skewX(-15deg);
+    display: inline-block;
+    .icon-inner{
+      transform: skewX(15deg);
+    }
+  }
+}
+.image{
+  display: inline-block;
+  width: 59%;
+  float: left;
+  height: 325px;
+  img{
+    width: 100%;
+    max-width: 585px;
+    background-size: cover;
+    height: 305px;
+    margin: 10px;
+  }
 }
 
-.markdown-content {
-  @include content;
+.zipper-inner{
+  height: 325px;
+  width: 40%;
+  display: inline-block;
+  border-left: 1px solid $accent-color;
+  .zipper-link{
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    width: 40%;
+    line-height: 50px;
+    text-align: center;
+    color: $accent-color;
+    border-top: 1px solid $accent-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    .fa{
+      margin-left: 10px;
+    }
+  }
+  .zipper-content{
+    padding: 30px;
+    max-height: 133px;
+    overflow: hidden;
+  }
+}
+
+
+:host-context(.type0) .image{
+    float: right;
+}
+
+:host-context(.type0) .zipper-inner{
+  h2 .icon{
+  }
+  border-left: none;
+  border-right: 1px solid $accent-color;
 }

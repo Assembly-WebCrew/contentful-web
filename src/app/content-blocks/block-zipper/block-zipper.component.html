@@ -1,7 +1,7 @@
 <div class="centered-block">
 <asm-content-block
-    *ngFor="let content of content.topics"
-    class="zip-content"
+    *ngFor="let content of content.topics; let i = index"
+    class="zip-content type{{i%2}}"
     [content]="content">
 </asm-content-block>
 </div>
