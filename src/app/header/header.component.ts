@@ -6,15 +6,16 @@ import * as qs from 'qs';
 import { get } from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import { DOCUMENT } from '@angular/common';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { WINDOW } from '../core/window.service';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'asm-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   resizeSubject: Subject<number> = new Subject<number>();
   resizeObservable: Observable<number> = this.resizeSubject.asObservable().throttleTime(200);
   header$: Observable<any>;
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit {
   scrollDirection: string;
   mobileMenuOpen: boolean = false;
   isMobile: boolean = false;
+  subscriptions: Subscription[] = [];
   
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -34,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.event = this.route.snapshot.data.event;
-    this.resizeObservable.subscribe(x => this.onWindowResize(x));
+    this.subscriptions.push(this.resizeObservable.subscribe(x => this.onWindowResize(x)));
     const params = { 'fields.title': 'Main Menu' };
     this.header$ = this.contentful.query$<any>({
       query: gql`
@@ -111,6 +113,10 @@ export class HeaderComponent implements OnInit {
     this.checkMobileState(this.window.innerWidth);
   }
 
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s && s.unsubscribe());
+  }
+
   getLogo(isMobile) {
     if (this.scrolling && !isMobile) {
       return "/assets/images/generic-event-logo.png";
@@ -156,7 +162,7 @@ export class HeaderComponent implements OnInit {
   }
 
   private checkMobileState(width: number) {
-    this.isMobile = width < 1024;
+    this.isMobile = width && width < 1024;
 
     if (!this.isMobile && this.mobileMenuOpen) {
       this.toggleMobileMenu(false);

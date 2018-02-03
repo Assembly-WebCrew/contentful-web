@@ -10,6 +10,7 @@ import { SocialMediaComponent } from '../social-media/social-media.component';
 import { MenuComponent } from '../header/menu/menu.component';
 import { MobileMenuComponent } from '../header/mobile-menu/mobile-menu.component';
 import { WINDOW_PROVIDERS } from '../core/window.service';
+import { Observable } from 'rxjs/Observable';
 
 describe('SkeletorComponent', () => {
   let component: SkeletorComponent;
@@ -26,7 +27,10 @@ describe('SkeletorComponent', () => {
         MenuComponent,
         MobileMenuComponent
       ],
-      providers: [ContentfulService, WINDOW_PROVIDERS]
+      providers: [{
+        provide: ContentfulService,
+        useValue: { query$: () => Observable.of({ menus: [{title: "Main Menu", items: []}] }) }
+      }, WINDOW_PROVIDERS]
     })
     .compileComponents();
   }));
