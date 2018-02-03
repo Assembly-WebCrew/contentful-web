@@ -10,6 +10,10 @@ $fa-font-path: '/assets/fonts';
 body {
   background: $bg;
   font-family: $text-font;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .centered-block {
@@ -147,11 +151,6 @@ a:visited {
     .page-content {
       @include page-width;
       padding-bottom: 50px;
-    }
-
-    &.manual {
-      background: $manual-bg;
-      color: $manual-text;
     }
   }
 }

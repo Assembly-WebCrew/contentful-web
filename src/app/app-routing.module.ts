@@ -26,8 +26,13 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'sponsors',
+        path: 'partners',
         component: SponsorsPageComponent
+      },
+      {
+        path: 'sponsors',
+        pathMatch: 'full',
+        redirectTo: 'partners'
       },
       {
         path: '**',

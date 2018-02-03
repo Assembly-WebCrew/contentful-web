@@ -1,0 +1,84 @@
+@import '../../../common';
+
+:host {
+    @include component(initial, flex);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: $bg;
+    overflow: hidden;
+    flex-direction: column;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 120px;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        height: $menu-big-height;
+        position: relative;
+        border-radius: 0 5px 5px 0;
+        overflow: hidden;
+        color: $text-color;
+        padding: 0 20px 0 0;
+        flex-shrink: 0;
+
+        a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 250px;
+        }
+    }
+
+    button {
+        background-color: transparent;
+        color: white;
+        padding: 30px;
+        border: 0;
+        outline: 0;
+  
+        .fa {
+          font-size: 30px;
+        }
+    }
+}
+
+.bottom {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+  
+ul {
+    list-style: none;
+    font-size: 18px;
+}
+
+.menu {
+    text-transform: uppercase;
+    a,span {
+        display: inline-block;
+        padding: 10px 0;
+    }
+    .no-link {
+        color: grey;
+    }
+}
+
