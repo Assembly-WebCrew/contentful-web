@@ -30,13 +30,13 @@ $desktop-width: 1024px;
 }
 
 @mixin centered-block {
-  width: 1080px;
+  width: $page-content-width;
   max-width: 100%;
   margin: 0 auto;
 }
 
 @mixin content {
-  max-width: 700px;
+  max-width: $text-width;
   padding-left: 80px;
 }
 

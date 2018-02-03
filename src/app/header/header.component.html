@@ -1,46 +1,61 @@
-<div class="asm-header" [class.scroll]="scrolling">
-  <div class="header-left"></div>
-  <div class="header-center">
-    <div class="logo-container">
-      <a [href]="'/' + event?.name">
-        <img class="logo" [src]="getLogo()" alt="{{event?.logo?.fields?.title}}">
-      </a>
-    </div>
-    <div class="header-inner">
-      <div class="header-upper">
-        <a class="highlight-button" *ngFor="let item of (header$ | async)?.highlights" [href]="getUrl(item.item)">
-          <div class="button-inner-wrapper {{item.icon}}">
-            <span class="icon">
-              <i class="fa {{item.icon}}"></i>
-            </span>
-            <span class="title">{{item.title}}</span>
-          </div>
+<div class="asm-header" [class.scroll]="scrolling" [class.mobile]="isMobile" [attr.data-scroll-direction]="scrollDirection">
+  <ng-container *ngIf="!isMobile; else showMobile">
+    <div class="header-left"></div>
+    <div class="header-center">
+      <div class="logo-container">
+        <a [href]="'/' + event?.name">
+          <img class="logo" [src]="getLogo()" alt="{{event?.logo?.fields?.title}}">
         </a>
-        <div class="search-container">
-          <div class="search-bar">
-            <p></p>
+      </div>
+      <div class="header-inner">
+        <div class="header-upper">
+          <a class="highlight-button" *ngFor="let item of (header$ | async)?.highlights" [href]="getUrl(item.item)">
+            <div class="button-inner-wrapper {{item.icon}}">
+              <span class="icon">
+                <i class="fa {{item.icon}}"></i>
+              </span>
+              <span class="title">{{item.title}}</span>
+            </div>
+          </a>
+          <div class="search-container">
+            <div class="search-bar">
+              <p></p>
+            </div>
+            <div class="button">
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="button">
+              <span>ENG</span>
+            </div>
           </div>
-          <div class="button">
-            <i class="fa fa-search"></i>
-          </div>
-          <div class="button">
-            <span>ENG</span>
-          </div>
+          <a href="//tickets.assembly.org" class="highlight-button tickets" target="_blank">
+            <div class="button-inner-wrapper fa-ticket">
+              <span class="icon">
+                <i class="fa fa-ticket"></i>
+              </span>
+              <span class="title">Tickets</span>
+            </div>
+          </a>
         </div>
-        <a href="//tickets.assembly.org" class="highlight-button tickets" target="_blank">
-          <div class="button-inner-wrapper fa-ticket">
-            <span class="icon">
-              <i class="fa fa-ticket"></i>
-            </span>
-            <span class="title">Tickets</span>
-          </div>
-        </a>
-      </div>
-      <div class="header-lower">
-        <asm-menu [menu]="(header$ | async)?.items"></asm-menu>
-        <asm-social-media></asm-social-media>
+        <div class="header-lower">
+            <asm-menu [menu]="(header$ | async)?.items"></asm-menu>
+            <asm-social-media></asm-social-media>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="header-right"></div>
+    <div class="header-right"></div>
+  </ng-container>
+  <ng-template #showMobile>
+      <div class="logo-container">
+        <a [href]="'/' + event?.name">
+          <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
+        </a>
+      </div>
+      <button type="button" class="menu" (click)="onMobileMenuClick()">
+        <i class="fa fa-bars"></i>
+      </button>
+  </ng-template>
 </div>
+<ng-container *ngIf="isMobile">
+  <asm-mobile-menu *ngIf="mobileMenuOpen" [menu]="(header$ | async)?.items" (onClose)="toggleMobileMenu(false)"></asm-mobile-menu>
+</ng-container>

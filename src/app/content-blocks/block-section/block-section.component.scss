@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   height: $page-title-size;
+  overflow: hidden;
   @include page-width;
 
   .title-border-left, .title-border-right {

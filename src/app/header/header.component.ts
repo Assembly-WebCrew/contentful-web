@@ -6,25 +6,37 @@ import * as qs from 'qs';
 import { get } from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import { DOCUMENT } from '@angular/common';
+import { Subject, Subscription } from 'rxjs';
+import { WINDOW } from '../core/window.service';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'asm-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  resizeSubject: Subject<number> = new Subject<number>();
+  resizeObservable: Observable<number> = this.resizeSubject.asObservable().throttleTime(200);
   header$: Observable<any>;
   event: any;
   scrolling: boolean = false;
-
+  previousScrollPosition: number;
+  scrollDirection: string;
+  mobileMenuOpen: boolean = false;
+  isMobile: boolean = false;
+  subscriptions: Subscription[] = [];
+  
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private contentful: ContentfulService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    @Inject(WINDOW) private window: Window) { }
 
   ngOnInit() {
     this.event = this.route.snapshot.data.event;
+    this.subscriptions.push(this.resizeObservable.subscribe(x => this.onWindowResize(x)));
     const params = { 'fields.title': 'Main Menu' };
     this.header$ = this.contentful.query$<any>({
       query: gql`
@@ -98,10 +110,15 @@ export class HeaderComponent implements OnInit {
         }
       }
     }` }).map(data => data.menus[0]);
+    this.checkMobileState(this.window.innerWidth);
   }
 
-  getLogo() {
-    if (this.scrolling) {
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s && s.unsubscribe());
+  }
+
+  getLogo(isMobile) {
+    if (this.scrolling && !isMobile) {
       return "/assets/images/generic-event-logo.png";
     } else if (this.event && this.event.logo && this.event.logo.fields) {
       return this.event.logo.fields.file.url;
@@ -119,6 +136,10 @@ export class HeaderComponent implements OnInit {
       }
   }
 
+  onMobileMenuClick() {
+    this.toggleMobileMenu(true);
+  }
+
   @HostListener("window:scroll", [])
   onWindowScrollEvent() {
     let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -126,6 +147,29 @@ export class HeaderComponent implements OnInit {
       this.scrolling = true;
     } else if (this.scrolling && number < 10) {
       this.scrolling = false;
+    } 
+    this.scrollDirection = this.previousScrollPosition > number ? "up" : "down"; 
+    this.previousScrollPosition = number;
+  }
+
+  onWindowResize(width: number) {
+    this.checkMobileState(width);
+  }
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResizeEvent(width: number) {
+    this.resizeSubject.next(width);
+  }
+
+  private checkMobileState(width: number) {
+    this.isMobile = width && width < 1024;
+
+    if (!this.isMobile && this.mobileMenuOpen) {
+      this.toggleMobileMenu(false);
     }
+  }
+
+  private toggleMobileMenu(state = !this.mobileMenuOpen) {
+    this.mobileMenuOpen = state;
   }
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlockMarkdownComponent } from './block-zipper-content.component';
+import { BlockZipperContentComponent } from './block-zipper-content.component';
 
-describe('BlockMarkdownComponent', () => {
-  let component: BlockMarkdownComponent;
-  let fixture: ComponentFixture<BlockMarkdownComponent>;
+describe('BlockZipperContentComponent', () => {
+  let component: BlockZipperContentComponent;
+  let fixture: ComponentFixture<BlockZipperContentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockMarkdownComponent ]
+      declarations: [ BlockZipperContentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlockMarkdownComponent);
+    fixture = TestBed.createComponent(BlockZipperContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -21,6 +21,7 @@ import { LearnMoreBlockComponent } from './content-blocks/learn-more-block/learn
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { MenuComponent } from './header/menu/menu.component';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
+import { MobileMenuComponent } from './header/mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
     LearnMoreBlockComponent,
     SocialMediaComponent,
     MenuComponent,
-    SponsorsPageComponent
+    SponsorsPageComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

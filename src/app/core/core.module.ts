@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentfulService } from './contentful.service';
+import { WINDOW_PROVIDERS } from './window.service';
 
 @NgModule({
   imports: [
@@ -9,7 +10,8 @@ import { ContentfulService } from './contentful.service';
     HttpClientModule
   ],
   providers: [
-    ContentfulService
+    ContentfulService,
+    WINDOW_PROVIDERS
   ]
 })
 export class CoreModule { }
