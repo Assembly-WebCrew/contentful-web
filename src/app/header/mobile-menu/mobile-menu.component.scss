@@ -16,6 +16,7 @@
     align-items: center;
     padding: 0 20px;
     height: 120px;
+    flex-shrink: 0;
 
     .logo-container {
         display: flex;
