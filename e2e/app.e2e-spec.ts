@@ -10,7 +10,8 @@ describe('contentful-web App', () => {
   });
 
   it('should contain ASSEMBLY logo', () => {
-    page.navigateTo();
-    expect(page.hasLogo()).toBeTruthy();
+    page.navigateTo().then(() => {
+      expect(page.hasLogo()).toBeTruthy();
+    });
   });
 });
