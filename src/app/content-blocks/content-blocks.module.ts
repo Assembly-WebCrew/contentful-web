@@ -11,6 +11,7 @@ import { BlockSectionComponent } from './block-section/block-section.component';
 import { BlockCountdownComponent } from './block-countdown/block-countdown.component';
 import { BlockEventInfoComponent } from './block-event-info/block-event-info.component';
 import { BlockSponsorsComponent } from './block-sponsors/block-sponsors.component';
+import { BlockCollapseComponent } from './block-collapse/block-collapse.component';
 
 export const contentComponents = [
   BlockMarkdownComponent,
@@ -18,7 +19,8 @@ export const contentComponents = [
   BlockZipperComponent,
   BlockZipperContentComponent,
   BlockSectionComponent,
-  BlockSponsorsComponent
+  BlockSponsorsComponent,
+  BlockCollapseComponent
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ export const contentComponents = [
     ...contentComponents,
     BlockEventInfoComponent,
     BlockCountdownComponent,
-    MarkdownDirective
+    MarkdownDirective,
+    BlockCollapseComponent
   ],
   entryComponents: contentComponents,
   exports: [
@@ -36,7 +39,8 @@ export const contentComponents = [
     BlockCountdownComponent,
     ContentBlockComponent,
     BlockSponsorsComponent,
-    MarkdownDirective
+    MarkdownDirective,
+    BlockCollapseComponent
   ]
 })
 export class ContentBlocksModule { }
