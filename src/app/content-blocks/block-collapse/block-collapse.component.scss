@@ -42,5 +42,9 @@ h2{
   }
 }
 .innercontent{
-  display: none;
+  padding: 20px;
+  padding-top: 0px;
+  &.hide{
+    display: none;
+  }
 }
