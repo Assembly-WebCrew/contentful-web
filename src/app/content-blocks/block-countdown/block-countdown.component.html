@@ -1,17 +1,21 @@
 <div class="counter">
+  <div *ngIf="months != 0">
+    <p>{{months}}</p>
+    <span>months</span>
+  </div>
   <div>
     <p>{{days}}</p>
     <span>days</span>
   </div>
-    <div>
+  <div>
     <p>{{hours}}</p>
     <span>hours</span>
-  </div> 
+  </div>
   <div>
     <p>{{minutes}}</p>
     <span>minutes</span>
-  </div> 
-  <div>
+  </div>
+  <div *ngIf="months == 0">
     <p>{{seconds}}</p>
     <span>seconds</span>
   </div>
