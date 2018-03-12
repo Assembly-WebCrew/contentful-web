@@ -55,6 +55,10 @@ export class ContentResolve implements Resolve<any> {
                   learnMoreLink
                 }
               }
+              ... on BlockCollapse {
+                title
+                content
+              }
               ... on BlockMarkdown {
                 title
                 body
