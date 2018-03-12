@@ -1,3 +1,9 @@
-.innercontent{
-  display: none;
+@import '../../../common';
+
+:host {
+  @include component;
+}
+
+.innercontent {
+//  display: none;
 }
