@@ -3,43 +3,49 @@
 
 @import 'mixins';
 
-// text
+// THEME COLORS
 $text-color: #fff;
-$text-font: 'Muli', sans-serif;
-$title-font: 'Oswald', sans-serif;
 
 $accent-color: #266eff; // blue
 $accent-dark-color: #133d8c; // dark-blue
 $accent-light-color: #3683ff; // footer-blue
 
-// navi
 $ticket-color: #ff0; // yellow
 $ticket-alt-color: #80850c; // dark-yellow
 
-// links
 $visited-link: #7c26cb; //  purple
 
-// bgs
 $bg: #000b19;
 $bg-image-overlay: #151440;
 
 $call-bg: #000;
 
-$border: $accent-color;
+// FONTS AND SIZES
 
-// manual
+$text-font: 'Muli', sans-serif;
+$title-font: 'Oswald', sans-serif;
+
+$font-size: 50px;
+$font-size-h1: 50px;
+
+$page-title-size: 40px;
+
+// BORDER
+$border: $accent-color;
+$border-basic: 1px solid;
+
+// MANUAL
 $manual-bg: #ccced1;
 $manual-text: $accent-dark-color;
 
-// page
+// PAGE WIDTHS
 $page-background-width: 1440px;
 $page-content-width: 1150px;
-$page-title-size: 40px;
 
-// content
+// CONTENT
 $text-width: 1000px;
 
-// menu
+// MENU
 $menu-big-height: 83px;
 $menu-small-height: 41px;
 $menu-section-width: 300px;
