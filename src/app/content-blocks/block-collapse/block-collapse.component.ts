@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 
 })
 export class BlockCollapseComponent implements OnInit{
+  show: false;
   content: any = {};
   opened: Boolean = false;
   ngOnInit() {

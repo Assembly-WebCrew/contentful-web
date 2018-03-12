@@ -12,6 +12,20 @@ h2 {
   margin-left: 80px;
 }
 
+p {
+  text-align: justify;
+}
+
 .markdown-content {
   @include content;
+
+  @include tablet {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  @include mobile {
+    width: 100%;
+    padding: 0 1em;
+  }
 }

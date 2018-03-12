@@ -26,6 +26,7 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data: { content: any }) => {
       this.content = data.content || {};
+      if (!this.content.title) { this.content.title = '404 Page Not Found' };
       this.title.setTitle(this.content.title);
       this.background = this.getBackground();
       this.tags = this.content.tags ? this.content.tags.map(tag => tag.title).join(" ") : "";

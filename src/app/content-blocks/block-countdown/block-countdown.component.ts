@@ -48,8 +48,8 @@ export class BlockCountdownComponent implements OnInit {
           return clearInterval(this.interval);
         }
 
-        this.months = Math.floor(distance / (1000 * 60 * 60 * 24));
-        this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        this.months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.42));
+        this.days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.42)) / (1000 * 60 * 60 * 24));
         this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
