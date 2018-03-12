@@ -11,4 +11,5 @@ export class BlockCollapseComponent implements OnInit{
     console.log(this);
     console.log(this.content.title);
   }
+  show: boolean = false;
 }

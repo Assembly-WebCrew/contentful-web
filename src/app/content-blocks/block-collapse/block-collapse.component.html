@@ -1,4 +1,4 @@
-<div>
-<h2>{{content.title}}</h2>
-<div class="innercontent" [innerHTML]="content.content" asmMarkdown></div>
+<div class="collapse-container">
+<div (click)="show = !show" class="colapse-title"><h2>{{content.title}}</h2></div>
+<div *ngIf="show" class="innercontent" [innerHTML]="content.content" asmMarkdown></div>
 </div>

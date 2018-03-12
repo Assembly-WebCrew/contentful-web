@@ -4,6 +4,24 @@
   @include component;
 }
 
+.collapse-container {
+  margin: 10px 50px;
+  padding: 0 10px;
+  border: $border-basic $accent-color;
+}
+
+.collapse-title {
+  h2 {
+    padding-left: 50px;
+
+    &:before {
+      border: 0;
+    }
+  }
+}
+
 .innercontent {
 //  display: none;
+  padding: 5px 5px 0;
+  border-top: $border-basic $accent-color;
 }
