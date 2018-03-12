@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./block-collapse.component.scss']
 })
 export class BlockCollapseComponent implements OnInit{
+  show: false;
   content: any = {};
   ngOnInit() {
     console.log(this);
     console.log(this.content.title);
   }
-  show: boolean = false;
 }
