@@ -14,9 +14,10 @@
 
   .sponsor {
     height: 190px;
-    min-width: 230px;
+    //min-width: 230px;
     width: 25%;
-    margin: 0 10px;
+    margin: 0;
+    padding: 1em;
     vertical-align: middle;
     display: flex;
     flex-direction: column;
@@ -26,7 +27,7 @@
 
     img {
       max-width: 100%;
-      min-width: 200px;
+      //min-width: 200px;
     }
   }
 }
