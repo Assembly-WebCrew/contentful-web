@@ -1,4 +1,10 @@
 <div>
-<h2>{{content.title}}</h2>
-<div class="innercontent" [innerHTML]="content.content" ></div>
+<h2>
+  <span class="container">
+    <span class="fa fa-plus"></span>
+    {{content.title}}
+    <span class="rightline"></span>
+  </span>
+</h2>
+<div class="innercontent" [innerHTML]="content.content" asmMarkdown></div>
 </div>

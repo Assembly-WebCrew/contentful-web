@@ -1,3 +1,46 @@
+@import '../../../common';
+
+:host {
+  @include component;
+  @include page-width;
+}
+
+
+h2{
+  cursor: pointer;
+  font-size: 40px;
+  border-bottom: 1px solid $accent-color;
+  height: 26px;
+  margin-bottom: 35px;
+  margin-top: 10px;
+  &:before{
+    border: None;
+  }
+  span.fa{
+    font-size: 20px;
+    line-height: 38px;
+    width: 38px;
+    display: inline-block;
+    background-color: $accent-color;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+    top: -9px;
+  }
+  .container{
+    padding-left: 20px;
+    background-color: $accent-color;     
+    background-color: $bg;
+    .rightline{
+      height: 30px;
+      display: inline-block;
+      padding-right: 15px;
+      border-right: 1px solid $accent-color;
+    }
+  }
+}
 .innercontent{
   display: none;
 }
