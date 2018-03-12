@@ -67,6 +67,10 @@ export class ContentResolve implements Resolve<any> {
                   url
                 }
               }
+              ... on BlockCollapse {
+                title
+                content
+              }
               ... on BlockSection {
                 title
                 items{

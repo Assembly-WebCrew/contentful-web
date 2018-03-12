@@ -9,7 +9,6 @@ export class BlockCollapseComponent implements OnInit{
   show: false;
   content: any = {};
   ngOnInit() {
-    console.log(this);
-    console.log(this.content.title);
+
   }
 }
