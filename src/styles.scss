@@ -32,7 +32,7 @@ body {
 
 table {
   column-gap: 0;
-  border: 1px solid $text-color;
+  border: $border-basic $text-color;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 5px;
@@ -46,17 +46,17 @@ table {
   td,
   th {
     padding: 10px 20px;
-    border-right: 1px solid $text-color;
-    border-bottom: 1px solid $text-color;
+    border-right: $border-basic $text-color;
+    border-bottom: $border-basic $text-color;
 
     &:last-child {
-      border-right: none;
+      border-right: 0;
     }
   }
 
   tr:last-child {
     td {
-      border-bottom: none;
+      border-bottom: 0;
     }
   }
 }
@@ -74,7 +74,7 @@ h2 {
     left: 0;
     bottom: -20px;
     width: 85px;
-    border-bottom: 1px solid $border;
+    border-bottom: $border-basic $accent-color;
   }
 }
 
@@ -85,7 +85,7 @@ h3 {
 }
 
 a:link {
-  color: $accent-color;
+  color: $accent-light-color;
 }
 
 a:visited {
@@ -105,31 +105,31 @@ a:visited {
   flex-direction: column;
 
   .page-title {
+    @include page-width;
     display: flex;
     align-items: center;
     height: $page-title-size;
     padding: 20px 0 100px;
-    @include page-width;
 
     .title-border {
-      border-right: 2px solid rgba($border, .6);
+      @include skewed;
+      border-right: $border-basic $accent-color;
       margin-right: 10px;
       flex-shrink: 0;
       height: 100%;
       display: flex;
       align-items: center;
-      @include skewed;
 
       &:before {
         content: '';
         width: 180px;
-        border-bottom: 2px solid rgba($border, .6);
+        border-bottom: $border-basic $accent-color;
         display: block;
       }
     }
 
     h1 {
-      color: white;
+      color: $text-color;
       font-family: 'Oswald', sans-serif;
       font-style: italic;
       font-weight: 400;
@@ -144,13 +144,17 @@ a:visited {
   .page-content-wrapper {
     background: $bg;
     background: linear-gradient(rgba($bg, .4) 0, $bg 230px);
-    color: #ffffff;
+    color: $text-color;
     display: flex;
     flex-grow: 1;
 
     .page-content {
       @include page-width;
       padding-bottom: 50px;
+
+      p {
+        text-align: justify;
+      }
     }
   }
 }
