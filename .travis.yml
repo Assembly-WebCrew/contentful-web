@@ -21,6 +21,8 @@ jobs:
     - stage: test
       script: yarn e2e
     - stage: build & deploy
+      if: branch = master
+      if: type IN (push)
       script:
         - openssl aes-256-cbc -K $encrypted_b9133dc7101e_key -iv $encrypted_b9133dc7101e_iv
           -in deploy.tar.gz.enc -out deploy.tar.gz -d
