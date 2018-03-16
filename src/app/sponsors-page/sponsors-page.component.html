@@ -1,32 +1,34 @@
 <asm-base [content]="content">
-  <h2>Main partners</h2>
-  <div class="main-partners">
-    <div class="sponsor" *ngFor="let sponsor of mainSponsors">
-      <div class="logo">
-        <ng-container *ngIf="sponsor.link; else noMainPartnerLink">
-          <a [href]="sponsor.link" target="_blank" ref="noopener">
-            <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-          </a>
-        </ng-container>
-        <ng-template #noMainPartnerLink>
-          <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-        </ng-template>
+  <div class="partners">
+    <h2>Main partners</h2>
+    <div class="main-partners">
+      <div class="partner" *ngFor="let partner of mainPartners">
+        <div class="logo">
+          <ng-container *ngIf="partner.link; else noMainPartnerLink">
+            <a [href]="partner.link" target="_blank" ref="noopener">
+              <img [src]="partner.logo?.url" [alt]="partner.title">
+            </a>
+          </ng-container>
+          <ng-template #noMainPartnerLink>
+            <img [src]="partner.logo?.url" [alt]="partner.title">
+          </ng-template>
+        </div>
+        <div class="description" *ngIf="partner.description" [innerHTML]="partner.description" asmMarkdown></div>
       </div>
-      <div class="description" *ngIf="sponsor.description" [innerHTML]="sponsor.description" asmMarkdown></div>
     </div>
-  </div>
-  <h2>Partners</h2>
-  <div class="other-sponsors">
-    <div class="sponsor" *ngFor="let sponsor of otherSponsors">
-      <div class="logo">
-        <ng-container *ngIf="sponsor.link; else noSponsorLink">
-          <a [href]="sponsor.link" target="_blank" ref="noopener">
-            <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-          </a>
-        </ng-container>
-        <ng-template #noSponsorLink>
-          <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-        </ng-template>
+    <h2>Partners</h2>
+    <div class="other-partners">
+      <div class="partner" *ngFor="let partner of otherPartners">
+        <div class="logo">
+          <ng-container *ngIf="partner.link; else noPartnerLink">
+            <a [href]="partner.link" target="_blank" ref="noopener">
+              <img [src]="partner.logo?.url" [alt]="partner.title">
+            </a>
+          </ng-container>
+          <ng-template #noPartnerLink>
+            <img [src]="partner.logo?.url" [alt]="partner.title">
+          </ng-template>
+        </div>
       </div>
     </div>
   </div>

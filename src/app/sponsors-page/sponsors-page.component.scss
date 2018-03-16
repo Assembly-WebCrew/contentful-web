@@ -2,10 +2,13 @@
 $lineWidth: 20px;
 :host {
   @include component;
-  @include centered-block;
 }
 
-.sponsor {
+.partners{
+  @include page-content-width;
+}
+
+.partner {
   .logo {
     padding: 15px;
     img {
@@ -15,7 +18,7 @@ $lineWidth: 20px;
 }
 
 .main-partners,
-.other-sponsors {
+.other-partners {
   padding: 20px 0;
 }
 
@@ -25,7 +28,7 @@ $lineWidth: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  .sponsor {
+  .partner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,7 +76,7 @@ $lineWidth: 20px;
   }
 }
 
-.other-sponsors {
+.other-partners {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -9,8 +9,8 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./sponsors-page.component.scss']
 })
 export class SponsorsPageComponent implements OnInit {
-  mainSponsors: any[] = [];
-  otherSponsors: any[] = [];
+  mainPartners: any[] = [];
+  otherPartners: any[] = [];
   content: any = {
     title: "Partners", // TODO translations
     tags: ["partners"]
@@ -36,9 +36,9 @@ export class SponsorsPageComponent implements OnInit {
     }` }).then(response => {
       response.data.sponsors.forEach(sponsor => {
         if (sponsor.isMainSponsor) {
-          this.mainSponsors.push(sponsor);
+          this.mainPartners.push(sponsor);
         } else {
-          this.otherSponsors.push(sponsor);
+          this.otherPartners.push(sponsor);
         }
       })
     });
