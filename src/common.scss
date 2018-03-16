@@ -8,6 +8,7 @@ $text-color: #fff;
 $black: #000;
 
 $accent-color: #266eff; // blue
+$accent-darker-color: #112; // darker-blue
 $accent-dark-color: #133d8c; // dark-blue
 $accent-light-color: #3683ff; // footer-blue
 
@@ -19,7 +20,8 @@ $visited-link: #7c26cb; //  purple
 $bg: #000b19;
 $bg-image-overlay: #151440;
 
-$call-bg: #000;
+$call-bg: $accent-color;
+$call-bg-hover: $accent-light-color;
 
 // FONTS AND SIZES
 
@@ -29,7 +31,7 @@ $title-font: 'Oswald', sans-serif;
 $font-size: 50px;
 $font-size-h1: 50px;
 
-$page-title-size: 40px;
+$page-title-size: 50px;
 
 // BORDER
 $border: $accent-color;
@@ -40,8 +42,8 @@ $manual-bg: #ccced1;
 $manual-text: $accent-dark-color;
 
 // PAGE WIDTHS
-$page-background-width: 1440px;
-$page-content-width: 1150px;
+$page-background-width: 1920px;
+$page-content-width: 1440px;
 
 // CONTENT
 $text-width: 1000px;

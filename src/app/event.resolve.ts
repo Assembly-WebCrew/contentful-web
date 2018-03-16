@@ -12,7 +12,7 @@ export class EventResolve implements Resolve<any> {
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Promise<any> {
     const event = await this.contentful.getEventMetadata(route.params.event);
-    if (!route.params.event)
+    if (!route.params.event && event)
       this.router.navigate([`/${event.name}`]);
     return event;
   }

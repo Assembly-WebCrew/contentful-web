@@ -1,40 +1,33 @@
-<div class="page-background">
-  <div class="page-title">
-    <div class="title-border"></div>
-    <h1>Partners</h1>
-  </div>
-  <div class="page-content-wrapper">
-    <div class="page-content sponsors">
-      <h2>Main partners</h2>
-      <div class="main-partners">
-        <div class="sponsor" *ngFor="let sponsor of mainSponsors">
-          <div class="logo">
-            <ng-container *ngIf="sponsor.link; else noMainPartnerLink">
-              <a [href]="sponsor.link" target="_blank" ref="noopener">
-                <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-              </a>
-            </ng-container>
-            <ng-template #noMainPartnerLink>
-              <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-            </ng-template>
-          </div>
-          <div class="description" *ngIf="sponsor.description" [innerHTML]="sponsor.description" asmMarkdown></div>
-        </div>
+<asm-base [content]="content">
+  <h2>Main partners</h2>
+  <div class="main-partners">
+    <div class="sponsor" *ngFor="let sponsor of mainSponsors">
+      <div class="logo">
+        <ng-container *ngIf="sponsor.link; else noMainPartnerLink">
+          <a [href]="sponsor.link" target="_blank" ref="noopener">
+            <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
+          </a>
+        </ng-container>
+        <ng-template #noMainPartnerLink>
+          <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
+        </ng-template>
       </div>
-      <h2>Partners</h2>
-      <div class="other-sponsors">
-        <div class="sponsor" *ngFor="let sponsor of otherSponsors">
-          <div class="logo">
-            <ng-container *ngIf="sponsor.link; else noSponsorLink">
-              <a [href]="sponsor.link" target="_blank" ref="noopener">
-                <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-              </a>
-            </ng-container>
-            <ng-template #noSponsorLink>
-              <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
-            </ng-template>
-          </div>
-        </div>
+      <div class="description" *ngIf="sponsor.description" [innerHTML]="sponsor.description" asmMarkdown></div>
+    </div>
+  </div>
+  <h2>Partners</h2>
+  <div class="other-sponsors">
+    <div class="sponsor" *ngFor="let sponsor of otherSponsors">
+      <div class="logo">
+        <ng-container *ngIf="sponsor.link; else noSponsorLink">
+          <a [href]="sponsor.link" target="_blank" ref="noopener">
+            <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
+          </a>
+        </ng-container>
+        <ng-template #noSponsorLink>
+          <img [src]="sponsor.logo?.url" [alt]="sponsor.title">
+        </ng-template>
       </div>
     </div>
   </div>
+</asm-base>

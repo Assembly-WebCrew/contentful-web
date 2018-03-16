@@ -8,6 +8,9 @@ import { ContentComponent } from './content/content.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
+import { NewsArchiveComponent } from './news/news-archive/news-archive.component';
+import { NewsArticleComponent } from './news/news-article/news-article.component';
+import { NewsArticleResolve } from './news/news-article.resolve.';
 
 const routes: Routes = [
   // If no event is specified, we will load default event.
@@ -26,6 +29,30 @@ const routes: Routes = [
     },
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        component: ContentComponent,
+        resolve: {
+          content: ContentResolve
+        }
+      },
+      {
+        path: 'news',
+        children: [
+          {
+            path: '',
+            component: NewsArchiveComponent
+          },
+          {
+            path: ':article',
+            component: NewsArticleComponent,
+            resolve: {
+              article: NewsArticleResolve
+            }
+          }
+        ]
+      },
+      {
         path: 'partners',
         component: SponsorsPageComponent
       },
@@ -35,7 +62,7 @@ const routes: Routes = [
         redirectTo: 'partners'
       },
       {
-        path: '**',
+        path: ':slug',
         component: ContentComponent,
         resolve: {
           content: ContentResolve

@@ -2,9 +2,9 @@
 
 :host {
   @include component;
-  @include page-width;
+  @include page-content-width;
+  padding: 10px 0;
 }
-
 
 h2 {
   cursor: pointer;

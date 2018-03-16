@@ -1,10 +1,12 @@
 @import '../../../common';
 
 :host {
-  @include component;
+  @include component(content, flex);
   @include centered-block;
   font-family: $text-font;
   font-weight: normal;
+  flex-direction: row-reverse;
+  height: 325px;
 }
 
 h2 {
@@ -15,6 +17,10 @@ h2 {
   padding: 0;
   height: 80px;
   position: initial;
+  flex-shrink: 0;
+  flex-grow: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   .title {
     line-height: 80px;
@@ -45,30 +51,23 @@ h2 {
 
 .image {
   display: inline-block;
-  width: 59%;
-  float: left;
-  height: 325px;
-
-  img {
-    width: 100%;
-    max-width: 585px;
-    background-size: cover;
-    height: 325px;
-    padding: 5px;
-  }
+  background-size: cover;
+  background-position: center;
+  width: 55%;
+  height: 100%;
+  flex-shrink: 0;
 }
 
 .zipper-inner {
-  height: 325px;
-  width: 40%;
-  display: inline-block;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   border-left: $border-basic $accent-color;
+  min-width: 400px;
 
   .zipper-link {
     height: 50px;
-    position: absolute;
-    bottom: 0;
-    width: 40%;
     line-height: 50px;
     text-align: center;
     color: $accent-color;
@@ -76,28 +75,32 @@ h2 {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
+    margin-top: 15px;
 
     .fa {
       margin-left: 10px;
+    }
+
+    &:hover {
+      color: $accent-light-color;
     }
   }
 
   .zipper-content {
     padding: 0 30px;
-    max-height: 133px;
+    flex-grow: 1;
+    display: block;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 
-:host-context(.type0) .image {
-    float: right;
+:host-context(.type0) {
+   flex-direction: row;
 }
 
 :host-context(.type0) .zipper-inner {
   border-left: 0;
   border-right: $border-basic $accent-color;
-
-  //h2 .icon {
-  //}
 }

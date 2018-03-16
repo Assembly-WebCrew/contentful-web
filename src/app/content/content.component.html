@@ -1,18 +1,4 @@
-<div class="page-background" [style.background-image]="background">
-  <div class="page-title" *ngIf="!content?.isFrontpage; else showFrontpageContent">
-    <ng-container *ngIf="content.title">
-      <div class="title-border"></div>
-      <h1>{{content.title}}</h1>
-    </ng-container>
-  </div>
-  <ng-template #showFrontpageContent>
-    <asm-block-event-info></asm-block-event-info>
-    <asm-block-countdown></asm-block-countdown>
-  </ng-template>
-  <div class="page-content-wrapper {{tags}}">
-    <div class="page-content">
-      <asm-block-sponsors></asm-block-sponsors>
-      <asm-content-block *ngFor="let content of content.contentBlocks" [content]="content"></asm-content-block>
-    </div>
-  </div>
-</div>
+<asm-base [content]="content">
+  <asm-block-sponsors></asm-block-sponsors>
+  <asm-content-block *ngFor="let content of content.contentBlocks" [content]="content"></asm-content-block>
+</asm-base>

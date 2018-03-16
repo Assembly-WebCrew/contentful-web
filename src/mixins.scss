@@ -10,7 +10,7 @@ $desktop-width: 1024px;
   @include gradient(rgba($color, .5), rgba($secondary, .1));
 }
 
-@mixin gradient($color: $text-color, $secondary: $accent-color) {
+@mixin gradient($color: $accent-color, $secondary: $accent-darker-color) {
   background: $color;
   background: linear-gradient($color, $secondary);
 }
@@ -23,10 +23,14 @@ $desktop-width: 1024px;
   }
 }
 
-@mixin page-width {
+@mixin page-width { // full page width
   margin: 0 auto;
   max-width: $page-background-width;
   width: 100%;
+}
+
+@mixin page-content-width { // page content area
+  @include centered-block;
 }
 
 @mixin centered-block {
@@ -35,9 +39,9 @@ $desktop-width: 1024px;
   margin: 0 auto;
 }
 
-@mixin content {
+@mixin text {
   max-width: $text-width;
-  padding-left: 80px;
+  padding-left: 10px;
 }
 
 @mixin list-styling {

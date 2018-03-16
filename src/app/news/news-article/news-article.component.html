@@ -1,0 +1,7 @@
+<asm-base [content]="content">
+  <asm-block-sponsors></asm-block-sponsors>
+  <div class="article">
+    <h2>{{article?.title}}</h2>
+    <div class="article-content" asmMarkdown [innerHTML]="article?.body"></div>
+  </div>
+</asm-base>

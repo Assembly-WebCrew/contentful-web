@@ -92,6 +92,10 @@ a:visited {
   color: $visited-link;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 .page-background {
   display: flex;
   background-image: url('/assets/images/background-picture.jpg');
@@ -104,25 +108,38 @@ a:visited {
   min-height: 60vh;
   flex-direction: column;
 
+  .overlay {
+    background-color: rgba($bg-image-overlay, .5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: $page-background-width;
+    height: 100%;
+    margin: auto;
+  }
+
   .page-title {
     @include page-width;
     display: flex;
     align-items: center;
     height: $page-title-size;
     padding: 20px 0 100px;
+    z-index: 2;
 
     .title-border {
       @include skewed;
       border-right: $border-basic $accent-color;
       margin-right: 10px;
       flex-shrink: 0;
-      height: 100%;
+      height: 30px;
       display: flex;
       align-items: center;
 
       &:before {
         content: '';
-        width: 180px;
+        width: 230px;
         border-bottom: $border-basic $accent-color;
         display: block;
       }
@@ -137,7 +154,7 @@ a:visited {
       font-size: $page-title-size;
       line-height: $page-title-size;
       margin: 0;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
   }
 
@@ -147,6 +164,7 @@ a:visited {
     color: $text-color;
     display: flex;
     flex-grow: 1;
+    z-index: 1;
 
     .page-content {
       @include page-width;

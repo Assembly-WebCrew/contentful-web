@@ -11,13 +11,16 @@ import { Title } from '@angular/platform-browser';
 export class SponsorsPageComponent implements OnInit {
   mainSponsors: any[] = [];
   otherSponsors: any[] = [];
+  content: any = {
+    title: "Partners", // TODO translations
+    tags: ["partners"]
+  };
 
   constructor(
     private contentful: ContentfulService,
     private title: Title) { }
 
   ngOnInit() {
-    this.title.setTitle("Sponsors");
     this.contentful.query<any>({
       query: gql`
     {

@@ -1,78 +1,81 @@
 @import '../../common';
-
-$lineWidth: 80px;
-
+$lineWidth: 20px;
 :host {
   @include component;
+  @include centered-block;
 }
 
-.page-content.sponsors {
-  @include centered-block;
+.sponsor {
+  .logo {
+    padding: 15px;
+    img {
+      max-width: 250px;
+    }
+  }
+}
 
+.main-partners,
+.other-sponsors {
+  padding: 20px 0;
+}
+
+.main-partners {
+  @include text;
+  max-width: $page-content-width;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   .sponsor {
-    .logo {
-      padding: 10px;
-
-      img {
-        max-width: 250px;
-      }
-    }
-  }
-  .main-partners,
-  .other-sponsors {
-    padding: 20px 0;
-  }
-
-  .main-partners {
-    @include content;
-    max-width: none;
-
-    .sponsor {
-      display: flex;
-      align-items: center;
-      padding: 10px 0;
-
-      .description {
-        margin-left: $lineWidth + 20px;
-        position: relative;
-
-        &:before {
-          content: "";
-          border-bottom: 1px solid $border;
-          display: block;
-          width: $lineWidth;
-          height: 100%;
-          position: absolute;
-          bottom: 50%;
-          left: -100px;
-        }
-
-        &:after {
-          content: "";
-          border-left: 1px solid $border;
-          display: block;
-          height: 80%;
-          position: absolute;
-          bottom: 10%;
-          left: -20px;
-        }
-      }
-
-      .logo {
-        padding: 20px;
-        border: 1px solid $border;
-        min-height: 230px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
-  
-  .other-sponsors {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 700px;
+    .description {
+      margin-top: 40px;
+      position: relative;
+      max-width: 650px;
+      &:before {
+        content: "";
+        border-bottom: 1px solid $border;
+        display: block;
+        width: 60px;
+        height: 20px;
+        position: absolute;
+        top: -20px;
+        margin: auto;
+        left: 0;
+        right: 0;
+      }
+      &:after {
+        content: "";
+        border-left: 1px solid $border;
+        display: block;
+        height: 40px;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        right: 50%;
+        margin: auto;
+      }
+    }
+    .logo {
+      padding: 20px;
+      border-bottom: 1px solid #266eff;
+      border-radius: 15px;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
+}
+
+.other-sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

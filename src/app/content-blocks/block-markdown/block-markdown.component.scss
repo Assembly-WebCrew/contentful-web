@@ -17,7 +17,7 @@ p {
 }
 
 .markdown-content {
-  @include content;
+  @include text;
 
   @include tablet {
     width: 100%;

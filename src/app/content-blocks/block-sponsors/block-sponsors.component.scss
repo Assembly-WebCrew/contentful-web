@@ -5,7 +5,7 @@
 }
 
 .sponsors {
-  @include centered-block;
+  @include page-content-width;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,6 @@
 
   .sponsor {
     height: 190px;
-    //min-width: 230px;
     width: 25%;
     margin: 0;
     padding: 1em;

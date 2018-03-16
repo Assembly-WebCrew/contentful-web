@@ -1,0 +1,39 @@
+@import '../../../common';
+:host {
+  @include component;
+  @include page-width;
+}
+
+.articles {
+  @include page-content-width;
+  padding: 20px 0;
+  .article {
+    padding: 20px;
+    border: 1px solid $accent-color;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    .title {
+      text-decoration: none;
+      h3 {
+        color: $text-color;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 40px;
+        margin: 0;
+        padding: 0;
+      }
+      &:hover {
+        h3 {
+          color: $accent-color;
+        }
+      }
+    }
+    .published {
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+    }
+  }
+}

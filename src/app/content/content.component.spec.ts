@@ -9,6 +9,7 @@ import { BlockSponsorsComponent } from '../content-blocks/block-sponsors/block-s
 import { HttpClientModule } from '@angular/common/http';
 import { ContentfulService } from '../core/contentful.service';
 import { Observable } from 'rxjs/Observable';
+import { BaseComponent } from './base/base.component';
 
 describe('ContentComponent', () => {
   let component: ContentComponent;
@@ -17,7 +18,7 @@ describe('ContentComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientModule],
-      declarations: [ContentBlockComponent, ContentComponent, BlockCountdownComponent, BlockEventInfoComponent, BlockSponsorsComponent],
+      declarations: [ContentBlockComponent, ContentComponent, BlockCountdownComponent, BlockEventInfoComponent, BlockSponsorsComponent, BaseComponent],
       providers: [
         {
           provide: ContentfulService,

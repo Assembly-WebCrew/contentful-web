@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlockZipperContentComponent implements OnInit{
   content: any = {};
+  image: string;
+
   ngOnInit() {
-    console.log(this.content);
+    this.image = this.getImage();
+  }
+
+  getImage() {
+    if (this.content && this.content.image)
+      return 'url(' + this.content.image.url + ')';
   }
 }

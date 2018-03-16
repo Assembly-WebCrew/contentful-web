@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SponsorsPageComponent } from './sponsors-page.component';
 import { ContentfulService } from '../core/contentful.service';
+import { BaseComponent } from '../content/base/base.component';
+import { BlockEventInfoComponent } from '../content-blocks/block-event-info/block-event-info.component';
+import { BlockCountdownComponent } from '../content-blocks/block-countdown/block-countdown.component';
 
 describe('SponsorsPageComponent', () => {
   let component: SponsorsPageComponent;
@@ -9,7 +12,7 @@ describe('SponsorsPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SponsorsPageComponent ],
+      declarations: [ SponsorsPageComponent, BaseComponent, BlockCountdownComponent, BlockEventInfoComponent ],
       providers: [
         {
           provide: ContentfulService,

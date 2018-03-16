@@ -1,0 +1,7 @@
+@import '../../../common';
+
+:host {
+  @include component;
+  min-height: 70vh;
+  height: 100%;
+}

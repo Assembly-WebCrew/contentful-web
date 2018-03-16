@@ -8,15 +8,12 @@ import * as qs from 'qs';
 
 @Injectable()
 export class ContentResolve implements Resolve<any> {
-  constructor(private contentful: ContentfulService) {}
+  constructor(private contentful: ContentfulService) { }
 
   public async resolve(
-      route: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot): Promise<any> {
-
-    const slug = get(last(route.url), 'path', 'frontpage'),
-      params = { 'fields.slug': slug, limit: 1 };
-
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Promise<any> {
+    const params = { 'fields.slug': route.params.slug || 'frontpage', limit: 1 };
     const response = await this.contentful.query<any>({
       query: gql`
         {
@@ -90,8 +87,7 @@ export class ContentResolve implements Resolve<any> {
             }
           }
         }`
-      });
-
+    });
     return get(response, 'data.pages[0]');
   }
 }

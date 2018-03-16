@@ -2,6 +2,7 @@
 
 :host {
   @include component;
+  padding: 20px 0;
 }
 
 .zip-content {
@@ -17,4 +18,12 @@
 .zip-content:nth-child(odd) {
   margin-left: 0;
   margin-right: 3%;
+}
+
+@include mobile {
+  .zip-content, .zip-content:nth-child(odd) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

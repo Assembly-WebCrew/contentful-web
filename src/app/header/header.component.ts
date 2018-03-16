@@ -132,7 +132,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         if (item.url && item.url[0] === '/')
           return `/${this.event.name}${item.url}`;
   
-        return item.url;
+        return item.url || '';
       }
   }
 
