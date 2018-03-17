@@ -24,7 +24,7 @@ body {
   @include skewed;
 }
 
-.markdown-content {
+.markdown-content, asm-block-collapse {
   ul {
     @include list-styling;
   }

@@ -28,6 +28,6 @@
   flex-shrink: 0;
 
   &:hover {
-    background: $call-bg-hover;
+    @include gradient($call-bg-hover, $call-bg);
   }
 }

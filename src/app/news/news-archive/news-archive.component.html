@@ -1,9 +1,9 @@
 <asm-base [content]="content">
   <asm-block-sponsors></asm-block-sponsors>
   <div class="articles">
-    <div class="article" *ngFor="let article of news$ | async">
+    <div class="article" *ngFor="let article of articles">
       <a class="title" [routerLink]="article.slug"><h3>{{article.title}}</h3></a>
-      <span class="published" *ngIf="article.publishTime">{{article.publishTime | date:'dd.MM.yyyy'}}</span>
+      <span class="published" *ngIf="article.date">{{article.date | date:'dd.MM.yyyy'}}</span>
     </div>
   </div>
 </asm-base>

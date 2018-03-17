@@ -11,7 +11,9 @@ describe('contentful-web App', () => {
 
   it('should contain ASSEMBLY logo', () => {
     page.navigateTo().then(() => {
-      expect(page.hasLogo()).toBeTruthy();
+      setTimeout(() => {
+        expect(page.hasLogo()).toBeTruthy();
+      }, 1000);
     });
   });
 });

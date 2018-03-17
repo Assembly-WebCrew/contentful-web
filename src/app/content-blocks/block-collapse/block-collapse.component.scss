@@ -4,6 +4,7 @@
   @include component;
   @include page-content-width;
   padding: 10px 0;
+  padding-left: 60px;
 }
 
 h2 {
@@ -49,6 +50,7 @@ h2 {
 .innercontent {
   padding: 20px;
   padding-top: 0;
+  padding-left: 70px;
 
   &.hide {
     display: none;

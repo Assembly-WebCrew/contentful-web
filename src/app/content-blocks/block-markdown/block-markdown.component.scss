@@ -4,16 +4,9 @@
   @include component;
   @include centered-block;
   padding: 10px;
+  padding-left: 70px;
   font-family: $text-font;
   font-weight: normal;
-}
-
-h2 {
-  margin-left: 80px;
-}
-
-p {
-  text-align: justify;
 }
 
 .markdown-content {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,8 +13,7 @@ export class NewsArticleComponent implements OnInit {
   };
 
   constructor(
-    private route: ActivatedRoute,
-    private cfResolver: ComponentFactoryResolver) {}
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.data.subscribe((data: { article: any }) => {

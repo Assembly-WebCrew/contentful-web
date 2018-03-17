@@ -11,6 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class NewsArchiveComponent implements OnInit {
   news$: Observable<any>;
+  articles: any;
   event: any;
   content: any = {
     title: "News",
@@ -24,20 +25,8 @@ export class NewsArchiveComponent implements OnInit {
 
   ngOnInit() {
     this.event = this.route.snapshot.data.event;
-    this.news$ = this.contentful.query$<any>({ // TODO: can you filter by publishTime?
-      query: gql`{
-        newsArticles {
-          title
-          slug
-          publishTime
-          tags {
-            title
-          }
-        }
-      }`}).map(data => {
-      console.log(data);
-      return data.newsArticles;
-    });
-  }
-
+      this.route.data.subscribe((data: { articles: any }) => {
+        this.articles = data.articles || []; console.log(data);
+      });
+    }
 }

@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { ContentfulService } from './core/contentful.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { get, last } from 'lodash';
+import { get, join } from 'lodash';
 import * as qs from 'qs';
 
 @Injectable()
@@ -13,7 +13,9 @@ export class ContentResolve implements Resolve<any> {
   public async resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<any> {
-    const params = { 'fields.slug': route.params.slug || 'frontpage', limit: 1 };
+      console.log(route);
+    const slug = join(route.url,"/"), 
+          params = { 'fields.slug': slug || 'frontpage', limit: 1 };
     const response = await this.contentful.query<any>({
       query: gql`
         {

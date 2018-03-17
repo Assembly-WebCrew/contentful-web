@@ -24,7 +24,7 @@ import { MobileMenuComponent } from './header/mobile-menu/mobile-menu.component'
 import { NewsArchiveComponent } from './news/news-archive/news-archive.component';
 import { NewsArticleComponent } from './news/news-article/news-article.component';
 import { BaseComponent } from './content/base/base.component';
-import { NewsArticleResolve } from './news/news-article.resolve.';
+import { NewsArticleResolve } from './news/news-article.resolve';
 
 @NgModule({
   declarations: [

@@ -10,7 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 import { NewsArchiveComponent } from './news/news-archive/news-archive.component';
 import { NewsArticleComponent } from './news/news-article/news-article.component';
-import { NewsArticleResolve } from './news/news-article.resolve.';
+import { NewsArticleResolve } from './news/news-article.resolve';
 
 const routes: Routes = [
   // If no event is specified, we will load default event.
@@ -41,7 +41,10 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: NewsArchiveComponent
+            component: NewsArchiveComponent,
+            resolve: {
+              articles: NewsArticleResolve
+            }
           },
           {
             path: ':article',
@@ -62,7 +65,7 @@ const routes: Routes = [
         redirectTo: 'partners'
       },
       {
-        path: ':slug',
+        path: '**',
         component: ContentComponent,
         resolve: {
           content: ContentResolve

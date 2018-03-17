@@ -53,9 +53,10 @@ h2 {
   display: inline-block;
   background-size: cover;
   background-position: center;
-  width: 55%;
-  height: 100%;
+  width: 50%;
+  height: calc(100% - 20px);
   flex-shrink: 0;
+  margin: 10px;
 }
 
 .zipper-inner {
@@ -82,7 +83,7 @@ h2 {
     }
 
     &:hover {
-      color: $accent-light-color;
+      @include gradient(rgba($accent-color, .3), $bg);
     }
   }
 
