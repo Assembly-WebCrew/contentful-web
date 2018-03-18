@@ -68,6 +68,7 @@ h2 {
   min-width: 400px;
 
   .zipper-link {
+    font-family: 'Oswald', sans-serif;
     height: 50px;
     line-height: 50px;
     text-align: center;
@@ -75,11 +76,14 @@ h2 {
     border-top: 1px solid $accent-color;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     margin-top: 15px;
+    vertical-align: middle;
+    font-size: 20px;
 
     .fa {
       margin-left: 10px;
+      font-size: 20px;
     }
 
     &:hover {

@@ -1,5 +1,9 @@
-<a class="cta"
-    *ngFor="let cta of content.callToAction"
-    [href]="cta.url">
-  {{ cta.linkLabel }}
-</a>
+<div class="cta" *ngFor="let cta of content.callToAction">
+  <div class="cta-title">
+    {{ cta.title }}
+  </div>
+  <a class="cta-link" [href]="cta.url">
+    {{ cta.linkLabel }}
+    <span class="fa fa-long-arrow-right"></span>
+  </a>
+</div>

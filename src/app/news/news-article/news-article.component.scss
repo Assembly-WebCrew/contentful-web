@@ -1,4 +1,34 @@
 @import '../../../common';
 .article {
   @include page-content-width;
+
+  img {
+    max-width: 700px;
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
+    float: right;
+    background-color: $bg;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    z-index: -1;
+
+    &:before {
+      width: 100%;
+    }
+  }
+
+  .date {
+    color: $accent-color;
+    text-align: right;
+  }
+
+  .ingress {
+    font-style: italic;
+    padding: 10px 0 30px;
+    font-size: 1.2em;
+  }
 }

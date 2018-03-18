@@ -8,12 +8,13 @@
   @include page-content-width;
   padding: 20px 0;
   .article {
-    padding: 20px;
+    padding: 10px;
+    padding-left: 20px;
     border: 1px solid $accent-color;
     border-radius: 5px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+    height: 250px;
+    
     .title {
       text-decoration: none;
       h3 {
@@ -23,7 +24,7 @@
         text-transform: uppercase;
         font-size: 40px;
         margin: 0;
-        padding: 0;
+        padding: 10px 0;
       }
       &:hover {
         h3 {
@@ -34,6 +35,32 @@
     .published {
       text-transform: uppercase;
       font-family: 'Oswald', sans-serif;
+      color: $accent-color;
+    }
+    img {
+      height: 100%;
+      float: right;
+    }
+    .link {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 10px 20px;
+      color: $text-color;
+      font-size: 20px;
+      text-decoration: none;
+      border: 1px solid $text-color;
+      border-radius: 5px;
+
+      .fa {
+        margin-left: 10px;
+        font-size: 1em;
+      }
+
+      &:hover {
+        color: $bg;
+        background-color: $text-color;
+      }
     }
   }
 }

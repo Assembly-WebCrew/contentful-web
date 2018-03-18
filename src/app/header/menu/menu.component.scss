@@ -142,19 +142,25 @@ ul {
             padding: 0 0 0 10px;
 
             li {
-              padding: 0;
-              padding-left: 30px;
+              padding: 5px 10px;
+              padding-left: 15px;
 
               &:first-child {
-                padding-top: 0;
+                padding-top: 10px;
               }
 
               &:before {
-                bottom: 35%;
+                height: 50%;
               }
 
               a {
-                padding: 15px 0 5px;
+                border-radius: 5px;
+                padding: 10px;
+                border: 1px solid transparent;
+
+                &:hover {
+                  border-color: $border;
+                }
               }
             }
           }

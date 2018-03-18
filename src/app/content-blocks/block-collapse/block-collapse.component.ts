@@ -9,8 +9,14 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 export class BlockCollapseComponent implements OnInit{
   content: any = {};
   opened: Boolean = false;
+  id: string;
+
   ngOnInit() {
+    if (this.content.title) {
+      this.id = this.content.title.replace(/\s/gi, "-").replace(/[^\w-]/gi, "").toLowerCase();
+    }
   }
+
   toggle(){
       this.opened = !this.opened;
   }
