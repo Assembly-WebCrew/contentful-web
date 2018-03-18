@@ -34,6 +34,6 @@ describe('MarkdownDirective', () => {
   });
 
   it('should be converted to markdown', () => {
-    expect(fixture.debugElement.nativeElement.innerHTML).toEqual('<div asmmarkdown=""><h1 id="helloworld">Hello, world!</h1></div>');
+    expect(fixture.debugElement.nativeElement.innerHTML).toEqual('<div asmmarkdown=""><h2 id="helloworld">Hello, world!</h2></div>');
   });
 });
