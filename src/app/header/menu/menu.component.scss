@@ -5,7 +5,7 @@
 }
 
 a {
-  color: #ffffff;
+  color: $color-text;
   text-decoration: none;
 }
 
@@ -44,10 +44,10 @@ ul {
     }
 
     .menu-dropdown {
-      font-family: 'Muli', sans-serif;
+      font-family: $font-text;
       opacity: 0;
       visibility: hidden;
-      background-color: rgba($bg, .8);
+      background-color: rgba($color-bg, .8);
       padding: 10px;
       text-align: left;
       position: absolute;
@@ -56,7 +56,7 @@ ul {
       margin-left: -100px;
       width: 200px;
       transition: opacity.3s .1s, top .3s .1s, visibility .1s .2s;
-      border: 1px solid rgba($accent-color, .6);
+      border: $border-basic rgba($color-accent, .6);
       border-radius: 5px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
       box-sizing: border-box;
@@ -64,7 +64,7 @@ ul {
 
       &:after {
         content: '';
-        border: 9px solid $bg;
+        border: 9px solid $color-bg;
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
@@ -77,7 +77,7 @@ ul {
 
       &:before {
         content: '';
-        border: 10px solid rgba($accent-color, .6);
+        border: 10px solid rgba($color-accent, .6);
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
@@ -99,7 +99,7 @@ ul {
           transition: color .1s;
 
           &:hover {
-            color: $accent-color;
+            color: $color-accent;
           }
         }
       }
@@ -126,14 +126,14 @@ ul {
 
           .title {
             text-transform: uppercase;
-            color: $border;
-            font-family: $title-font;
-            border-bottom: 1px solid $border;
+            color: $color-accent;
+            font-family: $font-title;
+            border-bottom: $border-basic $color-accent;
             padding: 15px 0;
             margin: 0 10px;
 
             &[href]:hover {
-              color: #ffffff;
+              color: $color-text;
             }
           }
 
@@ -156,10 +156,10 @@ ul {
               a {
                 border-radius: 5px;
                 padding: 10px;
-                border: 1px solid transparent;
+                border: $border-basic transparent;
 
                 &:hover {
-                  border-color: $border;
+                  border-color: $color-accent;
                 }
               }
             }

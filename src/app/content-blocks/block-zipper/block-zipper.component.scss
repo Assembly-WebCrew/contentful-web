@@ -8,11 +8,11 @@
 .zip-content {
   width: 97%;
   display: block;
-  border: $border-basic $accent-color;
+  border: $border-basic $color-accent;
   margin-bottom: 29px;
   margin-left: 3%;
   margin-right: 0;
-  border-radius: 3px;
+  border-radius: $border-radius;
 }
 
 .zip-content:nth-child(odd) {

@@ -2,7 +2,7 @@
 
 .counter {
   padding-top: 64px;
-  font-family: $title-font;
+  font-family: $font-title;
   overflow: hidden;
   text-align: center;
   position: relative;
@@ -12,7 +12,7 @@
 
   div {
     margin: 0;
-    color: $text-color;
+    color: $color-text;
     text-transform: uppercase;
     width: 90px;
     text-align: center;
@@ -22,13 +22,14 @@
 
     p {
       margin: 0;
-      color: $text-color;
+      color: $color-text;
       font-size: 70px;
     }
 
     span {
-      color: $accent-color;
-      font-size: 23px;
+      color: $color-accent;
+      font-size: $font-size-frontpage-definition;
+      //font-size: 23px;
     }
   }
 }

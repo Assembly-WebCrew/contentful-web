@@ -3,13 +3,13 @@
 @import 'common';
 
 $fa-font-path: '/assets/fonts';
-@import url('https://fonts.googleapis.com/css?family=Muli');
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('//fonts.googleapis.com/css?family=Muli');
+@import url('//fonts.googleapis.com/css?family=Oswald');
 @import 'font-awesome/font-awesome';
 
 body {
-  background: $bg;
-  font-family: $text-font;
+  background: $color-bg;
+  font-family: $font-text;
 
   * {
     box-sizing: border-box;
@@ -24,7 +24,8 @@ body {
   @include skewed;
 }
 
-.markdown-content, asm-block-collapse {
+.markdown-content,
+asm-block-collapse {
   ul {
     @include list-styling;
   }
@@ -32,22 +33,22 @@ body {
 
 table {
   column-gap: 0;
-  border: $border-basic $text-color;
+  border: $border-basic $color-text;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 5px;
 
   th {
-    font-family: $title-font;
+    font-family: $font-title;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 1.1em;
   }
 
   td,
   th {
     padding: 10px 20px;
-    border-right: $border-basic $text-color;
-    border-bottom: $border-basic $text-color;
+    border-right: $border-basic $color-text;
+    border-bottom: $border-basic $color-text;
 
     &:last-child {
       border-right: 0;
@@ -62,8 +63,8 @@ table {
 }
 
 h2 {
-  font-size: 50px;
-  font-family: $title-font;
+  font-size: $font-size-h1;
+  font-family: $font-title;
   text-transform: uppercase;
   position: relative;
 
@@ -74,22 +75,22 @@ h2 {
     left: 0;
     bottom: -20px;
     width: 85px;
-    border-bottom: $border-basic $accent-color;
+    border-bottom: $border-basic $color-accent;
   }
 }
 
 h3 {
-  color: $accent-color;
-  font-size: 24px;
+  color: $color-accent;
+  font-size: $font-size-h3;
   margin: 30px 0 10px;
 }
 
 a:link {
-  color: $accent-light-color;
+  color: $color-accent-light;
 }
 
 a:visited {
-  color: $visited-link;
+  color: $color-visited-link;
 }
 
 pre {

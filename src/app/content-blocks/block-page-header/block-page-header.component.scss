@@ -4,8 +4,8 @@
   @include component(contain, flex);
   @include page-content-width;
   justify-content: center;
-  border-radius: 5px;
-  border: 1px solid $text-color;
+  border-radius: $border-radius;
+  border: $border-basic $color-text;
 }
 
 .cta {
@@ -14,9 +14,9 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-title;
   text-transform: uppercase;
-  border-right: 1px solid $text-color;
+  border-right: $border-basic $color-text;
   font-size: 20px;
 
   @include mobile {
@@ -42,10 +42,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $text-color;
+    color: $color-text;
     font-size: 1em;
     text-decoration: none;
-    border-top: 1px solid $text-color;
+    border-top: $border-basic $color-text;
 
     .fa {
       margin-left: 10px;
@@ -53,8 +53,8 @@
     }
 
     &:hover {
-      color: $bg;
-      background-color: $text-color;
+      color: $color-bg;
+      background-color: $color-text;
     }
   }
 
@@ -63,7 +63,7 @@
   // display: flex;
   // background: $call-bg;
   // margin: 10px;
-  // color: $text-color;
+  // color: $color-text;
   // justify-content: center;
   // align-items: center;
   // border-radius: 5px;

@@ -1,16 +1,19 @@
 @import '../../common';
+
 $lineWidth: 20px;
+
 :host {
   @include component;
 }
 
-.partners{
+.partners {
   @include page-content-width;
 }
 
 .partner {
   .logo {
     padding: 15px;
+
     img {
       max-width: 250px;
     }
@@ -24,10 +27,11 @@ $lineWidth: 20px;
 
 .main-partners {
   @include text;
-  max-width: $page-content-width;
+  max-width: $width-page-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   .partner {
     display: flex;
     flex-direction: column;
@@ -35,13 +39,15 @@ $lineWidth: 20px;
     padding: 10px 0;
     width: 100%;
     max-width: 700px;
+
     .description {
       margin-top: 40px;
       position: relative;
       max-width: 650px;
+
       &:before {
-        content: "";
-        border-bottom: 1px solid $border;
+        content: '';
+        border-bottom: $border-basic £color-accent;
         display: block;
         width: 60px;
         height: 20px;
@@ -51,9 +57,10 @@ $lineWidth: 20px;
         left: 0;
         right: 0;
       }
+
       &:after {
-        content: "";
-        border-left: 1px solid $border;
+        content: '';
+        border-left: $border-basic £color-accent;
         display: block;
         height: 40px;
         position: absolute;
@@ -63,9 +70,10 @@ $lineWidth: 20px;
         margin: auto;
       }
     }
+
     .logo {
       padding: 20px;
-      border-bottom: 1px solid #266eff;
+      border-bottom: $border-basic £color-accent;
       border-radius: 15px;
       min-height: 230px;
       display: flex;

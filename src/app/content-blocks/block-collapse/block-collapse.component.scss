@@ -9,8 +9,8 @@
 
 h2 {
   cursor: pointer;
-  font-size: 40px;
-  border-bottom: $border-basic $accent-color;
+  font-size: $font-size-collapse-title;
+  border-bottom: $border-basic $color-accent;
   height: 26px;
   margin-bottom: 35px;
   margin-top: 10px;
@@ -20,11 +20,11 @@ h2 {
   }
 
   span.fa {
-    font-size: 20px;
-    line-height: 38px;
-    width: 38px;
+    font-size: $font-size-collapse-fa;
+    line-height: #{$font-size-collapse-title - 2px};
+    width: #{$font-size-collapse-title - 2px};
     display: inline-block;
-    background-color: $accent-color;
+    background-color: $color-accent;
     text-align: center;
     //-webkit-border-radius: 3px;
     //-moz-border-radius: 3px;
@@ -35,14 +35,14 @@ h2 {
 
   .container {
     padding-left: 20px;
-    //background-color: $accent-color;
-    background-color: $bg;
+    //background-color: $color-accent;
+    background-color: $color-bg;
 
     .rightline {
       height: 30px;
       display: inline-block;
       padding-right: 15px;
-      border-right: $border-basic $accent-color;
+      border-right: $border-basic $color-accent;
     }
   }
 }

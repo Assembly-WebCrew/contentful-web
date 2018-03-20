@@ -9,11 +9,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: $page-title-size;
+  height: $font-size-page-title;
   overflow: hidden;
   @include page-width;
 
-  .title-border-left, .title-border-right {
+  .title-border-left,
+  .title-border-right {
     flex-shrink: 0;
     height: 90%;
     display: flex;
@@ -23,37 +24,37 @@
   }
 
   .title-border-left {
-    border-right: 2px solid rgba($border, .6);
+    border-right: $border-section;
     margin-right: 10px;
 
     &:before {
-      content:"";
+      content: '';
       width: 100%;
-      border-bottom: 2px solid rgba($border, .6);
+      border-bottom: $border-section;
       display: block;
     }
   }
 
   .title-border-right {
-    border-left: 2px solid rgba($border, .6);
+    border-left: $border-section;
     margin-left: 20px;
 
     &:after {
-      content:"";
+      content: '';
       width: 100%;
-      border-bottom: 2px solid rgba($border, .6);
+      border-bottom: $border-section;
       display: block;
     }
   }
 
   h2 {
-    color: $text-color;
-    font-family: $title-font;
+    color: $color-text;
+    font-family: $font-title;
     font-style: italic;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: $page-title-size;
-    line-height: $page-title-size;
+    font-size: $font-size-h1;
+    line-height: $font-size-h1;
     margin: 0;
     margin-bottom: 4px;
     flex-shrink: 0;

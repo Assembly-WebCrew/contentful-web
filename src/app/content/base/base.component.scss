@@ -11,7 +11,7 @@
   background-image: url('/assets/images/background-picture.jpg');
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: $page-background-width auto;
+  background-size: $width-page-bg auto;
   padding-top: 230px;
   position: relative;
   height: 100%;
@@ -19,13 +19,13 @@
   flex-direction: column;
 
   .overlay {
-    background-color: rgba($bg-image-overlay, .5);
+    background-color: rgba($color-bg-overlay, .5);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: $page-background-width;
+    width: $width-page-bg;
     height: 100%;
     margin: auto;
   }
@@ -39,7 +39,7 @@
 
     .title-border {
       @include skewed;
-      border-right: $border-basic $accent-color;
+      border-right: $border-basic $color-accent;
       margin-right: 10px;
       flex-shrink: 0;
       height: 30px;
@@ -49,7 +49,7 @@
       &:before {
         content: '';
         width: 230px;
-        border-bottom: $border-basic $accent-color;
+        border-bottom: $border-basic $color-accent;
         display: block;
 
         @include mobile {
@@ -59,22 +59,21 @@
     }
 
     h1 {
-      color: $text-color;
+      color: $color-text;
       font-family: 'Oswald', sans-serif;
       font-style: italic;
       font-weight: 400;
       text-transform: uppercase;
-      font-size: $page-title-size;
-      line-height: $page-title-size;
+      font-size: $font-size-page-title;
+      line-height: $font-size-page-title;
       margin: 0;
       margin-bottom: 8px;
     }
   }
 
   .page-content-wrapper {
-    background: $bg;
-    background: linear-gradient(rgba($bg, .4) 0, $bg 230px);
-    color: $text-color;
+    background: linear-gradient(rgba($color-bg, .4) 0, $color-bg 230px);
+    color: $color-text;
     display: flex;
     flex-grow: 1;
     z-index: 1;

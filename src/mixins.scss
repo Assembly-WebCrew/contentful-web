@@ -6,11 +6,11 @@ $desktop-width: 1024px;
   display: $display;
 }
 
-@mixin gradient-top($color, $secondary: $bg) {
+@mixin gradient-top($color, $secondary: $color-bg) {
   @include gradient(rgba($color, .5), rgba($secondary, .1));
 }
 
-@mixin gradient($color: $accent-color, $secondary: $accent-darker-color) {
+@mixin gradient($color: $color-accent, $secondary: $color-accent-darker) {
   background: $color;
   background: linear-gradient($color, $secondary);
 }
@@ -25,7 +25,7 @@ $desktop-width: 1024px;
 
 @mixin page-width { // full page width
   margin: 0 auto;
-  max-width: $page-background-width;
+  max-width: $width-page-bg;
   width: 100%;
 }
 
@@ -34,13 +34,13 @@ $desktop-width: 1024px;
 }
 
 @mixin centered-block {
-  width: $page-content-width;
+  width: $width-page-content;
   max-width: 100%;
   margin: 0 auto;
 }
 
 @mixin text {
-  max-width: $text-width;
+  max-width: $width-text;
   padding-left: 10px;
 }
 
@@ -57,8 +57,8 @@ $desktop-width: 1024px;
 
     &:before {
       content: '';
-      border-bottom: 1px solid $border;
-      border-left: 1px solid $border;
+      border-bottom: $border-basic $color-accent;
+      border-left: $border-basic $color-accent;
       display: block;
       width: 15px;
       position: absolute;
@@ -69,7 +69,7 @@ $desktop-width: 1024px;
 
     &:after {
       content: '';
-      border-left: 1px solid $border;
+      border-left: $border-basic $color-accent;
       display: block;
       height: 100%;
       position: absolute;

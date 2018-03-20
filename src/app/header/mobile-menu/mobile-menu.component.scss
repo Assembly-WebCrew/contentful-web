@@ -6,10 +6,11 @@
     top: 0;
     width: 100vw;
     height: 100%;
-    background-color: $bg;
+    background-color: $color-bg;
     overflow: hidden;
     flex-direction: column;
 }
+
 .top {
     display: flex;
     justify-content: space-between;
@@ -26,7 +27,7 @@
         position: relative;
         border-radius: 0 5px 5px 0;
         overflow: hidden;
-        color: $text-color;
+        color: $color-text;
         padding: 0 20px 0 0;
         flex-shrink: 0;
 
@@ -37,17 +38,17 @@
         }
 
         .logo {
-            max-width: 250px;
+            max-width: 160px;
         }
     }
 
     button {
         background-color: transparent;
-        color: white;
+        color: $color-text;
         padding: 30px;
         border: 0;
         outline: 0;
-  
+
         .fa {
           font-size: 30px;
         }
@@ -63,10 +64,10 @@
 }
 
 a {
-    color: #ffffff;
+    color: $color-text;
     text-decoration: none;
 }
-  
+
 ul {
     list-style: none;
     font-size: 18px;
@@ -74,12 +75,15 @@ ul {
 
 .menu {
     text-transform: uppercase;
-    a,span {
+
+  a,
+  span {
         display: inline-block;
         padding: 10px 0;
     }
-    .no-link {
-        color: grey;
+
+  .no-link {
+        color: $color-no-link;
     }
 }
 

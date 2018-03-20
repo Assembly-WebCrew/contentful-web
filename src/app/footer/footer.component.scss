@@ -5,10 +5,10 @@
 }
 
 .asm-footer {
-  font-family: $text-font;
+  font-family: $font-text;
 
   a {
-    color: $text-color;
+    color: $color-text;
     text-decoration: none;
 
     &:hover {
@@ -17,10 +17,10 @@
   }
 
   .footer-upper {
-    background-color: $black;
+    background-color: $color-black;
     padding: 65px 0;
     width: 100%;
-    color: $text-color;
+    color: $color-text;
 
     .centered-block {
       display: flex;
@@ -36,9 +36,9 @@
       flex-grow: 1;
 
       h4 {
-        font-family: $title-font;
-        border-bottom: $accent-light-color $border-basic;
-        color: $accent-light-color;
+        font-family: $font-title;
+        border-bottom: $color-accent-light $border-basic;
+        color: $color-accent-light;
         text-transform: uppercase;
         font-size: 23px;
         padding-bottom: 16px;
@@ -70,8 +70,8 @@
 
   .footer-lower {
     @include centered-block;
-    font-family: $text-font;
-    background-color: $bg;
+    font-family: $font-text;
+    background-color: $color-bg;
     height: 40px;
     padding: 30px 0;
     display: flex;
@@ -79,25 +79,25 @@
 
     .copyright {
       margin: 0;
-      color: $text-color;
+      color: $color-text;
       text-transform: uppercase;
       margin-top: 6px;
     }
 
     .site {
       text-transform: uppercase;
-      color: $text-font;
+      color: $color-text;
       text-align: center;
       position: relative;
 
       select {
-        font-family: $title-font;
+        font-family: $font-title;
         background-color: transparent;
         padding: 3px 5px;
-        border: $accent-light-color 2px solid;
-        border-radius: 3px;
+        border: $color-accent-light 2px solid;
+        border-radius: $border-radius;
         margin-left: 5px;
-        color: $text-color;
+        color: $color-text;
       }
     }
   }

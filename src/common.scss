@@ -1,54 +1,75 @@
 // Add common styling used by components here. E.g. variables.
 // Import this file to component styles.
-
 @import 'mixins';
 
 // THEME COLORS
-$text-color: #fff;
-$black: #000;
+$color-text: #fff;
+$color-visited-link: #7c26cb; //  purple
+$color-no-link: #808080; // grey
+$color-black: #000; // black
 
-$accent-color: #266eff; // blue
-$accent-darker-color: #112; // darker-blue
-$accent-dark-color: #133d8c; // dark-blue
-$accent-light-color: #3683ff; // footer-blue
+$color-bg: #000b19;
+$color-bg-overlay: #151440;
 
-$ticket-color: #ff0; // yellow
-$ticket-alt-color: #80850c; // dark-yellow
+$color-accent: #266eff; // blue
+$color-accent-darker: #112; // darker-blue
+$color-accent-dark: #133d8c; // dark-blue
+$color-accent-light: #3683ff; // footer-blue
 
-$visited-link: #7c26cb; //  purple
+$color-ticket: #ff0; // yellow
+$color-ticket-alt: #80850c; // dark-yellow
 
-$bg: #000b19;
-$bg-image-overlay: #151440;
-
-$call-bg: $accent-color;
-$call-bg-hover: $accent-light-color;
+$color-manual-bg: #ccced1;
 
 // FONTS AND SIZES
+$font-text: 'Muli', sans-serif;
+$font-title: 'Oswald', sans-serif;
 
-$text-font: 'Muli', sans-serif;
-$title-font: 'Oswald', sans-serif;
-
-$font-size: 50px;
+$font-size: 1em;
 $font-size-h1: 50px;
+$font-size-h3: 24px;
+$font-size-page-title: 50px;
+$font-size-collapse-title: 40px;
+$font-size-collapse-fa: 20px;
 
-$page-title-size: 50px;
+$font-size-frontpage-definition: 23px;
 
 // BORDER
-$border: $accent-color;
+$border-radius: 5px;
 $border-basic: 1px solid;
+$border-section: 2px solid rgba($color-accent, .6);
 
-// MANUAL
-$manual-bg: #ccced1;
-$manual-text: $accent-dark-color;
-
-// PAGE WIDTHS
-$page-background-width: 1920px;
-$page-content-width: 1440px;
-
-// CONTENT
-$text-width: 1000px;
+// WIDTHS
+$width-page-bg: 1920px;
+$width-page-content: 1440px;
+$width-text: 800px;
 
 // MENU
 $menu-big-height: 83px;
 $menu-small-height: 41px;
 $menu-section-width: 300px;
+
+// OLD NAMES
+$text-color: $color-text;
+$black: $color-black;
+$accent-color: $color-accent;
+$accent-darker-color: $color-accent-darker;
+$accent-dark-color: $color-accent-dark;
+$accent-light-color: $color-accent;
+$ticket-color: $color-ticket;
+$ticket-alt-color: $color-ticket-alt;
+$visited-link: $color-visited-link;
+$bg: $color-bg;
+$bg-image-overlay: $color-bg-overlay;
+$call-bg: $color-accent;
+$call-bg-hover: $color-accent;
+$text-font: $font-text;
+$title-font: $font-title;
+$page-title-size: $font-size-page-title;
+$border: $color-accent;
+$manual-bg: $color-manual-bg;
+$manual-text: $color-accent;
+$page-background-width: $width-page-bg;
+$page-content-width: $width-page-content;
+$text-width: $width-text;
+$color-manual-text: $color-accent-dark;

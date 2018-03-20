@@ -1,20 +1,18 @@
 @import '../../../common';
 
-$border: #266eff;
-
 :host {
   display: block;
   contain: content;
-  background-color: $bg;
-  color: $text-color;
+  background-color: $color-bg;
+  color: $color-text;
   padding-top: 30px;
-  font-family: $text-font;
+  font-family: $font-text;
   overflow: hidden;
 }
 
 .block {
   margin-bottom: 24px;
-  border: $border 1px solid;
+  border: $color-accent $border-basic;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -23,12 +21,12 @@ $border: #266eff;
     display: block;
     width: 100%;
     text-align: center;
-    color: $border;
+    color: $color-accent;
     height: 50px;
     line-height: 50px;
     font-size: 20px;
     text-transform: uppercase;
-    border-top: $border 1px solid;
+    border-top: $color-accent $border-basic;
     text-decoration: none;
     font-weight: bold;
     clear: both;
@@ -43,7 +41,7 @@ $border: #266eff;
 
   h2 {
     text-transform: uppercase;
-    border-bottom: $border 1px solid;
+    border-bottom: $color-accent $border-basic;
     height: 70px;
     line-height: 70px;
     padding: 0;
@@ -81,7 +79,7 @@ $border: #266eff;
     right: -53px;
     z-index: -1;
 
-    border-right: $border 1px solid;
+    border-right: $color-accent 1px solid;
     transform-origin: bottom left;
     -ms-transform: skew(-18deg, 0deg);
     -webkit-transform: skew(-18deg, 0deg);

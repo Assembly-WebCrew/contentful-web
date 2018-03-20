@@ -2,7 +2,7 @@
 
 :host {
   @include component(initial);
-  color: $text-color;
+  color: $color-text;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -11,7 +11,7 @@
 
 .asm-header {
   margin-top: 20px;
-  font-family: $title-font;
+  font-family: $font-title;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -30,7 +30,7 @@
     position: relative;
     border-radius: 0 5px 5px 0;
     overflow: hidden;
-    color: $text-color;
+    color: $color-text;
     padding: 0 20px 0 0;
     flex-shrink: 0;
 
@@ -45,7 +45,7 @@
       transform: skewX(-15deg);
       border-radius: 0 5px 5px 0;
       z-index: -1;
-      @include gradient(rgba($bg, 0.8), $bg);
+      @include gradient(rgba($color-bg, .8), $color-bg);
     }
 
     a {
@@ -61,20 +61,20 @@
 
   .header-left,
   .header-right {
+    @include gradient(rgba($color-bg, .8), $color-bg);
     height: $menu-big-height;
     flex-grow: 1;
-    @include gradient(rgba($bg, 0.8), $bg);
   }
 
   .header-right {
-    border-radius: 5px;
     @include skewed;
+    border-radius: 5px;
     margin: 0 -15px 0 -19px;
     min-width: 20px;
   }
 
   .header-center {
-    width: $page-content-width;
+    width: $width-page-content;
     max-width: 100%;
     flex-shrink: 0;
     display: flex;
@@ -94,20 +94,20 @@
         margin: 0 0 1px -3px;
 
         .highlight-button {
+          @include skewed;
+          @include gradient(rgba($color-bg, .8), $color-bg);
           display: flex;
           align-items: center;
           height: $menu-small-height;
           border-radius: 5px;
-          border: 2px solid $bg;
-          color: $accent-color;
+          border: 2px solid $color-bg;
+          color: $color-accent;
           box-sizing: border-box;
           font-size: 18px;
           cursor: pointer;
-          @include skewed;
-          @include gradient(rgba($bg, 0.8), $bg);
 
           .button-inner-wrapper {
-            border: 1px solid rgba($accent-color, .6);
+            border: $border-basic rgba($color-accent, .6);
             display: flex;
             align-items: center;
             height: 100%;
@@ -115,11 +115,11 @@
             border-radius: 5px;
             box-sizing: border-box;
             overflow: hidden;
-            text-shadow: 0 -2px rgba($bg, .2);
+            text-shadow: 0 -2px rgba($color-bg, .2);
             position: relative;
 
             .icon {
-              @include gradient-top($accent-color);
+              @include gradient-top($color-accent);
               height: 100%;
               width: 40px;
               transform: skew(0deg);
@@ -143,7 +143,7 @@
             &:before {
               display: none;
               text-align: center;
-              text-shadow: 0 -1px rgba($bg, .4);
+              text-shadow: 0 -1px rgba($color-bg, .4);
               font-family: FontAwesome;
               position: absolute;
               align-items: center;
@@ -152,7 +152,7 @@
               bottom: 0;
               left: -15px;
               right: -15px;
-              color: white;
+              color: $color-text;
               transition: background .1s .1s ease-in-out;
               transform: skew(15deg);
             }
@@ -164,7 +164,9 @@
                 display: flex;
                 z-index: 1;
                 transition: background .1s .2s ease-in-out;
-                @include gradient;
+                background-color: $color-accent;
+                @include gradient($color-accent,
+                  $color-accent-dark);
               }
             }
           }
@@ -172,24 +174,25 @@
           &.tickets {
             margin-right: 16px;
             margin-left: 2px;
-            color: $ticket-color;
+            color: $color-ticket;
 
             .button-inner-wrapper {
-              border-color: rgba($ticket-color, .6);
+              border-color: rgba($color-ticket, .6);
 
               .icon {
-                @include gradient-top($ticket-color);
+                @include gradient-top($color-ticket);
               }
 
               &:before {
-                @include gradient($ticket-color,
-                  $ticket-alt-color);
+                @include gradient($color-ticket,
+                  $color-ticket-alt);
               }
             }
           }
         }
 
         .search-container {
+          @include gradient(rgba($color-bg, .8), $color-bg);
           border-radius: 5px;
           position: relative;
           padding-left: 15px;
@@ -199,10 +202,9 @@
           margin-left: 2px;
           height: $menu-small-height;
           transform: skew(-15deg);
-          @include gradient(rgba($bg, 0.8), $bg);
 
           .button {
-            color: $accent-color;
+            color: $color-accent;
             border-radius: 5px;
             width: 37px;
             height: 37px;
@@ -213,11 +215,11 @@
             transform: skew(0deg);
             cursor: pointer;
             transition: background-color .1s ease-in-out;
-            text-shadow: 0 -2px rgba($bg, 0.2);
+            text-shadow: 0 -2px rgba($color-bg, .2);
 
             &:hover {
-              background-color: $accent-color;
-              color: $text-color;
+              background-color: $color-accent;
+              color: $color-text;
               transition: background-color .1s ease-in-out;
             }
 
@@ -235,6 +237,7 @@
       }
 
       .header-lower {
+        @include gradient(rgba($color-bg, .8), $color-bg);
         height: $menu-small-height;
         display: flex;
         align-items: center;
@@ -244,7 +247,6 @@
         padding: 0 20px;
         transform: skew(-15deg);
         border-radius: 5px;
-        @include gradient(rgba($bg, 0.8), $bg);
 
         asm-social-media,
         asm-menu {
@@ -257,14 +259,14 @@
   &.scroll {
     transform: translateY(-150%);
 
-    &[data-scroll-direction="up"] {
+    &[data-scroll-direction='up'] {
       transform: translateY(0);
     }
 
     .header-left,
     .header-right,
     .logo-container:before {
-      @include gradient(rgba($bg, 0.8), $bg);
+      @include gradient(rgba($color-bg, .8), $color-bg);
     }
 
     .header-left,
@@ -290,16 +292,16 @@
   }
 
   &.mobile {
+    @include gradient(rgba($color-bg, .8), $color-bg);
     height: $menu-big-height;
     flex-grow: 1;
-    @include gradient(rgba($bg, 0.8), $bg);
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
 
     .menu {
       background-color: transparent;
-      color: white;
+      color: $color-text;
       padding: 0 2em;
       border: 0;
       outline: 0;

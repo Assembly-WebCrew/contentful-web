@@ -1,14 +1,15 @@
 @import '../../../common';
+
 .article {
   @include page-content-width;
 
   img {
     max-width: 700px;
-    border: 1px solid $border;
+    border: $border-basic $color-accent;
     border-radius: 5px;
     padding: 10px;
     float: right;
-    background-color: $bg;
+    background-color: $color-bg;
     margin-left: 20px;
     margin-bottom: 10px;
   }
@@ -22,7 +23,7 @@
   }
 
   .date {
-    color: $accent-color;
+    color: $color-accent;
     text-align: right;
   }
 

@@ -1,21 +1,23 @@
 @import '../../../common';
 
+$zipper-title-height: 80px;
+
 :host {
   @include component(content, flex);
   @include centered-block;
-  font-family: $text-font;
+  font-family: $font-text;
   font-weight: normal;
   flex-direction: row-reverse;
   height: 325px;
 }
 
 h2 {
-  margin-left: 80px;
-  border-bottom: $border-basic $accent-color;
+  margin-left: $zipper-title-height;
+  border-bottom: $border-basic $color-accent;
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 80px;
+  height: $zipper-title-height;
   position: initial;
   flex-shrink: 0;
   flex-grow: 0;
@@ -23,19 +25,19 @@ h2 {
   text-overflow: ellipsis;
 
   .title {
-    line-height: 80px;
-    height: 80px;
+    line-height: $zipper-title-height;
+    height: $zipper-title-height;
     padding-left: 30px;
     font-weight: normal;
     font-style: italic;
   }
 
   .icon {
-    border-right: $border-basic $accent-color;
-    color: $accent-color;
+    border-right: $border-basic $color-accent;
+    color: $color-accent;
     font-size: 25px;
-    height: 80px;
-    line-height: 80px;
+    height: $zipper-title-height;
+    line-height: $zipper-title-height;
     padding: 0 30px;
     position: relative;
     top: -16px;
@@ -64,16 +66,16 @@ h2 {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border-left: $border-basic $accent-color;
+  border-left: $border-basic $color-accent;
   min-width: 400px;
 
   .zipper-link {
-    font-family: 'Oswald', sans-serif;
+    font-family: $font-text;
     height: 50px;
     line-height: 50px;
     text-align: center;
-    color: $accent-color;
-    border-top: 1px solid $accent-color;
+    color: $color-accent;
+    border-top: 1px solid $color-accent;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: normal;
@@ -87,7 +89,7 @@ h2 {
     }
 
     &:hover {
-      @include gradient(rgba($accent-color, .3), $bg);
+      @include gradient(rgba($color-accent, .3), $color-bg);
     }
   }
 
@@ -107,5 +109,5 @@ h2 {
 
 :host-context(.type0) .zipper-inner {
   border-left: 0;
-  border-right: $border-basic $accent-color;
+  border-right: $border-basic $color-accent;
 }
