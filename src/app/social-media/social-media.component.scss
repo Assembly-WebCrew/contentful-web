@@ -2,6 +2,7 @@
 
 :host {
   @include component;
+  min-height: 24px;
 }
 
 .some {

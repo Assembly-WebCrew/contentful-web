@@ -47,7 +47,7 @@ $lineWidth: 20px;
 
       &:before {
         content: '';
-        border-bottom: $border-basic £color-accent;
+        border-bottom: $border-basic $color-accent;
         display: block;
         width: 60px;
         height: 20px;
@@ -60,20 +60,21 @@ $lineWidth: 20px;
 
       &:after {
         content: '';
-        border-left: $border-basic £color-accent;
+        border-left: $border-basic $color-accent;
         display: block;
         height: 40px;
         position: absolute;
         top: -40px;
         left: 50%;
         right: 50%;
+        width: 1px;
         margin: auto;
       }
     }
 
     .logo {
       padding: 20px;
-      border-bottom: $border-basic £color-accent;
+      border-bottom: $border-basic $color-accent;
       border-radius: 15px;
       min-height: 230px;
       display: flex;

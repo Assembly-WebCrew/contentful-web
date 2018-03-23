@@ -3,4 +3,6 @@
   <div class="zipper-content" [innerHTML]="content.content" asmMarkdown></div>
   <a class="zipper-link" [href]="content.learnMoreLink">Learn more <span class="fa fa-long-arrow-right"></span></a>
 </div>
-<div class="image" *ngIf="image" [style.background-image]="image"></div>
+<div class="image-container">
+  <div class="image" *ngIf="image" [style.background-image]="image"></div>
+</div>

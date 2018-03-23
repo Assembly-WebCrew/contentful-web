@@ -15,7 +15,8 @@
     border: $border-basic $color-accent;
     border-radius: 5px;
     margin-bottom: 10px;
-    height: 250px;
+    min-height: 250px;
+    display: flex;
 
     .title {
       text-decoration: none;
@@ -43,9 +44,13 @@
       color: $color-accent;
     }
 
-    img {
-      height: 100%;
-      float: right;
+    .article-image {
+      width: 320px;
+      flex-shrink: 0;
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-left: 10px;
     }
 
     .link {

@@ -9,6 +9,7 @@ $zipper-title-height: 80px;
   font-weight: normal;
   flex-direction: row-reverse;
   height: 325px;
+  overflow: hidden;
 }
 
 h2 {
@@ -23,6 +24,8 @@ h2 {
   flex-grow: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
 
   .title {
     line-height: $zipper-title-height;
@@ -30,6 +33,9 @@ h2 {
     padding-left: 30px;
     font-weight: normal;
     font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 
   .icon {
@@ -39,8 +45,6 @@ h2 {
     height: $zipper-title-height;
     line-height: $zipper-title-height;
     padding: 0 30px;
-    position: relative;
-    top: -16px;
     border-bottom: 0;
     transform: skewX(-15deg);
     display: inline-block;
@@ -51,14 +55,21 @@ h2 {
   }
 }
 
-.image {
+.image-container {
   display: inline-block;
-  background-size: cover;
-  background-position: center;
-  width: 50%;
-  height: calc(100% - 20px);
   flex-shrink: 0;
-  margin: 10px;
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+
+  .image {
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .zipper-inner {

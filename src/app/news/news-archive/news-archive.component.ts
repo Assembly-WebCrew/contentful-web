@@ -28,5 +28,9 @@ export class NewsArchiveComponent implements OnInit {
       this.route.data.subscribe((data: { articles: any }) => {
         this.articles = data.articles || []; console.log(data);
       });
-    }
+  }
+
+  getImage(article: any) {
+    return 'url(' + ((article.featuredImage && article.featuredImage.url) || '/assets/images/background-picture.jpg') + ')'
+  }
 }
