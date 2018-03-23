@@ -70,6 +70,10 @@ h2 {
     width: 100%;
     height: 100%;
   }
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .zipper-inner {
@@ -78,10 +82,10 @@ h2 {
   display: flex;
   flex-direction: column;
   border-left: $border-basic $color-accent;
-  min-width: 400px;
+  min-width: 300px;
 
   .zipper-link {
-    font-family: $font-text;
+    font-family: $font-title;
     height: 50px;
     line-height: 50px;
     text-align: center;

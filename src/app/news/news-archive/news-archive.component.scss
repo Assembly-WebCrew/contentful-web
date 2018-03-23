@@ -45,10 +45,12 @@
     }
 
     .article-image {
-      width: 320px;
+      min-width: 125px;
+      max-width: 320px;
+      width: 40%;
       flex-shrink: 0;
       background-position: top center;
-      background-size: cover;
+      background-size: auto 250px;
       background-repeat: no-repeat;
       margin-left: 10px;
     }
