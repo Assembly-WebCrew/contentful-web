@@ -19,11 +19,6 @@ const routes: Routes = [
     resolve: { event: EventResolve },
     component: EventComponent
   },
-  {
-    path: 'news',
-    resolve: { event: EventResolve },
-    component: EventComponent
-  },
   // If the event is known, we will load the page.
   {
     path: ':event',
