@@ -3,7 +3,7 @@
 @import 'common';
 
 $fa-font-path: '/assets/fonts';
-@import url('//fonts.googleapis.com/css?family=Muli');
+@import url('//fonts.googleapis.com/css?family=Muli:400,900');
 @import url('//fonts.googleapis.com/css?family=Oswald');
 @import 'font-awesome/font-awesome';
 
@@ -95,4 +95,9 @@ a:visited {
 
 pre {
   white-space: pre-wrap;
+}
+
+b,
+strong {
+  font-weight: 900;
 }
