@@ -9,18 +9,23 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class ContentfulService {
   private client: ApolloClient;
+  private event: { name: string };
 
   constructor(
     private http: HttpClient,
-    private router: Router) {}
+    private router: Router) { }
 
   private async getContentfulSchema(event): Promise<any> {
     return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise();
   }
 
+  getEvent() {
+    return this.event;
+  }
+
   async getEventMetadata(name?: string): Promise<any> {
-    const event = await this.http.get(`${environment.apiUrl}/event` ,
-      name && { params: new HttpParams().set('name', name) } ).toPromise();
+    const event = await this.http.get(`${environment.apiUrl}/event`,
+      name && { params: new HttpParams().set('name', name) }).toPromise();
     return event;
   }
 
@@ -28,18 +33,18 @@ export class ContentfulService {
     if (this.client) return;
 
     try {
-      const event = await this.getEventMetadata(eventName),
-        fragmentMatcher = new IntrospectionFragmentMatcher({
-          introspectionQueryResultData: await this.getContentfulSchema(event)
-        });
+      this.event = await this.getEventMetadata(eventName);
+      const fragmentMatcher = new IntrospectionFragmentMatcher({
+        introspectionQueryResultData: await this.getContentfulSchema(this.event)
+      });
 
       this.client = new ApolloClient({
         networkInterface: createNetworkInterface({
-          uri: `${environment.apiUrl}/en/${event.name}/graphql`
+          uri: `${environment.apiUrl}/en/${this.event.name}/graphql`
         }),
         fragmentMatcher
       });
-    } catch(e) {
+    } catch (e) {
       this.router.navigate(['/']);
     }
   }

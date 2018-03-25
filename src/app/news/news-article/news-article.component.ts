@@ -17,7 +17,7 @@ export class NewsArticleComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data: { article: any }) => {
-      this.article = data.article || {}; console.log(data);
+      this.article = data.article || {};
     });
   }
 
