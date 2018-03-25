@@ -51,6 +51,10 @@ export class ContentResolve implements Resolve<any> {
                   }
                   icon
                   learnMoreLink
+                  linkToPage {
+                    slug
+                    title
+                  }
                 }
               }
               ... on BlockMarkdown {
