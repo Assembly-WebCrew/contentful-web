@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlockZipperContentComponent } from './block-zipper-content.component';
+import { ContentfulService } from '../../core/contentful.service';
+import { Observable } from 'rxjs/Observable';
 
 describe('BlockZipperContentComponent', () => {
   let component: BlockZipperContentComponent;
@@ -8,7 +10,13 @@ describe('BlockZipperContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockZipperContentComponent ]
+      declarations: [ BlockZipperContentComponent ],
+      providers: [
+        {
+          provide: ContentfulService,
+          useValue: { query$: () => Observable.of({ menus: [{title: "Main Menu", items: []}] }) }
+        }
+      ]
     })
     .compileComponents();
   }));
