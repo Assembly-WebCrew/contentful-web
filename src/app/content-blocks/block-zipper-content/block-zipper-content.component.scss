@@ -10,6 +10,12 @@ $zipper-title-height: 80px;
   flex-direction: row-reverse;
   height: 325px;
   overflow: hidden;
+
+  @include mobile {
+    flex-direction: column-reverse;
+    min-height: 325px;
+    height: auto;
+  }
 }
 
 h2 {
@@ -72,7 +78,8 @@ h2 {
   }
 
   @include mobile {
-    display: none;
+    height: 325px;
+    width: 100%;
   }
 }
 
@@ -83,6 +90,12 @@ h2 {
   flex-direction: column;
   border-left: $border-basic $color-accent;
   min-width: 300px;
+
+  @include mobile {
+    height: auto;
+    border-top: $border-basic $color-accent;
+    border-left: 0;
+  }
 
   .zipper-link {
     font-family: $font-title;
@@ -120,9 +133,17 @@ h2 {
 
 :host-context(.type0) {
    flex-direction: row;
+
+  @include mobile {
+    flex-direction: column-reverse;
+  }
 }
 
 :host-context(.type0) .zipper-inner {
   border-left: 0;
   border-right: $border-basic $color-accent;
+
+  @include mobile {
+    border-right: 0;
+  }
 }

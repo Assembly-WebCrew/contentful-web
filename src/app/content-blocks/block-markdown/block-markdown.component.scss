@@ -22,3 +22,24 @@
     padding: 0 1em;
   }
 }
+
+.image {
+  max-width: 50%;
+  width: 100%;
+  float: right;
+  padding: 10px;
+  border: $border-basic $color-accent;
+  border-radius: $border-radius;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+  img {
+    width: 100%;
+  }
+
+  @include mobile {
+    max-width: 100%;
+    float: none;
+    margin-left: 0;
+  }
+}

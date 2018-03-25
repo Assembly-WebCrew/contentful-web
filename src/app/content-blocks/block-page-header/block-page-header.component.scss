@@ -6,6 +6,10 @@
   justify-content: center;
   border-radius: $border-radius;
   border: $border-basic $color-text;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .cta {
@@ -20,11 +24,16 @@
   font-size: 20px;
 
   @include mobile {
-      font-size: 14px;
+    border-bottom: $border-basic $color-text;
+    border-right: 0;
   }
 
   &:last-of-type {
     border-right: 0;
+
+    @include mobile {
+      border-bottom: 0;
+    }
   }
 
   .cta-title {

@@ -24,13 +24,6 @@ body {
   @include skewed;
 }
 
-.markdown-content,
-asm-block-collapse {
-  ul {
-    @include list-styling;
-  }
-}
-
 table {
   column-gap: 0;
   border: $border-basic $color-text;
@@ -100,4 +93,13 @@ pre {
 b,
 strong {
   font-weight: 900;
+}
+
+[asmMarkdown] {
+  ul {
+    @include list-styling;
+  }
+  p {
+    line-height: 1.5em;
+  }
 }
