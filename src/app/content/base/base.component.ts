@@ -26,7 +26,7 @@ export class BaseComponent implements OnInit {
 
   getBackground() {
     if (this.content && this.content.featuredImage)
-      return 'url(' + this.content.featuredImage.url + '?w=1440)';
+      return 'url(' + this.content.featuredImage.url + '?w=1920)';
   }
 
   setPageContent() {
