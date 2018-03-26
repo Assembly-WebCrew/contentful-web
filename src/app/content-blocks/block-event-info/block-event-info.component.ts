@@ -20,7 +20,7 @@ export class BlockEventInfoComponent implements OnInit {
     this.event = this.route.snapshot.parent ? this.route.snapshot.parent.data.event : null;
     if (this.event) {
       if (this.event.logo && this.event.logo.fields) {
-        this.logo = this.event.logo.fields.file.url;
+        this.logo = this.event.logo.fields.file.url + '?w=700';
       }
       this.place = this.event.eventPlace || "TBA";
       this.dates = this.getEventDates();
