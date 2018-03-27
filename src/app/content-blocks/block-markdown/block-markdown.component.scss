@@ -7,6 +7,10 @@
   padding-left: 70px;
   font-family: $font-text;
   font-weight: normal;
+
+  @include mobile {
+    padding-left: 0;
+  }
 }
 
 .markdown-content {
@@ -14,12 +18,7 @@
 
   @include tablet {
     width: 100%;
-    padding: 0 1em;
-  }
-
-  @include mobile {
-    width: 100%;
-    padding: 0 1em;
+    padding: 0;
   }
 }
 

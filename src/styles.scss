@@ -30,6 +30,7 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 5px;
+  max-width: 100%;
 
   th {
     font-family: $font-title;
@@ -51,6 +52,15 @@ table {
   tr:last-child {
     td {
       border-bottom: 0;
+    }
+  }
+  
+  @include mobile {
+    font-size: 0.8em;
+
+    td,
+    th {
+      padding: 5px 10px;
     }
   }
 }
@@ -101,5 +111,8 @@ strong {
   }
   p {
     line-height: 1.5em;
+  }
+  img {
+    max-width: 100%;
   }
 }

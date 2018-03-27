@@ -5,6 +5,10 @@
   @include page-content-width;
   padding: 10px 0;
   padding-left: 60px;
+
+  @include mobile {
+    padding-left: 10px;
+  }
 }
 
 h2 {
@@ -38,6 +42,10 @@ h2 {
     //background-color: $color-accent;
     background-color: $color-bg;
 
+    @include mobile {
+      padding-left: 0;
+    }
+
     .rightline {
       height: 30px;
       display: inline-block;
@@ -54,5 +62,9 @@ h2 {
 
   &.hide {
     display: none;
+  }
+
+  @include mobile {
+    padding-left: 10px;
   }
 }
