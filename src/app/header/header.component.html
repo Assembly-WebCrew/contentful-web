@@ -4,7 +4,7 @@
     <div class="header-center">
       <div class="logo-container">
         <a [href]="'/' + event?.name">
-          <img class="logo" [src]="getLogo()" alt="{{event?.logo?.fields?.title}}">
+          <img class="logo" [src]="getLogo()" alt="{{event?.eventTitle}}" title="{{event?.eventTitle}}">
         </a>
       </div>
       <div class="header-inner">

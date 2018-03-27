@@ -36,7 +36,12 @@ export class BlockCountdownComponent implements OnInit {
   private setCountdown() {
     if (this.event) {
       this.interval = setInterval(() => {
-        let now = new Date().getTime();
+        const now = new Date().getTime();
+        const sec = 1000;
+        const min = 60 * sec;
+        const hour = 60 * min;
+        const day = 24 * hour;
+        const month = 30.42 * day;
         let distance = this.startTime - now;
 
         // event has started
@@ -48,11 +53,11 @@ export class BlockCountdownComponent implements OnInit {
           return clearInterval(this.interval);
         }
 
-        this.months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.42));
-        this.days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.42)) / (1000 * 60 * 60 * 24));
-        this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        this.months = Math.floor(distance / month);
+        this.days = Math.floor((distance % month) / day);
+        this.hours = Math.floor((distance % day) / hour);
+        this.minutes = Math.floor((distance % hour) / min);
+        this.seconds = Math.floor((distance % min) / sec);
       }, 1000);
     }
   }

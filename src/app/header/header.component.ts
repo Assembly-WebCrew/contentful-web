@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   mobileMenuOpen: boolean = false;
   isMobile: boolean = false;
   subscriptions: Subscription[] = [];
-  
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private contentful: ContentfulService,
@@ -121,7 +121,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (this.scrolling && !isMobile) {
       return "/assets/images/generic-event-logo.png";
     } else if (this.event && this.event.logo && this.event.logo.fields) {
-      return this.event.logo.fields.file.url;
+      return this.event.logo.fields.file.url + '?w=200';
     }
   }
 
@@ -131,7 +131,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       } else {
         if (item.url && item.url[0] === '/')
           return `/${this.event.name}${item.url}`;
-  
+
         return item.url || '';
       }
   }
@@ -147,8 +147,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.scrolling = true;
     } else if (this.scrolling && number < 10) {
       this.scrolling = false;
-    } 
-    this.scrollDirection = this.previousScrollPosition > number ? "up" : "down"; 
+    }
+    this.scrollDirection = this.previousScrollPosition > number ? "up" : "down";
     this.previousScrollPosition = number;
   }
 
