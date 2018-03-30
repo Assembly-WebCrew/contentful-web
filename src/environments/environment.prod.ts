@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://assembly.org/api'
+  apiUrl: 'https://www.assembly.org/api'
 };
