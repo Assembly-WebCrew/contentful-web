@@ -9,14 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: $font-size-page-title;
+  // height: $font-size-page-title;
   overflow: hidden;
   @include page-width;
 
   .title-border-left,
   .title-border-right {
     flex-shrink: 0;
-    height: 90%;
+    height: #{$font-size-page-title - 10px};
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -58,6 +58,7 @@
     margin: 0;
     margin-bottom: 4px;
     flex-shrink: 0;
+    max-width: 85%;
 
     &:before {
       display: none;

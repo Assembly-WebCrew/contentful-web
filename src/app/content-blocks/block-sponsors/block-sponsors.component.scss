@@ -32,6 +32,7 @@
     
     @include mobile {
       width: 50%;
+      max-width: 200px;
     }
   }
 }

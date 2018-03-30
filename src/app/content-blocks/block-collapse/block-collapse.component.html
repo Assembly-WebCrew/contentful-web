@@ -1,8 +1,8 @@
 <h2 [id]="id">
   <span class="container" (click)="toggle()">
     <span class="fa" [ngClass]="{'fa-plus': !opened, 'fa-minus': opened}"></span>
-    {{content.title}}
-    <span class="rightline"></span>
+    <span>{{content.title}}</span>
   </span>
+  <span class="rightline"></span>
 </h2>
 <div class="innercontent" [innerHTML]="content.content" asmMarkdown [ngClass]="{hide: !opened}"></div>

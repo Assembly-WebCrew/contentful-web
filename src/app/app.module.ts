@@ -16,7 +16,6 @@ import { ContentComponent } from './content/content.component';
 import { CustomReuseStrategy } from './router-reuse-strategy';
 import { EventComponent } from './event/event.component';
 import { SkeletorComponent } from './skeletor/skeletor.component';
-import { LearnMoreBlockComponent } from './content-blocks/learn-more-block/learn-more-block.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { MenuComponent } from './header/menu/menu.component';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
@@ -34,7 +33,6 @@ import { NewsArticleResolve } from './news/news-article.resolve';
     EventComponent,
     ContentComponent,
     SkeletorComponent,
-    LearnMoreBlockComponent,
     SocialMediaComponent,
     MenuComponent,
     SponsorsPageComponent,
