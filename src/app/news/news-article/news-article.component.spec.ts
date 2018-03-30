@@ -8,6 +8,7 @@ import { BlockSponsorsComponent } from '../../content-blocks/block-sponsors/bloc
 import { RouterTestingModule } from '@angular/router/testing';
 import { ContentfulService } from '../../core/contentful.service';
 import { Observable } from 'rxjs/Observable';
+import { WINDOW_PROVIDERS } from '../../core/window.service';
 
 describe('NewsArticleComponent', () => {
   let component: NewsArticleComponent;
@@ -21,7 +22,8 @@ describe('NewsArticleComponent', () => {
         {
           provide: ContentfulService,
           useValue: { query$: () => Observable.of({ sponsors: [{}]}) }
-        }
+        },
+        WINDOW_PROVIDERS
       ]
     })
     .compileComponents();

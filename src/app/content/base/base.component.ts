@@ -1,5 +1,7 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
+import { WINDOW } from '../../core/window.service';
 
 @Component({
   selector: 'asm-base',
@@ -12,11 +14,21 @@ export class BaseComponent implements OnInit {
   tags: string;
   init: boolean;
 
-  constructor(private title: Title) { }
+  constructor(private title: Title,
+    private router: Router,
+    @Inject(WINDOW) private window: Window) { }
 
   ngOnInit() {
     this.setPageContent();
     this.init = true;
+    this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .subscribe((event: NavigationEnd) => {
+        let tree = this.router.parseUrl(event.urlAfterRedirects);
+        if (!tree.fragment) {
+          this.window.scroll(0, 0);
+        }
+      });
   }
 
   ngOnChanges() {

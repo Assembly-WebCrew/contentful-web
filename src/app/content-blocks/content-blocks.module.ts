@@ -30,8 +30,7 @@ export const contentComponents = [
     ...contentComponents,
     BlockEventInfoComponent,
     BlockCountdownComponent,
-    MarkdownDirective,
-    BlockCollapseComponent
+    MarkdownDirective
   ],
   entryComponents: contentComponents,
   exports: [

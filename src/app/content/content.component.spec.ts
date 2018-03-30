@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContentfulService } from '../core/contentful.service';
 import { Observable } from 'rxjs/Observable';
 import { BaseComponent } from './base/base.component';
+import { WINDOW_PROVIDERS } from '../core/window.service';
 
 describe('ContentComponent', () => {
   let component: ContentComponent;
@@ -23,7 +24,8 @@ describe('ContentComponent', () => {
         {
           provide: ContentfulService,
           useValue: { query$: () => Observable.of({ sponsors: [{}]}) }
-        }
+        },
+        WINDOW_PROVIDERS
       ]
     })
     .compileComponents();
