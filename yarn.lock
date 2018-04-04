@@ -1656,11 +1656,6 @@ cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
 
-<<<<<<< HEAD
-core-js@2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
-=======
 copy-concurrently@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/copy-concurrently/-/copy-concurrently-1.0.5.tgz#92297398cae34937fcafd6ec8139c18051f0b5e0"
@@ -1692,7 +1687,6 @@ copy-webpack-plugin@~4.4.1:
 core-js@2.5.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.4.tgz#f2c8bf181f2a80b92f360121429ce63a2f0aeae0"
->>>>>>> 886aa0f... update deps
 
 core-js@^2.2.0, core-js@^2.4.0:
   version "2.4.1"
@@ -2370,6 +2364,10 @@ es6-set@~0.1.5:
     es6-iterator "~2.0.1"
     es6-symbol "3.1.1"
     event-emitter "~0.3.5"
+
+es6-shim@^0.35.3:
+  version "0.35.3"
+  resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.3.tgz#9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26"
 
 es6-symbol@3.1.1, es6-symbol@^3.1, es6-symbol@^3.1.1, es6-symbol@~3.1, es6-symbol@~3.1.1:
   version "3.1.1"
@@ -6202,15 +6200,9 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-<<<<<<< HEAD
-rxjs@5.5.4:
-  version "5.5.4"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.4.tgz#66a466acb21270b5f441645a1141f95fcae10ee6"
-=======
 rxjs@5.5.8, rxjs@^5.5.6:
   version "5.5.8"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.8.tgz#b2b0809a57614ad6254c03d7446dea0d83ca3791"
->>>>>>> 886aa0f... update deps
   dependencies:
     symbol-observable "1.0.1"
 
@@ -6485,9 +6477,9 @@ shelljs@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.6.1.tgz#ec6211bed1920442088fe0f70b2837232ed2c8a8"
 
-showdown@1.8.4:
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.4.tgz#f0e82567f15f3e40b92d886c071b55386cb0e2ce"
+showdown@1.8.6:
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.6.tgz#91ea4ee3b7a5448aaca6820a4e27e690c6ad771c"
   dependencies:
     yargs "^10.0.3"
 
@@ -7942,16 +7934,6 @@ zen-observable-ts@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.1.0.tgz#3b06d1520daa7f3a02980c5288baa2f052c35a62"
 
-<<<<<<< HEAD
-zone.js@0.8.18:
-  version "0.8.18"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.18.tgz#8cecb3977fcd1b3090562ff4570e2847e752b48d"
-
-zone.js@^0.8.14:
-  version "0.8.16"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.16.tgz#ac31b6c418f88c0f918ad6acd8a402aca9313abb"
-=======
 zone.js@0.8.24:
   version "0.8.24"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.24.tgz#f12a733d564dae589843d2e199fba132212203b8"
->>>>>>> 886aa0f... update deps

@@ -74,3 +74,5 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 import 'rxjs/add/observable/fromPromise';
 
 import 'rxjs/add/operator/toPromise';
+
+import 'es6-shim';
