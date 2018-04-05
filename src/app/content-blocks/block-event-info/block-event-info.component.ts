@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BlockEventInfoComponent implements OnInit {
   event: any = {};
   content: any = {};
-  logo: string = "/assets/images/generic-event-logo.png";
+  logo = '/assets/images/generic-event-logo.png';
   dates: string;
   place: string;
 
@@ -22,18 +22,18 @@ export class BlockEventInfoComponent implements OnInit {
       if (this.event.logo && this.event.logo.fields) {
         this.logo = this.event.logo.fields.file.url + '?w=700';
       }
-      this.place = this.event.eventPlace || "TBA";
+      this.place = this.event.eventPlace || 'TBA';
       this.dates = this.getEventDates();
     }
   }
 
-  getEventDates() : string {
-    let startTime = new Date(this.event.startDate);
-    let endTime = new Date(this.event.endDate);
-    let dates = startTime.getDate() + ".";
+  getEventDates(): string {
+    const startTime = new Date(this.event.startDate);
+    const endTime = new Date(this.event.endDate);
+    let dates = startTime.getDate() + '.';
 
     if (startTime.getMonth() !== endTime.getMonth()) {
-      dates += (startTime.getMonth() + 1) + ".";
+      dates += (startTime.getMonth() + 1) + '.';
     }
 
     dates += `-${endTime.getDate()}.${endTime.getMonth() + 1}.${endTime.getFullYear()}`;

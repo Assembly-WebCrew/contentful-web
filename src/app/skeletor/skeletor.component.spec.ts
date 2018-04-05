@@ -29,7 +29,7 @@ describe('SkeletorComponent', () => {
       ],
       providers: [{
         provide: ContentfulService,
-        useValue: { query$: () => Observable.of({ menus: [{title: "Main Menu", items: []}] }) }
+        useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
       }, WINDOW_PROVIDERS]
     })
     .compileComponents();

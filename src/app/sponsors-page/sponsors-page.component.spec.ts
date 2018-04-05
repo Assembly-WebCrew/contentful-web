@@ -13,7 +13,7 @@ describe('SponsorsPageComponent', () => {
   let fixture: ComponentFixture<SponsorsPageComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({ 
+    TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [ SponsorsPageComponent, BaseComponent, BlockCountdownComponent, BlockEventInfoComponent ],
       providers: [

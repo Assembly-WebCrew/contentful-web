@@ -13,7 +13,7 @@ export class ContentResolve implements Resolve<any> {
   public async resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<any> {
-    const slug = join(route.url,"/"), 
+    const slug = join(route.url, '/'),
           params = { 'fields.slug': slug || 'frontpage', limit: 1 };
     const response = await this.contentful.query<any>({
       query: gql`

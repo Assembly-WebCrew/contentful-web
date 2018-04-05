@@ -14,8 +14,8 @@ export class NewsArchiveComponent implements OnInit {
   articles: any;
   event: any;
   content: any = {
-    title: "News",
-    tags: ["news"]
+    title: 'News',
+    tags: ['news']
   };
 
   constructor(
@@ -31,6 +31,6 @@ export class NewsArchiveComponent implements OnInit {
   }
 
   getImage(article: any) {
-    return 'url(' + ((article.featuredImage && article.featuredImage.url) || '/assets/images/background-picture.jpg') + ')'
+    return 'url(' + ((article.featuredImage && article.featuredImage.url) || '/assets/images/background-picture.jpg') + ')';
   }
 }

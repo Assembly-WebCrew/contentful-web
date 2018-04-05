@@ -2,6 +2,10 @@
   "name": "contentful-web",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Assembly-WebCrew/contentful-web.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

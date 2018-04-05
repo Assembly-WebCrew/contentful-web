@@ -35,10 +35,10 @@ export class MobileMenuComponent implements OnInit {
   }
 
   onNavigation(item, event: Event) {
-    let url: string = this.getUrl(item);
+    const url: string = this.getUrl(item);
     this.onCloseClick();
 
-    if (url.startsWith("/")) {
+    if (url.startsWith('/')) {
       event.preventDefault();
       this.router.navigate([url]);
       return false;

@@ -6,7 +6,7 @@ import { ContentfulService } from '../../core/contentful.service';
   templateUrl: './block-zipper-content.component.html',
   styleUrls: ['./block-zipper-content.component.scss']
 })
-export class BlockZipperContentComponent implements OnInit{
+export class BlockZipperContentComponent implements OnInit {
   content: any = {};
   image: string;
   link: string;

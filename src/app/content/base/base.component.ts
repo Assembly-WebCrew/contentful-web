@@ -24,7 +24,7 @@ export class BaseComponent implements OnInit {
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .subscribe((event: NavigationEnd) => {
-        let tree = this.router.parseUrl(event.urlAfterRedirects);
+        const tree = this.router.parseUrl(event.urlAfterRedirects);
         if (!tree.fragment) {
           this.window.scroll(0, 0);
         }
@@ -47,6 +47,6 @@ export class BaseComponent implements OnInit {
     this.title.setTitle(this.content.title + ' - Assembly');
     //this.title.setTitle(this.content.title + ' - ' + this.event.eventTitle); // use event name
     this.background = this.getBackground();
-    this.tags = this.content.tags ? this.content.tags.map(tag => tag.title).join(" ") : "";
+    this.tags = this.content.tags ? this.content.tags.map(tag => tag.title).join(' ') : '';
   }
 }

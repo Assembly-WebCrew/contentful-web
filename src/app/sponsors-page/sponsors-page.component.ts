@@ -12,8 +12,8 @@ export class SponsorsPageComponent implements OnInit {
   mainPartners: any[] = [];
   otherPartners: any[] = [];
   content: any = {
-    title: "Partners", // TODO translations
-    tags: ["partners"]
+    title: 'Partners', // TODO translations
+    tags: ['partners']
   };
 
   constructor(
@@ -40,7 +40,7 @@ export class SponsorsPageComponent implements OnInit {
         } else {
           this.otherPartners.push(sponsor);
         }
-      })
+      });
     });
   }
 }

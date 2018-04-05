@@ -21,9 +21,9 @@ describe('HeaderComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ menus: [{title: "Main Menu", items: []}] }) }
+          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
         },
-        WINDOW_PROVIDERS 
+        WINDOW_PROVIDERS
       ]
     })
     .compileComponents();

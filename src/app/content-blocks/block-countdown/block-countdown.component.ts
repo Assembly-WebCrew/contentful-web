@@ -10,13 +10,13 @@ export class BlockCountdownComponent implements OnInit {
   content: any = {};
   event: any;
   interval: any;
-  months: number = 0;
-  days: number = 0;
-  hours: number = 0;
-  minutes: number = 0;
-  seconds: number = 0;
-  startTime: number = 0;
-  endTime: number = 0;
+  months = 0;
+  days = 0;
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
+  startTime = 0;
+  endTime = 0;
 
   constructor(
     private route: ActivatedRoute) { }

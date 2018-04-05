@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class NewsArticleComponent implements OnInit {
   article: any = {};
   content: any = {
-    title: "News"
+    title: 'News'
   };
 
   constructor(

@@ -6,18 +6,18 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./block-collapse.component.scss']
 
 })
-export class BlockCollapseComponent implements OnInit{
+export class BlockCollapseComponent implements OnInit {
   content: any = {};
   opened: Boolean = false;
   id: string;
 
   ngOnInit() {
     if (this.content.title) {
-      this.id = this.content.title.replace(/\s/gi, "-").replace(/[^\w-]/gi, "").toLowerCase();
+      this.id = this.content.title.replace(/\s/gi, '-').replace(/[^\w-]/gi, '').toLowerCase();
     }
   }
 
-  toggle(){
+  toggle() {
       this.opened = !this.opened;
   }
 

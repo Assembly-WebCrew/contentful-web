@@ -20,11 +20,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   resizeObservable: Observable<number> = this.resizeSubject.asObservable().throttleTime(200);
   header$: Observable<any>;
   event: any;
-  scrolling: boolean = false;
+  scrolling = false;
   previousScrollPosition: number;
   scrollDirection: string;
-  mobileMenuOpen: boolean = false;
-  isMobile: boolean = false;
+  mobileMenuOpen = false;
+  isMobile = false;
   subscriptions: Subscription[] = [];
 
   constructor(
@@ -119,7 +119,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   getLogo(isMobile) {
     if (this.scrolling && !isMobile) {
-      return "/assets/images/generic-event-logo.png";
+      return '/assets/images/generic-event-logo.png';
     } else if (this.event && this.event.logo && this.event.logo.fields) {
       return this.event.logo.fields.file.url + '?w=200';
     }
@@ -140,15 +140,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.toggleMobileMenu(true);
   }
 
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   onWindowScrollEvent() {
-    let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (number > 100) {
       this.scrolling = true;
     } else if (this.scrolling && number < 10) {
       this.scrolling = false;
     }
-    this.scrollDirection = this.previousScrollPosition > number ? "up" : "down";
+    this.scrollDirection = this.previousScrollPosition > number ? 'up' : 'down';
     this.previousScrollPosition = number;
   }
 

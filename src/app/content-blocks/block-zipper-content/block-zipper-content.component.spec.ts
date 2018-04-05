@@ -14,7 +14,7 @@ describe('BlockZipperContentComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ menus: [{title: "Main Menu", items: []}] }) }
+          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
         }
       ]
     })

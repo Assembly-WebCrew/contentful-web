@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from "@angular/common";
+import { isPlatformBrowser } from '@angular/common';
 import { ClassProvider, FactoryProvider, InjectionToken, PLATFORM_ID } from '@angular/core';
 
 /*

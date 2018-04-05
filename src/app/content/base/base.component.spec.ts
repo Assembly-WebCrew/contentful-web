@@ -15,7 +15,7 @@ describe('BaseComponent', () => {
       declarations: [ BaseComponent, BlockCountdownComponent, BlockEventInfoComponent ],
       imports: [RouterTestingModule],
       providers: [
-        WINDOW_PROVIDERS 
+        WINDOW_PROVIDERS
       ]
     })
     .compileComponents();

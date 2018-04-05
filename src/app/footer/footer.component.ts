@@ -57,10 +57,10 @@ export class FooterComponent implements OnInit {
     }
   }
 
-  onNavigation(item, event : Event) {
-    let url : string = this.getUrl(item);
+  onNavigation(item, event: Event) {
+    const url: string = this.getUrl(item);
 
-    if (url.startsWith("/")) {
+    if (url.startsWith('/')) {
       event.preventDefault();
       this.router.navigate([url]);
       return false;

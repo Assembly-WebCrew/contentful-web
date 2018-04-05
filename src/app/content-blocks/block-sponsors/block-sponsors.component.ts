@@ -30,7 +30,7 @@ export class BlockSponsorsComponent implements OnInit {
         }
         link
       }
-    }` }).map(data => { return data.sponsors });
+    }` }).map(data => data.sponsors);
   }
 
 }
