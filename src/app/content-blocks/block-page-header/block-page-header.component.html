@@ -2,7 +2,7 @@
   <div class="cta-title">
     {{ cta.title }}
   </div>
-  <a class="cta-link" [href]="cta.url">
+  <a class="cta-link" [href]="getLink(cta)">
     {{ cta.linkLabel }}
     <span class="fa fa-long-arrow-right"></span>
   </a>

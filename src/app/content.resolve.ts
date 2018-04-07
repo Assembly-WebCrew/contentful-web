@@ -37,6 +37,10 @@ export class ContentResolve implements Resolve<any> {
                     title
                     url
                     linkLabel
+                    page {
+                      slug
+                      title
+                    }
                   }
                 }
               }

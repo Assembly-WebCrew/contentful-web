@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ContentfulService } from '../../core/contentful.service';
 
 @Component({
   selector: 'asm-block-page-header',
   templateUrl: './block-page-header.component.html',
   styleUrls: ['./block-page-header.component.scss']
 })
-export class BlockPageHeaderComponent {
+export class BlockPageHeaderComponent implements OnInit {
   content: any = {};
+
+  constructor(private contentful: ContentfulService) {}
+
+  ngOnInit() {
+  }
+  
+  getLink(cta) {
+    if (cta) {
+      if (cta.page) {
+        return `/${this.contentful.getEvent().name}/${cta.page.slug}`;
+      } else if (cta.url) {
+        return cta.url;
+      }
+    }
+    return "";
+  }
 }

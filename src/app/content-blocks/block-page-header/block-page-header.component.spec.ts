@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlockPageHeaderComponent } from './block-page-header.component';
+import { ContentfulService } from '../../core/contentful.service';
+import { Observable } from 'rxjs/Observable';
 
 describe('BlockPageHeaderComponent', () => {
   let component: BlockPageHeaderComponent;
@@ -8,7 +10,13 @@ describe('BlockPageHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockPageHeaderComponent ]
+      declarations: [ BlockPageHeaderComponent ],
+      providers: [
+        {
+          provide: ContentfulService,
+          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
+        }
+      ]
     })
     .compileComponents();
   }));

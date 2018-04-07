@@ -25,12 +25,13 @@ export class BlockZipperContentComponent implements OnInit {
 
   getLink() {
     if (this.content) {
-      if (this.content.learnMoreLink) {
-        return this.content.learnMoreLink;
-      } else if (this.content.linkToPage) {
+      if (this.content.linkToPage) {
         return `/${this.contentful.getEvent().name}/${this.content.linkToPage.slug}`;
       }
+      if (this.content.learnMoreLink) {
+        return this.content.learnMoreLink;
+      }
     }
-    return false;
+    return "";
   }
 }
