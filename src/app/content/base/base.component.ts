@@ -8,7 +8,7 @@ import { WINDOW } from '../../core/window.service';
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.scss']
 })
-export class BaseComponent implements OnInit {
+export class BaseComponent implements OnInit, OnChanges {
   @Input() content: any = {};
   background: string;
   tags: string;

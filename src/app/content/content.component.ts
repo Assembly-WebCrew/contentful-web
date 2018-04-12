@@ -1,5 +1,11 @@
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ApolloClient, createNetworkInterface } from 'apollo-client';
+import { Component, OnInit, ComponentFactoryResolver,
+  ViewContainerRef, ChangeDetectionStrategy, ViewChild, Injectable } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
+import gql from 'graphql-tag';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { last, get } from 'lodash';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'asm-content',

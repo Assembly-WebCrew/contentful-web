@@ -1,30 +1,36 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { ApiClientResolve } from './api-client.resolve';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ContentBlocksModule } from './content-blocks/content-blocks.module';
-import { BaseComponent } from './content/base/base.component';
-import { ContentComponent } from './content/content.component';
+import { ContentBlockComponent } from './content-block/content-block.component';
+import { ApiClientResolve } from './api-client.resolve';
+import { RouteReuseStrategy } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 import { CoreModule } from './core/core.module';
-import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './header/menu/menu.component';
-import { MobileMenuComponent } from './header/mobile-menu/mobile-menu.component';
-import { NewsArchiveComponent } from './news/news-archive/news-archive.component';
-import { NewsArticleResolve } from './news/news-article.resolve';
-import { NewsArticleComponent } from './news/news-article/news-article.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContentComponent } from './content/content.component';
+import { CustomReuseStrategy } from './router-reuse-strategy';
+import { EventComponent } from './event/event.component';
 import { SkeletorComponent } from './skeletor/skeletor.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
+import { MenuComponent } from './header/menu/menu.component';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
+import { MobileMenuComponent } from './header/mobile-menu/mobile-menu.component';
+import { NewsArchiveComponent } from './news/news-archive/news-archive.component';
+import { NewsArticleComponent } from './news/news-article/news-article.component';
+import { BaseComponent } from './content/base/base.component';
+import { NewsArticleResolve } from './news/news-article.resolve';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    EventComponent,
     ContentComponent,
     SkeletorComponent,
     SocialMediaComponent,
