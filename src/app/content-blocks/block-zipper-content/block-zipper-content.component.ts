@@ -32,6 +32,6 @@ export class BlockZipperContentComponent implements OnInit {
         return this.content.learnMoreLink;
       }
     }
-    return "";
+    return '';
   }
 }

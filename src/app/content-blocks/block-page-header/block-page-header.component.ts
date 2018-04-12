@@ -13,7 +13,7 @@ export class BlockPageHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   getLink(cta) {
     if (cta) {
       if (cta.page) {
@@ -22,6 +22,6 @@ export class BlockPageHeaderComponent implements OnInit {
         return cta.url;
       }
     }
-    return "";
+    return '';
   }
 }
