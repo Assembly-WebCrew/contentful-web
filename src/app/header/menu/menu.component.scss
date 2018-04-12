@@ -29,7 +29,7 @@ ul {
     position: relative;
     margin: 0 10px;
     height: $menu-small-height;
-    font-size: 16px;
+    font-size: $font-size;
     text-transform: uppercase;
 
     @include tablet {
@@ -48,7 +48,7 @@ ul {
       opacity: 0;
       visibility: hidden;
       background-color: rgba($color-bg, .9);
-      padding: 10px;
+      padding: 1em;
       text-align: left;
       position: absolute;
       top: 50%;
@@ -57,7 +57,7 @@ ul {
       width: 200px;
       transition: opacity.3s .1s, top .3s .1s, visibility .1s .2s;
       border: $border-basic rgba($color-accent, .6);
-      border-radius: 5px;
+      border-radius: $border-radius;
       box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
       box-sizing: border-box;
       z-index: -1;
@@ -91,9 +91,10 @@ ul {
         position: relative;
         text-transform: none;
 
-        a, span {
+        a,
+        span {
           height: auto;
-          font-size: 16px;
+          font-size: $font-size;
           padding: 10px;
           display: block;
           transition: color .1s;
@@ -126,11 +127,16 @@ ul {
 
           .title {
             text-transform: uppercase;
-            color: $color-accent;
+            color: $color-no-link;
+            // color: $color-accent;
             font-family: $font-title;
             border-bottom: $border-basic $color-accent;
-            padding: 15px 0;
-            margin: 0 10px;
+            // padding: 0 1.5em 1em;
+            // margin: 0 1em;
+
+            &[href] {
+              color: $color-accent;
+            }
 
             &[href]:hover {
               color: $color-text;
@@ -139,14 +145,21 @@ ul {
 
           .submenu-section {
             @include list-styling;
-            padding: 0 0 0 10px;
+            line-height: 1em;
+            // padding: 0 0 0 1em;
+            padding: 0 ;
 
             li {
-              padding: 5px 10px;
-              padding-left: 15px;
+              // padding: 2px 10px;
+              // padding-left: 0 1em;
+              padding-left: 1em;
 
               &:first-child {
-                padding-top: 10px;
+                padding-top: 1em;
+              }
+
+              &:last-child {
+                padding-bottom: 1em;
               }
 
               &:before {
@@ -154,8 +167,8 @@ ul {
               }
 
               a {
-                border-radius: 5px;
-                padding: 10px;
+                border-radius: $border-radius;
+                // padding: .5em;
                 border: $border-basic transparent;
 
                 &:hover {

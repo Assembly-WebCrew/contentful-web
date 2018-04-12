@@ -3,13 +3,14 @@
 @import 'common';
 
 $fa-font-path: '/assets/fonts';
-@import url('//fonts.googleapis.com/css?family=Muli:400,900');
+@import url('//fonts.googleapis.com/css?family=Open+Sans:400,900');
 @import url('//fonts.googleapis.com/css?family=Oswald');
 @import 'font-awesome/font-awesome';
 
 body {
   background: $color-bg;
   font-family: $font-text;
+  text-align: justify;
 
   * {
     box-sizing: border-box;
@@ -29,7 +30,7 @@ table {
   border: $border-basic $color-text;
   border-collapse: separate;
   border-spacing: 0;
-  border-radius: 5px;
+  border-radius: $border-radius;
   max-width: 100%;
 
   th {
@@ -54,9 +55,9 @@ table {
       border-bottom: 0;
     }
   }
-  
+
   @include mobile {
-    font-size: 0.8em;
+    font-size: .8em;
 
     td,
     th {
@@ -114,10 +115,14 @@ strong {
 [asmMarkdown] {
   ul {
     @include list-styling;
+    //line-height: $line-height-menu;
   }
+
   p {
-    line-height: 1.5em;
+    line-height: $line-height-text;
+    font-size: $font-size-text;
   }
+
   img {
     max-width: 100%;
   }

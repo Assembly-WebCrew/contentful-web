@@ -5,7 +5,7 @@ import { find } from 'lodash';
 @Component({
   selector: 'asm-content-block',
   template: '<ng-template #contentTemplate></ng-template>',
-  styleUrls: ['./content-block.component.scss']
+  styles: ['']
 })
 export class ContentBlockComponent implements OnInit {
   @Input() content: any = {};

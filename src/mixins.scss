@@ -11,7 +11,7 @@ $desktop-width: 1440px;
 }
 
 @mixin gradient($color: $color-accent, $secondary: $color-accent-darker) {
-  background: $color;
+  background-color: $color;
   background: linear-gradient($color, $secondary);
 }
 
@@ -46,13 +46,15 @@ $desktop-width: 1440px;
 
 @mixin list-styling {
   list-style-type: none;
-  padding: 15px 25px;
+  padding: $font-size #{$font-size * 1.5};
   margin: 0;
+  line-height:  #{$font-size * 2};
+  font-size: $font-size;
 
   li {
     position: relative;
     display: block;
-    padding: 10px 30px;
+    padding: #{$font-size / 2} #{$font-size * 2};
     overflow-y: hidden;
 
     &:before {
@@ -60,9 +62,9 @@ $desktop-width: 1440px;
       border-bottom: $border-basic $color-accent;
       border-left: $border-basic $color-accent;
       display: block;
-      width: 15px;
+      width: $font-size;
       position: absolute;
-      height: 1em;
+      height: #{$font-size * 1.5};
       left: 0;
       top: 0;
     }
@@ -78,7 +80,7 @@ $desktop-width: 1440px;
     }
 
     &:first-child {
-      padding-top: 5px;
+      padding-top: #{$font-size / 2};
     }
 
     &:last-child {
@@ -89,7 +91,7 @@ $desktop-width: 1440px;
 
     ul {
       margin: 0;
-      padding: 15px 0 0;
+      padding: $font-size 0 0;
     }
   }
 }
@@ -112,7 +114,7 @@ $desktop-width: 1440px;
   }
 }
 
-@mixin screenSmall {
+@mixin screen-small {
   @media (max-width: 1124px) {
     @content;
   }

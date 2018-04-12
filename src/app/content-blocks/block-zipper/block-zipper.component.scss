@@ -13,6 +13,8 @@
   margin-left: 3%;
   margin-right: 0;
   border-radius: $border-radius;
+
+
 }
 
 .zip-content:nth-child(odd) {
@@ -21,7 +23,8 @@
 }
 
 @include mobile {
-  .zip-content, .zip-content:nth-child(odd) {
+  .zip-content,
+  .zip-content:nth-child(odd) {
     width: 100%;
     margin-left: 0;
     margin-right: 0;

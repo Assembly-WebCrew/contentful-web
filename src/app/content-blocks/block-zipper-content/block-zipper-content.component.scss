@@ -47,7 +47,7 @@ h2 {
   .icon {
     border-right: $border-basic $color-accent;
     color: $color-accent;
-    font-size: 25px;
+    font-size: $font-size-zipper-title-icon;
     height: $zipper-title-height;
     line-height: $zipper-title-height;
     padding: 0 30px;
@@ -109,11 +109,11 @@ h2 {
     font-weight: normal;
     margin-top: 15px;
     vertical-align: middle;
-    font-size: 20px;
+    font-size: $font-size-zipper-link;
 
     .fa {
       margin-left: 10px;
-      font-size: 20px;
+      font-size: $font-size-zipper-link;
     }
 
     &:hover {
@@ -127,6 +127,7 @@ h2 {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: $font-size;
   }
 }
 

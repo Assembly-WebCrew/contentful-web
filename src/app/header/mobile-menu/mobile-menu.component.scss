@@ -29,7 +29,7 @@
         margin: 0;
         height: $menu-big-height;
         position: relative;
-        border-radius: 0 5px 5px 0;
+        border-radius: 0 $border-radius $border-radius 0;
         overflow: hidden;
         color: $color-text;
         padding: 0 20px 0 0;
@@ -54,7 +54,7 @@
         outline: 0;
 
         .fa {
-          font-size: 30px;
+          font-size: $font-size-mobile-menu-button;
         }
     }
 }
@@ -74,7 +74,7 @@ a {
 
 ul {
     list-style: none;
-    font-size: 18px;
+    font-size: $font-size-mobile-menu-list;
 }
 
 .menu {

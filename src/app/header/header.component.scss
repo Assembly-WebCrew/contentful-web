@@ -28,7 +28,7 @@
     margin: 0;
     height: $menu-big-height;
     position: relative;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 $border-radius $border-radius 0;
     overflow: hidden;
     color: $color-text;
     padding: 0 20px 0 0;
@@ -43,7 +43,7 @@
       height: 100%;
       transform-origin: 100% 0;
       transform: skewX(-15deg);
-      border-radius: 0 5px 5px 0;
+      border-radius: 0 $border-radius $border-radius 0;
       z-index: -1;
       @include gradient(rgba($color-bg, .8), $color-bg);
     }
@@ -68,7 +68,7 @@
 
   .header-right {
     @include skewed;
-    border-radius: 5px;
+    border-radius: $border-radius;
     margin: 0 -15px 0 -19px;
     min-width: 20px;
   }
@@ -99,7 +99,7 @@
           display: flex;
           align-items: center;
           height: $menu-small-height;
-          border-radius: 5px;
+          border-radius: $border-radius;
           border: 2px solid $color-bg;
           color: $color-accent;
           box-sizing: border-box;
@@ -112,7 +112,7 @@
             align-items: center;
             height: 100%;
             transform: skew(0deg);
-            border-radius: 5px;
+            border-radius: $border-radius;
             box-sizing: border-box;
             overflow: hidden;
             text-shadow: 0 -2px rgba($color-bg, .2);
@@ -193,7 +193,7 @@
 
         .search-container {
           @include gradient(rgba($color-bg, .8), $color-bg);
-          border-radius: 5px;
+          border-radius: $border-radius;
           position: relative;
           padding-left: 15px;
           display: flex;
@@ -205,7 +205,7 @@
 
           .button {
             color: $color-accent;
-            border-radius: 5px;
+            border-radius: $border-radius;
             width: 37px;
             height: 37px;
             display: flex;
@@ -246,7 +246,7 @@
         margin: 0 27px 0 -15px;
         padding: 0 20px;
         transform: skew(-15deg);
-        border-radius: 5px;
+        border-radius: $border-radius;
 
         asm-social-media,
         asm-menu {
@@ -307,7 +307,7 @@
       outline: 0;
 
       .fa {
-        font-size: 30px;
+        font-size: $font-size-mobile-menu-button;
       }
     }
 

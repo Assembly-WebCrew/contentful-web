@@ -13,7 +13,7 @@
     padding: 10px;
     padding-left: 20px;
     border: $border-basic $color-accent;
-    border-radius: 5px;
+    border-radius: $border-radius;
     margin-bottom: 10px;
     min-height: 250px;
     display: flex;
@@ -26,7 +26,7 @@
         font-family: $font-title;
         font-weight: 400;
         text-transform: uppercase;
-        font-size: 40px;
+        font-size: $font-size-news-archive-h3;
         margin: 0;
         padding: 10px 0;
       }
@@ -36,6 +36,11 @@
           color: $color-accent;
         }
       }
+    }
+
+    .ingress {
+      font-size: $font-size-text;
+      line-height: $line-height-menu;
     }
 
     .published {
@@ -52,7 +57,7 @@
       background-position: top center;
       background-size: auto 250px;
       background-repeat: no-repeat;
-      margin-left: 10px;
+      margin-left: 2em;
     }
 
     .link {
@@ -61,14 +66,14 @@
       display: inline-block;
       padding: 10px 20px;
       color: $color-text;
-      font-size: 20px;
+      font-size: $font-size-news-button;
       text-decoration: none;
       border: $border-basic $color-text;
-      border-radius: 5px;
+      border-radius: $border-radius;
 
       .fa {
         margin-left: 10px;
-        font-size: 1em;
+        font-size: $font-size;
       }
 
       &:hover {

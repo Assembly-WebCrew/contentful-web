@@ -4,9 +4,9 @@
   @include page-content-width;
 
   img {
-    max-width: 700px;
+    max-width: 40%;
     border: $border-basic $color-accent;
-    border-radius: 5px;
+    border-radius: $border-radius;
     padding: 10px;
     float: right;
     background-color: $color-bg;
@@ -14,8 +14,8 @@
     margin-bottom: 10px;
     width: 100%;
     display: block;
-    
-    @include screenSmall {
+
+    @include screen-small {
       margin: auto;
       float: none;
     }
@@ -37,6 +37,7 @@
   .ingress {
     font-style: italic;
     padding: 10px 0 30px;
-    font-size: 1.2em;
+    font-size: $font-size-ingress;
+    line-height: $line-height-menu;
   }
 }

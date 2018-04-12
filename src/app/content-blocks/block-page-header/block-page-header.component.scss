@@ -21,7 +21,7 @@
   font-family: $font-title;
   text-transform: uppercase;
   border-right: $border-basic $color-text;
-  font-size: 20px;
+  font-size: $font-size-cta;
 
   @include mobile {
     border-bottom: $border-basic $color-text;
@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: $font-size-cta-title;
     font-style: italic;
     font-weight: 400;
     overflow: hidden;
@@ -53,13 +53,13 @@
     justify-content: center;
     align-items: center;
     color: $color-text;
-    font-size: 1em;
+    font-size: $font-size;
     text-decoration: none;
     border-top: $border-basic $color-text;
 
     .fa {
       margin-left: 10px;
-      font-size: 1em;
+      font-size: $font-size;
     }
 
     &:hover {

@@ -23,13 +23,12 @@
     p {
       margin: 0;
       color: $color-text;
-      font-size: 70px;
+      font-size: $font-size-counter-number;
     }
 
     span {
       color: $color-accent;
-      font-size: $font-size-frontpage-definition;
-      //font-size: 23px;
+      font-size: $font-size-counter-text;
     }
   }
 }

@@ -22,18 +22,37 @@ $color-ticket-alt: #80850c; // dark-yellow
 $color-manual-bg: #ccced1;
 
 // FONTS AND SIZES
-$font-text: 'Muli', sans-serif;
+$font-text: 'Open Sans', sans-serif;
 $font-title: 'Oswald', sans-serif;
 
+$font-size-smaller: .8em;
 $font-size: 1em;
-$font-size-h1: 50px;
-$font-size-h3: 24px;
-$font-size-h4: 18px;
-$font-size-page-title: 50px;
-$font-size-collapse-title: 40px;
-$font-size-collapse-fa: 20px;
+$font-size-text: 1.1em;
+$font-size-ingress: 1.2em;
+$font-size-cta-title: 2em;
 
-$font-size-frontpage-definition: 23px;
+$font-size-counter-number: 70px;
+$font-size-h1: 50px;
+$font-size-page-title: $font-size-h1;
+$font-size-news-archive-h3: 40px;
+$font-size-collapse-title: 40px;
+$font-size-mobile-menu-button: 30px;
+$font-size-zipper-title-icon: 25px;
+$font-size-h3: 24px;
+$font-size-footer-h4: $font-size-h3;
+$font-size-frontpage-details: $font-size-h3;
+$font-size-counter-text: $font-size-h3;
+$font-size-news-button: 20px;
+$font-size-cta: 20px;
+$font-size-collapse-plus: $font-size-cta;
+$font-size-zipper-link: $font-size-cta;
+$font-size-h4: 1.1em;
+$font-size-mobile-menu-list: 18px;
+$font-size-menu-item: $font-size; //16px
+$font-size-copyright-tablet: $font-size-smaller;
+
+$line-height-text: 2em;
+$line-height-menu: 1.5em;
 
 // BORDER
 $border-radius: 5px;
@@ -49,28 +68,3 @@ $width-text: 800px;
 $menu-big-height: 83px;
 $menu-small-height: 41px;
 $menu-section-width: 300px;
-
-// OLD NAMES
-$text-color: $color-text;
-$black: $color-black;
-$accent-color: $color-accent;
-$accent-darker-color: $color-accent-darker;
-$accent-dark-color: $color-accent-dark;
-$accent-light-color: $color-accent;
-$ticket-color: $color-ticket;
-$ticket-alt-color: $color-ticket-alt;
-$visited-link: $color-visited-link;
-$bg: $color-bg;
-$bg-image-overlay: $color-bg-overlay;
-$call-bg: $color-accent;
-$call-bg-hover: $color-accent;
-$text-font: $font-text;
-$title-font: $font-title;
-$page-title-size: $font-size-page-title;
-$border: $color-accent;
-$manual-bg: $color-manual-bg;
-$manual-text: $color-accent;
-$page-background-width: $width-page-bg;
-$page-content-width: $width-page-content;
-$text-width: $width-text;
-$color-manual-text: $color-accent-dark;

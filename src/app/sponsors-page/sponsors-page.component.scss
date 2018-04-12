@@ -1,7 +1,5 @@
 @import '../../common';
 
-$lineWidth: 20px;
-
 :host {
   @include component;
 }
@@ -75,7 +73,7 @@ $lineWidth: 20px;
     .logo {
       padding: 20px;
       border-bottom: $border-basic $color-accent;
-      border-radius: 15px;
+      border-radius: ($border-radius * 3);
       min-height: 230px;
       display: flex;
       flex-direction: column;
