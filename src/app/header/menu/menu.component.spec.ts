@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuComponent } from './menu.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Observable } from 'rxjs/Observable';
+import { ContentfulService } from '../../core/contentful.service';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -10,7 +12,12 @@ describe('MenuComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ MenuComponent ]
+      declarations: [ MenuComponent ],
+      providers:  [       {
+        provide: ContentfulService,
+        useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
+      }
+    ]
     })
     .compileComponents();
   }));

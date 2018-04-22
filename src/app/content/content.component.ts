@@ -17,11 +17,15 @@ export class ContentComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cfResolver: ComponentFactoryResolver) {}
+    private cfResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
+    this.getContent();
+  }
+
+  getContent(): void {
     this.route.data.subscribe((data: { content: any }) => {
-      this.content = data.content || {};
+      this.content = data.content || {};
     });
   }
 

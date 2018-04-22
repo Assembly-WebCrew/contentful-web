@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ContentfulService } from '../../core/contentful.service';
 
 @Component({
   selector: 'asm-menu',
@@ -11,6 +12,7 @@ export class MenuComponent implements OnInit {
   event: any;
 
   constructor(private router: Router,
+    private contentful: ContentfulService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -18,14 +20,7 @@ export class MenuComponent implements OnInit {
   }
 
   getUrl(item) {
-    if (item.page) {
-      return `/${this.event.name}/${item.page.slug}`;
-    } else {
-      if (item.url && item.url[0] === '/')
-        return `/${this.event.name}${item.url}`;
-
-      return item.url || '';
-    }
+    return this.contentful.getUrl(item);
   }
 
   isMenuSectioned(item) {
@@ -33,12 +28,6 @@ export class MenuComponent implements OnInit {
   }
 
   onNavigation(item, event: Event) {
-    const url: string = this.getUrl(item);
-
-    if (url.startsWith('/')) {
-      event.preventDefault();
-      this.router.navigate([url]);
-      return false;
-    }
+    this.contentful.onNavigation(item, event);
   }
 }

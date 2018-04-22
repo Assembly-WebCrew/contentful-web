@@ -48,25 +48,14 @@ export class FooterComponent implements OnInit {
     }` }).map(data => data.menus[0]);
   }
 
-  getUrl(item) {
-    if (item.page) {
-      return `/${this.event.name}/${item.page.slug}`;
-    } else {
-      if (item.url && item.url[0] === '/')
-        return `/${this.event.name}${item.url}`;
-
-      return item.url;
-    }
+  onNavigation(item, event: Event) {
+    this.contentful.onNavigation(item, event);
   }
 
-  onNavigation(item, event: Event) {
-    const url: string = this.getUrl(item);
+  getUrl(item) {
+    return this.contentful.getUrl(item);
+  }
 
-    if (url.startsWith('/')) {
-      event.preventDefault();
-      this.router.navigate([url]);
-      return false;
-    }
   getYear() {
     return new Date().getFullYear();
   }

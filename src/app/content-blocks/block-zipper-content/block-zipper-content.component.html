@@ -1,5 +1,5 @@
 <div class="zipper-inner">
-  <h2><span class="icon"><span class="icon-inner fa fa-fw {{content.icon}}"></span></span><span class="title">{{content.title}}</span></h2>
+  <h2><span class="icon"><span class="icon-inner fa fa-fw {{icon}}"></span></span><span class="title">{{content.title}}</span></h2>
   <div class="zipper-content" [innerHTML]="content.content" asmMarkdown></div>
   <a class="zipper-link" *ngIf="link" [href]="link">Learn more <span class="fa fa-long-arrow-right"></span></a>
 </div>
