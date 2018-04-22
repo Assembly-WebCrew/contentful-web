@@ -67,6 +67,7 @@ export class FooterComponent implements OnInit {
       this.router.navigate([url]);
       return false;
     }
+  }
   getYear() {
     return new Date().getFullYear();
   }
