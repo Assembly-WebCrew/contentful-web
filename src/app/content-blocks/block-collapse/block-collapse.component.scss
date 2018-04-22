@@ -70,9 +70,10 @@ h2 {
 
 .innercontent {
   width: $width-text;
+  max-width: 100%;
   padding: 20px;
   padding-top: 0;
-  padding-left: 70px;
+  margin-left: 50px;
 
   &.hide {
     display: none;

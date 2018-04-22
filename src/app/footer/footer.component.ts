@@ -14,6 +14,7 @@ import { Observable } from 'rxjs/Observable';
 export class FooterComponent implements OnInit {
   footer$: Observable<any>;
   event: any;
+  year: number;
 
   constructor(
     private contentful: ContentfulService,
@@ -21,6 +22,7 @@ export class FooterComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.year = this.getYear();
     this.event = this.route.snapshot.data.event;
     const params = { 'fields.title': 'Footer Menu' };
     this.footer$ = this.contentful.query$<any>({
@@ -65,5 +67,7 @@ export class FooterComponent implements OnInit {
       this.router.navigate([url]);
       return false;
     }
+  getYear() {
+    return new Date().getFullYear();
   }
 }
