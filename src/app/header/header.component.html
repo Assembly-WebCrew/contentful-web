@@ -10,7 +10,9 @@
       <div class="header-inner">
         <div class="header-upper">
           <a class="highlight-button" *ngFor="let item of (header$ | async)?.highlights" [href]="getUrl(item.item)">
-            <div class="button-inner-wrapper {{item.icon}}">
+            <div class="button-inner-wrapper {{item.icon}}"
+                  angulartics2On="click"
+                  angularticsAction="Highlight: {{item.title}}">
               <span class="icon">
                 <i class="fa {{item.icon}}"></i>
               </span>
@@ -28,7 +30,8 @@
               <span>ENG</span>
             </div> -->
           </div>
-          <a href="//tickets.assembly.org" class="highlight-button tickets" target="_blank">
+          <a href="//tickets.assembly.org" class="highlight-button tickets" target="_blank" angulartics2On="click"
+          angularticsAction="Tickets store" >
             <div class="button-inner-wrapper fa-ticket">
               <span class="icon">
                 <i class="fa fa-ticket"></i>
