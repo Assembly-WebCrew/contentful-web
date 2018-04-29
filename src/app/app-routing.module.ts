@@ -5,6 +5,9 @@ import { ApiClientResolve } from './api-client.resolve';
 import { EventComponent } from './event/event.component';
 import { ContentComponent } from './content/content.component';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
@@ -77,7 +80,13 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics],
+      {
+      pageTracking: {
+        clearQueryParams: true,
+      }
+    })
   ],
   providers: [
     EventResolve,

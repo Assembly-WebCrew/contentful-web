@@ -55,5 +55,6 @@
   "defaults": {
     "styleExt": "scss",
     "component": {}
-  }
+  },
+  "packageManager": "yarn"
 }

@@ -6,6 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -46,7 +49,8 @@ import { NewsArticleResolve } from './news/news-article.resolve';
     HttpClientModule,
     CoreModule,
     ContentBlocksModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
   providers: [
     ApiClientResolve,
@@ -58,4 +62,4 @@ import { NewsArticleResolve } from './news/news-article.resolve';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -4,11 +4,11 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 
 @Injectable()
 export class ApiClientResolve implements Resolve<any> {
-  constructor(private contentful: ContentfulService) {}
+  constructor(private contentful: ContentfulService) { }
 
   public async resolve(
-      route: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot): Promise<void> {
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Promise<void> {
     await this.contentful.initialize(route.params.event !== 'news' && route.params.event);
   }
 }
