@@ -1,6 +1,8 @@
 import { ApolloClient, createNetworkInterface } from 'apollo-client';
-import { Component, OnInit, ComponentFactoryResolver,
-  ViewContainerRef, ChangeDetectionStrategy, ViewChild, Injectable } from '@angular/core';
+import {
+  Component, OnInit, ComponentFactoryResolver,
+  ViewContainerRef, ChangeDetectionStrategy, ViewChild, Injectable
+} from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import gql from 'graphql-tag';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -17,11 +19,15 @@ export class ContentComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cfResolver: ComponentFactoryResolver) {}
+    private cfResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
+    this.getContent();
+  }
+
+  getContent(): void {
     this.route.data.subscribe((data: { content: any }) => {
-      this.content = data.content || {};
+      this.content = data.content || {};
     });
   }
 

@@ -14,7 +14,7 @@ export class ContentResolve implements Resolve<any> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<any> {
     const slug = join(route.url, '/'),
-          params = { 'fields.slug': slug || 'frontpage', limit: 1 };
+      params = { 'fields.slug': slug || 'frontpage', limit: 1 };
     const response = await this.contentful.query<any>({
       query: gql`
         {

@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.year = this.getYear();
+    this.year = new Date().getFullYear();
     this.event = this.route.snapshot.data.event;
     const params = { 'fields.title': 'Footer Menu' };
     this.footer$ = this.contentful.query$<any>({
@@ -48,27 +48,12 @@ export class FooterComponent implements OnInit {
     }` }).map(data => data.menus[0]);
   }
 
-  getUrl(item) {
-    if (item.page) {
-      return `/${this.event.name}/${item.page.slug}`;
-    } else {
-      if (item.url && item.url[0] === '/')
-        return `/${this.event.name}${item.url}`;
-
-      return item.url;
-    }
-  }
-
   onNavigation(item, event: Event) {
-    const url: string = this.getUrl(item);
+    this.contentful.onNavigation(item, event);
+  }
 
-    if (url.startsWith('/')) {
-      event.preventDefault();
-      this.router.navigate([url]);
-      return false;
-    }
+  getUrl(item) {
+    return this.contentful.getUrl(item);
   }
-  getYear() {
-    return new Date().getFullYear();
-  }
+
 }

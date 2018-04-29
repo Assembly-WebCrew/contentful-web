@@ -6,7 +6,8 @@ import * as qs from 'qs';
 import { get } from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import { DOCUMENT } from '@angular/common';
-import { Subject, Subscription } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 import { WINDOW } from '../core/window.service';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
@@ -37,6 +38,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.event = this.route.snapshot.data.event;
     this.subscriptions.push(this.resizeObservable.subscribe(x => this.onWindowResize(x)));
+    this.getHeader();
+    this.checkMobileState(this.window.innerWidth);
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s && s.unsubscribe());
+  }
+
+  getHeader(): void {
     const params = { 'fields.title': 'Main Menu' };
     this.header$ = this.contentful.query$<any>({
       query: gql`
@@ -110,11 +120,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         }
       }
     }` }).map(data => data.menus[0]);
-    this.checkMobileState(this.window.innerWidth);
-  }
-
-  ngOnDestroy() {
-    this.subscriptions.forEach(s => s && s.unsubscribe());
   }
 
   getLogo(isMobile) {
@@ -126,14 +131,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   getUrl(item) {
-      if (item.page) {
-        return `/${this.event.name}/${item.page.slug}`;
-      } else {
-        if (item.url && item.url[0] === '/')
-          return `/${this.event.name}${item.url}`;
-
-        return item.url || '';
-      }
+    return this.contentful.getUrl(item);
   }
 
   onMobileMenuClick() {

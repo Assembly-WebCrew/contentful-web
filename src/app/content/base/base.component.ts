@@ -14,21 +14,15 @@ export class BaseComponent implements OnInit, OnChanges {
   tags: string;
   init: boolean;
 
-  constructor(private title: Title,
+  constructor(
+    private title: Title,
     private router: Router,
     @Inject(WINDOW) private window: Window) { }
 
   ngOnInit() {
     this.setPageContent();
     this.init = true;
-    this.router.events
-      .filter(event => event instanceof NavigationEnd)
-      .subscribe((event: NavigationEnd) => {
-        const tree = this.router.parseUrl(event.urlAfterRedirects);
-        if (!tree.fragment) {
-          this.window.scroll(0, 0);
-        }
-      });
+    this.getRouterEvents();
   }
 
   ngOnChanges() {
@@ -39,6 +33,8 @@ export class BaseComponent implements OnInit, OnChanges {
   getBackground() {
     if (this.content && this.content.featuredImage)
       return 'url(' + this.content.featuredImage.url + '?w=1920)';
+    else
+      return '';
   }
 
   setPageContent() {
@@ -48,5 +44,16 @@ export class BaseComponent implements OnInit, OnChanges {
     // this.title.setTitle(this.content.title + ' - ' + this.event.eventTitle); // use event name
     this.background = this.getBackground();
     this.tags = this.content.tags ? this.content.tags.map(tag => tag.title).join(' ') : '';
+  }
+
+  getRouterEvents(): void {
+    this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .subscribe((event: NavigationEnd) => {
+        const tree = this.router.parseUrl(event.urlAfterRedirects);
+        if (!tree.fragment) {
+          this.window.scroll(0, 0);
+        }
+      });
   }
 }
