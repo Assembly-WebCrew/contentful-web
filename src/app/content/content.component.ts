@@ -22,6 +22,10 @@ export class ContentComponent implements OnInit {
     private cfResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
+    this.getContent();
+  }
+
+  getContent(): void {
     this.route.data.subscribe((data: { content: any }) => {
       this.content = data.content || {};
     });

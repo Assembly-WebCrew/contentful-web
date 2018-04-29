@@ -38,22 +38,22 @@
           </a>
         </div>
         <div class="header-lower">
-            <asm-menu [menu]="(header$ | async)?.items"></asm-menu>
-            <asm-social-media></asm-social-media>
+          <asm-menu [menu]="(header$ | async)?.items"></asm-menu>
+          <asm-social-media></asm-social-media>
         </div>
       </div>
     </div>
     <div class="header-right"></div>
   </ng-container>
   <ng-template #showMobile>
-      <div class="logo-container">
-        <a [href]="'/' + event?.name">
-          <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
-        </a>
-      </div>
-      <button type="button" class="menu" (click)="onMobileMenuClick()">
-        <i class="fa fa-bars"></i>
-      </button>
+    <div class="logo-container">
+      <a [href]="'/' + event?.name">
+        <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
+      </a>
+    </div>
+    <button type="button" class="menu" (click)="onMobileMenuClick()">
+      <i class="fa fa-bars"></i>
+    </button>
   </ng-template>
 </div>
 <ng-container *ngIf="isMobile">

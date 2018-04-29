@@ -21,6 +21,8 @@ export class BlockEventInfoComponent implements OnInit {
     if (this.event) {
       if (this.event.logo && this.event.logo.fields) {
         this.logo = this.event.logo.fields.file.url + '?w=700';
+      } else {
+        this.logo = '/assets/images/generic-event-logo.png';
       }
       this.place = this.event.eventPlace || 'TBA';
       this.dates = this.getEventDates();
