@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   // If the event is known, we will load the page.
   {
-    path: ':event',
+    path: ':lang/:event',
     component: SkeletorComponent,
     resolve: {
       apiClient: ApiClientResolve,

@@ -12,13 +12,22 @@ export class EventResolve implements Resolve<any> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<any> {
     let event: any;
+    let lang: string;
+
+    if (!route.params.lang) {
+      // TODO: Maybe populate based on backend supported languages?
+      lang = navigator.language.slice(0, 2);
+    } else {
+      lang = route.params.lang;
+    }
+
     if (route.params.event === 'news') {
       event = await this.contentful.getEventMetadata();
-      this.router.navigate([`/${event.name}`, 'news']);
+      this.router.navigate([`/${lang}/${event.name}`, 'news']);
     } else {
       event = await this.contentful.getEventMetadata(route.params.event);
       if (!route.params.event && event)
-        this.router.navigate([`/${event.name}`]);
+        this.router.navigate([`/${lang}/${event.name}`]);
     }
 
     return event;

@@ -1,24 +1,42 @@
 import { Observable } from 'rxjs/Rx';
 import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Event, ActivationEnd, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ApolloClient, createNetworkInterface, IntrospectionFragmentMatcher, NetworkStatus } from 'apollo-client';
 import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ContentfulService {
-  private client: ApolloClient;
+
+  private activeLang: string;
+  private activeEvent: string;
+  private clients: { [event: string]: { [lang: string]: ApolloClient } } = {};
   private event: { name: string };
 
   constructor(
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router) {
+    router.events.subscribe((event: Event) => {
+      if (event instanceof ActivationEnd) {
+        this.activeLang = event.snapshot.params.lang || 'en';
+        this.activeEvent = event.snapshot.params.event;
+        console.log('new route state', this.activeLang, this.activeEvent);
+      }
+    });
+  }
 
   // get Contentful Schema from api / backend
   private async getContentfulSchema(event): Promise<any> {
     return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise();
+  }
+
+  private getEventApiClient(): ApolloClient {
+    const eventClients = this.clients[this.activeEvent];
+    if (!eventClients) {
+      return undefined;
+    }
+    return eventClients[this.activeLang];
   }
 
   // get event
@@ -28,9 +46,8 @@ export class ContentfulService {
 
   // get event metadata from backend
   async getEventMetadata(name?: string): Promise<any> {
-    const event = await this.http.get(`${environment.apiUrl}/event`,
+    return await this.http.get(`${environment.apiUrl}/event`,
       name && { params: new HttpParams().set('name', name) }).toPromise();
-    return event;
   }
 
   // get page url
@@ -56,8 +73,11 @@ export class ContentfulService {
   }
 
   // initialize apollo-client
-  async initialize(eventName?: string) {
-    if (this.client) return;
+  async initialize(eventName?: string, lang?: string) {
+    this.activeEvent = eventName;
+    this.activeLang = lang;
+
+    if (this.getEventApiClient()) return;
 
     try {
       this.event = await this.getEventMetadata(eventName);
@@ -65,9 +85,10 @@ export class ContentfulService {
         introspectionQueryResultData: await this.getContentfulSchema(this.event)
       });
 
-      this.client = new ApolloClient({
+      const eventClients = this.clients[this.event.name] = {};
+      eventClients[this.activeLang] = new ApolloClient({
         networkInterface: createNetworkInterface({
-          uri: `${environment.apiUrl}/en/${this.event.name}/graphql`
+          uri: `${environment.apiUrl}/${this.activeLang}/${this.event.name}/graphql`
         }),
         fragmentMatcher
       });
@@ -82,9 +103,11 @@ export class ContentfulService {
     networkStatus: NetworkStatus;
     stale: boolean;
   }> {
-    if (!this.client) throw new Error(
+    console.log('query', this.activeEvent, this.activeLang);
+    const client = this.getEventApiClient();
+    if (!client) throw new Error(
       'Make sure that ContentfulService has been initialized before calling .query');
-    return this.client.query<T>(options);
+    return client.query<T>(options);
   }
 
   query$<T>(options: WatchQueryOptions): Observable<T> {
