@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/Rx';
 import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Event, ActivationEnd, Router } from '@angular/router';
+import { Event as RouterEvent, ActivationEnd, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ApolloClient, createNetworkInterface, IntrospectionFragmentMatcher, NetworkStatus } from 'apollo-client';
 import { environment } from '../../environments/environment';
@@ -17,7 +17,7 @@ export class ContentfulService {
   constructor(
     private http: HttpClient,
     private router: Router) {
-    router.events.subscribe((event: Event) => {
+    router.events.subscribe((event: RouterEvent) => {
       if (event instanceof ActivationEnd) {
         this.activeLang = event.snapshot.params.lang || 'en';
         this.activeEvent = event.snapshot.params.event;
