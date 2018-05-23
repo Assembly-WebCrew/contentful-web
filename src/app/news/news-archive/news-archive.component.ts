@@ -25,9 +25,11 @@ export class NewsArchiveComponent implements OnInit {
 
   ngOnInit() {
     this.event = this.route.snapshot.data.event;
-      this.route.data.subscribe((data: { articles: any }) => {
-        this.articles = data.articles || [];
-      });
+    this.route.data.subscribe((data: { articles: any }) => {
+      this.articles = data.articles && data.articles.map(a => a).sort((a, b) => {
+        return +new Date(b.date) - +new Date(a.date);
+      }) ||  [];
+    });
   }
 
   getImage(article: any) {
