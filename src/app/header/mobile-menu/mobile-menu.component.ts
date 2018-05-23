@@ -32,5 +32,6 @@ export class MobileMenuComponent implements OnInit {
 
   onNavigation(item, event: Event) {
     this.contentful.onNavigation(item, event);
+    this.onClose.emit();
   }
 }

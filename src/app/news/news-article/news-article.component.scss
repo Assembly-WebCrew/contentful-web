@@ -18,11 +18,16 @@
     @include screen-small {
       margin: auto;
       float: none;
+      max-width: 60%;
+    }
+    @include mobile {
+      max-width: 100%;
     }
   }
 
   h2 {
     z-index: -1;
+    text-align: left;
 
     &:before {
       width: 100%;

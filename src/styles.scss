@@ -71,6 +71,7 @@ h2 {
   font-family: $font-title;
   text-transform: uppercase;
   position: relative;
+  text-align: left;
 
   &:before {
     content: '';
@@ -87,12 +88,14 @@ h3 {
   color: $color-accent;
   font-size: $font-size-h3;
   margin: 30px 0 10px;
+  text-align: left;
 }
 
 h4 {
   color: $color-text;
   font-size: $font-size-h4;
   margin: 20px 0 5px;
+  text-align: left;
 }
 
 a:link {
