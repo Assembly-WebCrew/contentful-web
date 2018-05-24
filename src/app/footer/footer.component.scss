@@ -84,10 +84,15 @@
       padding: 30px 10px;
     }
 
+    .contentful-attribution {
+      margin: 0 1em;
+    }
+
     .copyright {
       margin: 0;
       color: $color-text;
       text-transform: uppercase;
+      text-align: right;
       margin-top: 6px;
 
       @include tablet {

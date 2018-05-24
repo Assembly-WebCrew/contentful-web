@@ -16,7 +16,7 @@
     width: 25%;
     min-width: 140px;
     margin: 0;
-    padding: 1em;
+    padding: 10px;
     vertical-align: middle;
     display: flex;
     flex-direction: column;
@@ -29,10 +29,30 @@
       max-height: 100%;
       //min-width: 200px;
     }
+    
+    &:first-child:nth-last-child(5),
+    &:first-child:nth-last-child(5) ~ .sponsor {
+      width: 20%;
+    }
+    &:first-child:nth-last-child(6),
+    &:first-child:nth-last-child(6) ~ .sponsor {
+      width: 16%;
+
+      @include screen-small {
+        width: 25%;
+      }
+    }
 
     @include mobile {
       width: 50%;
       max-width: 200px;
+
+      &:first-child:nth-last-child(5),
+      &:first-child:nth-last-child(5) ~ .sponsor,
+      &:first-child:nth-last-child(6),
+      &:first-child:nth-last-child(6) ~ .sponsor {
+          width: 50%;
+      }
     }
   }
 }

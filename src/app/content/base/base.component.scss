@@ -37,6 +37,7 @@
     align-items: center;
     padding: 20px 0 100px;
     z-index: 2;
+    overflow: hidden;
 
     .title-border {
       @include skewed;
@@ -53,8 +54,11 @@
         border-bottom: $border-basic $color-accent;
         display: block;
 
-        @include mobile {
+        @include tablet {
           width: 100px;
+        }
+        @include mobile {
+          width: 20px;
         }
       }
     }
@@ -69,6 +73,11 @@
       line-height: $font-size-page-title;
       margin: 0;
       margin-bottom: 8px;
+      
+      @include mobile {
+        font-size: 45px;
+        line-height: 45px;
+      }
     }
   }
 
