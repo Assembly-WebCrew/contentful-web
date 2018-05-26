@@ -41,6 +41,8 @@ export class SponsorsPageComponent implements OnInit {
           this.otherPartners.push(sponsor);
         }
       });
+      this.mainPartners.sort((a,b) => (a.title + "").localeCompare((b.title + "")));
+      this.otherPartners.sort((a,b) => (a.title + "").localeCompare((b.title + "")));
     });
   }
 }

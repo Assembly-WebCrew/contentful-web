@@ -16,20 +16,22 @@
         <div class="description" *ngIf="partner.description" [innerHTML]="partner.description" asmMarkdown></div>
       </div>
     </div>
-    <h2>Partners</h2>
-    <div class="other-partners">
-      <div class="partner" *ngFor="let partner of otherPartners">
-        <div class="logo">
-          <ng-container *ngIf="partner.link; else noPartnerLink">
-            <a [href]="partner.link" target="_blank" ref="noopener">
+    <ng-container *ngIf="otherPartners && otherPartners.length">
+      <h2>Partners</h2>
+      <div class="other-partners">
+        <div class="partner" *ngFor="let partner of otherPartners">
+          <div class="logo">
+            <ng-container *ngIf="partner.link; else noPartnerLink">
+              <a [href]="partner.link" target="_blank" ref="noopener">
+                <img [src]="partner.logo?.url" [alt]="partner.title">
+              </a>
+            </ng-container>
+            <ng-template #noPartnerLink>
               <img [src]="partner.logo?.url" [alt]="partner.title">
-            </a>
-          </ng-container>
-          <ng-template #noPartnerLink>
-            <img [src]="partner.logo?.url" [alt]="partner.title">
-          </ng-template>
+            </ng-template>
+          </div>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 </asm-base>

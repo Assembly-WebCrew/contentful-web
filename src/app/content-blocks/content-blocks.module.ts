@@ -12,6 +12,8 @@ import { BlockCountdownComponent } from './block-countdown/block-countdown.compo
 import { BlockEventInfoComponent } from './block-event-info/block-event-info.component';
 import { BlockSponsorsComponent } from './block-sponsors/block-sponsors.component';
 import { BlockCollapseComponent } from './block-collapse/block-collapse.component';
+import { BlockNewsComponent } from './block-news/block-news.component';
+import { RouterModule } from '@angular/router';
 
 export const contentComponents = [
   BlockMarkdownComponent,
@@ -20,11 +22,12 @@ export const contentComponents = [
   BlockZipperContentComponent,
   BlockSectionComponent,
   BlockSponsorsComponent,
-  BlockCollapseComponent
+  BlockCollapseComponent,
+  BlockNewsComponent
 ];
 
 @NgModule({
-  imports: [CommonModule, CoreModule],
+  imports: [CommonModule, CoreModule, RouterModule],
   declarations: [
     ContentBlockComponent,
     ...contentComponents,

@@ -93,6 +93,11 @@ export class ContentResolve implements Resolve<any> {
               ... on BlockSponsors {
                 title
               }
+              ... on BlockNews {
+                title
+                filterByCategory
+                frontpageFeaturedNewsOnly
+              }
             }
           }
         }`

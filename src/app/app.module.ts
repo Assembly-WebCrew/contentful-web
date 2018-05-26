@@ -1,7 +1,7 @@
 import { ContentBlocksModule } from './content-blocks/content-blocks.module';
 import { ContentBlockComponent } from './content-block/content-block.component';
 import { ApiClientResolve } from './api-client.resolve';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -51,6 +51,9 @@ import { NewsArticleResolve } from './news/news-article.resolve';
     ContentBlocksModule,
     AppRoutingModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [
     ApiClientResolve,

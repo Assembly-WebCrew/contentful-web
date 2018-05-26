@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class BlockSectionComponent implements OnInit {
   content: any = {};
 
+  static blockName = "BlockSection";
+  
   constructor() { }
 
   ngOnInit() {

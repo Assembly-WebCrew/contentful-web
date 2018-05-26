@@ -17,7 +17,7 @@ export class ContentBlockComponent implements OnInit {
     const contentType = this.content.__typename;
     if (!contentType) return;
     const ComponentClass = find(contentComponents,
-      component => component.name === `${contentType}Component`);
+      component => component.blockName === contentType);
     const blockComponentFactory = this.cfResolver.resolveComponentFactory(ComponentClass);
     const blockComponent = this.contentTemplate.createComponent(blockComponentFactory);
     blockComponent.instance['content'] = this.content;
