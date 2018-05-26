@@ -3,6 +3,7 @@
 :host {
   @include component;
   @include page-width;
+  z-index: 1;
 }
 
 .logo {
