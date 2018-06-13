@@ -9,7 +9,7 @@ import { ContentfulService } from '../../core/contentful.service';
   styleUrls: ['./mobile-menu.component.scss']
 })
 export class MobileMenuComponent implements OnInit {
-  @Input('menu') menu: any[];
+  @Input() menu: any[];
   @Output() onClose: EventEmitter<any> = new EventEmitter();
   event: any;
 

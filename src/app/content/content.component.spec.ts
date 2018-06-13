@@ -19,7 +19,14 @@ describe('ContentComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientModule],
-      declarations: [ContentBlockComponent, ContentComponent, BlockCountdownComponent, BlockEventInfoComponent, BlockSponsorsComponent, BaseComponent],
+      declarations: [
+        ContentBlockComponent,
+        ContentComponent,
+        BlockCountdownComponent,
+        BlockEventInfoComponent,
+        BlockSponsorsComponent,
+        BaseComponent
+      ],
       providers: [
         {
           provide: ContentfulService,
