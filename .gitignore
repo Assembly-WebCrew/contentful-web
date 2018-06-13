@@ -12,6 +12,10 @@ deploy.tar.gz
 # dependencies
 /node_modules
 
+# tool outputs
+/coverage
+sass-lint.html
+
 # IDEs and editors
 /.idea
 .project
@@ -31,7 +35,6 @@ deploy.tar.gz
 # misc
 /.sass-cache
 /connect.lock
-/coverage
 /libpeerconnection.log
 npm-debug.log
 testem.log

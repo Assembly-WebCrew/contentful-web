@@ -2,6 +2,9 @@ options:
   formatter: stylish
 files:
   include: 'src/**/*.s+(a|c)ss'
+  ignore:
+    - 'node_modules/**'
+    - 'src/font-awesome/**'
 rules:
   # Extends
   extends-before-mixins: 1
@@ -22,7 +25,7 @@ rules:
   no-color-keywords: 1
   no-color-literals: 1
   no-combinators: 0
-  no-css-comments: 1
+  no-css-comments: 0
   no-debug: 1
   no-disallowed-properties: 0
   no-duplicate-properties: 1
@@ -77,7 +80,7 @@ rules:
   property-sort-order: 0
   pseudo-element: 0
   quotes: 1
-  shorthand-values: 1
+  shorthand-values: 0
   url-quotes: 1
   variable-for-property: 1
   zero-unit: 1

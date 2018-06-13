@@ -64,6 +64,7 @@
       padding: 10px;
       font-size: 14px;
     }
+
     .category {
       font-family: $font-title;
       font-size: 18px;
@@ -91,6 +92,7 @@
       }
     }
   }
+
   .article-image {
     border-radius: $border-radius 0 0 0;
     border: $border-basic $color-accent;
@@ -106,6 +108,7 @@
      background-position: center;
     }
   }
+
   .article-content {
     border-radius: 0 0 $border-radius $border-radius;
     border: $border-basic $color-accent;
@@ -128,18 +131,21 @@
       &:hover {
         text-decoration: underline;
       }
+
       .fa {
         padding-left: 10px;
         font-weight: normal;
       }
     }
   }
+
   &:first-child {
     width: 50%;
     .article-image {
       height: 460px;
       border-radius: $border-radius 0 $border-radius $border-radius;
     }
+
     .article-content {
       position: absolute;
       bottom: 0;

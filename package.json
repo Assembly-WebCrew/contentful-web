@@ -18,6 +18,8 @@
     "build:ci": "npm run build:dev && npm run build:stg && npm run build:prod && npm run prod:copy",
     "test": "ng test -cc --singleRun",
     "lint": "ng lint",
+    "sass-lint": "sass-lint -v",
+    "sass-lint-html": "sass-lint -v --format html -o sass-lint.html",
     "e2e": "ng e2e -e srvdev"
   },
   "private": true,
@@ -63,7 +65,7 @@
     "karma-jasmine": "1.1.1",
     "karma-jasmine-html-reporter": "1.0.0",
     "protractor": "~5.3",
-    "sass-lint": "1.12.1",
+    "sass-lint": "^1.12.1",
     "ts-node": "5.0.1",
     "tslint": "5.9.1",
     "tslint-language-service": "0.9.9",

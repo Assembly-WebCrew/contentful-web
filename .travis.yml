@@ -20,6 +20,10 @@ jobs:
         - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
     - stage: test
       script: yarn e2e
+    - stage: lint
+        script:
+          - npm run sass-lint
+          - npm run lint
     - stage: build & deploy
       if: branch = master
       if: type IN (push)

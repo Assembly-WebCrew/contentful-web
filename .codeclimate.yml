@@ -15,4 +15,4 @@ exclude_patterns:
 - "**/node_modules/"
 - "coverage/"
 - "dist/"
-- "**/font_awesome/"
+- "**/font-awesome/"
