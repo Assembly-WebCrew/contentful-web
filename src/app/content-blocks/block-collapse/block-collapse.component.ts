@@ -11,7 +11,7 @@ export class BlockCollapseComponent implements OnInit {
   opened: Boolean = false;
   id: string;
 
-  static blockName = "BlockCollapse";
+  static blockName = 'BlockCollapse';
 
   ngOnInit() {
     if (this.content.title) {

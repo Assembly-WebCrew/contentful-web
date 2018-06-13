@@ -12,7 +12,7 @@ export class BlockZipperContentComponent implements OnInit {
   link: string;
   icon: string;
 
-  static blockName = "BlockZipperContent";
+  static blockName = 'BlockZipperContent';
 
   constructor(private contentful: ContentfulService) {}
 

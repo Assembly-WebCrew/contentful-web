@@ -16,8 +16,8 @@ describe('BlockNewsComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query: () => Promise.resolve({ data: { newsItems: []}}), getEvent: () => ({name:"summer18"}) }
-        } 
+          useValue: { query: () => Promise.resolve({ data: { newsItems: []}}), getEvent: () => ({name: 'summer18'}) }
+        }
       ]
     })
     .compileComponents();

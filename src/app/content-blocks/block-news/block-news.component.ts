@@ -14,12 +14,12 @@ export class BlockNewsComponent implements OnInit {
   articles: Array<any> = [];
   newsUrl: Array<any> = [];
 
-  static blockName = "BlockNews";
+  static blockName = 'BlockNews';
 
   constructor(private contentful: ContentfulService) { }
 
   ngOnInit() {
-    this.newsUrl = ["/", this.contentful.getEvent().name, "news"];
+    this.newsUrl = ['/', this.contentful.getEvent().name, 'news'];
     this.getNews();
   }
 

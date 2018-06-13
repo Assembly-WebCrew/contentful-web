@@ -14,8 +14,8 @@ export class BlockSponsorsComponent implements OnInit {
   sponsors$: Observable<any>;
   isMainSponsors: boolean;
 
-  static blockName = "BlockSponsors";
-  
+  static blockName = 'BlockSponsors';
+
   constructor(
     private contentful: ContentfulService) { }
 

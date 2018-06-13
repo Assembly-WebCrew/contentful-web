@@ -18,7 +18,7 @@ export class BlockCountdownComponent implements OnInit {
   startTime = 0;
   endTime = 0;
 
-  static blockName = "BlockCountdown";
+  static blockName = 'BlockCountdown';
 
   constructor(
     private route: ActivatedRoute) { }

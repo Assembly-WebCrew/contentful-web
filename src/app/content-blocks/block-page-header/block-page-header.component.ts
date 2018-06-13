@@ -9,7 +9,7 @@ import { ContentfulService } from '../../core/contentful.service';
 export class BlockPageHeaderComponent implements OnInit {
   content: any = {};
 
-  static blockName = "BlockPageHeader";
+  static blockName = 'BlockPageHeader';
 
   constructor(private contentful: ContentfulService) {}
 

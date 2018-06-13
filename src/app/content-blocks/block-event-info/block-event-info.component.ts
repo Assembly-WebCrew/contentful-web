@@ -13,7 +13,7 @@ export class BlockEventInfoComponent implements OnInit {
   dates: string;
   place: string;
 
-  static blockName = "BlockEventInfo";
+  static blockName = 'BlockEventInfo';
 
   constructor(
     private route: ActivatedRoute) { }

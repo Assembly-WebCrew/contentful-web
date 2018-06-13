@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class BlockZipperComponent {
   content: any = {};
 
-  static blockName = "BlockZipper";
+  static blockName = 'BlockZipper';
 }
