@@ -194,3 +194,54 @@ strong {
     }
   }
 }
+
+ol {
+    line-height: 2em;
+    font-size: 1em;
+
+}
+
+ol li {
+    position: relative;
+    padding: 0.5em 2em;
+    padding-top: 0.5em;
+    padding-top: 0.5em;
+
+}
+
+ol li::before {
+
+    content: "";
+    border-bottom: 1px solid #266eff;
+    border-left: 1px solid #266eff;
+	color: #266eff;
+    display: block;
+    width: 1em;
+    position: absolute;
+    height: 1.5em;
+    left: -45px;
+    top: 0;
+	color: #266eff
+
+}
+
+ol li::after {
+
+    content: '';
+    border-left: 1px solid #266eff;
+    display: block;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: -45px;
+
+}
+
+ol li:last-child::after {
+    border: 0;
+}
+
+ol li ol {
+    padding-left: 0;
+}
+
