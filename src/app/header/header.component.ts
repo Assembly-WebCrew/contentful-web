@@ -27,6 +27,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   mobileMenuOpen = false;
   isMobile = false;
   subscriptions: Subscription[] = [];
+  lang: string;
+  isLangEng: boolean;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -40,6 +42,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.subscriptions.push(this.resizeObservable.subscribe(x => this.onWindowResize(x)));
     this.getHeader();
     this.checkMobileState(this.window.innerWidth);
+    this.lang = this.contentful.getActiveLang();
+    if (this.lang === 'en') {
+      this.isLangEng = true;
+    } else {
+      this.isLangEng = false;
+    }
   }
 
   ngOnDestroy() {
@@ -132,6 +140,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   getUrl(item) {
     return this.contentful.getUrl(item);
+  }
+
+  setLang(lang) {
+    this.contentful.setActiveLang(lang);
   }
 
   onMobileMenuClick() {

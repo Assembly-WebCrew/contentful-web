@@ -223,6 +223,10 @@
               transition: background-color .1s ease-in-out;
             }
 
+            &.active {
+              color: #ffffff;
+            }
+
             * {
               transform: skew(15deg);
             }

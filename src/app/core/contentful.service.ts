@@ -44,6 +44,16 @@ export class ContentfulService {
     return this.event;
   }
 
+  // get active language
+  getActiveLang () {
+    return this.activeLang;
+  }
+
+  setActiveLang(lang) {
+    this.activeLang = lang;
+    this.activeEvent = this.event.name;
+  }
+
   // get event metadata from backend
   async getEventMetadata(name?: string): Promise<any> {
     return await this.http.get(`${environment.apiUrl}/event`,
@@ -53,15 +63,16 @@ export class ContentfulService {
   // get page url
   getUrl(item) {
     if (item.page) {
-      return `/${this.event.name}/${item.page.slug}`;
+      return `/${this.activeLang}/${this.event.name}/${item.page.slug}`;
     } else {
       if (item.url && item.url[0] === '/') {
-        return `/${this.event.name}${item.url}`;
+        return `/${this.activeLang}/${this.event.name}${item.url}`;
       }
       return item.url || '';
     }
   }
 
+  // navigate to page
   onNavigation(item, event: Event) {
     const url: string = this.getUrl(item);
 
