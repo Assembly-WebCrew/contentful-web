@@ -65,4 +65,8 @@ export class BlockNewsComponent implements OnInit {
   getImage(article: any) {
     return 'url(' + ((article.featuredImage && article.featuredImage.url) || '/assets/images/background-picture.jpg') + ')';
   }
+
+  getLink(slug: string) {
+    return this.newsUrl.concat([slug]);
+  }
 }

@@ -30,7 +30,7 @@ describe('ContentComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ sponsors: [{}]}) }
+          useValue: { query$: () => Observable.of({ sponsors: [{}]}), getEvent: () => ({name: 'summer18', eventTitle: 'ASSEMBLY Summer 2018'}) }
         },
         WINDOW_PROVIDERS
       ]

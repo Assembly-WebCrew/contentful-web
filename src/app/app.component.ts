@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 
 @Component({
   selector: 'asm-root',
@@ -8,5 +9,6 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 })
 export class AppComponent {
   constructor(
-    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) { }
+    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
+    angulartics2GoogleTagManager: Angulartics2GoogleTagManager) { }
 }

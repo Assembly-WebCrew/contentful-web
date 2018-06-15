@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -50,7 +51,7 @@ import { NewsArticleResolve } from './news/news-article.resolve';
     CoreModule,
     ContentBlocksModule,
     AppRoutingModule,
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics, Angulartics2GoogleTagManager])
   ],
   exports: [
     RouterModule

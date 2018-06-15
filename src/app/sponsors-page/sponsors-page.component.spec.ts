@@ -19,7 +19,7 @@ describe('SponsorsPageComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query: () => Promise.resolve({ data: { sponsors: [{}]}}) }
+          useValue: { query: () => Promise.resolve({ data: { sponsors: [{}]}}), getEvent: () => ({name: 'summer18', eventTitle: 'ASSEMBLY Summer 2018'}) }
         },
         WINDOW_PROVIDERS
       ]

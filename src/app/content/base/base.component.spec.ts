@@ -5,6 +5,7 @@ import { BlockEventInfoComponent } from '../../content-blocks/block-event-info/b
 import { BlockCountdownComponent } from '../../content-blocks/block-countdown/block-countdown.component';
 import { WINDOW_PROVIDERS } from '../../core/window.service';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ContentfulService } from '../../core/contentful.service';
 
 describe('BaseComponent', () => {
   let component: BaseComponent;
@@ -15,7 +16,11 @@ describe('BaseComponent', () => {
       declarations: [ BaseComponent, BlockCountdownComponent, BlockEventInfoComponent ],
       imports: [RouterTestingModule],
       providers: [
-        WINDOW_PROVIDERS
+        WINDOW_PROVIDERS,
+        {
+          provide: ContentfulService,
+          useValue: { getEvent: () => ({name: 'summer18', eventTitle: 'ASSEMBLY Summer 2018'}) }
+        }
       ]
     })
     .compileComponents();

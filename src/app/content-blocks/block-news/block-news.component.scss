@@ -63,6 +63,13 @@
     .published {
       padding: 10px;
       font-size: 14px;
+      flex-shrink: 1;
+     overflow: hidden;
+     text-overflow: ellipsis;
+
+      @include mobile {
+        font-size: 12px;
+      }
     }
 
     .category {
@@ -89,6 +96,11 @@
         z-index: -1;
         top: 0;
         border-radius: 5px 0;
+      }
+      
+      @include mobile {
+        font-size: 14px;
+        padding: 8px 10px 8px 10px;
       }
     }
   }

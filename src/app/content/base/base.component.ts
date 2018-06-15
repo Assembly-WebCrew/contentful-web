@@ -1,7 +1,8 @@
 import { Component, OnInit, OnChanges, Input, Inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart, ActivatedRoute } from '@angular/router';
 import { WINDOW } from '../../core/window.service';
+import { ContentfulService } from '../../core/contentful.service';
 
 @Component({
   selector: 'asm-base',
@@ -15,6 +16,8 @@ export class BaseComponent implements OnInit, OnChanges {
   init: boolean;
 
   constructor(
+    private route: ActivatedRoute,
+    private contentful: ContentfulService,
     private title: Title,
     private router: Router,
     @Inject(WINDOW) private window: Window) { }
@@ -40,8 +43,7 @@ export class BaseComponent implements OnInit, OnChanges {
   setPageContent() {
     if (!this.content) { this.content = {}; }
     if (!this.content.title) { this.content.title = 'Page Not Found'; }
-    this.title.setTitle(this.content.title + ' - Assembly');
-    // this.title.setTitle(this.content.title + ' - ' + this.event.eventTitle); // use event name
+    this.title.setTitle(this.content.title + ' - ' + this.contentful.getEvent().eventTitle);
     this.background = this.getBackground();
     this.tags = this.content.tags ? this.content.tags.map(tag => tag.title).join(' ') : '';
   }
@@ -50,10 +52,10 @@ export class BaseComponent implements OnInit, OnChanges {
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .subscribe((event: NavigationEnd) => {
-        const tree = this.router.parseUrl(event.urlAfterRedirects);
-        if (!tree.fragment) {
-          this.window.scroll(0, 0);
-        }
+          const tree = this.router.parseUrl(event.urlAfterRedirects);
+          if (!tree.fragment) {
+            this.window.scroll(0, 0);
+          }
       });
   }
 }

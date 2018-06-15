@@ -1,5 +1,4 @@
 @import '../../../common';
-
 :host {
   @include component;
   @include page-width;
@@ -11,35 +10,38 @@
   width: 100%;
   margin: 80px auto 0;
   position: relative;
-
   img {
     width: 100%;
   }
 }
 
 .details {
-  padding-top: 10px;
+  padding: 10px 5px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-shadow: #000 0 0 15px;
-
   span {
     display: flex;
     align-items: center;
     color: $color-accent;
-    //font-size: 25px;
     font-size: $font-size-frontpage-details;
     text-transform: uppercase;
-
     span {
       padding-left: 15px;
       color: $color-text;
       font-family: $font-title;
     }
   }
-
   .dates {
     margin-right: 45px;
-   }
+  }
+  @include mobile {
+    .dates {
+      margin-right: 30px;
+    }
+    span {
+      font-size: $font-size-h4;
+    }
+  }
 }

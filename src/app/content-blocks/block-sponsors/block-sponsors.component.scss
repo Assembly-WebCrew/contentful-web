@@ -46,6 +46,7 @@
     @include mobile {
       width: 50%;
       max-width: 200px;
+      height: 170px;
 
       &:first-child:nth-last-child(5),
       &:first-child:nth-last-child(5) ~ .sponsor,
