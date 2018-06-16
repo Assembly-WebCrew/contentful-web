@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router, NavigationEnd, NavigationStart, ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { WINDOW } from '../../core/window.service';
 import { ContentfulService } from '../../core/contentful.service';
 
@@ -16,7 +16,6 @@ export class BaseComponent implements OnInit, OnChanges {
   init: boolean;
 
   constructor(
-    private route: ActivatedRoute,
     private contentful: ContentfulService,
     private title: Title,
     private router: Router,
@@ -52,10 +51,10 @@ export class BaseComponent implements OnInit, OnChanges {
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .subscribe((event: NavigationEnd) => {
-          const tree = this.router.parseUrl(event.urlAfterRedirects);
-          if (!tree.fragment) {
-            this.window.scroll(0, 0);
-          }
+        const tree = this.router.parseUrl(event.urlAfterRedirects);
+        if (!tree.fragment) {
+          this.window.scroll(0, 0);
+        }
       });
   }
 }

@@ -5,10 +5,12 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { get, values } from 'lodash';
 import * as qs from 'qs';
+import { Title } from '@angular/platform-browser';
 
 @Injectable()
 export class NewsArticleResolve implements Resolve<any> {
-  constructor(private contentful: ContentfulService) { }
+  constructor(private contentful: ContentfulService,
+    private title: Title) { }
 
   public async resolve(
     route: ActivatedRouteSnapshot,
@@ -37,6 +39,13 @@ export class NewsArticleResolve implements Resolve<any> {
         }`
     });
 
-    return route.params.article ? get(response, 'data.newsItems[0]') : get(response, 'data.newsItems');
+    if (route.params.article) {
+      let page = get(response, 'data.newsItems[0]');
+      this.title.setTitle(page.title + ' - ' + this.contentful.getEvent().eventTitle);
+      return page;
+    } else {
+      this.title.setTitle('News - ' + this.contentful.getEvent().eventTitle);
+      return get(response, 'data.newsItems');
+    }
   }
 }

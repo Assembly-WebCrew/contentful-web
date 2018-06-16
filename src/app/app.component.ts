@@ -9,6 +9,5 @@ import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 })
 export class AppComponent {
   constructor(
-    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
     angulartics2GoogleTagManager: Angulartics2GoogleTagManager) { }
 }

@@ -5,10 +5,12 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { get, join } from 'lodash';
 import * as qs from 'qs';
+import { Title } from '@angular/platform-browser';
 
 @Injectable()
 export class ContentResolve implements Resolve<any> {
-  constructor(private contentful: ContentfulService) { }
+  constructor(private contentful: ContentfulService,
+    private title: Title) { }
 
   public async resolve(
     route: ActivatedRouteSnapshot,
@@ -102,6 +104,10 @@ export class ContentResolve implements Resolve<any> {
           }
         }`
     });
-    return get(response, 'data.pages[0]');
+    let page = get(response, 'data.pages[0]');
+    if (page) {
+      this.title.setTitle(page.title + ' - ' + this.contentful.getEvent().eventTitle);
+    }
+    return page;
   }
 }

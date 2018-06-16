@@ -49,7 +49,7 @@ import { NewsArticleResolve } from './news/news-article.resolve';
     CoreModule,
     ContentBlocksModule,
     AppRoutingModule,
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics, Angulartics2GoogleTagManager])
+    Angulartics2Module.forRoot([Angulartics2GoogleTagManager])
   ],
   exports: [
     RouterModule

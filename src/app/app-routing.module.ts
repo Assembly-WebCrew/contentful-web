@@ -9,11 +9,12 @@ import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 import { NewsArchiveComponent } from './news/news-archive/news-archive.component';
 import { NewsArticleComponent } from './news/news-article/news-article.component';
 import { NewsArticleResolve } from './news/news-article.resolve';
+import { MetaResolve } from './meta.resolve';
 
 const routes: Routes = [
   // If no event is specified, we will load default event.
@@ -36,7 +37,8 @@ const routes: Routes = [
         pathMatch: 'full',
         component: ContentComponent,
         resolve: {
-          content: ContentResolve
+          content: ContentResolve,
+          meta: MetaResolve
         }
       },
       {
@@ -46,21 +48,26 @@ const routes: Routes = [
             path: '',
             component: NewsArchiveComponent,
             resolve: {
-              articles: NewsArticleResolve
+              articles: NewsArticleResolve,
+              meta: MetaResolve
             }
           },
           {
             path: ':article',
             component: NewsArticleComponent,
             resolve: {
-              article: NewsArticleResolve
+              article: NewsArticleResolve,
+              meta: MetaResolve
             }
           }
         ]
       },
       {
         path: 'partners',
-        component: SponsorsPageComponent
+        component: SponsorsPageComponent, 
+        resolve: {
+          meta: MetaResolve
+        }
       },
       {
         path: 'sponsors',
@@ -71,7 +78,8 @@ const routes: Routes = [
         path: '**',
         component: ContentComponent,
         resolve: {
-          content: ContentResolve
+          content: ContentResolve,
+          meta: MetaResolve
         }
       }
     ]
@@ -80,18 +88,13 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics],
-      {
-      pageTracking: {
-        clearQueryParams: true,
-      }
-    })
+    RouterModule.forRoot(routes)
   ],
   providers: [
     EventResolve,
     ApiClientResolve,
-    ContentResolve
+    ContentResolve,
+    MetaResolve
   ],
   exports: [RouterModule]
 })
