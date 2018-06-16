@@ -16,18 +16,23 @@ export class EventResolve implements Resolve<any> {
 
     if (!route.params.lang) {
       // TODO: Maybe populate based on backend supported languages?
-      lang = navigator.language.slice(0, 2);
+      const newLang = navigator.language.slice(0, 2);
+      if (newLang === 'en' || 'fi') {
+        lang = newLang;
+      } else {
+        lang = 'en';
+      }
     } else {
       lang = route.params.lang;
     }
 
     if (route.params.event === 'news') {
       event = await this.contentful.getEventMetadata();
-      this.router.navigate([`/${lang}/${event.name}`, 'news']);
+      this.router.navigate([`/${event.name}/${lang}`, 'news']);
     } else {
       event = await this.contentful.getEventMetadata(route.params.event);
       if (!route.params.event && event)
-        this.router.navigate([`/${lang}/${event.name}`]);
+        this.router.navigate([`/${event.name}/${lang}`]);
     }
 
     return event;

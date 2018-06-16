@@ -217,14 +217,17 @@
             transition: background-color .1s ease-in-out;
             text-shadow: 0 -2px rgba($color-bg, .2);
 
-            &:hover {
-              background-color: $color-accent;
-              color: $color-text;
-              transition: background-color .1s ease-in-out;
+            &:not(.disabled) {
+              &:hover {
+                background-color: $color-accent;
+                color: $color-text;
+                transition: background-color .1s ease-in-out;
+              }
             }
 
-            &.active {
-              color: #ffffff;
+            &.disabled {
+              color: grey;
+              cursor: default;
             }
 
             * {

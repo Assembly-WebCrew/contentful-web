@@ -8,7 +8,7 @@ import { ContentfulService } from '../../core/contentful.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  @Input('menu') menu: any[];
+  @Input() menu: any[];
   event: any;
 
   constructor(private router: Router,

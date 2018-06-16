@@ -3,7 +3,7 @@
     <div class="header-left"></div>
     <div class="header-center">
       <div class="logo-container">
-        <a [href]="'/' + event?.name">
+        <a [href]="'/' + event?.name + '/' + this.lang">
           <img class="logo" [src]="getLogo()" alt="{{event?.eventTitle}}" title="{{event?.eventTitle}}">
         </a>
       </div>
@@ -24,15 +24,20 @@
             <div class="button">
               <i class="fa fa-search"></i>
             </div>-->
-              <a [href]="'/en/' + event?.name">
-              <div class="button" [class.active]="this.isLangEng"><span>ENG</span>
-              </div>
-              </a>
 
-            <a [href]="'/fi/' + event?.name">
-            <div class="button" [class.active]="!this.isLangEng">
-             <span>FIN</span>
-            </div></a>
+
+            <a [class.disabled]="this.isLangEng" (click)="this.setLang('en');" [href]="event?.name + '/en'" >
+              <div class="button" [class.disabled]="this.isLangEng" >
+                <span>ENG</span>
+              </div>
+            </a>
+
+            <a [class.disabled]="!this.isLangEng" (click)="this.setLang('fi');" [href]="event?.name + '/fi'">
+              <div class="button" [class.disabled]="!this.isLangEng">
+                <span>FIN</span>
+              </div>
+            </a>
+
           </div>
           <a href="//tickets.assembly.org" class="highlight-button tickets" target="_blank">
             <div class="button-inner-wrapper fa-ticket">
@@ -53,7 +58,7 @@
   </ng-container>
   <ng-template #showMobile>
     <div class="logo-container">
-      <a [href]="'/' + event?.name">
+      <a [href]="'/' + event?.name + '/' + this.lang">
         <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
       </a>
     </div>

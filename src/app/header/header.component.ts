@@ -3,7 +3,6 @@ import gql from 'graphql-tag';
 import { ContentfulService } from '../core/contentful.service';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import * as qs from 'qs';
-import { get } from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import { DOCUMENT } from '@angular/common';
 import { Subject } from 'rxjs/Subject';

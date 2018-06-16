@@ -63,10 +63,10 @@ export class ContentfulService {
   // get page url
   getUrl(item) {
     if (item.page) {
-      return `/${this.activeLang}/${this.event.name}/${item.page.slug}`;
+      return `/${this.event.name}/${this.activeLang}/${item.page.slug}`;
     } else {
       if (item.url && item.url[0] === '/') {
-        return `/${this.activeLang}/${this.event.name}${item.url}`;
+        return `/${this.event.name}/${this.activeLang}/${item.url}`;
       }
       return item.url || '';
     }
