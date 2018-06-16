@@ -40,7 +40,7 @@ table {
   th {
     font-family: $font-title;
     text-transform: uppercase;
-    font-size: 1.1em;
+    font-size: 1.1rem;
   }
 
   td,
@@ -61,7 +61,7 @@ table {
   }
 
   @include mobile {
-    font-size: .8em;
+    font-size: .8rem;
 
     td,
     th {
@@ -179,21 +179,21 @@ strong {
 }
 
 .section-header {
+  @include page-width;
   display: flex;
   align-items: center;
   justify-content: center;
   // height: $font-size-page-title;
   overflow: hidden;
-  @include page-width;
 
   .title-border-left,
   .title-border-right {
+    @include skewed;
     flex-shrink: 0;
     height: #{$font-size-page-title - 10px};
     display: flex;
     align-items: center;
     flex-grow: 1;
-    @include skewed;
   }
 
   .title-border-left {

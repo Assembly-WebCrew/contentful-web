@@ -11,7 +11,7 @@
     "start": "ng serve",
     "build": "ng build -e prod",
     "build:dev": "ng build -e srvdev -op ./dev",
-    "build:stg": "ng build -e stg -op ./stg",
+    "build:stg": "ng build --prod -e stg -op ./stg",
     "build:prod": "ng build --prod -d code -op ./prod/code",
     "build:prod-aot": "ng build --prod -d code -op prod/code -bh .",
     "prod:copy": "cp prod/code/index.html prod/",
@@ -67,7 +67,7 @@
     "protractor": "~5.3",
     "sass-lint": "^1.12.1",
     "ts-node": "5.0.1",
-    "tslint": "5.9.1",
+    "tslint": "5.10.0",
     "tslint-language-service": "0.9.9",
     "typescript": "~2.4.0"
   }

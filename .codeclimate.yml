@@ -9,8 +9,9 @@ plugins:
     enabled: true
   tslint:
     enabled: true
-    channel: beta
     config: tslint.codeclimate.json
+  nodesecurity:
+    enabled: true
 exclude_patterns:
 - "**/node_modules/"
 - "coverage/"
