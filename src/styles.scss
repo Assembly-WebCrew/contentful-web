@@ -10,8 +10,7 @@ $fa-font-path: '/assets/fonts';
 body {
   background: $color-bg;
   font-family: $font-text;
-  text-align: justify;
-
+  
   * {
     box-sizing: border-box;
   }
@@ -96,10 +95,21 @@ h3 {
 }
 
 h4 {
-  color: $color-text;
+  color: $color-accent;
   font-size: $font-size-h4;
   margin: 20px 0 5px;
   text-align: left;
+}
+
+h5, h6, h7 {
+  font-size: $font-size-h5;
+  color: $color-text;
+  margin: 15px 0 5px;
+  display: block;
+}
+
+h6, h7 {
+  font-size: $font-size-h6;
 }
 
 a:link {
@@ -155,6 +165,7 @@ blockquote {
   p {
     line-height: $line-height-text;
     font-size: $font-size-text;
+    text-align: justify;
   }
 
   img {
