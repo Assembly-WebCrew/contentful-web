@@ -13,7 +13,7 @@
             <img [src]="partner.logo?.url" [alt]="partner.title">
           </ng-template>
         </div>
-        <div class="description" *ngIf="partner.description" [innerHTML]="partner.description" asmMarkdown></div>
+        <div class="description" *ngIf="partner.description" [markdownText]="partner.description" asmMarkdown></div>
       </div>
     </div>
     <ng-container *ngIf="otherPartners && otherPartners.length">

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlockMarkdownComponent } from './block-markdown.component';
+import { MarkdownDirective } from '../directives/markdown.directive';
 
 describe('BlockMarkdownComponent', () => {
   let component: BlockMarkdownComponent;
@@ -8,7 +9,7 @@ describe('BlockMarkdownComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockMarkdownComponent ]
+      declarations: [ BlockMarkdownComponent, MarkdownDirective ]
     })
     .compileComponents();
   }));

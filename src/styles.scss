@@ -119,6 +119,33 @@ strong {
   font-weight: 900;
 }
 
+blockquote {
+  font-style: italic;
+  padding: 1.2em 60px;
+  line-height: 1.6;
+  position: relative;
+  color: $color-text;
+  display: inline-block;
+  margin: 1em;
+  &:before {
+    font-family: Arial;
+    content: "\201C";
+    font-size: 5em;
+    position: absolute;
+    left: 10px;
+    top: -15px;
+    color: $color-accent;
+  }
+  &:after {
+    font-family: Arial;
+    content: "\201D";
+    font-size: 5em;
+    position: absolute;
+    right: 15px;
+    bottom: -0.75em;
+    color: $color-accent;
+  }
+}
 [asmMarkdown] {
   ul {
     @include list-styling;

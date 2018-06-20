@@ -7,6 +7,7 @@ import { BlockEventInfoComponent } from '../content-blocks/block-event-info/bloc
 import { BlockCountdownComponent } from '../content-blocks/block-countdown/block-countdown.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { WINDOW_PROVIDERS } from '../core/window.service';
+import { MarkdownDirective } from '../content-blocks/directives/markdown.directive';
 
 describe('SponsorsPageComponent', () => {
   let component: SponsorsPageComponent;
@@ -15,7 +16,7 @@ describe('SponsorsPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ SponsorsPageComponent, BaseComponent, BlockCountdownComponent, BlockEventInfoComponent ],
+      declarations: [ SponsorsPageComponent, BaseComponent, BlockCountdownComponent, BlockEventInfoComponent, MarkdownDirective ],
       providers: [
         {
           provide: ContentfulService,

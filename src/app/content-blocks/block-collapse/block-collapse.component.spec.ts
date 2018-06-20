@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlockCollapseComponent } from './block-collapse.component';
+import { MarkdownDirective } from '../directives/markdown.directive';
 
 describe('BlockCollapseComponent', () => {
   let component: BlockCollapseComponent;
@@ -8,7 +9,7 @@ describe('BlockCollapseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockCollapseComponent ]
+      declarations: [ BlockCollapseComponent, MarkdownDirective ]
     })
     .compileComponents();
   }));

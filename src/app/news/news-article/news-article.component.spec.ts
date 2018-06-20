@@ -9,6 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ContentfulService } from '../../core/contentful.service';
 import { Observable } from 'rxjs/Observable';
 import { WINDOW_PROVIDERS } from '../../core/window.service';
+import { MarkdownDirective } from '../../content-blocks/directives/markdown.directive';
 
 describe('NewsArticleComponent', () => {
   let component: NewsArticleComponent;
@@ -17,7 +18,7 @@ describe('NewsArticleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ NewsArticleComponent, BaseComponent, BlockCountdownComponent, BlockEventInfoComponent, BlockSponsorsComponent ],
+      declarations: [ NewsArticleComponent, BaseComponent, BlockCountdownComponent, BlockEventInfoComponent, BlockSponsorsComponent, MarkdownDirective ],
       providers: [
         {
           provide: ContentfulService,

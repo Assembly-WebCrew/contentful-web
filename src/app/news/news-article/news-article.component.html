@@ -5,6 +5,6 @@
     <h2>{{article?.title}}</h2>
     <div class="date">{{article?.date | date:'dd.MM.yyyy'}}</div>
     <p class="ingress" *ngIf="article?.ingress">{{article?.ingress}}</p>
-    <div class="article-content" [innerHTML]="article?.body" asmMarkdown></div>
+    <div class="article-content" [markdownText]="article?.body" asmMarkdown></div>
   </div>
 </asm-base>
