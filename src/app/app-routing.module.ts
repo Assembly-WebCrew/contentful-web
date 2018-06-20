@@ -5,11 +5,8 @@ import { ApiClientResolve } from './api-client.resolve';
 import { EventComponent } from './event/event.component';
 import { ContentComponent } from './content/content.component';
 
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
-
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 import { NewsArchiveComponent } from './news/news-archive/news-archive.component';
 import { NewsArticleComponent } from './news/news-article/news-article.component';
@@ -62,7 +59,7 @@ const routes: Routes = [
       },
       {
         path: 'partners',
-        component: SponsorsPageComponent, 
+        component: SponsorsPageComponent,
         resolve: {
           meta: MetaResolve
         }

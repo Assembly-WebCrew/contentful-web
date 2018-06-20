@@ -21,4 +21,11 @@ export class NewsArticleComponent implements OnInit {
     });
   }
 
+  getImage(article: any) {
+    if (article.featuredImage && article.featuredImage.url) {
+      return article.featuredImage.url + '?w=600';
+    } else {
+      return '/assets/images/background-picture.jpg';
+    }
+  }
 }

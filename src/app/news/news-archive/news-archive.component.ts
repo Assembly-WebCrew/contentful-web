@@ -33,6 +33,10 @@ export class NewsArchiveComponent implements OnInit {
   }
 
   getImage(article: any) {
-    return 'url(' + ((article.featuredImage && article.featuredImage.url) || '/assets/images/background-picture.jpg') + ')';
+    if (article.featuredImage && article.featuredImage.url) {
+      return 'url(' + article.featuredImage.url + '?w=400)';
+    } else {
+      return 'url(/assets/images/background-picture.jpg)';
+    }
   }
 }

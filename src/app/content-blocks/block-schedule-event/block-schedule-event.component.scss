@@ -1,0 +1,91 @@
+@import '../../../common';
+
+:host {
+  @include component;
+  width: $width-text;
+  max-width: 90%;
+
+  @include mobile {
+    padding-left: 0;
+  }
+}
+
+h4 {
+  cursor: pointer;
+  margin-top: 0;
+  border-bottom: $border-basic rgba($color-accent, .5);
+  padding-bottom: .2rem;
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  span.fa {
+    margin-right: .2rem;
+  }
+
+  .container {
+    @include mobile {
+      padding: 0 15px;
+      padding-left: 0;
+    }
+  }
+}
+
+.title {
+  &.major {
+    font-weight: 900;
+  }
+}
+
+
+.innercontent {
+  width: $width-text;
+  max-width: 90%;
+  padding: 20px;
+  padding-top: 0;
+  //margin-left: 50px;
+
+  &.hide {
+    display: none;
+  }
+
+  @include mobile {
+    padding-left: 10px;
+  }
+}
+
+.details-list {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: $line-height-text;
+}
+
+.tag {
+  background: $color-accent-dark;
+  border-radius: $border-radius;
+  color: white;
+  display: inline-block;
+  font-size: 90%;
+  line-height: 90%;
+  margin: 5px;
+  max-height: $line-height-menu;
+  padding: 5px;
+  text-transform: lowercase;
+  vertical-align: middle;
+
+  &.major {
+    background: $color-accent-light;
+  }
+
+  &.rescheduled {
+    background: $color-ticket;
+    color: black;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+

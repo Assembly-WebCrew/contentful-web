@@ -45,4 +45,11 @@ export class SponsorsPageComponent implements OnInit {
       this.otherPartners.sort((a, b) => (a.title + '').localeCompare((b.title + '')));
     });
   }
+
+  getLogo(url) {
+    if (url) {
+      return url + '?w=300';
+    }
+  }
+
 }

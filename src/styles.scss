@@ -14,7 +14,7 @@ body {
   * {
     box-sizing: border-box;
   }
-  
+
   &.mobile-menu-open {
     overflow: hidden;
   }
@@ -209,9 +209,9 @@ blockquote {
       border: 0;
     }
 
-   ol {
-     padding-left: 0;
-   }
+    ol {
+      padding-left: 0;
+    }
   }
 
 }

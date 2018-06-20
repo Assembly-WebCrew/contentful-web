@@ -1,4 +1,3 @@
-import { ApolloClient } from 'apollo-client';
 import gql from 'graphql-tag';
 import { ContentfulService } from './core/contentful.service';
 import { Injectable } from '@angular/core';
@@ -71,6 +70,10 @@ export class ContentResolve implements Resolve<any> {
                   url
                 }
               }
+              ... on BlockSchedule {
+                scheduleSource
+                tag
+              }
               ... on BlockCollapse {
                 title
                 content
@@ -104,7 +107,7 @@ export class ContentResolve implements Resolve<any> {
           }
         }`
     });
-    let page = get(response, 'data.pages[0]');
+    const page = get(response, 'data.pages[0]');
     if (page) {
       this.meta.setMetaTags(state.url, page);
     }

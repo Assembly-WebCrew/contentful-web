@@ -1,7 +1,7 @@
 <asm-base [content]="content">
   <asm-block-sponsors></asm-block-sponsors>
   <div class="article">
-    <img [src]="article?.featuredImage?.url || '/assets/images/background-picture.jpg'" [alt]="article?.title">
+    <img [src]="getImage(article)" [alt]="article?.title">
     <h2>{{article?.title}}</h2>
     <div class="date">{{article?.date | date:'dd.MM.yyyy'}}</div>
     <p class="ingress" *ngIf="article?.ingress">{{article?.ingress}}</p>

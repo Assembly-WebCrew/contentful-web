@@ -1,8 +1,7 @@
 import { Observable } from 'rxjs/Rx';
 import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ApolloClient, createNetworkInterface, IntrospectionFragmentMatcher, NetworkStatus } from 'apollo-client';
 import { environment } from '../../environments/environment';

@@ -7,9 +7,9 @@ import { ContentfulService } from '../../core/contentful.service';
   styleUrls: ['./block-page-header.component.scss']
 })
 export class BlockPageHeaderComponent implements OnInit {
-  content: any = {};
-
   static blockName = 'BlockPageHeader';
+
+  content: any = {};
 
   constructor(private contentful: ContentfulService) {}
 

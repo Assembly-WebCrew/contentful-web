@@ -6,11 +6,11 @@
         <div class="logo">
           <ng-container *ngIf="partner.link; else noMainPartnerLink">
             <a [href]="partner.link" target="_blank" ref="noopener">
-              <img [src]="partner.logo?.url" [alt]="partner.title">
+              <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
             </a>
           </ng-container>
           <ng-template #noMainPartnerLink>
-            <img [src]="partner.logo?.url" [alt]="partner.title">
+            <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
           </ng-template>
         </div>
         <div class="description" *ngIf="partner.description" [markdownText]="partner.description" asmMarkdown></div>
@@ -23,11 +23,11 @@
           <div class="logo">
             <ng-container *ngIf="partner.link; else noPartnerLink">
               <a [href]="partner.link" target="_blank" ref="noopener">
-                <img [src]="partner.logo?.url" [alt]="partner.title">
+                <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
               </a>
             </ng-container>
             <ng-template #noPartnerLink>
-              <img [src]="partner.logo?.url" [alt]="partner.title">
+              <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
             </ng-template>
           </div>
         </div>

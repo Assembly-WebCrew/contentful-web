@@ -1,0 +1,12 @@
+<div class="schedule">
+  <ul class="day-list">
+    <li *ngFor="let day of days">
+      <div class="pill">{{day}}</div>
+    </li>
+  </ul>
+
+  <asm-block-schedule-event
+    *ngFor="let event of events; let i = index"
+    [event]="event">
+  </asm-block-schedule-event>
+</div>

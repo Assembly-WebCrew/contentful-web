@@ -37,6 +37,12 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
     return this.contentful.getUrl(item);
   }
 
+  getLogo() {
+    if (this.event && this.event.logo && this.event.logo.fields) {
+      return this.event.logo.fields.file.url + '?w=300';
+    }
+  }
+
   onNavigation(item, event: Event) {
     this.contentful.onNavigation(item, event);
     this.onClose.emit();

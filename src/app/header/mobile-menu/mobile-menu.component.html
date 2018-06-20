@@ -1,7 +1,7 @@
 <div class="top">
     <div class="logo-container">
       <a [href]="'/' + event?.name">
-        <img class="logo" [src]="event?.logo?.fields?.file?.url + '?w=200'" alt="{{event?.logo?.fields?.title}}">
+        <img class="logo" [src]="getLogo()" alt="{{event?.logo?.fields?.title}}">
       </a>
     </div>
     <button type="button" (click)="onCloseClick()">

@@ -1,0 +1,1783 @@
+{
+   "locations":{
+      "sportfield":{
+         "name_fi":"Urheilukentt\u00e4",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Sport Field"
+      },
+      "esport":{
+         "name_fi":"Esport-alue",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Esports area"
+      },
+      "stream_corner":{
+         "name_fi":"Streamcorner",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Streamcorner"
+      },
+      "pms":{
+         "name_fi":"PMS",
+         "url":"http://pms.assembly.org",
+         "name":"PMS"
+      },
+      "party_area":{
+         "name_fi":"Tapahtuma-alue",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Main party area"
+      },
+      "all_entrances":{
+         "name_fi":"Kaikki sis\u00e4\u00e4nk\u00e4ynnit",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"All entrances"
+      },
+      "seminar":{
+         "name_fi":"Seminaarialue",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Seminar area"
+      },
+      "web":{
+         "name_fi":"Website",
+         "url":"http://assembly.org",
+         "name":"Website"
+      },
+      "loading":{
+         "name_fi":"Lastaussis\u00e4\u00e4nk\u00e4ynti",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Loading entrance"
+      },
+      "own_place":{
+         "name_fi":"Oma tietokonepaikka",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Own computer place"
+      },
+      "all_areas":{
+         "name_fi":"Kaikki alueet",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"All Areas"
+      },
+      "msi":{
+         "name_fi":"MSI st\u00e4ndi",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"MSI stand"
+      },
+      "hp":{
+         "name_fi":"Omen by HP st\u00e4ndi",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Omen by HP stand"
+      },
+      "entrance":{
+         "name_fi":"P\u00e4\u00e4ovi",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Main entrance"
+      },
+      "screen":{
+         "name_fi":"Big screen",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Big screen"
+      },
+      "sponsors":{
+         "name_fi":"Sponsorialue",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Sponsor area"
+      },
+      "speedplay":{
+         "name_fi":"Speed run -alue",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Speed run area"
+      },
+      "asmtv":{
+         "name_fi":"AssemblyTV",
+         "url":"http://www.assembly.org/winter18/program/streams/",
+         "name":"AssemblyTV"
+      },
+      "activity_area":{
+         "name_fi":"Aktiviteettialue",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Activity area"
+      },
+      "stage":{
+         "name_fi":"Asus ROG Lava",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Asus ROG Stage"
+      },
+      "infodesk":{
+         "name_fi":"Infodesk",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Infodesk"
+      },
+      "netinfo":{
+         "name_fi":"NetInfo",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"NetInfo"
+      },
+      "ticket_sales":{
+         "name_fi":"Lipunmyyntipiste",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Ticket sales booth"
+      },
+      "ow_stage":{
+         "name_fi":"Overwatch-lava",
+         "url":"http://www.assembly.org/winter18/manual/maps/",
+         "name":"Overwatch Stage"
+      }
+   },
+   "events":[
+      {
+         "location_key":"all_areas",
+         "name":"ASSEMBLY Winter 2018 starts!",
+         "start_time":"2018-02-02T10:00+0200",
+         "original_start_time":"2018-02-02T10:00+0200",
+         "flags":[
+            "major"
+         ],
+         "end_time":"2018-02-02T10:00+0200",
+         "key":"winter18-2010",
+         "name_fi":"ASSEMBLY Winter 2018 alkaa!",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"entrance",
+         "name":"Loading doors 5.5 open (Premium computer places)",
+         "url":"http://www.assembly.org/winter18/manual/setting/",
+         "start_time":"2018-02-02T10:00+0200",
+         "original_start_time":"2018-02-02T10:00+0200",
+         "flags":[
+            "major",
+            "onsite"
+         ],
+         "end_time":"2018-02-02T12:00+0200",
+         "key":"winter18-2040",
+         "name_fi":"Lastausovi 5.5 avoinna (Premium konepaikat)",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"entrance",
+         "name":"Main entrance opened",
+         "url":"http://www.assembly.org/winter18/manual/setting/",
+         "start_time":"2018-02-02T12:00+0200",
+         "original_start_time":"2018-02-02T12:00+0200",
+         "flags":[
+            "major"
+         ],
+         "end_time":"2018-02-02T12:00+0200",
+         "key":"winter18-2020",
+         "name_fi":"P\u00e4\u00e4ovi avataan",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"entrance",
+         "name":"Loading doors 5.6 open (All visitors)",
+         "url":"http://www.assembly.org/winter18/manual/getting/",
+         "start_time":"2018-02-02T12:00+0200",
+         "original_start_time":"2018-02-02T12:00+0200",
+         "flags":[
+            "major",
+            "onsite"
+         ],
+         "end_time":"2018-02-02T12:00+0200",
+         "key":"winter18-2050",
+         "name_fi":"Lastausovi 5.6 avoinna (Kaikki k\u00e4vij\u00e4t)",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"esport",
+         "name":"CS:GO PRO Group A First Round, bo1",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-02T12:00+0200",
+         "description_fi":"Assembly Winter 2018 is\u00e4nn\u00f6i ammattimaisen Counter-Strike: Global Offensive -turnauksen helmikuun 2.-3. p\u00e4iv\u00e4. ASUS ROG Winter 2018 -kisassa on mukana kahdeksan joukkuetta taistelemassa 15 000 dollarin palkintorahoista.",
+         "original_start_time":"2018-02-02T12:00+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-02T13:30+0200",
+         "key":"winter18-3030",
+         "name_fi":"CS:GO PRO Group A First Round, bo1",
+         "categories":[
+            "Game",
+            "Groups"
+         ],
+         "description":"ASUS ROG CS:GO tournament at Assembly Winter 2018 in Helsinki, Finland on February 2-3, featuring eight teams and a $15,000 USD prize pool."
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Ulttis",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T12:00+0200",
+         "original_start_time":"2018-02-02T12:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T14:00+0200",
+         "key":"winter18-8010",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Ulttis",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"esport",
+         "name":"CS:GO PRO Group A Winners Match & Losers Match, bo1",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-02T13:30+0200",
+         "description_fi":"Assembly Winter 2018 is\u00e4nn\u00f6i ammattimaisen Counter-Strike: Global Offensive -turnauksen helmikuun 2.-3. p\u00e4iv\u00e4. ASUS ROG Winter 2018 -kisassa on mukana kahdeksan joukkuetta taistelemassa 15 000 dollarin palkintorahoista.",
+         "original_start_time":"2018-02-02T13:30+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-02T14:30+0200",
+         "key":"winter18-3050",
+         "name_fi":"CS:GO PRO Group A Winners Match & Losers Match, bo1",
+         "categories":[
+            "Game",
+            "Groups"
+         ],
+         "description":"ASUS ROG CS:GO tournament at Assembly Winter 2018 in Helsinki, Finland on February 2-3, featuring eight teams and a $15,000 USD prize pool."
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Mustikka",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T14:00+0200",
+         "original_start_time":"2018-02-02T14:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T16:00+0200",
+         "key":"winter18-8030",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Mustikka",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: TurunMarkku",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T14:00+0200",
+         "original_start_time":"2018-02-02T14:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T16:00+0200",
+         "key":"winter18-8040",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: TurunMarkku",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stage",
+         "name":"CS:GO PRO Group A Decider Match, bo3",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-02T15:00+0200",
+         "description_fi":"Assembly Winter 2018 is\u00e4nn\u00f6i ammattimaisen Counter-Strike: Global Offensive -turnauksen helmikuun 2.-3. p\u00e4iv\u00e4. ASUS ROG Winter 2018 -kisassa on mukana kahdeksan joukkuetta taistelemassa 15 000 dollarin palkintorahoista.",
+         "original_start_time":"2018-02-02T15:00+0200",
+         "flags":[
+            "major",
+            "bigscreen",
+            "onsite",
+            "stream"
+         ],
+         "end_time":"2018-02-02T17:00+0200",
+         "key":"winter18-3060",
+         "name_fi":"CS:GO PRO Group A Decider Match, bo3",
+         "categories":[
+            "Game",
+            "Groups"
+         ],
+         "description":"ASUS ROG CS:GO tournament at Assembly Winter 2018 in Helsinki, Finland on February 2-3, featuring eight teams and a $15,000 USD prize pool."
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Overwatch PRO Winner Bracket #1",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/omen-by-hp-overwatch-tournament",
+         "start_time":"2018-02-02T15:00+0200",
+         "description_fi":"Overwatch palaa Assembly Wintereille helmikuun 2.-3. p\u00e4iv\u00e4 OMEN by HP: Overwatch Tournamentilla, jossa on mukana nelj\u00e4 suomalaista joukkuetta ottelemassa 10 000 euron palkinnoista.",
+         "original_start_time":"2018-02-02T15:00+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-02T17:00+0200",
+         "key":"winter18-3210",
+         "name_fi":"Overwatch PRO Winner Bracket #1",
+         "categories":[
+            "Game",
+            "Semifinals"
+         ],
+         "description":"Overwatch returns to Assembly Winter from February 2-3, 2018 with OMEN by HP: Overwatch Tournament, featuring four Finnish teams and a prize pool of \u20ac10,000."
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Valley",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T16:00+0200",
+         "original_start_time":"2018-02-02T16:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T16:30+0200",
+         "key":"winter18-6010",
+         "name_fi":"Speedrun: Valley",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: ChimmTV",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T16:00+0200",
+         "original_start_time":"2018-02-02T16:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T20:00+0200",
+         "key":"winter18-8050",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: ChimmTV",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Vorhala",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T16:00+0200",
+         "original_start_time":"2018-02-02T16:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T18:00+0200",
+         "key":"winter18-8060",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Vorhala",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Environmental Station Alpha",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T16:30+0200",
+         "original_start_time":"2018-02-02T16:30+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T17:00+0200",
+         "key":"winter18-6020",
+         "name_fi":"Speedrun: Environmental Station Alpha",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Overwatch PRO Winner Bracket #2",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/omen-by-hp-overwatch-tournament",
+         "start_time":"2018-02-02T17:00+0200",
+         "description_fi":"Overwatch palaa Assembly Wintereille helmikuun 2.-3. p\u00e4iv\u00e4 OMEN by HP: Overwatch Tournamentilla, jossa on mukana nelj\u00e4 suomalaista joukkuetta ottelemassa 10 000 euron palkinnoista.",
+         "original_start_time":"2018-02-02T17:00+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-02T19:00+0200",
+         "key":"winter18-3220",
+         "name_fi":"Overwatch PRO Winner Bracket #2",
+         "categories":[
+            "Game",
+            "Semifinals"
+         ],
+         "description":"Overwatch returns to Assembly Winter from February 2-3, 2018 with OMEN by HP: Overwatch Tournament, featuring four Finnish teams and a prize pool of \u20ac10,000."
+      },
+      {
+         "location_key":"own_place",
+         "name":"Overwatch BYOC Sign-up ends & Check-in starts",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/overwatch-byoc",
+         "start_time":"2018-02-02T17:00+0200",
+         "original_start_time":"2018-02-02T17:00+0200",
+         "flags":[
+
+         ],
+         "end_time":"2018-02-02T17:00+0200",
+         "key":"winter18-3310",
+         "name_fi":"Overwatch BYOC Rekister\u00f6inti loppuu & Ilmoittautuminen alkaa",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"Hearthstone BYOC Sign-up ends & Check-in starts",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/hearthstone-byoc",
+         "start_time":"2018-02-02T17:00+0200",
+         "original_start_time":"2018-02-02T17:00+0200",
+         "flags":[
+
+         ],
+         "end_time":"2018-02-02T17:00+0200",
+         "key":"winter18-3410",
+         "name_fi":"Hearthstone BYOC Rekister\u00f6inti loppuu & Ilmoittautuminen alkaa",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"CS:GO BYOC Sign-up ends & Check-in starts",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/cs-go-byoc",
+         "start_time":"2018-02-02T17:00+0200",
+         "original_start_time":"2018-02-02T17:00+0200",
+         "flags":[
+
+         ],
+         "end_time":"2018-02-02T17:00+0200",
+         "key":"winter18-3510",
+         "name_fi":"CS:GO BYOC Rekister\u00f6inti loppuu & Ilmoittautuminen alkaa",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"League Of Legends BYOC Sign-up ends & Check-in starts",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/league-of-legends-byoc",
+         "start_time":"2018-02-02T17:00+0200",
+         "original_start_time":"2018-02-02T17:00+0200",
+         "flags":[
+
+         ],
+         "end_time":"2018-02-02T17:00+0200",
+         "key":"winter18-3610",
+         "name_fi":"League Of Legends BYOC Rekister\u00f6inti loppuu & Ilmoittautuminen alkaa",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Resident Evil 7: Biohazard",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T17:00+0200",
+         "original_start_time":"2018-02-02T17:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T17:35+0200",
+         "key":"winter18-6030",
+         "name_fi":"Speedrun: Resident Evil 7: Biohazard",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Streamcorner: Work in Progress LIVE",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T17:00+0200",
+         "original_start_time":"2018-02-02T17:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T18:45+0200",
+         "key":"winter18-8230",
+         "name_fi":"Streamcorner: Work In Progress LIVE",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Amnesia: The Dark Descent",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T17:35+0200",
+         "original_start_time":"2018-02-02T17:35+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T18:20+0200",
+         "key":"winter18-6040",
+         "name_fi":"Speedrun: Amnesia: The Dark Descent",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"Overwatch BYOC Tournament",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/overwatch-byoc",
+         "start_time":"2018-02-02T18:00+0200",
+         "original_start_time":"2018-02-02T18:00+0200",
+         "flags":[
+
+         ],
+         "end_time":"2018-02-03T02:00+0200",
+         "key":"winter18-3320",
+         "name_fi":"Overwatch BYOC Turnaus",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"Hearthstone BYOC Tournament",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/hearthstone-byoc",
+         "start_time":"2018-02-02T18:00+0200",
+         "original_start_time":"2018-02-02T18:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T02:00+0200",
+         "key":"winter18-3420",
+         "name_fi":"Hearthstone BYOC Turnaus",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"CS:GO BYOC Tournament",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/cs-go-byoc",
+         "start_time":"2018-02-02T18:00+0200",
+         "original_start_time":"2018-02-02T18:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T02:00+0200",
+         "key":"winter18-3520",
+         "name_fi":"CS:GO BYOC Turnaus",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"League Of Legends BYOC Tournament",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/league-of-legends-byoc",
+         "start_time":"2018-02-02T18:00+0200",
+         "original_start_time":"2018-02-02T18:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T02:00+0200",
+         "key":"winter18-3620",
+         "name_fi":"League Of Legends BYOC Turnaus",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Vertigal",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T18:00+0200",
+         "original_start_time":"2018-02-02T18:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T20:00+0200",
+         "key":"winter18-8070",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Vertigal",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"own_place",
+         "name":"Yle FTW PlayerUnknown's Battlegrounds BYOC Tournament",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/pubg-x-yle-ftw",
+         "start_time":"2018-02-02T18:00+0200",
+         "original_start_time":"2018-02-02T18:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T18:05+0200",
+         "key":"winter18-yle-ftw-pubg",
+         "name_fi":"Yle FTW PlayerUnknown's Battlegrounds BYOC -turnaus",
+         "categories":[
+            "game"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: The Legend of Zelda: The Minish Cap",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T18:20+0200",
+         "original_start_time":"2018-02-02T18:20+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T20:25+0200",
+         "key":"winter18-6050",
+         "name_fi":"Speedrun: The Legend of Zelda: The Minish Cap",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"esport",
+         "name":"CS:GO PRO Group B First Round, bo1",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-02T18:30+0200",
+         "description_fi":"Assembly Winter 2018 is\u00e4nn\u00f6i ammattimaisen Counter-Strike: Global Offensive -turnauksen helmikuun 2.-3. p\u00e4iv\u00e4. ASUS ROG Winter 2018 -kisassa on mukana kahdeksan joukkuetta taistelemassa 15 000 dollarin palkintorahoista.",
+         "original_start_time":"2018-02-02T18:30+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-02T19:45+0200",
+         "key":"winter18-3080",
+         "name_fi":"CS:GO PRO Group B First Round, bo1",
+         "categories":[
+            "Game",
+            "Groups"
+         ],
+         "description":"ASUS ROG CS:GO tournament at Assembly Winter 2018 in Helsinki, Finland on February 2-3, featuring eight teams and a $15,000 USD prize pool."
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Overwatch PRO Lower Bracket #1",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/omen-by-hp-overwatch-tournament",
+         "start_time":"2018-02-02T19:00+0200",
+         "description_fi":"Overwatch palaa Assembly Wintereille helmikuun 2.-3. p\u00e4iv\u00e4 OMEN by HP: Overwatch Tournamentilla, jossa on mukana nelj\u00e4 suomalaista joukkuetta ottelemassa 10 000 euron palkinnoista.",
+         "original_start_time":"2018-02-02T19:00+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-02T21:00+0200",
+         "key":"winter18-3230",
+         "name_fi":"Overwatch PRO Lower Bracket #1",
+         "categories":[
+            "Game",
+            "Finals"
+         ],
+         "description":"Overwatch returns to Assembly Winter from February 2-3, 2018 with OMEN by HP: Overwatch Tournament, featuring four Finnish teams and a prize pool of \u20ac10,000."
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Streamcorner: Mit\u00e4 on GTA RP?",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T19:00+0200",
+         "original_start_time":"2018-02-02T19:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T20:45+0200",
+         "key":"winter18-8240",
+         "name_fi":"Streamcorner: Mit\u00e4 on GTA RP?",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"esport",
+         "name":"CS:GO PRO Group B Winners Match & Losers Match, bo1",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-02T19:45+0200",
+         "description_fi":"Assembly Winter 2018 is\u00e4nn\u00f6i ammattimaisen Counter-Strike: Global Offensive -turnauksen helmikuun 2.-3. p\u00e4iv\u00e4. ASUS ROG Winter 2018 -kisassa on mukana kahdeksan joukkuetta taistelemassa 15 000 dollarin palkintorahoista.",
+         "original_start_time":"2018-02-02T19:45+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-02T21:00+0200",
+         "key":"winter18-3090",
+         "name_fi":"CS:GO PRO Group B Winners Match & Losers Match, bo1",
+         "categories":[
+            "Game",
+            "Groups"
+         ],
+         "description":"ASUS ROG CS:GO tournament at Assembly Winter 2018 in Helsinki, Finland on February 2-3, featuring eight teams and a $15,000 USD prize pool."
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: dajoanna",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T20:00+0200",
+         "original_start_time":"2018-02-02T20:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T22:00+0200",
+         "key":"winter18-8080",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: dajoanna",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Matteplay",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T20:00+0200",
+         "original_start_time":"2018-02-02T20:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T22:00+0200",
+         "key":"winter18-8090",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Matteplay",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Mega Man 3 ",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T20:25+0200",
+         "original_start_time":"2018-02-02T20:25+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T21:15+0200",
+         "key":"winter18-6060",
+         "name_fi":"Speedrun: Mega Man 3 ",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stage",
+         "name":"CS:GO PRO Group B Decider Match, bo3",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-02T21:00+0200",
+         "description_fi":"Assembly Winter 2018 is\u00e4nn\u00f6i ammattimaisen Counter-Strike: Global Offensive -turnauksen helmikuun 2.-3. p\u00e4iv\u00e4. ASUS ROG Winter 2018 -kisassa on mukana kahdeksan joukkuetta taistelemassa 15 000 dollarin palkintorahoista.",
+         "original_start_time":"2018-02-02T21:00+0200",
+         "flags":[
+            "major",
+            "bigscreen",
+            "onsite",
+            "stream"
+         ],
+         "end_time":"2018-02-02T23:30+0200",
+         "key":"winter18-3100",
+         "name_fi":"CS:GO PRO Group B Decider Match, bo3",
+         "categories":[
+            "Game",
+            "Groups"
+         ],
+         "description":"ASUS ROG CS:GO tournament at Assembly Winter 2018 in Helsinki, Finland on February 2-3, featuring eight teams and a $15,000 USD prize pool."
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Streamcorner: Ninan lavaskaba",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T21:00+0200",
+         "original_start_time":"2018-02-02T21:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T22:45+0200",
+         "key":"winter18-8250",
+         "name_fi":"Streamcorner: Ninan lavaskaba",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Die by the Sword",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T21:15+0200",
+         "original_start_time":"2018-02-02T21:15+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T22:00+0200",
+         "key":"winter18-6070",
+         "name_fi":"Speedrun: Die by the Sword",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Far Cry 4",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T22:00+0200",
+         "original_start_time":"2018-02-02T22:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T22:30+0200",
+         "key":"winter18-6080",
+         "name_fi":"Speedrun: Far Cry 4",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Bile-Dan",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T22:00+0200",
+         "original_start_time":"2018-02-02T22:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-02T00:00+0200",
+         "key":"winter18-0010",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Bile-Dan",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Ninaonilo",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-02T22:00+0200",
+         "original_start_time":"2018-02-02T22:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T00:00+0200",
+         "key":"winter18-0040",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Ninaonilo",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Grand Theft Auto III",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-02T22:30+0200",
+         "original_start_time":"2018-02-02T22:30+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T01:40+0200",
+         "key":"winter18-6090",
+         "name_fi":"Speedrun: Grand Theft Auto III",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Grand Theft Auto: Vice City Stories",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T01:40+0200",
+         "original_start_time":"2018-02-03T01:40+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T02:35+0200",
+         "key":"winter18-6100",
+         "name_fi":"Speedrun: Grand Theft Auto: Vice City Stories",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Gravity Rush",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T02:35+0200",
+         "original_start_time":"2018-02-03T02:35+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T04:30+0200",
+         "key":"winter18-6110",
+         "name_fi":"Speedrun: Gravity Rush",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Crash Bash",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T04:30+0200",
+         "original_start_time":"2018-02-03T04:30+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T06:35+0200",
+         "key":"winter18-6120",
+         "name_fi":"Speedrun: Crash Bash",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: VODCAST BREAK",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T06:35+0200",
+         "original_start_time":"2018-02-03T06:35+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T11:55+0200",
+         "key":"winter18-6130",
+         "name_fi":"Speedrun: VODCAST BREAK",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Overwatch PRO Winner Bracket #3",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/omen-by-hp-overwatch-tournament",
+         "start_time":"2018-02-03T10:00+0200",
+         "description_fi":"Overwatch palaa Assembly Wintereille helmikuun 2.-3. p\u00e4iv\u00e4 OMEN by HP: Overwatch Tournamentilla, jossa on mukana nelj\u00e4 suomalaista joukkuetta ottelemassa 10 000 euron palkinnoista.",
+         "original_start_time":"2018-02-03T10:00+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-03T12:00+0200",
+         "key":"winter18-3240",
+         "name_fi":"Overwatch PRO Winner Bracket #3",
+         "categories":[
+            "Game"
+         ],
+         "description":"Overwatch returns to Assembly Winter from February 2-3, 2018 with OMEN by HP: Overwatch Tournament, featuring four Finnish teams and a prize pool of \u20ac10,000."
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Final Fantasy XIII-2",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T11:55+0200",
+         "original_start_time":"2018-02-03T11:55+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T15:15+0200",
+         "key":"winter18-6140",
+         "name_fi":"Speedrun: Final Fantasy XIII-2",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"esport",
+         "name":"CS:GO PRO Group A Second Round; bo1",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-03T12:00+0200",
+         "description_fi":"Assembly Winter 2018 is\u00e4nn\u00f6i ammattimaisen Counter-Strike: Global Offensive -turnauksen helmikuun 2.-3. p\u00e4iv\u00e4. ASUS ROG Winter 2018 -kisassa on mukana kahdeksan joukkuetta taistelemassa 15 000 dollarin palkintorahoista.",
+         "original_start_time":"2018-02-03T12:00+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-03T13:30+0200",
+         "key":"winter18-3040",
+         "name_fi":"CS:GO PRO Group A Second Round, bo1",
+         "categories":[
+            "Game"
+         ],
+         "description":"ASUS ROG CS:GO tournament at Assembly Winter 2018 in Helsinki, Finland on February 2-3, featuring eight teams and a $15,000 USD prize pool."
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Overwatch PRO Lower Bracket #2",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/omen-by-hp-overwatch-tournament",
+         "start_time":"2018-02-03T12:00+0200",
+         "description_fi":"Overwatch palaa Assembly Wintereille helmikuun 2.-3. p\u00e4iv\u00e4 OMEN by HP: Overwatch Tournamentilla, jossa on mukana nelj\u00e4 suomalaista joukkuetta ottelemassa 10 000 euron palkinnoista.",
+         "original_start_time":"2018-02-03T12:00+0200",
+         "flags":[
+            "onsite",
+            "major",
+            "stream"
+         ],
+         "end_time":"2018-02-03T14:00+0200",
+         "key":"winter18-3250",
+         "name_fi":"Overwatch PRO Lower Bracket #2",
+         "categories":[
+            "Game",
+            "Finals"
+         ],
+         "description":"Overwatch returns to Assembly Winter from February 2-3, 2018 with OMEN by HP: Overwatch Tournament, featuring four Finnish teams and a prize pool of \u20ac10,000."
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: nunununununununununununu",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T12:00+0200",
+         "original_start_time":"2018-02-03T12:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T14:00+0200",
+         "key":"winter18-8120",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: nunununununununununununu",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: milkifin",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T12:00+0200",
+         "original_start_time":"2018-02-03T12:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T14:00+0200",
+         "key":"winter18-8130",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: milkifin",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stage",
+         "name":"CS:GO Semifinal A, bo3",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-03T13:00+0200",
+         "original_start_time":"2018-02-03T13:00+0200",
+         "flags":[
+            "major",
+            "bigscreen",
+            "onsite"
+         ],
+         "end_time":"2018-02-03T15:30+0200",
+         "key":"winter18-3120",
+         "name_fi":"CS:GO Semifinal A, bo3",
+         "categories":[
+            "Game",
+            "Semifinals"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: aippa",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T14:00+0200",
+         "original_start_time":"2018-02-03T14:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T18:00+0200",
+         "key":"winter18-8140",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: aippa",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: amisankka",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T14:00+0200",
+         "original_start_time":"2018-02-03T14:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T16:00+0200",
+         "key":"winter18-8150",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: amisankka",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Streamcorner: Challenge Anniina",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T14:00+0200",
+         "original_start_time":"2018-02-03T14:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T15:45+0200",
+         "key":"winter18-0020",
+         "name_fi":"Streamcorner: Haasta Anniina",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"hp",
+         "name":"Overwatch BYOC Semifinals",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/overwatch-byoc",
+         "start_time":"2018-02-03T15:00+0200",
+         "original_start_time":"2018-02-03T15:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T18:00+0200",
+         "key":"winter18-3330",
+         "name_fi":"Overwatch BYOC Semifinaali",
+         "categories":[
+            "Game",
+            "Semifinals"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Super Mario Odyssey",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T15:15+0200",
+         "original_start_time":"2018-02-03T15:15+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T16:40+0200",
+         "key":"winter18-6150",
+         "name_fi":"Speedrun: Super Mario Odyssey",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stage",
+         "name":"CS:GO Semifinal B, bo3",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-03T16:00+0200",
+         "original_start_time":"2018-02-03T16:00+0200",
+         "flags":[
+            "major",
+            "bigscreen",
+            "onsite"
+         ],
+         "end_time":"2018-02-03T18:00+0200",
+         "key":"winter18-3130",
+         "name_fi":"CS:GO Semifinaali B, bo3",
+         "categories":[
+            "Game",
+            "Semifinals"
+         ]
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Overwatch PRO FINAL, bo5 and prize ceremony",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/omen-by-hp-overwatch-tournament",
+         "start_time":"2018-02-03T16:00+0200",
+         "description_fi":"Overwatch palaa Assembly Wintereille helmikuun 2.-3. p\u00e4iv\u00e4 OMEN by HP: Overwatch Tournamentilla, jossa on mukana nelj\u00e4 suomalaista joukkuetta ottelemassa 10 000 euron palkinnoista.",
+         "original_start_time":"2018-02-03T16:00+0200",
+         "flags":[
+            "major",
+            "onsite",
+            "stream"
+         ],
+         "end_time":"2018-02-03T19:00+0200",
+         "key":"winter18-3260",
+         "name_fi":"Overwatch PRO Finaali, bo5 ja palkintojenjako",
+         "categories":[
+            "Game",
+            "Finals"
+         ],
+         "description":"Overwatch returns to Assembly Winter from February 2-3, 2018 with OMEN by HP: Overwatch Tournament, featuring four Finnish teams and a prize pool of \u20ac10,000."
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Ninaonilo",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T16:00+0200",
+         "original_start_time":"2018-02-03T16:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T18:00+0200",
+         "key":"winter18-8160",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Ninaonilo",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"HEO - Professional eSport and training",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T16:00+0200",
+         "description_fi":"HEO kansanopiston eSports linja kertoo kilpailupelaamisen opiskelusta: Keskustelussa pelaaminen ammattina, pelaamisen harjoittelu, kilpailupelaajan el\u00e4m\u00e4 pelien ulkopuolella ja kehityksen tie.",
+         "original_start_time":"2018-02-03T16:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T17:45+0200",
+         "key":"winter18-0030",
+         "name_fi":"HEO - Kilpailupelaaminen ja harjoittelu",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Super Mario Sunshine",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T16:40+0200",
+         "original_start_time":"2018-02-03T16:40+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T18:10+0200",
+         "key":"winter18-6160",
+         "name_fi":"Speedrun: Super Mario Sunshine",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Ys Origin",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T17:10+0200",
+         "original_start_time":"2018-02-03T17:10+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T18:45+0200",
+         "key":"winter18-6170",
+         "name_fi":"Speedrun: Ys Origin",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Vertigal",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T18:00+0200",
+         "original_start_time":"2018-02-03T18:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T20:00+0200",
+         "key":"winter18-8170",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Vertigal",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: navixdaking",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T18:00+0200",
+         "original_start_time":"2018-02-03T18:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T22:00+0200",
+         "key":"winter18-8180",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: navixdaking",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Overwatch BYOC Final and Prize Ceremony",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/overwatch-byoc",
+         "start_time":"2018-02-03T18:30+0200",
+         "original_start_time":"2018-02-03T18:30+0200",
+         "flags":[
+            "major",
+            "onsite"
+         ],
+         "end_time":"2018-02-03T20:00+0200",
+         "key":"winter18-3340",
+         "name_fi":"Overwatch BYOC finaali ja palkintojenjako",
+         "categories":[
+            "Game",
+            "Finals"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: The Legend of Zelda: Majora's Mask",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T18:45+0200",
+         "original_start_time":"2018-02-03T18:45+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T21:05+0200",
+         "key":"winter18-6180",
+         "name_fi":"Speedrun: The Legend of Zelda: Majora's Mask",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stage",
+         "name":"CS:GO BYOC Final and Prize Ceremony",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/cs-go-byoc",
+         "start_time":"2018-02-03T19:00+0200",
+         "original_start_time":"2018-02-03T19:00+0200",
+         "flags":[
+            "major",
+            "bigscreen",
+            "onsite"
+         ],
+         "end_time":"2018-02-03T21:00+0200",
+         "key":"winter18-3530",
+         "name_fi":"CS:GO BYOC finaali ja palkintojenjako",
+         "categories":[
+
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Streamcorner: Hearthstone with Roarr",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T19:00+0200",
+         "original_start_time":"2018-02-03T19:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T20:45+0200",
+         "key":"winter18-8270",
+         "name_fi":"Streamcorner: Hearthstonea Roarrin kanssa",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: nunununununununununununu",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T20:00+0200",
+         "original_start_time":"2018-02-03T20:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T22:00+0200",
+         "key":"winter18-8190",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: nunununununununununununu",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"Hearthstone and League of Legends BYOC Prize Ceremony",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/hearthstone-byoc",
+         "start_time":"2018-02-03T20:00+0200",
+         "original_start_time":"2018-02-03T20:00+0200",
+         "flags":[
+            "canceled",
+            "major"
+         ],
+         "end_time":"2018-02-03T20:30+0200",
+         "key":"winter18-hs-and-lol-byoc-prices",
+         "name_fi":"Hearthstone ja League of Legends BYOC palkintojenjako",
+         "categories":[
+            "Game"
+         ]
+      },
+      {
+         "location_key":"ow_stage",
+         "name":"MSI Rainbow 6: Siege Showmatch ENCE eSports vs Moti on Gaming",
+         "url":"http://www.assembly.org/winter18/esport/msi-rainbow-six-siege-showmatch/",
+         "start_time":"2018-02-03T20:30+0200",
+         "description_fi":"MSI esitt\u00e4\u00e4: ENCE eSports vs Moti on Gaming, ammattimainen Rainbow Six: Siege Showmatch n\u00e4ytt\u00e4v\u00e4sti Assembly Winter 2018 -tapahtumassa!",
+         "original_start_time":"2018-02-03T20:30+0200",
+         "flags":[
+            "stream",
+            "asmtv"
+         ],
+         "end_time":"2018-02-03T22:00+0200",
+         "key":"winter18-msi-r6-showmatch",
+         "name_fi":"MSI Rainbow 6: Siege Showmatch ENCE eSports vs Moti on Gaming",
+         "categories":[
+            "game"
+         ],
+         "description":"MSI presents ENCE eSports vs Moti on Gaming, Rainbow Six: Siege Showmatch at Assembly Winter 2018!"
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Kotti Showcase: Max Payne 2 tutorial and race",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T21:00+0200",
+         "original_start_time":"2018-02-03T21:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T22:45+0200",
+         "key":"winter18-6200",
+         "name_fi":"Speedrun: Kotti Showcase: Max Payne 2 tutorial and race",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Streamcorner: Speedrun Showcase",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T21:00+0200",
+         "original_start_time":"2018-02-03T21:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T22:45+0200",
+         "key":"winter18-8290",
+         "name_fi":"Streamcorner: Speedrun Showcase",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stage",
+         "name":"CS:GO Final and prize ceremony",
+         "url":"http://tournaments.peliliiga.fi/winter18/tournaments/view/asus-rog-winter-2018-cs-go",
+         "start_time":"2018-02-03T22:00+0200",
+         "original_start_time":"2018-02-03T22:00+0200",
+         "flags":[
+            "major",
+            "bigscreen",
+            "onsite"
+         ],
+         "end_time":"2018-02-04T02:00+0200",
+         "key":"winter18-3140",
+         "name_fi":"CS:GO Finaali and prize ceremony",
+         "categories":[
+            "Game",
+            "Finals"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Rasite",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T22:00+0200",
+         "original_start_time":"2018-02-03T22:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T00:00+0200",
+         "key":"winter18-8210",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Rasite",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"stream_corner",
+         "name":"Stream station: Xanogames",
+         "url":"http://www.assembly.org/winter18/program/streamcorner/",
+         "start_time":"2018-02-03T22:00+0200",
+         "original_start_time":"2018-02-03T22:00+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T00:00+0200",
+         "key":"winter18-0050",
+         "name_fi":"Kiert\u00e4v\u00e4 streampiste: Xanogames",
+         "categories":[
+            "Event",
+            "Streamcorner"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Hitman: Blood Money",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T22:45+0200",
+         "original_start_time":"2018-02-03T22:45+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-03T23:20+0200",
+         "key":"winter18-6190",
+         "name_fi":"Speedrun: Hitman: Blood Money",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Crash Team Racing",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-03T23:15+0200",
+         "original_start_time":"2018-02-03T23:15+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T00:15+0200",
+         "key":"winter18-6210",
+         "name_fi":"Speedrun: Crash Team Racing",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Shin Megami Tensei: Synchronicity Prologue",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-04T00:15+0200",
+         "original_start_time":"2018-02-04T00:15+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T00:35+0200",
+         "key":"winter18-6220",
+         "name_fi":"Speedrun: Shin Megami Tensei: Synchronicity Prologue",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Thief: The Dark Project",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-04T00:35+0200",
+         "original_start_time":"2018-02-04T00:35+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T01:30+0200",
+         "key":"winter18-6230",
+         "name_fi":"Speedrun: Thief: The Dark Project",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Hob",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-04T01:30+0200",
+         "original_start_time":"2018-02-04T01:30+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T02:35+0200",
+         "key":"winter18-6240",
+         "name_fi":"Speedrun: Hob",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: SiN Episodes: Emergence",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-04T02:35+0200",
+         "original_start_time":"2018-02-04T02:35+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T03:10+0200",
+         "key":"winter18-6250",
+         "name_fi":"Speedrun: SiN Episodes: Emergence",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Dark Souls II",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-04T03:10+0200",
+         "original_start_time":"2018-02-04T03:10+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T03:40+0200",
+         "key":"winter18-6260",
+         "name_fi":"Speedrun: Dark Souls II",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Quake",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-04T03:40+0200",
+         "original_start_time":"2018-02-04T03:40+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T04:05+0200",
+         "key":"winter18-6270",
+         "name_fi":"Speedrun: Quake",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"speedplay",
+         "name":"Speedrun: Doom",
+         "url":"https://www.speedrun.com/speed_games_united_winter_2018",
+         "start_time":"2018-02-04T04:05+0200",
+         "original_start_time":"2018-02-04T04:05+0200",
+         "flags":[
+            "onsite"
+         ],
+         "end_time":"2018-02-04T04:35+0200",
+         "key":"winter18-6280",
+         "name_fi":"Speedrun: Doom",
+         "categories":[
+            "Event",
+            "Speedrun"
+         ]
+      },
+      {
+         "location_key":"loading",
+         "name":"Loading doors open",
+         "url":"http://www.assembly.org/winter18/manual/leaving/",
+         "start_time":"2018-02-04T10:00+0200",
+         "original_start_time":"2018-02-04T10:00+0200",
+         "flags":[
+            "major"
+         ],
+         "end_time":"2018-02-04T16:00+0200",
+         "key":"winter18-9010",
+         "name_fi":"Lastausovet avoinna",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"all_areas",
+         "name":"Lights go on",
+         "start_time":"2018-02-04T13:45+0200",
+         "original_start_time":"2018-02-04T13:45+0200",
+         "flags":[
+            "major"
+         ],
+         "end_time":"2018-02-04T13:45+0200",
+         "key":"winter18-9020",
+         "name_fi":"Valot p\u00e4\u00e4lle",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"all_areas",
+         "name":"Party network goes down",
+         "start_time":"2018-02-04T14:30+0200",
+         "original_start_time":"2018-02-04T14:30+0200",
+         "flags":[
+            "major"
+         ],
+         "end_time":"2018-02-04T14:30+0200",
+         "key":"winter18-9030",
+         "name_fi":"Partyverkko pois p\u00e4\u00e4lt\u00e4",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"all_areas",
+         "name":"Electricity is cut",
+         "start_time":"2018-02-04T15:00+0200",
+         "original_start_time":"2018-02-04T15:00+0200",
+         "flags":[
+            "major"
+         ],
+         "end_time":"2018-02-04T15:00+0200",
+         "key":"winter18-9040",
+         "name_fi":"S\u00e4hk\u00f6t pois p\u00e4\u00e4lt\u00e4",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"loading",
+         "name":"Loading doors closed",
+         "url":"http://www.assembly.org/winter18/manual/leaving/",
+         "start_time":"2018-02-04T16:00+0200",
+         "original_start_time":"2018-02-04T16:00+0200",
+         "flags":[
+            "major"
+         ],
+         "end_time":"2018-02-04T16:00+0200",
+         "key":"winter18-9050",
+         "name_fi":"Lastausovet suljetaan",
+         "categories":[
+            "Event"
+         ]
+      },
+      {
+         "location_key":"all_areas",
+         "name":"ASSEMBLY Winter 2018 is over - see you in August!",
+         "start_time":"2018-02-04T16:00+0200",
+         "original_start_time":"2018-02-04T16:00+0200",
+         "flags":[
+            "major",
+            "onsite"
+         ],
+         "end_time":"2018-02-04T16:00+0200",
+         "key":"winter18-9060",
+         "name_fi":"ASSEMBLY Winter 2018 on ohi - n\u00e4hd\u00e4\u00e4n elokuussa!",
+         "categories":[
+            "Event"
+         ]
+      }
+   ]
+}

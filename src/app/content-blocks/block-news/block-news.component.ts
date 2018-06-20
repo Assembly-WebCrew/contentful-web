@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { ContentfulService } from '../../core/contentful.service';
 import * as qs from 'qs';
 import gql from 'graphql-tag';
@@ -10,11 +9,11 @@ import gql from 'graphql-tag';
   styleUrls: ['./block-news.component.scss']
 })
 export class BlockNewsComponent implements OnInit {
+  static blockName = 'BlockNews';
+
   content: any = {};
   articles: Array<any> = [];
   newsUrl: Array<any> = [];
-
-  static blockName = 'BlockNews';
 
   constructor(private contentful: ContentfulService) { }
 
@@ -63,7 +62,11 @@ export class BlockNewsComponent implements OnInit {
   }
 
   getImage(article: any) {
-    return 'url(' + ((article.featuredImage && article.featuredImage.url) || '/assets/images/background-picture.jpg') + ')';
+    if (article.featuredImage && article.featuredImage.url) {
+      return 'url(' + article.featuredImage.url + '?w=400)';
+    } else {
+      return 'url(/assets/images/background-picture.jpg)';
+    }
   }
 
   getLink(slug: string) {

@@ -3,7 +3,6 @@ import { ContentfulService } from '../core/contentful.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import gql from 'graphql-tag';
 import * as qs from 'qs';
-import { get } from 'lodash';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
