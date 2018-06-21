@@ -18,8 +18,12 @@
   min-height: 60vh;
   flex-direction: column;
 
+  @include mobile {
+    padding-top: 150px;
+  }
+
   .overlay {
-    background-color: rgba($color-bg-overlay, .5);
+    background-color: rgba($color-bg-overlay, .6);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -35,9 +39,13 @@
     @include page-width;
     display: flex;
     align-items: center;
-    padding: 20px 0 100px;
+    padding: 20px 10px 100px 0;
     z-index: 2;
     overflow: hidden;
+
+    @include mobile {
+     padding: 20px 10px 70px 0;
+    }
 
     .title-border {
       @include skewed;
@@ -75,8 +83,9 @@
       margin-bottom: 8px;
       
       @include mobile {
-        font-size: 45px;
-        line-height: 45px;
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 3px;
       }
     }
   }

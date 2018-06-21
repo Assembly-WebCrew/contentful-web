@@ -18,6 +18,10 @@
   width: 100%;
   transition: transform .3s ease;
 
+  @include mobile {
+    margin-top: 0;
+  }
+
   a {
     text-decoration: none;
   }
