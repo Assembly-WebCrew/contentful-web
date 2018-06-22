@@ -29,12 +29,6 @@ export class Location {
   name: string;
 }
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Access-Control-Allow-Origin': '*'
-  })
-};
-
 @Injectable()
 export class ScheduleService {
 
@@ -51,24 +45,28 @@ export class ScheduleService {
   constructor(
     private http: HttpClient) { }
 
-  getSchedule(url) {
-    let schedule: any;
-    this.http.get<Schedule>(url)
-    .subscribe((data: Schedule) => {
-        schedule = {
-          locations: data.locations,
-          events:  data.events
-        };
-        this.loading = false;
-        console.log('getSchedule');
-        console.log(schedule);
-        console.log(schedule.events);
-        console.log(schedule.locations);
-      return schedule.events;
-    });
-    console.log(schedule);
-    return schedule;
-  }
+    getJSON(url) {
+      return this.http.get<Schedule>(url);
+    }
+
+  // getSchedule(url) {
+  //   let schedule: any;
+  //   this.http.get<Schedule>(url)
+  //   .subscribe((data: Schedule) => {
+  //       schedule = {
+  //         locations: data.locations,
+  //         events:  data.events
+  //       };
+  //       this.loading = false;
+  //       console.log('getSchedule');
+  //       console.log(schedule);
+  //       console.log(schedule.events);
+  //       console.log(schedule.locations);
+  //     return schedule.events;
+  //   });
+  //   console.log(schedule);
+  //   return schedule;
+  // }
 
   // getEvents() {
   //   this.http.get<Schedule>(this.scheduleUrl).subscribe(data => {
@@ -85,14 +83,4 @@ export class ScheduleService {
   //   }
   // );
   // }
-
-  getJSON(url) {
-    return this.http.get<Schedule>(url);
-  }
-
-
 }
-
-
-
-

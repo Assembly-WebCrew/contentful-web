@@ -2,7 +2,7 @@
 
   <span class="fa fa-fw" [ngClass]="{'fa-plus': !opened, 'fa-minus': opened}"></span>
 
-  <span>{{event.start_time | date:'HH:mm'}}</span>
+  <span class="start-time">{{event.start_time | date:'HH:mm'}}</span>
 
   <span class="category-icon fa fa-fw {{event.icon}}" aria-hidden="true"></span>
 
@@ -11,7 +11,7 @@
   <div class="tags">
 
 
-    <div *ngIf="this.event.isMajor" class="flag tag pill major button">major</div>
+    <div *ngIf="this.event.isMajor" class="flag tag major button">major</div>
     <div *ngIf="this.event.isRescheduled" class="tag rescheduled button">rescheduled</div>
   </div>
 </h4>
@@ -59,7 +59,7 @@
   <p *ngIf="event.stream">
     <a class="watch" href="">Watch stream</a>
   </p>
-  <p>
+  <!-- <p>
     <a href="#{{event.key}}" title="Link here" class="anchor">[Link to this event]</a>
-  </p>
+  </p> -->
 </div>

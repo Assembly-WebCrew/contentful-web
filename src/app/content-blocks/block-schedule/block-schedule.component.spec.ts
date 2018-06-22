@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ScheduleService, Schedule } from '../services/schedule.service';
 
 import { BlockScheduleComponent } from './block-schedule.component';
 
@@ -8,7 +9,12 @@ describe('BlockScheduleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockScheduleComponent ]
+      declarations: [ BlockScheduleComponent ],
+      providers: [
+        {
+          provide: ScheduleService
+        }
+      ]
     })
     .compileComponents();
   }));

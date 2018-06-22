@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ScheduleService, Schedule } from '../services/schedule.service';
 import { BlockScheduleEventComponent } from './block-schedule-event.component';
+
+import { Observable } from 'rxjs/Observable';
 
 describe('BlockScheduleEventComponent', () => {
   let component: BlockScheduleEventComponent;
@@ -8,7 +10,13 @@ describe('BlockScheduleEventComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockScheduleEventComponent ]
+      declarations: [ BlockScheduleEventComponent ],
+      providers: [
+        {
+          provide: ScheduleService,
+          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
+        }
+      ]
     })
     .compileComponents();
   }));

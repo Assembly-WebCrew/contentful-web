@@ -23,23 +23,28 @@
 .day-list {
   padding: 0;
   margin: 1rem;
+  text-align: center;
 
   @include mobile {
     padding: 0;
     width: 100%;
-    margin: auto;
+    margin: .5rem;
   }
 
   li {
     display: inline-block;
     padding: 1rem;
     margin: 0;
+
+    @include mobile {
+      padding: 2px;
+    }
   }
 
   .button {
     background: $color-accent-dark;
     border-radius: $border-radius;
-    cursor: pointer;
+    //cursor: pointer;
     display: inline-block;
     font-family: $font-title;
     font-size: $font-size-h4;
@@ -55,11 +60,11 @@
       font-size: $font-size;
     }
 
-    &:hover {
-      background-color: $color-accent;
-      color: $color-text;
-      transition: background-color .1s ease-in-out;
-    }
+    // &:hover {
+    //   background-color: $color-accent;
+    //   color: $color-text;
+    //   transition: background-color .1s ease-in-out;
+    // }
   }
 }
 
@@ -116,24 +121,6 @@
 //     padding-bottom: .2rem;
 //   }
 // }
-
-.pill {
-  background: $color-accent-dark;
-  border-radius: $border-radius;
-  color: white;
-  display: inline-block;
-  font-size: $font-size-h4;
-  //line-height: 120%;
-  margin: 5px;
-  //line-height: $line-height-menu;
-  padding: 5px;
-  text-transform: lowercase;
-  vertical-align: middle;
-
-  span {
-
-  }
-}
 
 .section-header {
   margin-bottom: 2rem;

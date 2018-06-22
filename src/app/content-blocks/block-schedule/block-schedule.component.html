@@ -1,59 +1,60 @@
+<ul class="day-list">
+  <li *ngIf="this.days.thursday.length != 0">
+    <div class="button">
+      <span>thursday</span>
+    </div>
+  </li>
+  <li *ngIf="this.days.friday.length != 0">
+    <div class="button">friday</div>
+  </li>
+  <li *ngIf="this.days.saturday.length != 0">
+    <div class="button">saturday</div>
+  </li>
+  <li *ngIf="this.days.sunday.length != 0">
+    <div class="button">sunday</div>
+  </li>
+</ul>
 
-  <ul class="day-list">
-    <li *ngIf="this.days.thursday.length != 0">
-      <div class="button"><span>thursday</span></div>
-    </li>
-    <li *ngIf="this.days.friday.length != 0">
-        <div class="button">friday</div>
-      </li>
-      <li *ngIf="this.days.saturday.length != 0">
-          <div class="button">saturday</div>
-        </li>
-        <li *ngIf="this.days.sunday.length != 0">
-            <div class="button">sunday</div>
-          </li>
-  </ul>
-
-  <div class="schedule">
+<div class="schedule">
   <div *ngIf="this.days.thursday.length != 0">
-      <div class="section-header">
-          <div class="title-border-left"></div>
-          <h2>Thursday</h2>
-          <div class="title-border-right"></div>
-      </div>
+    <div class="section-header">
+      <div class="title-border-left"></div>
+      <h2>Thursday</h2>
+      <div class="title-border-right"></div>
+    </div>
 
     <asm-block-schedule-event *ngFor="let event of this.days.thursday; let i = index" class="event type{{i%2}}" [event]="event">
     </asm-block-schedule-event>
   </div>
 
   <div *ngIf="this.days.friday.length != 0">
-      <div class="section-header">
-          <div class="title-border-left"></div>
-          <h2>Friday</h2>
-          <div class="title-border-right"></div>
-      </div>
-
-      <asm-block-schedule-event *ngFor="let event of this.days.friday; let i = index" class="event type{{i%2}}" [event]="event">
-      </asm-block-schedule-event>
+    <div class="section-header">
+      <div class="title-border-left"></div>
+      <h2>Friday</h2>
+      <div class="title-border-right"></div>
     </div>
 
-    <div *ngIf="this.days.saturday.length != 0">
-        <div class="section-header">
-            <div class="title-border-left"></div>
-            <h2>Saturday</h2>
-            <div class="title-border-right"></div>
-        </div>
-        <asm-block-schedule-event *ngFor="let event of this.days.saturday; let i = index" class="event type{{i%2}}" [event]="event">
-        </asm-block-schedule-event>
-      </div>
+    <asm-block-schedule-event *ngFor="let event of this.days.friday; let i = index" class="event type{{i%2}}" [event]="event">
+    </asm-block-schedule-event>
+  </div>
 
-      <div *ngIf="this.days.sunday.length != 0">
-          <div class="section-header">
-              <div class="title-border-left"></div>
-              <h2>Sunday</h2>
-              <div class="title-border-right"></div>
-          </div>
-          <asm-block-schedule-event *ngFor="let event of this.days.sunday; let i = index" class="event type{{i%2}}" [event]="event">
-          </asm-block-schedule-event>
-        </div>
-      </div>
+  <div *ngIf="this.days.saturday.length != 0">
+    <div class="section-header">
+      <div class="title-border-left"></div>
+      <h2>Saturday</h2>
+      <div class="title-border-right"></div>
+    </div>
+    <asm-block-schedule-event *ngFor="let event of this.days.saturday; let i = index" class="event type{{i%2}}" [event]="event">
+    </asm-block-schedule-event>
+  </div>
+
+  <div *ngIf="this.days.sunday.length != 0">
+    <div class="section-header">
+      <div class="title-border-left"></div>
+      <h2>Sunday</h2>
+      <div class="title-border-right"></div>
+    </div>
+    <asm-block-schedule-event *ngFor="let event of this.days.sunday; let i = index" class="event type{{i%2}}" [event]="event">
+    </asm-block-schedule-event>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ScheduleService, Schedule } from '../services/schedule.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'asm-block-schedule',
@@ -21,13 +22,16 @@ export class BlockScheduleComponent implements OnInit {
   // loading = true;
   events = [];
 
+
   constructor(private scheduleService: ScheduleService) {}
 
   ngOnInit() {
-    this.times = ['12:00', '13:00'];
+    // const scheduleUrl = 'https://www.assembly.org/media/uploads/schedule/summer17/events.json';
+    // const scheduleUrl = 'assets/summer17.json';
 
+    // on server use content.scheduleUrl
     this.scheduleService
-      .getJSON('assets/winter18.json')
+      .getJSON(this.content.scheduleUrl)
       .subscribe((data: Schedule) => {
         this.schedule = {
           locations: data.locations,
@@ -51,8 +55,20 @@ export class BlockScheduleComponent implements OnInit {
               break;
           }
         });
-      });
+      },
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+            console.log('Schedule service: Client-side error occurred');
+          } else {
+            console.log('Schedule service: Server-side error occurred');
+          }
+        });
   }
+
+  // getDayOfWeek(time) {
+  //   const day = new Date(time).getDay();
+  //   return day;
+  // }
 
   // }` }).then(response => {
   //   response.data.sponsors.forEach(sponsor => {
@@ -71,10 +87,7 @@ export class BlockScheduleComponent implements OnInit {
   //   }
   // }
 
-  getDayOfWeek(time) {
-    const day = new Date(time).getDay();
-    return day;
-  }
+
 
   // checkDay(time, day) {
   //   // const date = new Date();

@@ -2,31 +2,45 @@
 // Import this file to component styles.
 @import 'mixins';
 
+// COLOR PALETTE
+$black: #000;
+$blue: #266eff;
+$purple: #7c26cb;
+$white: #fff;
+$yellow: #ff0;
+$grey: #808080;
+
+$yellow-dark: #80850c;
+
+$blue-light-1: #3683ff;
+$blue-light-2: #ccced1;
+
+$blue-dark-1: #133d8c;
+$blue-dark-2: #151440;
+$blue-dark-3: #112;
+$blue-dark-4: #000b19;
+
 // THEME COLORS
-$color-text: #fff;
-$color-visited-link: #7c26cb; //  purple
-$color-no-link: #808080; // grey
-$color-black: #000; // black
-
-$color-bg: #000b19;
-$color-bg-overlay: #151440;
-
-$color-accent: #266eff; // blue
-$color-accent-darker: #112; // darker-blue
-$color-accent-dark: #133d8c; // dark-blue
-$color-accent-light: #3683ff; // footer-blue
-
-$color-ticket: #ff0; // yellow
-$color-ticket-alt: #80850c; // dark-yellow
-
-$color-manual-bg: #ccced1;
+$color-text: $white;
+$color-visited-link: $purple;
+$color-no-link: $grey;
+$color-black: $black;
+$color-bg: $blue-dark-4;
+$color-bg-overlay: $blue-dark-2;
+$color-accent: $blue;
+$color-accent-darker: $blue-dark-3; // darker-blue
+$color-accent-dark: $blue-dark-1; // dark-blue
+$color-accent-light: $blue-light-1; // footer-blue
+$color-ticket: $yellow; // yellow
+$color-ticket-alt: $yellow-dark; // dark-yellow
+$color-manual-bg: $blue-light-2;
 
 // FONTS AND SIZES
 $font-text: 'Open Sans', sans-serif;
 $font-title: 'Oswald', sans-serif;
 
 $font-size-smaller: .8em;
-$font-size: 1em;
+$font-size: 16px; // have to use px
 $font-size-text: 1.1em;
 $font-size-ingress: 1.2em;
 $font-size-cta-title: 2em;
