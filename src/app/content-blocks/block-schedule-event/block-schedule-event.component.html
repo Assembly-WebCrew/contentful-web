@@ -1,30 +1,65 @@
-<h4 id="{{event.key}}">
-  <span class="container" (click)="toggle()">
-    <span class="fa" [ngClass]="{'fa-plus': !opened, 'fa-minus': opened}"></span>
-    <span>{{event.start_time | date:'H:mm'}}</span>
-    <span class="title" [class.major]="isMajor">{{event.name}}</span>
-  <a href="#{{event.key}}" title="Link here">#</a>
-  <div *ngIf="event.isRescheduled" class="tag rescheduled">rescheduled</div>
-  </span>
+<h4 id="{{event.key}}" (click)="toggle()" [ngClass]="{'major': event.isMajor, 'minor': !event.isMajor}">
+
+  <span class="fa fa-fw" [ngClass]="{'fa-plus': !opened, 'fa-minus': opened}"></span>
+
+  <span>{{event.start_time | date:'HH:mm'}}</span>
+
+  <span class="category-icon fa fa-fw {{event.icon}}" aria-hidden="true"></span>
+
+  <span class="title">{{event.name}}</span>
+
+  <div class="tags">
+
+
+    <div *ngIf="this.event.isMajor" class="flag tag pill major button">major</div>
+    <div *ngIf="this.event.isRescheduled" class="tag rescheduled button">rescheduled</div>
+  </div>
 </h4>
+
 <div class="innercontent" [ngClass]="{hide: !opened}">
-    <span class="location">{{event.location_key}}</span> &mdash;
 
-            {{event.start_time | date:'H:mm'}} &ndash; {{event.end_time | date:'H:mm'}}
-          <span [innerHTML]="getDuration(event.start_time, event.end_time)"></span>
+  <p>
+    <span *ngFor="let flag of event.flags" class="flag button {{flag}}">
+      {{flag}}
+    </span>
+    <span *ngFor="let category of event.categories" class="category button {{category}}">
+      {{category}}
+    </span>
+    <span *ngIf="event.isRescheduled" class="button rescheduled">
+      rescheduled
+    </span>
+  </p>
 
-      <span *ngIf="event.isRescheduled" class="orig-time">
-        &mdash; original starting time: {{event.original_start_time | date:'H:mm'}}
-      </span>
+  <p>
+    <span class="location">
+      <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
+      {{event.location_key}}
+    </span>
+  </p>
 
+  <p>
+    <i class="fa fa-fw fa-clock-o" aria-hidden="true"></i>
+    {{event.start_time | date:'H:mm'}} &ndash; {{event.end_time | date:'H:mm'}}
+    <span>{{event.duration}}</span>
+    <span *ngIf="this.event.isRescheduled" class="orig-time">
+      &mdash; original starting time: {{event.original_start_time | date:'H:mm'}}
+    </span>
+  </p>
 
-    <p class="description">{{event.description}}</p>
-    <div>
-      <div *ngFor="let flag of event.flags" [class.major]="flag === 'major'" class="tag pill">{{flag}}</div>
-      <div *ngFor="let category of event.categories" class="tag">{{category}}</div>
-    </div>
-    <ul class="details-list">
-      <li *ngIf="event.url"><a href="{{event.url}}">More info</a></li>
-      <li><a href="">Watch stream</a></li>
-    </ul>
+  <p *ngIf="event.description" class="description">
+    <i class="fa fa-fw fa-comment" aria-hidden="true"></i>
+    {{event.description}}
+  </p>
+  <p *ngIf="event.url">
+    <i class="fa fa-link" aria-hidden="true"></i>
+    <span>
+      <a href="{{event.url}}">More info</a>
+    </span>
+  </p>
+  <p *ngIf="event.stream">
+    <a class="watch" href="">Watch stream</a>
+  </p>
+  <p>
+    <a href="#{{event.key}}" title="Link here" class="anchor">[Link to this event]</a>
+  </p>
 </div>
