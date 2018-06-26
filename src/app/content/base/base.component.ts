@@ -1,5 +1,4 @@
 import { Component, OnInit, OnChanges, Input, Inject } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { WINDOW } from '../../core/window.service';
 import { ContentfulService } from '../../core/contentful.service';
@@ -17,7 +16,6 @@ export class BaseComponent implements OnInit, OnChanges {
 
   constructor(
     private contentful: ContentfulService,
-    private title: Title,
     private router: Router,
     @Inject(WINDOW) private window: Window) { }
 
@@ -42,7 +40,6 @@ export class BaseComponent implements OnInit, OnChanges {
   setPageContent() {
     if (!this.content) { this.content = {}; }
     if (!this.content.title) { this.content.title = 'Page Not Found'; }
-    this.title.setTitle(this.content.title + ' - ' + this.contentful.getEvent().eventTitle);
     this.background = this.getBackground();
     this.tags = this.content.tags ? this.content.tags.map(tag => tag.title).join(' ') : '';
   }

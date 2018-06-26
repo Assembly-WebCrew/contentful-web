@@ -37,8 +37,7 @@ const routes: Routes = [
         pathMatch: 'full',
         component: ContentComponent,
         resolve: {
-          content: ContentResolve,
-          meta: MetaResolve
+          content: ContentResolve
         }
       },
       {
@@ -56,8 +55,7 @@ const routes: Routes = [
             path: ':article',
             component: NewsArticleComponent,
             resolve: {
-              article: NewsArticleResolve,
-              meta: MetaResolve
+              article: NewsArticleResolve
             }
           }
         ]
@@ -78,8 +76,7 @@ const routes: Routes = [
         path: '**',
         component: ContentComponent,
         resolve: {
-          content: ContentResolve,
-          meta: MetaResolve
+          content: ContentResolve
         }
       }
     ]
