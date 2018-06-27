@@ -10,13 +10,7 @@ describe('BlockScheduleEventComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockScheduleEventComponent ],
-      providers: [
-        {
-          provide: ScheduleService,
-          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
-        }
-      ]
+      declarations: [ BlockScheduleEventComponent ]
     })
     .compileComponents();
   }));

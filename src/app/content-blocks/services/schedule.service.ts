@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 export interface Schedule {
   locations: Object;
@@ -32,55 +32,10 @@ export class Location {
 @Injectable()
 export class ScheduleService {
 
-  scheduleUrl: string;
-  datajson: any;
-   events: any;
-   locations: any;
-  event: any;
-  // schedule: any;
-  localSchedule = 'assets/winter18.json';
-  loading = false;
-  data: Object;
-
   constructor(
     private http: HttpClient) { }
 
-    getJSON(url) {
-      return this.http.get<Schedule>(url);
-    }
-
-  // getSchedule(url) {
-  //   let schedule: any;
-  //   this.http.get<Schedule>(url)
-  //   .subscribe((data: Schedule) => {
-  //       schedule = {
-  //         locations: data.locations,
-  //         events:  data.events
-  //       };
-  //       this.loading = false;
-  //       console.log('getSchedule');
-  //       console.log(schedule);
-  //       console.log(schedule.events);
-  //       console.log(schedule.locations);
-  //     return schedule.events;
-  //   });
-  //   console.log(schedule);
-  //   return schedule;
-  // }
-
-  // getEvents() {
-  //   this.http.get<Schedule>(this.scheduleUrl).subscribe(data => {
-  //     // console.log(data);
-  //     console.log('locations: ' + data.locations);
-  //     console.log('events: ' + data.events);
-  //   },
-  //   (err: HttpErrorResponse) => {
-  //     if (err.error instanceof Error) {
-  //       console.log('Client-side error occurred');
-  //     } else {
-  //       console.log('Server-side error occurred');
-  //     }
-  //   }
-  // );
-  // }
+  getJSON(url) {
+    return this.http.get<Schedule>(url);
+  }
 }

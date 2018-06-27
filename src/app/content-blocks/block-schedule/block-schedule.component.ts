@@ -23,15 +23,15 @@ export class BlockScheduleComponent implements OnInit {
   events = [];
 
 
-  constructor(private scheduleService: ScheduleService) {}
+  constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
     // const scheduleUrl = 'https://www.assembly.org/media/uploads/schedule/summer17/events.json';
     // const scheduleUrl = 'assets/summer17.json';
 
-    // on server use content.scheduleUrl
+    // on server use content.scheduleSource
     this.scheduleService
-      .getJSON(this.content.scheduleUrl)
+      .getJSON(this.content.scheduleSource)
       .subscribe((data: Schedule) => {
         this.schedule = {
           locations: data.locations,
@@ -39,28 +39,30 @@ export class BlockScheduleComponent implements OnInit {
         };
         this.events = this.schedule.events;
         // this.loading = false;
-        this.events.forEach(x => {
-          switch (new Date(x.start_time).getDay()) {
-            case 4:
-              this.days.thursday.push(x);
-              break;
-            case 5:
-              this.days.friday.push(x);
-              break;
-            case 6:
-              this.days.saturday.push(x);
-              break;
-            case 0:
-              this.days.sunday.push(x);
-              break;
-          }
-        });
+        if (this.events) {
+          this.events.forEach(x => {
+            switch (new Date(x.start_time).getDay()) {
+              case 4:
+                this.days.thursday.push(x);
+                break;
+              case 5:
+                this.days.friday.push(x);
+                break;
+              case 6:
+                this.days.saturday.push(x);
+                break;
+              case 0:
+                this.days.sunday.push(x);
+                break;
+            }
+          });
+        }
       },
         (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
-            console.log('Schedule service: Client-side error occurred');
+            console.error('Schedule service: Client-side error occurred', err);
           } else {
-            console.log('Schedule service: Server-side error occurred');
+            console.error('Schedule service: Server-side error occurred', err);
           }
         });
   }

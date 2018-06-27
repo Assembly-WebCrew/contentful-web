@@ -13,12 +13,14 @@ export class BlockScheduleEventComponent implements OnInit {
   id: string;
 
   ngOnInit() {
+    if (!this.event)
+      this.event = {};
     this.event.duration = this.getDuration(
       this.event.start_time,
       this.event.end_time
     );
     this.event.isRescheduled = this.event.start_time !== this.event.original_start_time;
-    this.event.isMajor = this.event.flags.includes('major');
+    this.event.isMajor = this.event.flags && this.event.flags.includes('major');
     this.event.icon = this.getCategoryIcon();
   }
 
@@ -45,8 +47,8 @@ export class BlockScheduleEventComponent implements OnInit {
     duration.min = Math.floor((distance % sizes.hour) / sizes.min);
 
     let msg = duration.day !== 0 ? duration.day + ' days' : '';
-    msg = duration.hour !== 0 && msg !== '' ? msg + ' ' + duration.hour + ' h' : msg ;
-    msg = duration.min !== 0 && msg !== '' ? msg + ' ' + duration.min + ' min' : msg ;
+    msg = duration.hour !== 0 && msg !== '' ? msg + ' ' + duration.hour + ' h' : msg;
+    msg = duration.min !== 0 && msg !== '' ? msg + ' ' + duration.min + ' min' : msg;
 
     msg = msg !== '' ? '(' + msg + ')' : '';
 
@@ -55,22 +57,22 @@ export class BlockScheduleEventComponent implements OnInit {
 
   getCategoryIcon() {
     let icon = '';
-    if (this.event.name.includes('doors') || this.event.name.includes('entrance')) {
+    if (this.event.name && ['doors', 'entrance'].some(s => this.event.name.includes(s))) {
       return icon = 'fa-home';
     } else {
-      this.event.categories.map ( x => {
-
-        const y = x.toString().toLowerCase();
-        if (y === 'game') {
-          icon = 'fa-gamepad' ;
-        } else if (y === 'streamcorner') {
-          return icon = 'fa-play-circle-o';
-        } else if (y === 'compo' )  {
-          return icon = 'fa-image';
-        }
-      });
+      if (this.event.categories) {
+        this.event.categories.some(category => {
+          const y = category.toString().toLowerCase();
+          if (y === 'game') {
+            return icon = 'fa-gamepad';
+          } else if (y === 'streamcorner') {
+            return icon = 'fa-play-circle-o';
+          } else if (y === 'compo') {
+            return icon = 'fa-image';
+          }
+        });
+      }
     }
     return icon;
   }
-
 }
