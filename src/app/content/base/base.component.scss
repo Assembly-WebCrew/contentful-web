@@ -8,7 +8,7 @@
 
 .page-background {
   display: flex;
-  background-image: url('/assets/images/background-picture.jpg');
+  background-image: url('/assets/images/asms18-bg2.jpg');
   background-repeat: no-repeat;
   background-position: center top;
   background-size: $width-page-bg auto;
@@ -23,7 +23,7 @@
   }
 
   .overlay {
-    background-color: rgba($color-bg-overlay, .6);
+    background-color: $color-bg-overlay;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -73,17 +73,17 @@
 
     h1 {
       color: $color-text;
-      font-family: 'Oswald', sans-serif;
+      font-family: $font-title;
       font-style: italic;
       font-weight: 400;
       text-transform: uppercase;
-      font-size: $font-size-page-title;
-      line-height: $font-size-page-title;
+      font-size: $font-size-h1;
+      line-height: $font-size-h1;
       margin: 0;
       margin-bottom: 8px;
-      
+
       @include mobile {
-        font-size: 40px;
+        font-size: $font-size-h1-m;
         line-height: 40px;
         margin-bottom: 3px;
       }
@@ -91,7 +91,7 @@
   }
 
   .page-content-wrapper {
-    background: linear-gradient(rgba($color-bg, .4) 0, $color-bg 230px);
+    background: linear-gradient($color-bg-gradient-start 0, $color-bg-gradient-end 230px);
     color: $color-text;
     display: flex;
     flex-grow: 1;

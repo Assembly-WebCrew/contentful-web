@@ -20,27 +20,27 @@ $zipper-title-height-m: 60px;
 }
 
 h2 {
-  margin-left: $zipper-title-height;
-  border-bottom: $border-basic $color-accent;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: $zipper-title-height;
-  position: initial;
-  flex-shrink: 0;
-  flex-grow: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
   align-items: center;
+  border-bottom: $border-basic $color-accent;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: $zipper-title-height;
+  margin: 0;
+  margin-left: $zipper-title-height;
+  overflow: hidden;
+  padding: 0;
+  position: initial;
+  text-overflow: ellipsis;
+  width: 100%;
 
   .title {
-    line-height: $zipper-title-height;
-    height: 100%;
-    padding-left: 30px;
-    font-weight: normal;
     font-style: italic;
+    font-weight: normal;
+    height: 100%;
+    line-height: $zipper-title-height;
     overflow: hidden;
+    padding-left: 30px;
     text-overflow: ellipsis;
     width: 100%;
   }
@@ -62,9 +62,9 @@ h2 {
   }
 
   @include mobile {
+    font-size: $font-size-zipper-title-m;
     height: $zipper-title-height-m;
     margin-left: 0;
-    font-size: 33px;
 
     .title {
       line-height: $zipper-title-height-m;

@@ -32,7 +32,7 @@ export class BaseComponent implements OnInit, OnChanges {
 
   getBackground() {
     if (this.content && this.content.featuredImage)
-      return 'url(' + this.content.featuredImage.url + '?w=1920)';
+      return 'url(' + this.content.featuredImage.url + '?w=1920&f=top)';
     else
       return '';
   }

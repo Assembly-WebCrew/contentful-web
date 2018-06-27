@@ -17,28 +17,22 @@ deploy.tar.gz
 sass-lint.html
 
 # IDEs and editors
-/.idea
-.project
-.classpath
 .c9/
-*.launch
+.classpath
+.project
 .settings/
+*.launch
 *.sublime-workspace
-
-# IDE - VSCode
+/.idea
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 # misc
 /.sass-cache
 /connect.lock
 /libpeerconnection.log
+/typings
 npm-debug.log
 testem.log
-/typings
 
 # e2e
 /e2e/*.js

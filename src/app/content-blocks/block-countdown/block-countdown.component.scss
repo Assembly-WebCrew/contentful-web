@@ -1,6 +1,6 @@
 @import '../../../common';
 
-.counter {
+.countdown {
   padding-top: 64px;
   font-family: $font-title;
   overflow: hidden;
@@ -24,12 +24,20 @@
     p {
       margin: 0;
       color: $color-text;
-      font-size: $font-size-counter-number;
+      font-size: $font-size-countdown-number;
+
+      @include mobile {
+        font-size: $font-size-countdown-number-m;
+      }
     }
 
     span {
-      color: $color-accent;
-      font-size: $font-size-counter-text;
+      color: $color-countdown;
+      font-size: $font-size-countdown-text;
+
+      @include mobile {
+        font-size: $font-size-countdown-text-m;
+      }
     }
   }
 }

@@ -13,15 +13,15 @@
 }
 
 .cta {
-  min-width: 33%;
-  height: 200px;
+  border-right: $border-basic $color-text;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   font-family: $font-title;
-  text-transform: uppercase;
-  border-right: $border-basic $color-text;
   font-size: $font-size-cta;
+  height: 200px;
+  min-width: 33%;
+  text-transform: uppercase;
 
   @include mobile {
     border-bottom: $border-basic $color-text;
@@ -46,6 +46,10 @@
     font-style: italic;
     font-weight: 400;
     overflow: hidden;
+
+    @include mobile {
+      font-size: $font-size-cta-title-m;
+    }
   }
 
   .cta-link {

@@ -10,7 +10,7 @@ $fa-font-path: '/assets/fonts';
 body {
   background: $color-bg;
   font-family: $font-text;
-  
+
   * {
     box-sizing: border-box;
   }
@@ -39,7 +39,7 @@ table {
   th {
     font-family: $font-title;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: $font-size-text;
   }
 
   td,
@@ -60,7 +60,7 @@ table {
   }
 
   @include mobile {
-    font-size: .8rem;
+    font-size: $font-size-table-m;
 
     td,
     th {
@@ -76,6 +76,10 @@ h2 {
   position: relative;
   text-align: left;
 
+  @include mobile {
+    font-size: $font-size-h2-m;
+  }
+
   &:before {
     content: '';
     display: block;
@@ -88,36 +92,39 @@ h2 {
 }
 
 h3 {
-  color: $color-accent;
+  color: $color-heading;
   font-size: $font-size-h3;
   margin: 30px 0 10px;
   text-align: left;
 }
 
 h4 {
-  color: $color-accent;
+  color: $color-heading;
   font-size: $font-size-h4;
   margin: 20px 0 5px;
   text-align: left;
 }
 
-h5, h6, h7 {
+h5,
+h6,
+h7 {
   font-size: $font-size-h5;
   color: $color-text;
   margin: 15px 0 5px;
   display: block;
 }
 
-h6, h7 {
+h6,
+h7 {
   font-size: $font-size-h6;
 }
 
 a:link {
-  color: $color-accent-light;
+  color: $color-link;
 }
 
 a:visited {
-  color: $color-visited-link;
+  color: $color-link-visited;
 }
 
 pre {
@@ -130,32 +137,35 @@ strong {
 }
 
 blockquote {
-  font-style: italic;
-  padding: 1.2em 60px;
-  line-height: 1.6;
-  position: relative;
   color: $color-text;
   display: inline-block;
+  font-style: italic;
+  line-height: 1.6;
   margin: 1em;
+  padding: 1.2em 60px;
+  position: relative;
+
   &:before {
-    font-family: Arial;
-    content: "\201C";
-    font-size: 5em;
-    position: absolute;
-    left: 10px;
-    top: -15px;
     color: $color-accent;
-  }
-  &:after {
-    font-family: Arial;
-    content: "\201D";
-    font-size: 5em;
+    content: "\201C";
+    font-family: $font-family-blockquote-icon;
+    font-size: $font-size-blockquote-icon;
+    left: 10px;
     position: absolute;
-    right: 15px;
+    top: -15px;
+  }
+
+  &:after {
     bottom: -0.75em;
     color: $color-accent;
+    content: "\201D";
+    font-family: $font-family-blockquote-icon;
+    font-size: $font-size-blockquote-icon;
+    position: absolute;
+    right: 15px;
   }
 }
+
 [asmMarkdown] {
   ul {
     @include list-styling;
@@ -166,6 +176,10 @@ blockquote {
     line-height: $line-height-text;
     font-size: $font-size-text;
     text-align: justify;
+
+    @include mobile {
+      font-size: $font-size-base;
+    }
   }
 
   img {
@@ -177,7 +191,7 @@ blockquote {
 
   ol li {
     line-height: 2em;
-    font-size: 1em;
+    font-size: $font-size-base;
     position: relative;
     padding: .5em 2em;
     padding-top: .5em;
@@ -260,16 +274,20 @@ blockquote {
 
   h2 {
     color: $color-text;
+    flex-shrink: 0;
     font-family: $font-title;
+    font-size: $font-size-h1;
     font-style: italic;
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: $font-size-h1;
     line-height: $font-size-h1;
-    margin: 0;
     margin-bottom: 4px;
-    flex-shrink: 0;
+    margin: 0;
     max-width: 85%;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: $font-size-h2-m;
+    }
 
     &:before {
       display: none;

@@ -1,72 +1,75 @@
 // Add common styling used by components here. E.g. variables.
 // Import this file to component styles.
-@import 'mixins';
+@import 'assets/scss/mixins';
+@import 'assets/scss/theme-default';
+//@import 'assets/scss/theme-summer18';
 
-// COLOR PALETTE
-$black: #000;
-$blue: #266eff;
-$purple: #7c26cb;
-$white: #fff;
-$yellow: #ff0;
-$grey: #808080;
+// FONT FAMILY
+$font-text:   'Open Sans', sans-serif;
+$font-title:  'Oswald', sans-serif;
 
-$yellow-dark: #80850c;
+$font-family-blockquote-icon: 'Arial', sans-serif;
+$font-family-icon: FontAwesome;
 
-$blue-light-1: #3683ff;
-$blue-light-2: #ccced1;
-
-$blue-dark-1: #133d8c;
-$blue-dark-2: #151440;
-$blue-dark-3: #112;
-$blue-dark-4: #000b19;
-
-// THEME COLORS
-$color-text: $white;
-$color-visited-link: $purple;
-$color-no-link: $grey;
-$color-black: $black;
-$color-bg: $blue-dark-4;
-$color-bg-overlay: $blue-dark-2;
-$color-accent: $blue;
-$color-accent-darker: $blue-dark-3; // darker-blue
-$color-accent-dark: $blue-dark-1; // dark-blue
-$color-accent-light: $blue-light-1; // footer-blue
-$color-ticket: $yellow; // yellow
-$color-ticket-alt: $yellow-dark; // dark-yellow
-$color-manual-bg: $blue-light-2;
-
-// FONTS AND SIZES
-$font-text: 'Open Sans', sans-serif;
-$font-title: 'Oswald', sans-serif;
-
-$font-size-smaller: .8em;
+// FONT SIZE
 $font-size: 16px; // have to use px
-$font-size-text: 1.1em;
-$font-size-ingress: 1.2em;
-$font-size-cta-title: 2em;
+$font-size-base: 16px;
 
-$font-size-counter-number: 70px;
-$font-size-h1: 50px;
-$font-size-page-title: $font-size-h1;
-$font-size-news-archive-h3: 40px;
-$font-size-collapse-title: 40px;
-$font-size-mobile-menu-button: 30px;
-$font-size-zipper-title-icon: 25px;
-$font-size-h3: 28px;
-$font-size-h4: 24px;
-$font-size-footer-h4: $font-size-h4;
-$font-size-frontpage-details: $font-size-h4;
-$font-size-counter-text: $font-size-h4;
-$font-size-news-button: 20px;
-$font-size-cta: 20px;
-$font-size-collapse-plus: $font-size-cta;
-$font-size-zipper-link: $font-size-cta;
-$font-size-h5: 1.3em;
-$font-size-h6: 1.1em;
-$font-size-mobile-menu-list: 18px;
-$font-size-menu-item: $font-size; //16px
-$font-size-copyright-tablet: $font-size-smaller;
+$font-size-h1:    3.125rem; // = 50px
+$font-size-h2:    2.5rem; // = 40px
+$font-size-h3:    1.75rem; // = 28 px
+$font-size-h4:    1.5rem; // = 24 px
+$font-size-h5:    1.3rem; // = 20.8 px
+$font-size-h6:    1.1rem; // = 17.6px
+$font-size-text:  1.1rem; // = 17.6px
 
+$font-size-h1-m: 40px;
+$font-size-h2-m: 2.5rem;
+
+$font-size-xs:  .8rem;
+$font-size-sm:  .9rem;
+$font-size-lg:  1.2rem;
+$font-size-xl:  2rem;
+$font-size-2xl: 4rem;
+$font-size-3xl: 5rem;
+
+// font sizes for elements
+// b = block
+// m = mobile
+$font-size-blockquote-icon:     $font-size-3xl; //5rem;
+$font-size-collapse-icon:       $font-size-h5;
+$font-size-collapse-title:      px($font-size-h2);
+$font-size-copyright-tablet:    $font-size-xs;
+$font-size-countdown-number-m:    $font-size-h1;
+$font-size-countdown-number:      $font-size-2xl; //70px;
+$font-size-countdown-text-m:      $font-size-h5;
+$font-size-countdown-text:        $font-size-h4;
+$font-size-cta-title-m:           $font-size-xl;
+$font-size-cta-title:           $font-size-xl; //2rem;
+$font-size-cta:                 $font-size-h5; //20px;
+$font-size-event-info-m:        $font-size-h5;
+$font-size-event-info:          $font-size-h4;
+$font-size-footer-h4:           $font-size-h4;
+$font-size-ingress:             $font-size-lg; //1.2rem;
+$font-size-menu-item:           $font-size-base;
+$font-size-mobile-menu-button:  $font-size-xl; //2rem;
+$font-size-mobile-menu-list:    $font-size-text;
+$font-size-news-archive-h3:     $font-size-h2;
+$font-size-news-b-category-m:   $font-size-sm; //14px;
+$font-size-news-b-published-m:  $font-size-xs; //12px;
+$font-size-news-b-published:    $font-size-sm; //14px;
+$font-size-news-b-title-first:  $font-size-h3; //30px;
+$font-size-news-b-title:        $font-size-h5; //20px;
+$font-size-news-button:         $font-size-h5; //20px;
+$font-size-page-title:          px($font-size-h1);
+$font-size-smaller:             $font-size-xs;
+$font-size-some:                $font-size-h5; //20px;
+$font-size-table-m:             $font-size-base;
+$font-size-zipper-link:         $font-size-h5; //20px;
+$font-size-zipper-title-icon:   $font-size-h4; //25px;
+$font-size-zipper-title-m:        $font-size-h3; // 33px
+
+// LINE HEIGHT
 $line-height-text: 2em;
 $line-height-menu: 1.5em;
 

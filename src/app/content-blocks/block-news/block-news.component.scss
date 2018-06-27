@@ -53,53 +53,54 @@
   height: 500px;
   margin: 10px;
   position: relative;
+
   .info {
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-    color: $color-accent;
     align-items: flex-end;
+    color: $color-accent;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
 
     .published {
-      padding: 10px;
-      font-size: 14px;
       flex-shrink: 1;
-     overflow: hidden;
-     text-overflow: ellipsis;
+      font-size: $font-size-news-b-published;
+      overflow: hidden;
+      padding: 10px;
+      text-overflow: ellipsis;
 
       @include mobile {
-        font-size: 12px;
+        font-size: $font-size-news-b-published-m;
       }
     }
 
     .category {
-      font-family: $font-title;
-      font-size: 18px;
-      text-transform: uppercase;
-      font-style: italic;
-      padding: 10px 15px 10px 10px;
-      border: $border-basic $color-accent;
       border-radius: $border-radius $border-radius 0 0;
+      border: $border-basic $color-accent;
       border-bottom: 0;
       border-left: 0;
+      font-family: $font-title;
+      font-size: $font-size-text;
+      font-style: italic;
+      padding: 10px 15px 10px 10px;
       position: relative;
+      text-transform: uppercase;
 
       &:before {
-        content: "";
         @include skewed;
+        content: '';
+        border-left: $border-basic $color-accent;
+        border-radius: $border-radius 0;
         display: block;
-        border-left: 1px solid #266eff;
-        position: absolute;
-        width: 50%;
         height: 100%;
         left: -4px;
-        z-index: -1;
+        position: absolute;
         top: 0;
-        border-radius: 5px 0;
+        width: 50%;
+        z-index: -1;
       }
-      
+
       @include mobile {
-        font-size: 14px;
+        font-size: $font-size-news-b-category-m;
         padding: 8px 10px 8px 10px;
       }
     }
@@ -112,12 +113,13 @@
     height: 230px;
     border-bottom: 0;
     padding: 10px;
+
     .image {
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
       background-size: cover;
-     background-position: center;
+      background-position: center;
     }
   }
 
@@ -129,17 +131,19 @@
     text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
+
     a {
       color: $color-text;
       font-weight: bold;
       text-decoration: none;
-      font-size: 20px;
+      font-size: $font-size-news-b-title;
       line-height: 28px;
       text-overflow: ellipsis;
       overflow: hidden;
       display: block;
       width: 100%;
       max-height: 100%;
+
       &:hover {
         text-decoration: underline;
       }
@@ -153,20 +157,22 @@
 
   &:first-child {
     width: 50%;
+
     .article-image {
       height: 460px;
       border-radius: $border-radius 0 $border-radius $border-radius;
     }
 
     .article-content {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba($color-bg, 0.8);
+      background-color: rgba($color-bg, .8);
       border-top: 0;
+      bottom: 0;
       padding: 30px;
+      position: absolute;
+      width: 100%;
+
       a {
-        font-size: 30px;
+        font-size: $font-size-news-b-title-first;
         line-height: 40px;
       }
     }
@@ -174,6 +180,7 @@
 
   @include tablet {
     width: 30%;
+
     &:first-child {
       width: 40%;
     }
@@ -181,6 +188,7 @@
 
   @include screen-small {
     width: calc(50% - 20px);
+
     &:first-child {
       width: 100%;
     }

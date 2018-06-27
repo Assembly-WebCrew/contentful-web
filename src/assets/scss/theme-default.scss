@@ -1,0 +1,39 @@
+// COLOR PALETTE: DEFAULT
+$black: #000;
+$blue: #266eff;
+$purple: #7c26cb;
+$white: #fff;
+$yellow: #ff0;
+$grey: #808080;
+
+$yellow-dark: #80850c;
+
+$blue-light-1: #3683ff;
+$blue-light-2: #ccced1;
+$blue-dark-1: #133d8c;
+$blue-dark-2: #151440;
+$blue-dark-3: #112;
+$blue-dark-4: #000b19;
+
+// THEME COLORS
+$color-accent-dark:           $blue-dark-1; // dark-blue
+$color-accent-darker:         $blue-dark-3; // darker-blue
+$color-accent-light:          $blue-light-1; // footer-blue
+$color-accent:                $blue;
+$color-bg-gradient-end:       $blue-dark-4;
+$color-bg-gradient-start:     rgba($blue-dark-4, .4);
+$color-bg-overlay:            rgba($blue-dark-2, .6);
+$color-bg:                    $blue-dark-4;
+$color-countdown:             $blue;
+$color-event-info:            $blue;
+$color-header-gradient-end:   $blue-dark-4;
+$color-header-gradient-start: rgba($blue-dark-4, .8);
+$color-heading:               $blue;
+$color-link-visited:          $purple;
+$color-link:                  $blue-light-1;
+$color-manual-bg:             $blue-light-2;
+$color-news-category-alt:     $blue;
+$color-no-link:               $grey;
+$color-text:                  $white;
+$color-ticket-alt:            $yellow-dark;
+$color-ticket:                $yellow;

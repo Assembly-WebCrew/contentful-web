@@ -90,7 +90,7 @@ h4 {
 
     .category-icon {
       font-size: $font-size;
-      color: $color-visited-link;
+      color: $color-link-visited;
     }
   }
 
@@ -172,7 +172,7 @@ a:visited {
   // }
 
   &.major {
-    background: $color-visited-link;
+    background: $color-link-visited;
     color: $color-text;
 
     &::before {
@@ -180,7 +180,7 @@ a:visited {
     }
 
     // &:hover {
-    //   background-color: lighten($color-visited-link, 10%);
+    //   background-color: lighten($color-link-visited, 10%);
     //   transition: background-color .1s ease-in-out;
     // }
   }

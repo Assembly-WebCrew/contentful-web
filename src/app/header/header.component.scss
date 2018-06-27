@@ -27,29 +27,29 @@
   }
 
   .logo-container {
-    display: flex;
     align-items: center;
-    margin: 0;
-    height: $menu-big-height;
-    position: relative;
     border-radius: 0 $border-radius $border-radius 0;
-    overflow: hidden;
     color: $color-text;
-    padding: 0 20px 0 0;
+    display: flex;
     flex-shrink: 0;
+    height: $menu-big-height;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 20px 0 0;
+    position: relative;
 
     &:before {
+      @include header-gradient;
       content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
+      border-radius: 0 $border-radius $border-radius 0;
       height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
       transform-origin: 100% 0;
       transform: skewX(-15deg);
-      border-radius: 0 $border-radius $border-radius 0;
+      width: 100%;
       z-index: -1;
-      @include gradient(rgba($color-bg, .8), $color-bg);
     }
 
     a {
@@ -65,7 +65,7 @@
 
   .header-left,
   .header-right {
-    @include gradient(rgba($color-bg, .8), $color-bg);
+    @include header-gradient;
     height: $menu-big-height;
     flex-grow: 1;
   }
@@ -78,12 +78,12 @@
   }
 
   .header-center {
-    width: $width-page-content;
-    max-width: 100%;
-    flex-shrink: 0;
-    display: flex;
-    background-repeat: no-repeat;
     background-position: right center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-shrink: 0;
+    max-width: 100%;
+    width: $width-page-content;
 
     .header-inner {
       display: flex;
@@ -91,36 +91,36 @@
       flex-grow: 1;
 
       .header-upper {
-        display: flex;
         align-items: center;
+        display: flex;
         flex-direction: row;
         margin-left: -3px;
         margin: 0 0 1px -3px;
 
         .highlight-button {
           @include skewed;
-          @include gradient(rgba($color-bg, .8), $color-bg);
-          display: flex;
+          @include header-gradient;
           align-items: center;
-          height: $menu-small-height;
           border-radius: $border-radius;
           border: 2px solid $color-bg;
-          color: $color-accent;
           box-sizing: border-box;
-          font-size: 18px;
+          color: $color-accent;
           cursor: pointer;
+          display: flex;
+          font-size: $font-size-text;
+          height: $menu-small-height;
 
           .button-inner-wrapper {
-            border: $border-basic rgba($color-accent, .6);
-            display: flex;
             align-items: center;
-            height: 100%;
-            transform: skew(0deg);
             border-radius: $border-radius;
+            border: $border-basic rgba($color-accent, .6);
             box-sizing: border-box;
+            display: flex;
+            height: 100%;
             overflow: hidden;
-            text-shadow: 0 -2px rgba($color-bg, .2);
             position: relative;
+            text-shadow: 0 -2px rgba($color-bg, .2);
+            transform: skew(0deg);
 
             .icon {
               @include gradient-top($color-accent);
@@ -148,7 +148,7 @@
               display: none;
               text-align: center;
               text-shadow: 0 -1px rgba($color-bg, .4);
-              font-family: FontAwesome;
+              font-family: $font-family-icon;
               position: absolute;
               align-items: center;
               justify-content: center;
@@ -165,12 +165,10 @@
           &:hover {
             .button-inner-wrapper {
               &:before {
+                @include gradient($color-accent, $color-accent-dark);
                 display: flex;
                 z-index: 1;
                 transition: background .1s .2s ease-in-out;
-                background-color: $color-accent;
-                @include gradient($color-accent,
-                  $color-accent-dark);
               }
             }
           }
@@ -188,38 +186,37 @@
               }
 
               &:before {
-                @include gradient($color-ticket,
-                  $color-ticket-alt);
+                @include gradient($color-ticket, $color-ticket-alt);
               }
             }
           }
         }
 
         .search-container {
-          @include gradient(rgba($color-bg, .8), $color-bg);
-          border-radius: $border-radius;
-          position: relative;
-          padding-left: 15px;
-          display: flex;
+          @include header-gradient;
           align-items: center;
+          border-radius: $border-radius;
+          display: flex;
           flex-grow: 1;
-          margin-left: 2px;
           height: $menu-small-height;
+          margin-left: 2px;
+          padding-left: 15px;
+          position: relative;
           transform: skew(-15deg);
 
           .button {
-            color: $color-accent;
-            border-radius: $border-radius;
-            width: 37px;
-            height: 37px;
-            display: flex;
-            justify-content: center;
             align-items: center;
-            margin-right: 2px;
-            transform: skew(0deg);
+            border-radius: $border-radius;
+            color: $color-accent;
             cursor: pointer;
-            transition: background-color .1s ease-in-out;
+            display: flex;
+            height: 37px;
+            justify-content: center;
+            margin-right: 2px;
             text-shadow: 0 -2px rgba($color-bg, .2);
+            transform: skew(0deg);
+            transition: background-color .1s ease-in-out;
+            width: 37px;
 
             &:hover {
               background-color: $color-accent;
@@ -241,16 +238,16 @@
       }
 
       .header-lower {
-        @include gradient(rgba($color-bg, .8), $color-bg);
-        height: $menu-small-height;
-        display: flex;
+        @include header-gradient;
         align-items: center;
-        justify-content: space-between;
+        border-radius: $border-radius;
+        display: flex;
         flex-grow: 1;
+        height: $menu-small-height;
+        justify-content: space-between;
         margin: 0 27px 0 -15px;
         padding: 0 20px;
         transform: skew(-15deg);
-        border-radius: $border-radius;
 
         asm-social-media,
         asm-menu {
@@ -270,7 +267,7 @@
     .header-left,
     .header-right,
     .logo-container:before {
-      @include gradient(rgba($color-bg, .8), $color-bg);
+      @include header-gradient;
     }
 
     .header-left,
@@ -296,7 +293,7 @@
   }
 
   &.mobile {
-    @include gradient(rgba($color-bg, .8), $color-bg);
+    @include header-gradient;
     height: $menu-big-height;
     flex-grow: 1;
     justify-content: space-between;
