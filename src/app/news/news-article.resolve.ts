@@ -39,15 +39,9 @@ export class NewsArticleResolve implements Resolve<any> {
     });
 
     if (route.params.article) {
-<<<<<<< HEAD
-      let article = get(response, 'data.newsItems[0]');
+      const article = get(response, 'data.newsItems[0]');
       this.meta.setMetaTags(state.url, article);
       return article;
-=======
-      const page = get(response, 'data.newsItems[0]');
-      this.title.setTitle(page.title + ' - ' + this.contentful.getEvent().eventTitle);
-      return page;
->>>>>>> WIP: schedule
     } else {
       this.meta.setMetaTags(state.url);
       return get(response, 'data.newsItems');
