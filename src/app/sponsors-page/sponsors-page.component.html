@@ -7,13 +7,14 @@
           <ng-container *ngIf="partner.link; else noMainPartnerLink">
             <a [href]="partner.link" target="_blank" ref="noopener">
               <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
+              <div class="partner-name">{{partner.title}}</div>
             </a>
           </ng-container>
           <ng-template #noMainPartnerLink>
             <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
           </ng-template>
         </div>
-        <div class="description" *ngIf="partner.description" [markdownText]="partner.description" asmMarkdown></div>
+        <!--<div class="description" *ngIf="partner.description" [markdownText]="partner.description" asmMarkdown></div>-->
       </div>
     </div>
     <ng-container *ngIf="otherPartners && otherPartners.length">

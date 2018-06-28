@@ -1,3 +1,6 @@
+<div *ngIf="loading">loading...</div>
+<div *ngIf="errorMessage!==''">{{errorMessage}}</div>
+
 <ul class="day-list">
   <li *ngIf="this.days.thursday.length != 0">
     <div class="button">

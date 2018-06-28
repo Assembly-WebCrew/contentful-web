@@ -7,6 +7,18 @@ $fa-font-path: '/assets/fonts';
 @import url('//fonts.googleapis.com/css?family=Oswald');
 @import 'font-awesome/font-awesome';
 
+html {
+  font-size: 100%;
+
+  @include desktop {
+    font-size: 105%;
+  }
+  @include retina {
+    font-size: 110%;
+  }
+}
+
+
 body {
   background: $color-bg;
   font-family: $font-text;

@@ -17,15 +17,16 @@ export class BlockScheduleComponent implements OnInit {
     saturday: [],
     sunday: [],
   };
-  times = [];
   schedule: any = {};
-  // loading = true;
   events = [];
+  loading: boolean;
+  errorMessage: string;
 
 
   constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
+    this.loading = true;
     // const scheduleUrl = 'https://www.assembly.org/media/uploads/schedule/summer17/events.json';
     // const scheduleUrl = 'assets/summer17.json';
 
@@ -38,7 +39,7 @@ export class BlockScheduleComponent implements OnInit {
           events: data.events,
         };
         this.events = this.schedule.events;
-        // this.loading = false;
+        this.loading = false;
         if (this.events) {
           this.events.forEach(x => {
             switch (new Date(x.start_time).getDay()) {
@@ -60,43 +61,14 @@ export class BlockScheduleComponent implements OnInit {
       },
         (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
-            console.error('Schedule service: Client-side error occurred', err);
+            this.loading = false;
+            this.errorMessage = 'There is a problem loading schedule. (Client-side error occurred)';
+            console.error(this.errorMessage, err);
           } else {
-            console.error('Schedule service: Server-side error occurred', err);
+            this.loading = false;
+            this.errorMessage = 'There is a problem loading schedule. (Server-side error occurred)';
+            console.error(this.errorMessage, err);
           }
         });
   }
-
-  // getDayOfWeek(time) {
-  //   const day = new Date(time).getDay();
-  //   return day;
-  // }
-
-  // }` }).then(response => {
-  //   response.data.sponsors.forEach(sponsor => {
-  //     if (sponsor.isMainSponsor) {
-  //       this.mainPartners.push(sponsor);
-  //     } else {
-  //       this.otherPartners.push(sponsor);
-  //     }
-  //   });
-
-  // eventsToDays(events) {
-  //   let i = 0;
-  //   while (events[i]) {
-
-  //     i++;
-  //   }
-  // }
-
-
-
-  // checkDay(time, day) {
-  //   // const date = new Date();
-  //   const time_temp = new Date(time).getDay();
-  //   // const day_temp = new Date(day).getDay();
-  //   const isSame = (time_temp === day);
-  //   console.log(isSame, time_temp, day);
-  //   return isSame;
-  // }
 }

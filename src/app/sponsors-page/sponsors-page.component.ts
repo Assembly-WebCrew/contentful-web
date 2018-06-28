@@ -48,7 +48,7 @@ export class SponsorsPageComponent implements OnInit {
 
   getLogo(url) {
     if (url) {
-      return url + '?w=300';
+      return url + '?w=250&h=100&fit=pad';
     }
   }
 

@@ -11,11 +11,47 @@
 .partner {
   .logo {
     padding: 15px;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
 
     img {
       max-width: 250px;
+      max-height: 100px;
     }
   }
+
+  a {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.other-partners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-name {
+  transition: .5s ease;
+  opacity: 0;
+  //position: relative;
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.logo:hover img {
+  opacity: .8;
+}
+
+.logo:hover .partner-name {
+  opacity: 1;
 }
 
 .main-partners,
@@ -35,8 +71,9 @@
     flex-direction: column;
     align-items: center;
     padding: 10px 0;
-    width: 100%;
-    max-width: 700px;
+    width: 50%;
+    min-width: 13rem;
+    max-width: 44rem;
 
     .description {
       margin-top: 40px;
@@ -81,11 +118,4 @@
       justify-content: center;
     }
   }
-}
-
-.other-partners {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
