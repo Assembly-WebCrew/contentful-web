@@ -32,6 +32,8 @@ export class MetaResolve implements Resolve<any> {
     let title = event.eventTitle || 'Assembly';
     let image = this.images[Math.floor(Math.random() * 8)];
     let description = 'Assembly is bi-annual computer festival, esports event, demoscene and lan party in Helsinki, Finland.';
+    let type = 'website';
+    let publishedDate = '';
 
     if (url.indexOf('/partners') !== -1) {
       title = 'Partners - ' + event.eventTitle;
@@ -47,6 +49,10 @@ export class MetaResolve implements Resolve<any> {
       } else {
         title = 'News - ' + event.eventTitle;
       }
+      if (data && data.date ) {
+        publishedDate = data.date;
+      }
+      type = 'article';
     } else if (data && data.title) {
       title = data.title + ' - ' + event.eventTitle;
       if (data.featuredImage) {
@@ -55,13 +61,18 @@ export class MetaResolve implements Resolve<any> {
     }
     this.meta.updateTag({ property: 'og:site_name', content: event.eventTitle });
     this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'twitter:title', content: title });
     this.title.setTitle(title);
 
     this.meta.updateTag({ property: 'og:image', content: image, id: 'og-image' }, 'id="og-image"');
-    this.meta.updateTag({ name: 'twitter:image', content: image, id: 'twitter-image' }, 'id="twitter-image"');
 
     this.meta.updateTag({ property: 'og:description', content: description });
-    this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'description', content: description });
+
+    this.meta.updateTag({ property: 'og:url', content: 'https://www.assembly.org' + url });
+
+    this.meta.updateTag({ property: 'og:type', content: type});
+
+    if (publishedDate !== '') { this.meta.updateTag({ property: 'og:published_time', content: publishedDate }); }
   }
 }

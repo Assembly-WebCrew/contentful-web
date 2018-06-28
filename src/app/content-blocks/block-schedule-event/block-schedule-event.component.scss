@@ -4,6 +4,7 @@
   @include component;
   width: $width-text;
   max-width: 90%;
+  margin: 0 auto;
 
   @include mobile {
     padding: 0;

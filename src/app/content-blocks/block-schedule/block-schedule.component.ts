@@ -21,14 +21,14 @@ export class BlockScheduleComponent implements OnInit {
   events = [];
   loading: boolean;
   errorMessage: string;
+  // scheduleSource = 'assets/winter18.json';
+  // const scheduleUrl = 'https://www.assembly.org/media/uploads/schedule/summer17/events.json';
 
 
   constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
     this.loading = true;
-    // const scheduleUrl = 'https://www.assembly.org/media/uploads/schedule/summer17/events.json';
-    // const scheduleUrl = 'assets/summer17.json';
 
     // on server use content.scheduleSource
     this.scheduleService
