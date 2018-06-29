@@ -27,7 +27,6 @@ h2 {
   flex-shrink: 0;
   height: $zipper-title-height;
   margin: 0;
-  margin-left: $zipper-title-height;
   overflow: hidden;
   padding: 0;
   position: initial;
@@ -42,6 +41,7 @@ h2 {
     overflow: hidden;
     padding-left: 30px;
     text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
   }
 
