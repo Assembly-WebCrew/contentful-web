@@ -4,6 +4,7 @@ import { ScheduleService, Schedule } from '../services/schedule.service';
 import { BlockScheduleComponent } from './block-schedule.component';
 import { BlockScheduleEventComponent } from '../block-schedule-event/block-schedule-event.component';
 import { Observable } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BlockScheduleComponent', () => {
   let component: BlockScheduleComponent;
@@ -15,6 +16,7 @@ describe('BlockScheduleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BlockScheduleComponent, BlockScheduleEventComponent ],
+      imports: [RouterTestingModule],
       providers: [
         {
           provide: ScheduleService,

@@ -11,16 +11,13 @@ export class BlockScheduleComponent implements OnInit {
   static blockName = 'BlockSchedule';
 
   content: any = {};
-  days = {
-    thursday: [],
-    friday: [],
-    saturday: [],
-    sunday: [],
-  };
-  schedule: any = {};
+  days = [];
   events = [];
+  locations = {};
   loading: boolean;
   errorMessage: string;
+  subscriptions = [];
+  weekdays: string[] = ['Sunday', 'Monday', "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   // scheduleSource = 'assets/winter18.json';
   // const scheduleUrl = 'https://www.assembly.org/media/uploads/schedule/summer17/events.json';
 
@@ -34,41 +31,30 @@ export class BlockScheduleComponent implements OnInit {
     this.scheduleService
       .getJSON(this.content.scheduleSource)
       .subscribe((data: Schedule) => {
-        this.schedule = {
-          locations: data.locations,
-          events: data.events,
-        };
-        this.events = this.schedule.events;
+        this.locations = data.locations;
+        this.events = data.events;
         this.loading = false;
         if (this.events) {
+          let prevDay;
+          let currentDay;
           this.events.forEach(x => {
-            switch (new Date(x.start_time).getDay()) {
-              case 4:
-                this.days.thursday.push(x);
-                break;
-              case 5:
-                this.days.friday.push(x);
-                break;
-              case 6:
-                this.days.saturday.push(x);
-                break;
-              case 0:
-                this.days.sunday.push(x);
-                break;
+            let day = new Date(x.start_time).getDay();
+            if (day !== prevDay) {
+              currentDay = {
+                title: this.weekdays[day],
+                events: []
+              };
+              this.days.push(currentDay);
+              prevDay = day;
             }
+            currentDay.events.push(x);
           });
         }
       },
         (err: HttpErrorResponse) => {
-          if (err.error instanceof Error) {
-            this.loading = false;
-            this.errorMessage = 'There is a problem loading schedule. (Client-side error occurred)';
-            console.error(this.errorMessage, err);
-          } else {
-            this.loading = false;
-            this.errorMessage = 'There is a problem loading schedule. (Server-side error occurred)';
-            console.error(this.errorMessage, err);
-          }
+          this.loading = false;
+          this.errorMessage = 'There is a problem loading schedule.';
+          console.error(this.errorMessage, err);
         });
   }
 }

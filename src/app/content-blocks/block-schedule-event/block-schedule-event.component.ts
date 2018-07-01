@@ -9,10 +9,13 @@ export class BlockScheduleEventComponent implements OnInit {
   static blockName = 'BlockScheduleEvent';
 
   @Input() event;
+  @Input() locations;
   opened: Boolean = false;
   id: string;
 
   ngOnInit() {
+    if (!this.locations)
+      this.locations = {};
     if (!this.event)
       this.event = {};
     this.event.duration = this.getDuration(
@@ -23,7 +26,6 @@ export class BlockScheduleEventComponent implements OnInit {
     this.event.isMajor = this.event.flags && this.event.flags.includes('major');
     this.event.icon = this.getCategoryIcon();
   }
-
 
   toggle() {
     this.opened = !this.opened;
@@ -42,13 +44,14 @@ export class BlockScheduleEventComponent implements OnInit {
     };
 
     const distance = new Date(end).getTime() - new Date(start).getTime();
-    duration.day = Math.floor(distance / sizes.hour);
+    duration.day = Math.floor(distance / sizes.day);
     duration.hour = Math.floor((distance % sizes.day) / sizes.hour);
     duration.min = Math.floor((distance % sizes.hour) / sizes.min);
 
     let msg = duration.day !== 0 ? duration.day + ' days' : '';
-    msg = duration.hour !== 0 && msg !== '' ? msg + ' ' + duration.hour + ' h' : msg;
-    msg = duration.min !== 0 && msg !== '' ? msg + ' ' + duration.min + ' min' : msg;
+    msg = duration.hour !== 0 ? msg + ' ' + duration.hour + ' h' : msg;
+    msg = duration.min !== 0 ? msg + ' ' + duration.min + ' min' : msg;
+    msg = msg.trim();
 
     msg = msg !== '' ? '(' + msg + ')' : '';
 

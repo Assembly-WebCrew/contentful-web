@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, Input, Inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { WINDOW } from '../../core/window.service';
 import { ContentfulService } from '../../core/contentful.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'asm-base',
@@ -17,7 +18,8 @@ export class BaseComponent implements OnInit, OnChanges {
   constructor(
     private contentful: ContentfulService,
     private router: Router,
-    @Inject(WINDOW) private window: Window) { }
+    @Inject(WINDOW) private window: Window,
+    @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
     this.setPageContent();
@@ -51,7 +53,21 @@ export class BaseComponent implements OnInit, OnChanges {
         const tree = this.router.parseUrl(event.urlAfterRedirects);
         if (!tree.fragment) {
           this.window.scroll(0, 0);
+        } else {
+          const element = this.document.querySelector("#" + tree.fragment);
+          if (element) {
+            element.scrollIntoView(true);
+          }
         }
       });
+    const tree = this.router.parseUrl(this.router.url);
+    if (tree.fragment) {
+      setTimeout(() => {
+        const element = this.document.querySelector("#" + tree.fragment);
+        if (element) {
+          element.scrollIntoView(true);
+        }
+      }, 100)
+    }
   }
 }
