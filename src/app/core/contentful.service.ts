@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class ContentfulService {
   private client: ApolloClient;
-  private event: { name: string, eventTitle: string };
+  private event: { name: string, eventTitle: string, defaultBackground: { fields: { file: {url: string} } } };
 
   constructor(
     private http: HttpClient,

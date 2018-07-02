@@ -27,6 +27,7 @@ export class SponsorsPageComponent implements OnInit {
       sponsors {
         isMainSponsor
         title
+        importance
         logo {
           url
         }
@@ -41,8 +42,9 @@ export class SponsorsPageComponent implements OnInit {
           this.otherPartners.push(sponsor);
         }
       });
-      this.mainPartners.sort((a, b) => (a.title + '').localeCompare((b.title + '')));
-      this.otherPartners.sort((a, b) => (a.title + '').localeCompare((b.title + '')));
+      this.mainPartners.sort((a, b) => +b.importance - +a.importance || (a.title + '').localeCompare((b.title + ''))
+      );
+      this.otherPartners.sort((a, b) => +b.importance - +a.importance || (a.title + '').localeCompare((b.title + '')));
     });
   }
 

@@ -33,8 +33,11 @@ export class BaseComponent implements OnInit, OnChanges {
   }
 
   getBackground() {
+    let event = this.contentful.getEvent();
     if (this.content && this.content.featuredImage)
       return 'url(' + this.content.featuredImage.url + '?w=1920&f=top)';
+    else if (event.defaultBackground && event.defaultBackground.fields)
+      return 'url(' + event.defaultBackground.fields.file.url + '?w=1920&f=top)';
     else
       return '';
   }

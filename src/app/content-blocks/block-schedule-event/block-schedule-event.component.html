@@ -48,7 +48,7 @@
 
   <p *ngIf="event.description" class="description">
     <i class="fa fa-fw fa-comment" aria-hidden="true"></i>
-    {{event.description}}
+    <span [innerHTML]="event.description"></span>
   </p>
   <p *ngIf="event.url">
     <i class="fa fa-link" aria-hidden="true"></i>

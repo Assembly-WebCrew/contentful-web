@@ -27,12 +27,13 @@ export class BlockSponsorsComponent implements OnInit {
     {
       sponsors(q: "${qs.stringify(params)}") {
         title
+        importance
         logo {
           url
         }
         link
       }
-    }` }).map(data => data.sponsors);
+    }` }).map(data => data.sponsors.map(s => s).sort((a, b) => +b.importance - +a.importance));
   }
 
 }

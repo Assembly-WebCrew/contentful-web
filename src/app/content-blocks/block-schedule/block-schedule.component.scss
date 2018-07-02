@@ -23,6 +23,10 @@
   margin: 1rem;
   text-align: center;
 
+  .date {
+    padding-left: 2px;
+  }
+
   @include mobile {
     padding: 0;
     width: 100%;
@@ -67,16 +71,32 @@
 }
 
 .section-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   @include mobile {
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  padding: 0 0 2rem;
+  color: $color-accent;
+  font-weight: bold;
+  font-family: $font-title;
+
+  @include mobile {
+    padding: 0 0 1rem;
   }
 }
 
 .schedule {
   margin: auto;
+
+  .day {
+    padding-bottom: 1rem;
+  }
 }
 
 // .row {

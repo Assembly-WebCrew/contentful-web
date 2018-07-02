@@ -253,7 +253,7 @@ blockquote {
   .title-border-right {
     @include skewed;
     flex-shrink: 0;
-    height: #{$font-size-page-title - 10px};
+    height: calc(#{$font-size-page-title} - 10px);
     display: flex;
     align-items: center;
     flex-grow: 1;
