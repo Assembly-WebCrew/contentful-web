@@ -4,7 +4,7 @@
 
   <span class="start-time">{{event.start_time | date:'HH:mm'}}</span>
 
-  <span class="category-icon fa fa-fw {{event.icon}}" aria-hidden="true"></span>
+  <span class="category-icon fa fa-fw" [ngClass]="getCategoryIcon()" aria-hidden="true"></span>
 
   <span class="title">{{event.name}}</span>
 

@@ -30,7 +30,6 @@ export class BlockScheduleEventComponent implements OnInit {
     );
     this.event.isRescheduled = this.event.start_time !== this.event.original_start_time;
     this.event.isMajor = this.event.flags && this.event.flags.includes('major');
-    this.event.icon = this.getCategoryIcon();
   }
 
   toggle() {
@@ -66,22 +65,24 @@ export class BlockScheduleEventComponent implements OnInit {
 
   getCategoryIcon() {
     let icon = '';
-    if (this.event.name && ['doors', 'entrance'].some(s => this.event.name.includes(s))) {
-      return icon = 'fa-home';
-    } else {
       if (this.event.categories) {
         this.event.categories.some(category => {
           const y = category.toString().toLowerCase();
           if (y === 'game') {
-            return icon = 'fa-gamepad';
+            icon = 'fa-gamepad';
           } else if (y === 'streamcorner') {
-            return icon = 'fa-play-circle-o';
+            icon = 'fa-play-circle-o';
           } else if (y === 'compo') {
-            return icon = 'fa-image';
+            icon = 'fa-cog';
+          } else if (y === 'compostudio') {
+            icon = 'fa-users';
+          } else if ( y === 'sports') {
+            icon = 'fa-futbol-o';
+          } else if ( y === 'ceremony') {
+            icon = 'fa-trophy';
           }
         });
       }
-    }
     return icon;
   }
 }
