@@ -31,7 +31,7 @@ export class MetaResolve implements Resolve<any> {
     const event = this.contentful.getEvent();
     let title = event.eventTitle || 'Assembly';
     let image = location.origin + this.images[Math.floor(Math.random() * 8)];
-    let description = 'Assembly is bi-annual computer festival, esports event, demoscene and lan party in Helsinki, Finland.';
+    let description = 'Assembly is a bi-annual computer festival, esports event, demoscene and lan party in Helsinki, Finland.';
     let type = 'website';
     let publishedDate = '';
 

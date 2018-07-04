@@ -37,17 +37,27 @@
 }
 
 .partner-name {
-  transition: .5s ease;
-  opacity: 0;
+  //left: 50%;
   //position: relative;
   //top: 50%;
-  //left: 50%;
   //transform: translate(-50%, -50%);
+  color: $color-accent;
+  margin-top: 1rem;
+  opacity: 0;
   text-align: center;
+  transition: .5s ease;
+
+  &::after {
+    content: '\f08e';
+    font-family: 'FontAwesome';
+    display: inline-block;
+    padding-left: .5rem;
+  }
+
 }
 
 .logo:hover img {
-  opacity: .8;
+  opacity: .6;
 }
 
 .logo:hover .partner-name {
