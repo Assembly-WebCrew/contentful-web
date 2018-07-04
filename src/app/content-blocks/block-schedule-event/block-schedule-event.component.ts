@@ -19,11 +19,11 @@ export class BlockScheduleEventComponent implements OnInit {
     if (!this.event)
       this.event = {};
     if (this.event.start_time)
-      this.event.start_time = this.event.start_time.replace("-", "/");
+      this.event.start_time = this.event.start_time.replace(/-/g, "/").replace("T", " ");
     if (this.event.end_time)
-      this.event.end_time = this.event.end_time.replace("-", "/");
+      this.event.end_time = this.event.end_time.replace(/-/g, "/").replace("T", " ");
     if (this.event.original_start_time)
-      this.event.original_start_time = this.event.original_start_time.replace("-", "/");
+      this.event.original_start_time = this.event.original_start_time.replace(/-/g, "/").replace("T", " ");
     this.event.duration = this.getDuration(
       this.event.start_time,
       this.event.end_time

@@ -38,7 +38,7 @@ export class BlockScheduleComponent implements OnInit {
           let prevDay;
           let currentDay;
           this.events.forEach(x => {
-            let date = new Date((x.start_time + "").replace("-", "/"));
+            let date = new Date((x.start_time + "").replace(/-/g, "/").replace("T", " "));
             let day = date.getDay();
             if (day !== prevDay) {
               currentDay = {
