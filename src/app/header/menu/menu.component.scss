@@ -107,7 +107,7 @@ ul {
 
       &.sectioned {
         width: auto;
-        min-width: $menu-section-width;
+        min-width: 500px;
         display: flex;
         margin-left: -$menu-section-width;
 
@@ -153,6 +153,7 @@ ul {
               // padding: 2px 10px;
               // padding-left: 0 1em;
               padding-left: 1em;
+              padding-right: 1em;
 
               &:first-child {
                 padding-top: 0.5em;

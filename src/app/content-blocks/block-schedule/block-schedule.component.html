@@ -5,7 +5,7 @@
   <li *ngFor="let day of days">
       <div class="button" routerLink="." [fragment]="day.title">
         <span>{{day.title}}</span>
-        <span class="date" *ngIf="day.date">{{day.date | date:'d.M'}}</span>
+        <span class="date" *ngIf="day.date">{{day.date | date:'d.M.'}}</span>
       </div>
   </li>
 </ul>

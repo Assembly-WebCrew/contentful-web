@@ -10,6 +10,7 @@
   width: 100%;
   margin: 80px auto 0;
   position: relative;
+  z-index: 1;
 
   img {
     width: 100%;
@@ -42,9 +43,6 @@
   }
 
   @include mobile {
-    .dates {
-      //margin-right: 30px;
-    }
 
     span {
       font-size: $font-size-event-info-m;
