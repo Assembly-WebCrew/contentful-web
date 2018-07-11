@@ -19,11 +19,11 @@ export class BlockScheduleEventComponent implements OnInit {
     if (!this.event)
       this.event = {};
     if (this.event.start_time)
-      this.event.start_time = this.event.start_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, "$1:$2");
+      this.event.start_time = this.event.start_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2');
     if (this.event.end_time)
-      this.event.end_time = this.event.end_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, "$1:$2");
+      this.event.end_time = this.event.end_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2');
     if (this.event.original_start_time)
-      this.event.original_start_time = this.event.original_start_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, "$1:$2");
+      this.event.original_start_time = this.event.original_start_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2');
     this.event.duration = this.getDuration(
       this.event.start_time,
       this.event.end_time
@@ -72,10 +72,8 @@ export class BlockScheduleEventComponent implements OnInit {
             icon = 'fa-gamepad';
           } else if (y === 'streamcorner') {
             icon = 'fa-play-circle-o';
-          } else if (y === 'compo') {
+          } else if (y === 'compo' || y === 'compostudio') {
             icon = 'fa-cog';
-          } else if (y === 'compostudio') {
-            icon = 'fa-users';
           } else if ( y === 'sports') {
             icon = 'fa-futbol-o';
           } else if ( y === 'ceremony') {
