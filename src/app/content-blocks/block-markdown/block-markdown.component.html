@@ -1,4 +1,4 @@
 <div class="image" *ngIf="content.featuredImage">
-    <img [src]="content.featuredImage.url">
+    <img [src]="content.featuredImage.url + '?w=700'">
 </div>
 <div class="markdown-content" [markdownText]="content.body" asmMarkdown></div>

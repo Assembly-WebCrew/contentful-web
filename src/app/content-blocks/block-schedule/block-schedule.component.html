@@ -1,6 +1,10 @@
 <div *ngIf="loading">loading...</div>
 <div *ngIf="errorMessage!==''">{{errorMessage}}</div>
 
+<div class="schedule-info">
+  <p>Times in the schedule are shown in browser's timezone.</p>
+</div>
+
 <ul class="day-list">
   <li *ngFor="let day of days">
       <div *ngIf="day.filteredEvents.length" class="button" routerLink="." [fragment]="day.title + day.date.getDate() + (day.date.getMonth() + 1)">
@@ -10,16 +14,6 @@
   </li>
 </ul>
 
-<div class="schedule-info">
-  <p>Times in the schedule are shown in browser's timezone.</p>
-    <ul class="fa-ul">
-    <li><i class="fa-li fa fa-fw fa-gamepad"></i> gaming</li>
-    <li><i class="fa-li fa fa-fw fa-cog"></i> demoscene</li>
-    <li><i class="fa-li fa fa-fw fa-futbol-o"></i> sports</li>
-    <li><i class="fa-li fa fa-fw fa-play-circle-o"></i> Streamcorner</li>
-    <li><i class="fa-li fa fa-fw fa-trophy"></i> ceremony</li>
-  </ul>
-</div>
 <div class="schedule-filters">
   <ul class="filter-list">
     <li *ngFor="let filter of filters">
