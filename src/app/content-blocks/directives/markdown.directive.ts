@@ -16,7 +16,7 @@ export class MarkdownDirective implements AfterViewInit {
     if (!this.markdownText) {
       this.markdownText = this.el.nativeElement.innerHTML;
     }
-    this.el.nativeElement.innerHTML = this.converter.makeHtml(this.markdownText + "");
+    this.el.nativeElement.innerHTML = this.converter.makeHtml(this.markdownText + '');
   }
 
 }

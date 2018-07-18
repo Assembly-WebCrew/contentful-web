@@ -7,6 +7,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./block-countdown.component.scss']
 })
 export class BlockCountdownComponent implements OnInit {
+  static blockName = 'BlockCountdown';
+
   content: any = {};
   event: any;
   interval: any;
@@ -17,8 +19,6 @@ export class BlockCountdownComponent implements OnInit {
   seconds = 0;
   startTime = 0;
   endTime = 0;
-
-  static blockName = 'BlockCountdown';
 
   constructor(
     private route: ActivatedRoute) { }

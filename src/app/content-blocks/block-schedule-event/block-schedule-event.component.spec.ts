@@ -8,7 +8,7 @@ import { DatePipe } from '@angular/common';
 describe('BlockScheduleEventComponent', () => {
   let component: BlockScheduleEventComponent;
   let fixture: ComponentFixture<BlockScheduleEventComponent>;
-  let scheduleServiceStub = {
+  const scheduleServiceStub = {
     getCategoryIcon: () => ''
   };
 

@@ -7,11 +7,11 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 
 })
 export class BlockCollapseComponent implements OnInit {
+  static blockName = 'BlockCollapse';
+
   content: any = {};
   opened: Boolean = false;
   id: string;
-
-  static blockName = 'BlockCollapse';
 
   ngOnInit() {
     if (this.content.title) {

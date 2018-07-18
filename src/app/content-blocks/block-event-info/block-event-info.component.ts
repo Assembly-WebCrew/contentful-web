@@ -7,13 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./block-event-info.component.scss']
 })
 export class BlockEventInfoComponent implements OnInit {
+  static blockName = 'BlockEventInfo';
+
   event: any = {};
   content: any = {};
   logo = '/assets/images/generic-event-logo.png';
   dates: string;
   place: string;
-
-  static blockName = 'BlockEventInfo';
 
   constructor(
     private route: ActivatedRoute) { }

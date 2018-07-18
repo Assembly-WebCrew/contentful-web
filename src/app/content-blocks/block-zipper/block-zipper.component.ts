@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./block-zipper.component.scss']
 })
 export class BlockZipperComponent {
-  content: any = {};
-
   static blockName = 'BlockZipper';
+
+  content: any = {};
 }

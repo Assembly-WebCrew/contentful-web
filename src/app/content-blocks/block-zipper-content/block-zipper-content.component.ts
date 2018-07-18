@@ -7,12 +7,12 @@ import { ContentfulService } from '../../core/contentful.service';
   styleUrls: ['./block-zipper-content.component.scss']
 })
 export class BlockZipperContentComponent implements OnInit {
+  static blockName = 'BlockZipperContent';
+
   content: any = {};
   image: string;
   link: string;
   icon: string;
-
-  static blockName = 'BlockZipperContent';
 
   constructor(private contentful: ContentfulService) {}
 

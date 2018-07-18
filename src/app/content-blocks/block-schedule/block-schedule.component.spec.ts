@@ -9,7 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 describe('BlockScheduleComponent', () => {
   let component: BlockScheduleComponent;
   let fixture: ComponentFixture<BlockScheduleComponent>;
-  let scheduleServiceStub = {
+  const scheduleServiceStub = {
     getJSON: () => Observable.of({}),
     getCategoryIcon: () => ''
   };

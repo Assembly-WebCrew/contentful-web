@@ -33,7 +33,7 @@ export class BaseComponent implements OnInit, OnChanges {
   }
 
   getBackground() {
-    let event = this.contentful.getEvent();
+    const event = this.contentful.getEvent();
     if (this.content && this.content.featuredImage)
       return 'url(' + this.content.featuredImage.url + '?w=1920&f=top)';
     else if (event.defaultBackground && event.defaultBackground.fields)
@@ -57,7 +57,7 @@ export class BaseComponent implements OnInit, OnChanges {
         if (!tree.fragment) {
           this.window.scroll(0, 0);
         } else {
-          const element = this.document.querySelector("#" + tree.fragment);
+          const element = this.document.querySelector('#' + tree.fragment);
           if (element) {
             element.scrollIntoView(true);
           }
@@ -66,11 +66,11 @@ export class BaseComponent implements OnInit, OnChanges {
     const tree = this.router.parseUrl(this.router.url);
     if (tree.fragment) {
       setTimeout(() => {
-        const element = this.document.querySelector("#" + tree.fragment);
+        const element = this.document.querySelector('#' + tree.fragment);
         if (element) {
           element.scrollIntoView(true);
         }
-      }, 100)
+      }, 100);
     }
   }
 }

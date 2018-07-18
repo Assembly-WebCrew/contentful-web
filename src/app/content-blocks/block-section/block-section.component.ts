@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./block-section.component.scss']
 })
 export class BlockSectionComponent implements OnInit {
-  content: any = {};
-
   static blockName = 'BlockSection';
+
+  content: any = {};
 
   constructor() { }
 

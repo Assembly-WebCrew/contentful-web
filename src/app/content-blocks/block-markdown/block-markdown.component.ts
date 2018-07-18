@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./block-markdown.component.scss']
 })
 export class BlockMarkdownComponent {
-  content: any = {};
-
   static blockName = 'BlockMarkdown';
+
+  content: any = {};
 }
