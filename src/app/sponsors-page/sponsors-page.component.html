@@ -34,5 +34,22 @@
         </div>
       </div>
     </ng-container>
+    <ng-container *ngIf="mediaPartners && mediaPartners.length">
+      <h2>Media partners</h2>
+      <div class="other-partners">
+        <div class="partner" *ngFor="let partner of mediaPartners">
+          <div class="logo">
+            <ng-container *ngIf="partner.link; else noPartnerLink">
+              <a [href]="partner.link" target="_blank" ref="noopener">
+                <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
+              </a>
+            </ng-container>
+            <ng-template #noPartnerLink>
+              <img [src]="getLogo(partner.logo?.url)" [alt]="partner.title">
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </asm-base>

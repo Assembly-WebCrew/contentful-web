@@ -10,18 +10,17 @@ import { ContentfulService } from '../../core/contentful.service';
   styleUrls: ['./block-sponsors.component.scss']
 })
 export class BlockSponsorsComponent implements OnInit {
+  static blockName = 'BlockSponsors';
   content: any = {};
   sponsors$: Observable<any>;
-  isMainSponsors: boolean;
-
-  static blockName = 'BlockSponsors';
+  partnerLevel: String = 'main';
 
   constructor(
     private contentful: ContentfulService) { }
 
   ngOnInit() {
-    this.isMainSponsors = !this.content.title;
-    const params = { 'fields.isMainSponsor': this.isMainSponsors };
+    this.partnerLevel = !this.content.title ? 'main' : 'partner';
+    const params = { 'fields.partnerLevel': this.partnerLevel };
     this.sponsors$ = this.contentful.query$<any>({
       query: gql`
     {

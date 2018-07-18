@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { ScheduleService } from '../services/schedule.service';
 
 @Component({
   selector: 'asm-block-schedule-event',
@@ -12,6 +14,8 @@ export class BlockScheduleEventComponent implements OnInit {
   @Input() locations;
   opened: Boolean = false;
   id: string;
+
+  constructor(private scheduleService: ScheduleService, private datePipe: DatePipe) { }
 
   ngOnInit() {
     if (!this.locations)
@@ -37,6 +41,10 @@ export class BlockScheduleEventComponent implements OnInit {
   }
 
   getDuration(start: Date, end: Date) {
+
+    if (!start && !end)
+      return '';
+
     const sizes = {
       min: 60000,
       hour: 3600000,
@@ -47,40 +55,42 @@ export class BlockScheduleEventComponent implements OnInit {
       hour: 0,
       day: 0
     };
+    const startTime = new Date(start);
+    const endTime = new Date(end);
 
-    const distance = new Date(end).getTime() - new Date(start).getTime();
+    const distance = endTime.getTime() - startTime.getTime();
     duration.day = Math.floor(distance / sizes.day);
     duration.hour = Math.floor((distance % sizes.day) / sizes.hour);
     duration.min = Math.floor((distance % sizes.hour) / sizes.min);
 
-    let msg = duration.day !== 0 ? duration.day + ' days' : '';
-    msg = duration.hour !== 0 ? msg + ' ' + duration.hour + ' h' : msg;
-    msg = duration.min !== 0 ? msg + ' ' + duration.min + ' min' : msg;
-    msg = msg.trim();
+    // TODO: change to use formatDate after Angular 6 upgrade
+    let msg = '';
+    if (startTime.getDay() !== endTime.getDay()) {
+      msg = this.datePipe.transform(startTime, 'E d.M. H:mm') + ' – ' + this.datePipe.transform(endTime, 'E d.M. H:mm');
+    } else if (start === end) {
+      msg = this.datePipe.transform(startTime, 'H:mm');
+    } else {
+      msg = this.datePipe.transform(startTime, 'H:mm') + ' – ' + this.datePipe.transform(endTime, 'H:mm');
+    }
 
-    msg = msg !== '' ? '(' + msg + ')' : '';
+    let dur = duration.day !== 0 ? duration.day + ' days' : '';
+    dur = duration.hour !== 0 ? dur + ' ' + duration.hour + ' h' : dur;
+    dur = duration.min !== 0 ? dur + ' ' + duration.min + ' min' : dur;
+    dur = dur.trim();
+
+    msg += dur !== '' ? ' (' + dur + ')' : '';
 
     return msg;
   }
 
   getCategoryIcon() {
     let icon = '';
-      if (this.event.categories) {
-        this.event.categories.some(category => {
-          const y = category.toString().toLowerCase();
-          if (y === 'game') {
-            icon = 'fa-gamepad';
-          } else if (y === 'streamcorner') {
-            icon = 'fa-play-circle-o';
-          } else if (y === 'compo' || y === 'compostudio') {
-            icon = 'fa-cog';
-          } else if ( y === 'sports') {
-            icon = 'fa-futbol-o';
-          } else if ( y === 'ceremony') {
-            icon = 'fa-trophy';
-          }
-        });
-      }
+    if (this.event.categories) {
+      this.event.categories.some(category => {
+        icon = this.scheduleService.getCategoryIcon(category);
+        return icon;
+      });
+    }
     return icon;
   }
 }

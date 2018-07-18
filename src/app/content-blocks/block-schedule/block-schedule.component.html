@@ -3,7 +3,7 @@
 
 <ul class="day-list">
   <li *ngFor="let day of days">
-      <div class="button" routerLink="." [fragment]="day.title + day.date.getDate() + (day.date.getMonth() + 1)">
+      <div *ngIf="day.filteredEvents.length" class="button" routerLink="." [fragment]="day.title + day.date.getDate() + (day.date.getMonth() + 1)">
         <span>{{day.title}}</span>
         <span class="date" *ngIf="day.date">{{day.date | date:'d.M.'}}</span>
       </div>
@@ -20,16 +20,26 @@
     <li><i class="fa-li fa fa-fw fa-trophy"></i> ceremony</li>
   </ul>
 </div>
+<div class="schedule-filters">
+  <ul class="filter-list">
+    <li *ngFor="let filter of filters">
+      <div class="filter button" [class.active]="filter.active" (click)="onFilterToggle(filter)">
+        <i *ngIf="filter.icon" class="fa {{filter.icon}}"></i>{{filter.title}}</div>
+    </li>
+  </ul>
+</div>
 
 <div class="schedule">
   <div *ngFor="let day of days" class="day">
-    <div class="section-header">
-      <div class="title-border-left"></div>
-      <h2 [id]="day.title + day.date.getDate() + (day.date.getMonth() + 1)">{{day.title}}</h2>
-      <div class="title-border-right"></div>
-    </div>
-    <div class="subtitle" *ngIf="day.date">{{day.date | date:'dd.MM.yyyy'}}</div>
+    <ng-container *ngIf="day.filteredEvents.length">
+      <div class="section-header">
+        <div class="title-border-left"></div>
+        <h2 [id]="day.title + day.date.getDate() + (day.date.getMonth() + 1)">{{day.title}}</h2>
+        <div class="title-border-right"></div>
+      </div>
+      <div class="subtitle" *ngIf="day.date">{{day.date | date:'dd.MM.yyyy'}}</div>
 
-    <asm-block-schedule-event *ngFor="let event of day.events; let i = index" class="event type{{i%2}}" [locations]="locations" [event]="event"></asm-block-schedule-event>
+      <asm-block-schedule-event *ngFor="let event of day.filteredEvents; let i = index" class="event type{{i%2}}" [locations]="locations" [event]="event"></asm-block-schedule-event>
+    </ng-container>
   </div>
 </div>

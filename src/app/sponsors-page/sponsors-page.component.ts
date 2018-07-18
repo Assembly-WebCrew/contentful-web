@@ -11,8 +11,9 @@ import { Title } from '@angular/platform-browser';
 export class SponsorsPageComponent implements OnInit {
   mainPartners: any[] = [];
   otherPartners: any[] = [];
+  mediaPartners: any[] = [];
   content: any = {
-    title: 'Partners', // TODO translations
+    title: 'Partners',
     tags: ['partners']
   };
 
@@ -25,7 +26,7 @@ export class SponsorsPageComponent implements OnInit {
       query: gql`
     {
       sponsors {
-        isMainSponsor
+        partnerLevel
         title
         importance
         logo {
@@ -36,15 +37,17 @@ export class SponsorsPageComponent implements OnInit {
       }
     }` }).then(response => {
       response.data.sponsors.forEach(sponsor => {
-        if (sponsor.isMainSponsor) {
+        if (sponsor.partnerLevel === 'main') {
           this.mainPartners.push(sponsor);
+        } else if (sponsor.partnerLevel === 'media') {
+          this.mediaPartners.push(sponsor);
         } else {
           this.otherPartners.push(sponsor);
         }
       });
-      this.mainPartners.sort((a, b) => +b.importance - +a.importance || (a.title + '').localeCompare((b.title + ''))
-      );
+      this.mainPartners.sort((a, b) => +b.importance - +a.importance || (a.title + '').localeCompare((b.title + '')));
       this.otherPartners.sort((a, b) => +b.importance - +a.importance || (a.title + '').localeCompare((b.title + '')));
+      this.mediaPartners.sort((a, b) => +b.importance - +a.importance || (a.title + '').localeCompare((b.title + '')));
     });
   }
 

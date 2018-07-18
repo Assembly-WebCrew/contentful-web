@@ -14,20 +14,17 @@ export class BlockScheduleComponent implements OnInit {
   days = [];
   events = [];
   locations = {};
+  filters = [];
   loading: boolean;
   errorMessage: string;
   subscriptions = [];
-  weekdays: string[] = ['Sunday', 'Monday', "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  weekdays: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   // scheduleSource = 'assets/winter18.json';
-  // const scheduleUrl = 'https://www.assembly.org/media/uploads/schedule/summer17/events.json';
-
 
   constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
     this.loading = true;
-
-    // on server use content.scheduleSource
     this.scheduleService
       .getJSON(this.content.scheduleSource)
       .subscribe((data: Schedule) => {
@@ -38,8 +35,8 @@ export class BlockScheduleComponent implements OnInit {
           let prevDay;
           let currentDay;
           this.events.forEach(x => {
-            let date = new Date((x.start_time + "").replace(/([\+-][0-9]{2})([0-9]{2})$/, "$1:$2"));
-            let day = date.getDay();
+            const date = new Date((x.start_time + '').replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2'));
+            const day = date.getDay();
             if (day !== prevDay) {
               currentDay = {
                 title: this.weekdays[day],
@@ -50,7 +47,14 @@ export class BlockScheduleComponent implements OnInit {
               prevDay = day;
             }
             currentDay.events.push(x);
+            if (x.categories && x.categories.length)
+              this.filters.push(...x.categories);
+            if (x.flags && x.flags.length)
+              this.filters.push(...x.flags);
+            this.filters = Array.from(new Set(this.filters).values());
           });
+          this.parseFilters();
+          this.filterEvents();
         }
       },
         (err: HttpErrorResponse) => {
@@ -58,5 +62,37 @@ export class BlockScheduleComponent implements OnInit {
           this.errorMessage = 'There is a problem loading schedule.';
           console.error(this.errorMessage, err);
         });
+  }
+
+  onFilterToggle(filter) {
+    filter.active = !filter.active;
+
+    this.filterEvents();
+  }
+
+  parseFilters() {
+    this.filters = this.filters.map(filter => {
+      if (filter) {
+        let active = [];
+        if (this.content.tag) {
+          active = this.content.tag.replace(/\s+/g, '').toLowerCase().split(',');
+        }
+        return {
+          title: filter,
+          value: filter,
+          icon: this.scheduleService.getCategoryIcon(filter),
+          active: active.length && active.includes(filter.toLowerCase())
+        };
+      }
+    }).sort((a, b) => (a.title + '').localeCompare((b.title + '')));
+  }
+
+  filterEvents() {
+    const active = this.filters.filter(f => f.active);
+    this.days.forEach(day => {
+      day.filteredEvents = day.events.filter(event => !active.length || active.some(f => {
+        return event.categories.includes(f.value) || event.flags.includes(f.value);
+      }));
+    });
   }
 }

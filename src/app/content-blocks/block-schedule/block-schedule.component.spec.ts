@@ -10,7 +10,8 @@ describe('BlockScheduleComponent', () => {
   let component: BlockScheduleComponent;
   let fixture: ComponentFixture<BlockScheduleComponent>;
   let scheduleServiceStub = {
-    getJSON: () => Observable.of({})
+    getJSON: () => Observable.of({}),
+    getCategoryIcon: () => ''
   };
 
   beforeEach(async(() => {

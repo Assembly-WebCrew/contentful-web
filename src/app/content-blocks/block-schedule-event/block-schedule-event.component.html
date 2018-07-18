@@ -38,7 +38,6 @@
 
   <p>
     <i class="fa fa-fw fa-clock-o" aria-hidden="true"></i>
-    {{event.start_time | date:'H:mm'}} <ng-container *ngIf="event.start_time !== event.end_time">&ndash; {{event.end_time | date:'H:mm'}}</ng-container>
     <span>{{event.duration}}</span>
     <span *ngIf="this.event.isRescheduled" class="orig-time">
       &mdash; original starting time: {{event.original_start_time | date:'H:mm'}}

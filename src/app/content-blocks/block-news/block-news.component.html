@@ -5,13 +5,18 @@
 </div>
 <div class="articles">
   <div class="article" *ngFor="let article of articles">
-    <div class="info">
-        <span class="published" *ngIf="article.date">{{article.date | date:'dd.MM.yyyy'}}</span>
-        <div class="category" *ngIf="article.category">{{article.category}}</div>
-    </div>
-    <div class="article-image"><div class="image" [style.background-image]="getImage(article)"></div></div>
-    <div class="article-content">
-        <a class="title" [routerLink]="getLink(article.slug)">{{article.title}} <span class="fa fa-long-arrow-right"></span></a>
+    <div class="wrapper">
+      <div class="info">
+          <span class="published" *ngIf="article.date">{{article.date | date:'dd.MM.yyyy'}}</span>
+          <div class="category" *ngIf="article.category">{{article.category}}</div>
+      </div>
+      <div class="article-image"><div class="image" [style.background-image]="getImage(article)"></div></div>
+      <div class="article-content">
+          <a class="title" [routerLink]="getLink(article.slug)">
+            <span class="title">{{article.title}} <span class="fa fa-long-arrow-right"></span></span>
+            <span class="description" *ngIf="article.ingress">{{article.ingress}}</span>
+          </a>
+      </div>
     </div>
   </div>
 </div>

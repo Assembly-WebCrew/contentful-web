@@ -25,6 +25,7 @@ import { NewsArchiveComponent } from './news/news-archive/news-archive.component
 import { NewsArticleComponent } from './news/news-article/news-article.component';
 import { BaseComponent } from './content/base/base.component';
 import { NewsArticleResolve } from './news/news-article.resolve';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { NewsArticleResolve } from './news/news-article.resolve';
     RouterModule
   ],
   providers: [
+    DatePipe,
     ApiClientResolve,
     NewsArticleResolve
   ],

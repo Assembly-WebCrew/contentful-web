@@ -27,6 +27,7 @@ export class BlockNewsComponent implements OnInit {
     if (this.content && this.content.filterByCategory) {
       params['fields.category'] = this.content.filterByCategory;
     }
+    const maxCount = (this.content && +this.content.itemCount) || 3;
 
     this.contentful.query<any>({
       query: gql`
@@ -55,7 +56,11 @@ export class BlockNewsComponent implements OnInit {
               if (b.date && a.date)
                 return +new Date(b.date) - +new Date(a.date);
               return -1;
-            }).slice(0, 3);
+            });
+            if (this.content && this.content.filterByTag) {
+              this.articles = this.articles.filter(a => this.content.filterByTag.split(',').every(tag => a.tags.indexOf(tag) > -1));
+            }
+            this.articles = this.articles.slice(0, maxCount);
           }
         }
       });

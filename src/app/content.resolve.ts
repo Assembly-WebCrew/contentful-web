@@ -100,7 +100,9 @@ export class ContentResolve implements Resolve<any> {
               }
               ... on BlockNews {
                 title
+                itemCount
                 filterByCategory
+                filterByTag
                 frontpageFeaturedNewsOnly
               }
             }
