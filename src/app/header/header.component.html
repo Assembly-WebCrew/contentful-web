@@ -51,7 +51,7 @@
         <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
       </a>
     </div>
-    <button type="button" class="menu" (click)="onMobileMenuClick()">
+    <button type="button" class="menu" (click)="onMobileMenuClick()" aria-label="Open menu">
       <i class="fa fa-bars"></i>
     </button>
   </ng-template>

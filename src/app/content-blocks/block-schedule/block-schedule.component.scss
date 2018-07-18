@@ -18,6 +18,25 @@
   width: 100%;
 }
 
+.schedule-info {
+  @include text;
+}
+
+
+.schedule-days,
+.schedule-filters {
+  width: 80%;
+  margin: auto;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
 .day-list {
   padding: 0;
   margin: 1rem;
@@ -93,14 +112,14 @@
   }
 
   .filter {
-    background: $color-accent-dark;
+    background: $color-accent;
     border-radius: $border-radius;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
     font-family: $font-title;
-    font-size: $font-size-h4;
+    font-size: $font-size-lg;
     font-weight: bold;
     justify-content: center;
     padding: 5px;

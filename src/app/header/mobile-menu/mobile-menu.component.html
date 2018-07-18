@@ -4,7 +4,7 @@
         <img class="logo" [src]="getLogo()" alt="{{event?.logo?.fields?.title}}">
       </a>
     </div>
-    <button type="button" (click)="onCloseClick()">
+    <button type="button" (click)="onCloseClick()" aria-label="close menu">
         <i class="fa fa-times"></i>
     </button>
 </div>
