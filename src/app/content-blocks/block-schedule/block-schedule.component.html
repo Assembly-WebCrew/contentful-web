@@ -1,7 +1,7 @@
-<div class="schedule-info">
+<div class="schedule-info centered">
     <div *ngIf="loading">loading...</div>
     <div *ngIf="errorMessage!==''">{{errorMessage}}</div>
-  <p>Times in the schedule are shown in browser's timezone.</p>
+  <p class="center">Times in the schedule are shown in browser's timezone.</p>
 </div>
 
 <div class="schedule-days">
@@ -22,6 +22,13 @@
         <i *ngIf="filter.icon" class="fa fa-fw {{filter.icon}}"></i>{{filter.title}}</div>
       </li>
     </ul>
+    <h3>Locations</h3>
+    <ul class="filter-list">
+      <li *ngFor="let filter of locationFilters">
+        <div class="filter button" [class.active]="filter.active" (click)="onFilterToggle(filter)">
+          <i *ngIf="filter.icon" class="fa fa-fw {{filter.icon}}"></i>{{filter.title}}</div>
+        </li>
+      </ul>
   </div>
 
   <div class="schedule">
@@ -37,4 +44,7 @@
         <asm-block-schedule-event *ngFor="let event of day.filteredEvents; let i = index" class="event type{{i%2}}" [locations]="locations" [event]="event"></asm-block-schedule-event>
       </ng-container>
     </div>
+    <p class="center" *ngIf="noEvents">
+      No events matching selected filters.
+    </p>
   </div>

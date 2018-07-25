@@ -15,7 +15,9 @@ export class BlockScheduleComponent implements OnInit {
   events = [];
   locations = {};
   filters = [];
+  locationFilters = [];
   loading: boolean;
+  noEvents: boolean;
   errorMessage: string;
   subscriptions = [];
   weekdays: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -26,7 +28,7 @@ export class BlockScheduleComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.scheduleService
-      .getJSON(this.content.scheduleSource)
+      .getJSON('assets/summer18.json')// this.content.scheduleSource)
       .subscribe((data: Schedule) => {
         this.locations = data.locations;
         this.events = data.events;
@@ -52,6 +54,8 @@ export class BlockScheduleComponent implements OnInit {
             if (x.flags && x.flags.length)
               this.filters.push(...x.flags);
             this.filters = Array.from(new Set(this.filters).values());
+            this.locationFilters.push(x.location_key);
+            this.locationFilters = Array.from(new Set(this.locationFilters).values());
           });
           this.parseFilters();
           this.filterEvents();
@@ -75,7 +79,7 @@ export class BlockScheduleComponent implements OnInit {
       if (filter) {
         let active = [];
         if (this.content.tag) {
-          active = this.content.tag.replace(/\s+/g, '').toLowerCase().split(',');
+          active = this.content.tag.replace(/,\s+/g, ',').toLowerCase().split(',');
         }
         return {
           title: filter,
@@ -85,14 +89,34 @@ export class BlockScheduleComponent implements OnInit {
         };
       }
     }).sort((a, b) => (a.title + '').localeCompare((b.title + '')));
+    this.locationFilters = this.locationFilters.map(location => {
+      let active = [];
+      if (this.content.location) {
+        active = this.content.location.replace(/,\s+/g, ',').toLowerCase().split(',');
+      }
+      return {
+        title: this.locations[location].name,
+        value: location,
+        active: active.length && active.includes(location.toLowerCase())
+      };
+    });
   }
 
   filterEvents() {
     const active = this.filters.filter(f => f.active);
-    this.days.forEach(day => {
-      day.filteredEvents = day.events.filter(event => !active.length || active.some(f => {
-        return event.categories.includes(f.value) || event.flags.includes(f.value);
-      }));
+    const activeLocations = this.locationFilters.filter(l => l.active);
+
+    const hasLocation = (event) => !activeLocations.length || activeLocations.length && activeLocations.some(f => {
+      return event.location_key.toLowerCase() === f.value;
     });
+    const hasFilter = (event) => !active.length || active.length && active.some(f => {
+      return event.categories.includes(f.value) || event.flags.includes(f.value);
+    });
+
+    this.days.forEach(day => {
+      day.filteredEvents = day.events.filter(event => (!active.length && !activeLocations.length)
+        || hasFilter(event) && hasLocation(event));
+    });
+    this.noEvents = this.days.every(d => d.filteredEvents.length === 0);
   }
 }

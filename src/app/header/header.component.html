@@ -46,14 +46,16 @@
     <div class="header-right"></div>
   </ng-container>
   <ng-template #showMobile>
-    <div class="logo-container">
-      <a [href]="'/' + event?.name">
-        <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
-      </a>
-    </div>
-    <button type="button" class="menu" (click)="onMobileMenuClick()" aria-label="Open menu">
-      <i class="fa fa-bars"></i>
-    </button>
+    <ng-template [ngIf]="!mobileMenuOpen">
+      <div class="logo-container">
+        <a [href]="'/' + event?.name">
+          <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
+        </a>
+      </div>
+      <button type="button" class="menu" (click)="onMobileMenuClick()" aria-label="Open menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </ng-template>
   </ng-template>
 </div>
 <ng-container *ngIf="isMobile">

@@ -36,6 +36,13 @@ body {
 .centered-block {
   @include centered-block;
 }
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center {
+  text-align: center;
+}
 
 .skewed {
   @include skewed;
