@@ -28,7 +28,7 @@ export class BlockScheduleComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.scheduleService
-      .getJSON('assets/summer18.json')// this.content.scheduleSource)
+      .getJSON(this.content.scheduleSource)
       .subscribe((data: Schedule) => {
         this.locations = data.locations;
         this.events = data.events;

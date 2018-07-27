@@ -1,4 +1,4 @@
-<div class="schedule-info centered">
+<div class="schedule-info centered center">
     <div *ngIf="loading">loading...</div>
     <div *ngIf="errorMessage!==''">{{errorMessage}}</div>
   <p class="center">Times in the schedule are shown in browser's timezone.</p>
@@ -22,7 +22,7 @@
         <i *ngIf="filter.icon" class="fa fa-fw {{filter.icon}}"></i>{{filter.title}}</div>
       </li>
     </ul>
-    <h3>Locations</h3>
+    <h3 *ngIf="locationFilters.length">Locations</h3>
     <ul class="filter-list">
       <li *ngFor="let filter of locationFilters">
         <div class="filter button" [class.active]="filter.active" (click)="onFilterToggle(filter)">
