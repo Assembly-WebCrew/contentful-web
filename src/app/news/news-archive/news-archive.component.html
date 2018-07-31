@@ -4,6 +4,7 @@
     <div class="article" *ngFor="let article of articles">
       <div class="article-content">
           <span class="published" *ngIf="article.date">{{article.date | date:'dd.MM.yyyy'}}</span>
+          <span class="category" *ngIf="article.category">{{article.category}}</span>
           <a class="title" [routerLink]="article.slug"><h3>{{article.title}}</h3></a>
           <p class="ingress" *ngIf="article.ingress">{{article.ingress}}</p>
           <a class="link" [routerLink]="article.slug">Read more<span class="fa fa-long-arrow-right"></span></a>

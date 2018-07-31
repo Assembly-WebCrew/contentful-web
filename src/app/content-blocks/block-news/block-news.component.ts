@@ -23,7 +23,7 @@ export class BlockNewsComponent implements OnInit {
   }
 
   getNews(): void {
-    const params = {};
+    const params = { 'fields.published': true };
     if (this.content && this.content.filterByCategory) {
       params['fields.category'] = this.content.filterByCategory;
     }
@@ -58,7 +58,8 @@ export class BlockNewsComponent implements OnInit {
               return -1;
             });
             if (this.content && this.content.filterByTag) {
-              this.articles = this.articles.filter(a => this.content.filterByTag.split(',').every(tag => a.tags.indexOf(tag) > -1));
+              this.articles = this.articles.filter(a => a.tags && this.content.filterByTag.split(',')
+                .every(tag => a.tags.indexOf(tag) > -1));
             }
             this.articles = this.articles.slice(0, maxCount);
           }
@@ -71,7 +72,7 @@ export class BlockNewsComponent implements OnInit {
       let height: number;
       if (i === 0) { height = 460;
       } else { height = 210; }
-      console.log(i, article.featuredImage.url, height);
+      // console.log(i, article.featuredImage.url, height);
       return 'url(' + article.featuredImage.url + '?h=' + height + ')';
     } else {
       return 'url(/assets/images/background-picture.jpg)';

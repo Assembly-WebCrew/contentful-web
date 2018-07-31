@@ -48,6 +48,18 @@
       text-transform: uppercase;
       font-family: $font-title;
       color: $color-accent;
+      padding-right: 1rem;
+    }
+
+    .category {
+      text-transform: uppercase;
+      font-family: $font-title;
+      background: $color-accent-dark;
+      color: $color-text;
+      border-radius: $border-radius;
+      display: inline-block;
+      padding: 5px;
+      transform: skew(-15deg);
     }
 
     .article-content {

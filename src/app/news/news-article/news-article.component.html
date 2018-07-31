@@ -6,5 +6,13 @@
     <div class="date">{{article?.date | date:'dd.MM.yyyy'}}</div>
     <p class="ingress" *ngIf="article?.ingress">{{article?.ingress}}</p>
     <div class="article-content" [markdownText]="article?.body" asmMarkdown></div>
+    <div class="meta">
+      <div class="category tag" *ngIf="article.category">{{article.category}}</div>
+      <div class="tags" *ngIf="article.tags">
+        <span class="tag" *ngFor="let tag of article.tags">
+          {{tag}}
+        </span>
+      </div>
+    </div>
   </div>
 </asm-base>
