@@ -66,9 +66,13 @@ export class BlockNewsComponent implements OnInit {
       });
   }
 
-  getImage(article: any) {
+  getImage(article: any, i: number) {
     if (article.featuredImage && article.featuredImage.url) {
-      return 'url(' + article.featuredImage.url + '?w=400)';
+      let height: number;
+      if (i === 0) { height = 460;
+      } else { height = 210; }
+      console.log(i, article.featuredImage.url, height);
+      return 'url(' + article.featuredImage.url + '?h=' + height + ')';
     } else {
       return 'url(/assets/images/background-picture.jpg)';
     }
