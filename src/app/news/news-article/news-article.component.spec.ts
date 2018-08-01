@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { NewsArticleComponent } from './news-article.component';
 import { BaseComponent } from '../../content/base/base.component';
@@ -7,7 +8,6 @@ import { BlockCountdownComponent } from '../../content-blocks/block-countdown/bl
 import { BlockSponsorsComponent } from '../../content-blocks/block-sponsors/block-sponsors.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ContentfulService } from '../../core/contentful.service';
-import { Observable } from 'rxjs/Observable';
 import { WINDOW_PROVIDERS } from '../../core/window.service';
 import { MarkdownDirective } from '../../content-blocks/directives/markdown.directive';
 
@@ -18,16 +18,26 @@ describe('NewsArticleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ NewsArticleComponent, BaseComponent, BlockCountdownComponent, BlockEventInfoComponent, BlockSponsorsComponent, MarkdownDirective ],
+      declarations: [
+        NewsArticleComponent,
+        BaseComponent,
+        BlockCountdownComponent,
+        BlockEventInfoComponent,
+        BlockSponsorsComponent,
+        MarkdownDirective
+      ],
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ sponsors: [{}]}), getEvent: () => ({name: 'summer18', eventTitle: 'ASSEMBLY Summer 2018'}) }
+          useValue: {
+            query$: () => of({ sponsors: [{}] }),
+            getEvent: () => ({ name: 'summer18', eventTitle: 'ASSEMBLY Summer 2018' })
+          }
         },
         WINDOW_PROVIDERS
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

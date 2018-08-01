@@ -1,10 +1,10 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { ContentfulService } from '../core/contentful.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
+import { ContentfulService } from '../core/contentful.service';
 import { HeaderComponent } from './header.component';
-import { Observable } from 'rxjs/Observable';
 import { SocialMediaComponent } from '../social-media/social-media.component';
 import { MenuComponent } from './menu/menu.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
@@ -21,7 +21,7 @@ describe('HeaderComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
+          useValue: { query$: () => of({ menus: [{title: 'Main Menu', items: []}] }) }
         },
         WINDOW_PROVIDERS
       ]
