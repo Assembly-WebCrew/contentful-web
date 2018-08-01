@@ -20,7 +20,7 @@
     "lint": "ng lint",
     "sass-lint": "sass-lint",
     "sass-lint-html": "sass-lint -v --format html -o sass-lint.html",
-    "e2e": "ng e2e -c srvdev"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
