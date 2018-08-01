@@ -1,10 +1,8 @@
-
-import {from as observableFrom} from 'rxjs';
-import { Observable } from 'rxjs/Rx';
 import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { from, Observable } from 'rxjs';
 import { ApolloClient, NetworkStatus } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
@@ -14,11 +12,12 @@ import { environment } from '../../environments/environment';
 export class ContentfulService {
   // TODO: Add proper typing for ApolloClient cache
   private client: ApolloClient<any>;
-  private event: { name: string, eventTitle: string, defaultBackground: { fields: { file: {url: string} } } };
+  private event: { name: string, eventTitle: string, defaultBackground: { fields: { file: { url: string } } } };
 
   constructor(
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router) {
+  }
 
   // get Contentful Schema from api / backend
   private async getContentfulSchema(event): Promise<any> {
@@ -90,7 +89,7 @@ export class ContentfulService {
   }
 
   query$<T>(options: WatchQueryOptions): Observable<T> {
-    return observableFrom<T>(this.query<T>(options)
+    return from<T>(this.query<T>(options)
       .then(result => result.data));
   }
 }

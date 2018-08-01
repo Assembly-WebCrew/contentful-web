@@ -119,7 +119,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
           }
         }
       }
-    }` }).pipe(map(data => data.menus[0]));
+    }` }).pipe(map((data: any) => data.menus[0]));
   }
 
   getLogo(isMobile) {

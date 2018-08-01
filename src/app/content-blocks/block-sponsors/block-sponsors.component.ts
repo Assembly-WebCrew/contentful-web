@@ -34,7 +34,7 @@ export class BlockSponsorsComponent implements OnInit {
         }
         link
       }
-    }` }).pipe(map(data => data.sponsors.map(s => s).sort((a, b) => +b.importance - +a.importance)));
+    }` }).pipe(map((data: any) => data.sponsors.map(s => s).sort((a, b) => +b.importance - +a.importance)));
   }
 
 }

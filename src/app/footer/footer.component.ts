@@ -46,7 +46,7 @@ export class FooterComponent implements OnInit {
           }
         }
       }
-    }` }).pipe(map(data => data.menus[0]));
+    }` }).pipe(map((data: any) => data.menus[0]));
   }
 
   onNavigation(item, event: Event) {
