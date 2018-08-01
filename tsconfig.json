@@ -18,7 +18,10 @@
     ],
     "lib": [
       "es2016",
-      "dom"
-    ]
+      "dom",
+      "esnext"
+    ],
+    "module": "es2015",
+    "baseUrl": "./"
   }
 }

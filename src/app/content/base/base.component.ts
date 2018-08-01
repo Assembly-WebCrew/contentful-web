@@ -1,3 +1,5 @@
+
+import {filter} from 'rxjs/operators';
 import { Component, OnInit, OnChanges, Input, Inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { WINDOW } from '../../core/window.service';
@@ -50,8 +52,8 @@ export class BaseComponent implements OnInit, OnChanges {
   }
 
   getRouterEvents(): void {
-    this.router.events
-      .filter(event => event instanceof NavigationEnd)
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         const tree = this.router.parseUrl(event.urlAfterRedirects);
         if (!tree.fragment) {

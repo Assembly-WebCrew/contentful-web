@@ -1,14 +1,19 @@
+
+import {from as observableFrom} from 'rxjs';
 import { Observable } from 'rxjs/Rx';
 import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { ApolloClient, createNetworkInterface, IntrospectionFragmentMatcher, NetworkStatus } from 'apollo-client';
+import { ApolloClient, NetworkStatus } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ContentfulService {
-  private client: ApolloClient;
+  // TODO: Add proper typing for ApolloClient cache
+  private client: ApolloClient<any>;
   private event: { name: string, eventTitle: string, defaultBackground: { fields: { file: {url: string} } } };
 
   constructor(
@@ -65,10 +70,8 @@ export class ContentfulService {
       });
 
       this.client = new ApolloClient({
-        networkInterface: createNetworkInterface({
-          uri: `${environment.apiUrl}/en/${this.event.name}/graphql`
-        }),
-        fragmentMatcher
+        link: new HttpLink({ uri: `${environment.apiUrl}/en/${this.event.name}/graphql` }),
+        cache: new InMemoryCache({ fragmentMatcher })
       });
     } catch (e) {
       this.router.navigate(['/']);
@@ -87,7 +90,7 @@ export class ContentfulService {
   }
 
   query$<T>(options: WatchQueryOptions): Observable<T> {
-    return Observable.fromPromise<T>(this.query<T>(options)
+    return observableFrom<T>(this.query<T>(options)
       .then(result => result.data));
   }
 }

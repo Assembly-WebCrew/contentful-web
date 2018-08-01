@@ -1,9 +1,11 @@
+
+import {map} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../core/contentful.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import gql from 'graphql-tag';
 import * as qs from 'qs';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'asm-footer',
@@ -44,7 +46,7 @@ export class FooterComponent implements OnInit {
           }
         }
       }
-    }` }).map(data => data.menus[0]);
+    }` }).pipe(map(data => data.menus[0]));
   }
 
   onNavigation(item, event: Event) {

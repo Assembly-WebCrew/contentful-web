@@ -1,5 +1,7 @@
+
+import {map} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import gql from 'graphql-tag';
 import * as qs from 'qs';
 import { ContentfulService } from '../../core/contentful.service';
@@ -32,7 +34,7 @@ export class BlockSponsorsComponent implements OnInit {
         }
         link
       }
-    }` }).map(data => data.sponsors.map(s => s).sort((a, b) => +b.importance - +a.importance));
+    }` }).pipe(map(data => data.sponsors.map(s => s).sort((a, b) => +b.importance - +a.importance)));
   }
 
 }
