@@ -1,0 +1,12 @@
+{
+  "/api": {
+    "target": "https://www.assembly.org",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/media": {
+    "target": "https://www.assembly.org",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

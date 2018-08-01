@@ -21,7 +21,6 @@ export class BlockScheduleComponent implements OnInit {
   errorMessage: string;
   subscriptions = [];
   weekdays: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  // scheduleSource = 'assets/winter18.json';
 
   constructor(private scheduleService: ScheduleService) { }
 

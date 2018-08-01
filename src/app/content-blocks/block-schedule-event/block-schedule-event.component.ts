@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
 import { ScheduleService } from '../services/schedule.service';
 
 @Component({
@@ -41,7 +41,6 @@ export class BlockScheduleEventComponent implements OnInit {
   }
 
   getDuration(start: Date, end: Date) {
-
     if (!start && !end)
       return '';
 
@@ -63,14 +62,14 @@ export class BlockScheduleEventComponent implements OnInit {
     duration.hour = Math.floor((distance % sizes.day) / sizes.hour);
     duration.min = Math.floor((distance % sizes.hour) / sizes.min);
 
-    // TODO: change to use formatDate after Angular 6 upgrade
     let msg = '';
+    const locale = 'en'; // This is will be changed if we decide to do localization at some point;
     if (startTime.getDay() !== endTime.getDay()) {
-      msg = this.datePipe.transform(startTime, 'E d.M. H:mm') + ' – ' + this.datePipe.transform(endTime, 'E d.M. H:mm');
+      msg = `${formatDate(startTime, 'E d.M. H:mm', locale)} - ${formatDate(endTime, 'E d.M. H:mm', locale)}`;
     } else if (start === end) {
-      msg = this.datePipe.transform(startTime, 'H:mm');
+      msg = formatDate(startTime, 'H:mm', locale);
     } else {
-      msg = this.datePipe.transform(startTime, 'H:mm') + ' – ' + this.datePipe.transform(endTime, 'H:mm');
+      msg = `${formatDate(startTime, 'H:mm', locale)} - ${formatDate(endTime, 'H:mm', locale)}`;
     }
 
     let dur = duration.day !== 0 ? duration.day + ' days' : '';
