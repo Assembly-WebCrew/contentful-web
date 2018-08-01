@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { BlockZipperContentComponent } from './block-zipper-content.component';
 import { ContentfulService } from '../../core/contentful.service';
-import { Observable } from 'rxjs/Observable';
 import { MarkdownDirective } from '../directives/markdown.directive';
 
 describe('BlockZipperContentComponent', () => {
@@ -15,7 +15,7 @@ describe('BlockZipperContentComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
+          useValue: { query$: () => of({ menus: [{title: 'Main Menu', items: []}] }) }
         }
       ]
     })

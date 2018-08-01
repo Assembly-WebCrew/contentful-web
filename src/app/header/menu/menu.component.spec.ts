@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { MenuComponent } from './menu.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Observable } from 'rxjs/Observable';
 import { ContentfulService } from '../../core/contentful.service';
 
 describe('MenuComponent', () => {
@@ -15,7 +15,7 @@ describe('MenuComponent', () => {
       declarations: [ MenuComponent ],
       providers:  [       {
         provide: ContentfulService,
-        useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
+        useValue: { query$: () => of({ menus: [{title: 'Main Menu', items: []}] }) }
       }
     ]
     })

@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ScheduleService, Schedule } from '../services/schedule.service';
 import { BlockScheduleEventComponent } from './block-schedule-event.component';
 
-import { Observable } from 'rxjs/Observable';
 import { DatePipe } from '@angular/common';
 
 describe('BlockScheduleEventComponent', () => {

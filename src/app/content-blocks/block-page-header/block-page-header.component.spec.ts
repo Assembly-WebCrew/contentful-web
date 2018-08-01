@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { BlockPageHeaderComponent } from './block-page-header.component';
 import { ContentfulService } from '../../core/contentful.service';
-import { Observable } from 'rxjs/Observable';
 
 describe('BlockPageHeaderComponent', () => {
   let component: BlockPageHeaderComponent;
@@ -14,7 +14,7 @@ describe('BlockPageHeaderComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ menus: [{title: 'Main Menu', items: []}] }) }
+          useValue: { query$: () => of({ menus: [{title: 'Main Menu', items: []}] }) }
         }
       ]
     })
