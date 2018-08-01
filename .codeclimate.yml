@@ -18,3 +18,4 @@ exclude_patterns:
 - "dist/"
 - "**/font-awesome/"
 - "**/*.spec.ts"
+- "e2e/"
