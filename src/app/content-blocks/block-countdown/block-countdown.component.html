@@ -1,3 +1,7 @@
+<div class="prefix center" *ngIf="isCountingDown">
+  {{hasStarted ? 'Let\'s party!' : 'Event starts in'}}
+</div>
+
 <div class="countdown">
   <div *ngIf="months != 0">
     <p>{{months}}</p>
