@@ -17,3 +17,5 @@ exclude_patterns:
 - "coverage/"
 - "dist/"
 - "**/font-awesome/"
+- "**/*.spec.ts"
+- "e2e/"

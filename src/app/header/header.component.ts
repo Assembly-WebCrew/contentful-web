@@ -1,13 +1,13 @@
+
+import {map, throttleTime} from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import gql from 'graphql-tag';
 import { ContentfulService } from '../core/contentful.service';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import * as qs from 'qs';
 import { get } from 'lodash';
-import { Observable } from 'rxjs/Observable';
+import { Observable ,  Subject ,  Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
 import { WINDOW } from '../core/window.service';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
@@ -18,7 +18,7 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   resizeSubject: Subject<number> = new Subject<number>();
-  resizeObservable: Observable<number> = this.resizeSubject.asObservable().throttleTime(200);
+  resizeObservable: Observable<number> = this.resizeSubject.asObservable().pipe(throttleTime(200));
   header$: Observable<any>;
   event: any;
   scrolling = false;
@@ -119,7 +119,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
           }
         }
       }
-    }` }).map(data => data.menus[0]);
+    }` }).pipe(map((data: any) => data.menus[0]));
   }
 
   getLogo(isMobile) {

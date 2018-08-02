@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
 
 import { FooterComponent } from './footer.component';
 import { SocialMediaComponent } from '../social-media/social-media.component';
 import { ContentfulService } from '../core/contentful.service';
-import { Observable } from 'rxjs/Observable';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -17,7 +17,7 @@ describe('FooterComponent', () => {
       providers: [
         {
           provide: ContentfulService,
-          useValue: { query$: () => Observable.of({ menus: [{}] }) }
+          useValue: { query$: () => of({ menus: [{}] }) }
         }
       ]
     })

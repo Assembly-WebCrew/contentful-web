@@ -50,7 +50,7 @@ export class AnalyticsService implements IAnalytics {
 
   devMode(enable?: boolean): boolean {
     if (typeof enable !== 'undefined')
-      this.angulartics.developerMode(enable);
+      this.angulartics.settings.developerMode = enable;
 
     return this.angulartics.settings.developerMode;
   }
