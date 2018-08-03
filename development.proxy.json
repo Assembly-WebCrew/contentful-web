@@ -1,11 +1,11 @@
 {
   "/api": {
-    "target": "https://www.assembly.org",
+    "target": "https://webdev.assembly.org",
     "secure": false,
     "changeOrigin": true
   },
   "/media": {
-    "target": "https://www.assembly.org",
+    "target": "https://webdev.assembly.org",
     "secure": false,
     "changeOrigin": true
   }
