@@ -6,19 +6,16 @@ This project is for Assembly Party's website. It fetcheds the contents from Cont
 
 Commits are automatically tested and deployed to server by Travis CI.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2
 
-## Running your own copy
+## Running the project
 
-* install [Yarn](https://yarnpkg.com/lang/en/docs/install/)
-* (optional) install [NVM](https://github.com/creationix/nvm)
-* run `yarn`
-* run `ng serve -env=stg`
-* navigate to `http://localhost:4200/`
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* download the project `git clone https://github.com/Assembly-WebCrew/contentful-web.git`
+* (recommended)install [Yarn](https://yarnpkg.com/lang/en/docs/install/)
+* make sure you have Angular CLI 6+ `yarn global add @angular/cli` or `npm install -g @angular/cli`
+* run `yarn` or `npm install` inside contentful directory
+* run `yarn start` or `npm start`
+* navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -26,17 +23,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `yarn build` or `npm run build` to build the project(both prod and dev). The build artifacts will be stored in the `dist/` directory. Use the `build:prod` instead for a production build.
 
 ## Tests
 ### Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io). Test uses Chrome for default.
+Run `yarn test` or `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io). Test uses Chrome for default.
 
 ### Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Run `yarn e2e` or `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
