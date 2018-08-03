@@ -81,12 +81,39 @@ export class ContentResolve implements Resolve<any> {
               ... on BlockSection {
                 title
                 items{
+                  ... on BlockCollapse {
+                    title
+                    content
+                  }
                   ... on BlockMarkdown {
                     title
                     body
                     featuredImage{
                       title
                       url
+                    }
+                  }
+                  ... on CallToAction {
+                    title
+                    url
+                    linkLabel
+                    page {
+                      slug
+                      title
+                    }
+                  }
+                  ... on BlockPageHeader {
+                    title
+                    callToAction {
+                      ... on CallToAction {
+                        title
+                        url
+                        linkLabel
+                        page {
+                          slug
+                          title
+                        }
+                      }
                     }
                   }
                 }

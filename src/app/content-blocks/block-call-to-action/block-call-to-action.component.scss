@@ -1,40 +1,21 @@
 @import '../../../common';
 
 :host {
-  @include component(contain, flex);
-  @include page-content-width;
-  justify-content: center;
+  @include component(content, flex);
   border-radius: $border-radius;
-  border: $border-basic $color-text;
-
-  @include mobile {
-    flex-direction: column;
-  }
-}
-
-.cta {
-  border-right: $border-basic $color-text;
-  display: flex;
+  border: $border-basic $color-accent;
   flex-direction: column;
   flex-grow: 1;
   font-family: $font-title;
   font-size: $font-size-cta;
   height: 200px;
-  min-width: 33%;
   text-transform: uppercase;
-
-  @include mobile {
-    border-bottom: $border-basic $color-text;
-    border-right: 0;
-  }
-
-  &:last-of-type {
-    border-right: 0;
-
-    @include mobile {
-      border-bottom: 0;
-    }
-  }
+  width: 100%;
+  max-width: $width-page-content;
+  margin: 0 auto;
+  background-color: rgba($color-bg, .7);
+  text-shadow: $color-bg 0 0 15px;
+  font-weight: bold;
 
   .cta-title {
     flex-grow: 1;
@@ -44,8 +25,8 @@
     text-align: center;
     font-size: $font-size-cta-title;
     font-style: italic;
-    font-weight: 400;
     overflow: hidden;
+    color: $color-accent;
 
     @include mobile {
       font-size: $font-size-cta-title-m;
@@ -57,10 +38,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $color-text;
+    color: $color-accent;
     font-size: $font-size;
     text-decoration: none;
-    border-top: $border-basic $color-text;
+    border-top: $border-basic $color-accent;
 
     .fa {
       margin-left: 10px;
@@ -68,8 +49,7 @@
     }
 
     &:hover {
-      color: $color-bg;
-      background-color: $color-text;
+      @include gradient(rgba($color-accent, .3), $color-bg);
     }
   }
 }

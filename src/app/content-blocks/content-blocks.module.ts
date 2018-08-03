@@ -17,6 +17,7 @@ import { BlockZipperComponent } from './block-zipper/block-zipper.component';
 import { MarkdownDirective } from './directives/markdown.directive';
 import { ScheduleService } from './services/schedule.service';
 import { BlockScheduleEventComponent } from './block-schedule-event/block-schedule-event.component';
+import { BlockCallToActionComponent } from './block-call-to-action/block-call-to-action.component';
 
 export const contentComponents = [
   BlockMarkdownComponent,
@@ -27,7 +28,8 @@ export const contentComponents = [
   BlockSponsorsComponent,
   BlockCollapseComponent,
   BlockNewsComponent,
-  BlockScheduleComponent
+  BlockScheduleComponent,
+  BlockCallToActionComponent
 ];
 
 @NgModule({
@@ -38,7 +40,6 @@ export const contentComponents = [
     BlockEventInfoComponent,
     BlockCountdownComponent,
     MarkdownDirective,
-    BlockScheduleComponent,
     BlockScheduleEventComponent
   ],
   entryComponents: contentComponents,

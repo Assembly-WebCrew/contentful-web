@@ -3,3 +3,4 @@
     <h2>{{content?.title}}</h2>
     <div class="title-border-right"></div>
 </div>
+<asm-content-block *ngFor="let content of content?.items" [content]="content" class="{{content.__typename}}"></asm-content-block>

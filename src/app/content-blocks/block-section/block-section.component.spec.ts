@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlockSectionComponent } from './block-section.component';
+import { ContentBlockComponent } from '../../content-block/content-block.component';
 
 describe('BlockSectionComponent', () => {
   let component: BlockSectionComponent;
@@ -8,7 +9,7 @@ describe('BlockSectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockSectionComponent ]
+      declarations: [ BlockSectionComponent, ContentBlockComponent ]
     })
     .compileComponents();
   }));

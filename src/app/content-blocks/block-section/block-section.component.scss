@@ -1,6 +1,31 @@
 @import '../../../common';
-
 :host {
   @include component;
   padding: 20px 0;
+  text-align: center;
+
+  &.has-background {
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 0;
+  }
+}
+
+.section-header {
+  padding-bottom: 2rem;
+  text-shadow: $color-bg 0 0 15px;
+}
+
+.CallToAction {
+  display: inline-block;
+  width: 50%;
+  max-width: $width-page-content / 2;
+  padding: 10px;
+
+  @include mobile {
+    padding: 10px 0;
+    width: 100%;
+  }
 }
