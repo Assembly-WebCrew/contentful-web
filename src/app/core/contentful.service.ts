@@ -13,6 +13,7 @@ export class ContentfulService {
   // TODO: Add proper typing for ApolloClient cache
   private client: ApolloClient<any>;
   private event: { name: string, eventTitle: string, defaultBackground: { fields: { file: { url: string } } } };
+  private retry = 0;
 
   constructor(
     private http: HttpClient,
@@ -73,6 +74,9 @@ export class ContentfulService {
         cache: new InMemoryCache({ fragmentMatcher })
       });
     } catch (e) {
+      console.warn(e);
+      if (this.retry > 1) return;
+      this.retry++;
       this.router.navigate(['/']);
     }
   }
