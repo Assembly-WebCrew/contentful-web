@@ -6,16 +6,19 @@
 
 <div class="schedule-days">
   <ul class="day-list">
-    <li *ngFor="let day of days">
-      <div *ngIf="day.filteredEvents.length" class="button" routerLink="." [fragment]="day.title + day.date.getDate() + (day.date.getMonth() + 1)">
-        <span>{{day.title}}</span>
-        <span class="date" *ngIf="day.date">{{day.date | date:'d.M.'}}</span>
-      </div>
-    </li>
+    <ng-container *ngFor="let day of days">
+      <li *ngIf="day.filteredEvents.length">
+        <div class="button" routerLink="." [fragment]="day.title + day.date.getDate() + (day.date.getMonth() + 1)">
+          <span>{{day.title}}</span>
+          <span class="date" *ngIf="day.date">{{day.date | date:'d.M.'}}</span>
+        </div>
+      </li>
+    </ng-container>
   </ul>
 </div>
 
 <div class="schedule-filters">
+  <div class="filter past" [class.active]="showPastEvents" (click)="onShowPastEventsToggle()">Show past events</div>
   <ul class="filter-list">
     <li *ngFor="let filter of filters">
       <div class="filter button" [class.active]="filter.active" (click)="onFilterToggle(filter)">

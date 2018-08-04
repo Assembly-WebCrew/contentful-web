@@ -44,6 +44,11 @@ export class BlockScheduleEventComponent implements OnInit {
     if (!start && !end)
       return '';
 
+    if (!end) {
+      console.warn(`No end time defined for event ${this.event.name}`);
+      end = start;
+    }
+
     const sizes = {
       min: 60000,
       hour: 3600000,

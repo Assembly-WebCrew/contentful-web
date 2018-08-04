@@ -16,6 +16,7 @@ export class BlockScheduleComponent implements OnInit {
   locations = {};
   filters = [];
   locationFilters = [];
+  showPastEvents: boolean;
   loading: boolean;
   noEvents: boolean;
   errorMessage: string;
@@ -49,9 +50,9 @@ export class BlockScheduleComponent implements OnInit {
             }
             currentDay.events.push(x);
             if (x.categories && x.categories.length)
-              this.filters.push(...x.categories);
+              this.filters.push(...x.categories.map(c => c && c.toLowerCase()));
             if (x.flags && x.flags.length)
-              this.filters.push(...x.flags);
+              this.filters.push(...x.flags.map(f => f && f.toLowerCase()));
             this.filters = Array.from(new Set(this.filters).values());
             this.locationFilters.push(x.location_key);
             this.locationFilters = Array.from(new Set(this.locationFilters).values());
@@ -70,6 +71,11 @@ export class BlockScheduleComponent implements OnInit {
   onFilterToggle(filter) {
     filter.active = !filter.active;
 
+    this.filterEvents();
+  }
+
+  onShowPastEventsToggle() {
+    this.showPastEvents = !this.showPastEvents;
     this.filterEvents();
   }
 
@@ -105,6 +111,9 @@ export class BlockScheduleComponent implements OnInit {
     const active = this.filters.filter(f => f.active);
     const activeLocations = this.locationFilters.filter(l => l.active);
 
+    const canShow = (event) => this.showPastEvents
+      || Date.now() < new Date(((event.end_time || event.start_time) + '').replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2')).getTime();
+
     const hasLocation = (event) => !activeLocations.length || activeLocations.length && activeLocations.some(f => {
       return event.location_key.toLowerCase() === f.value;
     });
@@ -113,8 +122,8 @@ export class BlockScheduleComponent implements OnInit {
     });
 
     this.days.forEach(day => {
-      day.filteredEvents = day.events.filter(event => (!active.length && !activeLocations.length)
-        || hasFilter(event) && hasLocation(event));
+      day.filteredEvents = day.events.filter(event => canShow(event)
+        && ((!active.length && !activeLocations.length) || hasFilter(event) && hasLocation(event)));
     });
     this.noEvents = this.days.every(d => d.filteredEvents.length === 0);
   }
