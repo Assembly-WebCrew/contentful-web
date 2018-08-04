@@ -118,7 +118,8 @@ export class BlockScheduleComponent implements OnInit {
       return event.location_key.toLowerCase() === f.value;
     });
     const hasFilter = (event) => !active.length || active.length && active.some(f => {
-      return event.categories.includes(f.value) || event.flags.includes(f.value);
+      return event.categories.map(c => c && c.toLowerCase()).includes(f.value)
+        || event.flags.map(c => c && c.toLowerCase()).includes(f.value);
     });
 
     this.days.forEach(day => {
