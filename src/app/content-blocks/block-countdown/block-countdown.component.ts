@@ -13,6 +13,7 @@ export class BlockCountdownComponent implements OnInit {
   event: any;
   interval: any;
   hasStarted: boolean;
+  hasEnded: boolean;
   isCountingDown: boolean;
   months = 0;
   days = 0;
@@ -55,6 +56,7 @@ export class BlockCountdownComponent implements OnInit {
         }
         // event has ended, clear countdown
         if (distance < 0) {
+          this.hasEnded = true;
           this.isCountingDown = false;
           return clearInterval(this.interval);
         }
