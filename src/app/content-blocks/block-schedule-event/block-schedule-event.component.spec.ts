@@ -79,11 +79,11 @@ describe('Content-blocks: BlockScheduleEventComponent', () => {
     it('it should display correct start time', () => {
       const elementDe = fixture.debugElement.query(By.css('.start-time'));
       const elementEl = elementDe.nativeElement;
-      expect(elementEl.innerText).toBe('10:00');
+      expect(elementEl.innerText).toBe(formatDate('2018-08-02T10:00+0300', 'HH:mm', 'en', '+3:00'));
 
       component.event.start_time = '2018-08-02T12:30+0300';
       fixture.detectChanges();
-      expect(elementEl.innerText).toBe(formatDate(component.event.start_time, 'HH:mm', 'en'));
+      expect(elementEl.innerText).toBe(formatDate(component.event.start_time, 'HH:mm', 'en', '+3:00'));
     });
 
     it('it should display correct event location', () => {
