@@ -5,7 +5,7 @@ files:
   ignore:
     - 'node_modules/**'
     - 'src/scss/font-awesome/**'
-    - 'src/scss/socioicons.scss'
+    - 'src/scss/socicons.scss'
 rules:
   # Extends
   extends-before-mixins: 1
@@ -13,7 +13,15 @@ rules:
   placeholder-in-extend: 1
 
   # Mixins
-  mixins-before-declarations: 1
+  mixins-before-declarations:
+    - 1
+    - exclude: [
+      mobile,
+      tablet,
+      desktop,
+      retina,
+      screen-small
+    ]
 
   # Line Spacing
   one-declaration-per-line: 1
@@ -44,7 +52,9 @@ rules:
   no-universal-selectors: 0
   no-url-domains: 1
   no-url-protocols: 1
-  no-vendor-prefixes: 1
+  no-vendor-prefixes:
+    - 1
+    - ignore-non-standard: true
   no-warn: 1
   property-units:
     - 1

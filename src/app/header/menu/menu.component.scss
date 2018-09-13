@@ -1,5 +1,11 @@
 @import '../../../common';
 
+$menu-dropdown-bg-color: rgba($color-bg, .9);
+$menu-dropdown-border-color: rgba($color-accent, .6);
+$menu-dropdown-box-shadow-color: rgba(0, 0, 0, .4);
+$menu-dropdown-before-border-color: rgba($color-accent, .6);
+$menu-dropdown-sectioned-webkit-scrollbar-track-box-shadow-color: rgba(0, 0, 0, .5);
+
 :host {
   @include component(initial);
 }
@@ -47,7 +53,7 @@ ul {
       font-family: $font-text;
       opacity: 0;
       visibility: hidden;
-      background-color: rgba($color-bg, .9);
+      background-color: $menu-dropdown-bg-color;
       padding: 1em;
       text-align: left;
       position: absolute;
@@ -56,9 +62,9 @@ ul {
       margin-left: -100px;
       width: 200px;
       transition: opacity.3s .1s, top .3s .1s, visibility .1s .2s;
-      border: $border-basic rgba($color-accent, .6);
+      border: $border-basic $menu-dropdown-border-color;
       border-radius: $border-radius;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+      box-shadow: 0 1px 3px $menu-dropdown-box-shadow-color;
       box-sizing: border-box;
       z-index: -1;
 
@@ -77,7 +83,7 @@ ul {
 
       &:before {
         content: '';
-        border: 10px solid rgba($color-accent, .6);
+        border: 10px solid $menu-dropdown-before-border-color;
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
@@ -129,9 +135,11 @@ ul {
             &::-webkit-scrollbar {
               width: .5em;
             }
+
             &::-webkit-scrollbar-track {
-                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+              -webkit-box-shadow: inset 0 0 6px $menu-dropdown-sectioned-webkit-scrollbar-track-box-shadow-color;
             }
+
             &::-webkit-scrollbar-thumb {
               background-color: $color-accent-dark;
               outline: 1px solid $color-accent-dark;
@@ -166,11 +174,11 @@ ul {
               padding: .5rem 1em 0;
 
               &:first-child {
-                padding-top: 0.5em;
+                padding-top: .5em;
               }
 
               &:last-child {
-                padding-bottom: 0.5em;
+                padding-bottom: .5em;
               }
 
               &:before {

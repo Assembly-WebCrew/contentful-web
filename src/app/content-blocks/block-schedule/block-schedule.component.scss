@@ -1,5 +1,8 @@
 @import '../../../common';
 
+$block-schedule-day-button-text-shadow-color: rgba($color-bg, .2);
+$block-schedule-filter-text-shadow-color: rgba($color-bg, .2);
+
 :host {
   @include component;
   @include page-content-width;
@@ -22,7 +25,6 @@
   @include text;
 }
 
-
 .schedule-days,
 .schedule-filters {
   width: 80%;
@@ -38,7 +40,7 @@
 
   h3 {
     text-align: center;
-    font-family: "Oswald", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: $font-size-h3;
     font-style: italic;
     font-weight: 600;
@@ -81,7 +83,7 @@
     font-weight: bold;
     justify-content: center;
     padding: 5px;
-    text-shadow: 0 -2px rgba($color-bg, .2);
+    text-shadow: 0 -2px $block-schedule-day-button-text-shadow-color;
     text-transform: uppercase;
     transform: skew(-15deg);
     transition: background-color .1s ease-in-out;
@@ -135,7 +137,7 @@
     font-weight: bold;
     justify-content: center;
     padding: 5px;
-    text-shadow: 0 -2px rgba($color-bg, .2);
+    text-shadow: 0 -2px $block-schedule-filter-text-shadow-color;
     text-transform: uppercase;
     transform: skew(-15deg);
     transition: background-color .1s ease-in-out;

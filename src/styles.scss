@@ -36,10 +36,12 @@ body {
 .centered-block {
   @include centered-block;
 }
+
 .centered {
   margin-left: auto;
   margin-right: auto;
 }
+
 .center {
   text-align: center;
 }
@@ -167,7 +169,7 @@ blockquote {
 
   &:before {
     color: $color-accent;
-    content: "\201C";
+    content: '\201C';
     font-family: $font-family-blockquote-icon;
     font-size: $font-size-blockquote-icon;
     left: 10px;
@@ -176,9 +178,9 @@ blockquote {
   }
 
   &:after {
-    bottom: -0.75em;
+    bottom: -.75em;
     color: $color-accent;
-    content: "\201D";
+    content: '\201D';
     font-family: $font-family-blockquote-icon;
     font-size: $font-size-blockquote-icon;
     position: absolute;

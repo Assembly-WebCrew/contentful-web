@@ -1,4 +1,7 @@
 @import '../../../common';
+
+$article-first-article-content-bg-color: rgba($color-bg, .8);
+
 :host {
   @include component(contain);
 }
@@ -161,9 +164,11 @@
         font-weight: normal;
       }
     }
+
     span.title {
       display: block;
     }
+
     .description {
       font-size: .8rem;
       font-weight: normal;
@@ -182,7 +187,7 @@
     }
 
     .article-content {
-      background-color: rgba($color-bg, .8);
+      background-color: $article-first-article-content-bg-color;
       border-top: 0;
       bottom: 0;
       padding: 30px;

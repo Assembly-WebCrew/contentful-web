@@ -35,10 +35,12 @@
     &:first-child:nth-last-child(5) ~ .sponsor {
       width: 20%;
     }
+
     &:first-child:nth-last-child(6),
     &:first-child:nth-last-child(6) ~ .sponsor {
       width: 16%;
     }
+
     &:first-child:nth-last-child(7),
     &:first-child:nth-last-child(7) ~ .sponsor {
       width: 14%;

@@ -70,6 +70,7 @@ h2 {
       line-height: $zipper-title-height-m;
       padding-left: 20px;
     }
+
     .icon {
       line-height: 55px;
       padding: 0 20px;
@@ -146,7 +147,6 @@ h2 {
     font-size: $font-size;
   }
 }
-
 
 :host-context(.type0) {
    flex-direction: row;

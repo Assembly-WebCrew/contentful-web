@@ -1,5 +1,11 @@
 @import '../../../common';
 
+$block-schedule-event-innercontent-border-bottom-color: rgba($color-accent, .5);
+$block-schedule-event-h4-border-bottom-color: rgba($color-accent, .5);
+$block-schedule-event-h4-focus-bg-color: rgba($color-accent-dark, .3);
+$block-schedule-event-minor-category-icon-text-color: rgba($color-accent, .8);
+$block-schedule-event-button-text-shadow-color: rgba($color-bg, .2);
+
 :host {
   @include component;
   width: $width-text;
@@ -17,7 +23,7 @@
 .innercontent {
   padding: 20px;
   padding-top: 0;
-  border-bottom: $border-basic rgba($color-accent, .5);
+  border-bottom: $border-basic $block-schedule-event-innercontent-border-bottom-color;
 
   @include mobile {
     padding: 0;
@@ -51,7 +57,7 @@
 
 
 h4 {
-  border-bottom: $border-basic rgba($color-accent, .5);
+  border-bottom: $border-basic $block-schedule-event-h4-border-bottom-color;
   color: $color-text;
   cursor: pointer;
   font-size: $font-size-h5;
@@ -66,7 +72,7 @@ h4 {
   &:hover,
   &:active,
   &:focus {
-    background: rgba($color-accent-dark, .3);
+    background: $block-schedule-event-h4-focus-bg-color;
   }
 
   .fa-plus,
@@ -107,7 +113,7 @@ h4 {
     }
 
     .category-icon {
-      color: rgba($color-accent, .8);
+      color: $block-schedule-event-minor-category-icon-text-color;
     }
 
 
@@ -163,7 +169,7 @@ a:visited {
   justify-content: center;
   margin: 0 5px;
   padding: 5px;
-  text-shadow: 0 -2px rgba($color-bg, .2);
+  text-shadow: 0 -2px $block-schedule-event-button-text-shadow-color;
   text-transform: uppercase;
   transform: skew(-15deg);
   transition: background-color .1s ease-in-out;

@@ -1,5 +1,7 @@
 @import '../../../common';
 
+$block-cta-host-bg-color: rgba($color-bg, .7);
+
 :host {
   @include component(content, flex);
   border-radius: $border-radius;
@@ -13,7 +15,7 @@
   width: 100%;
   max-width: $width-page-content;
   margin: 0 auto;
-  background-color: rgba($color-bg, .7);
+  background-color: $block-cta-host-bg-color;
   text-shadow: $color-bg 0 0 15px;
   font-weight: bold;
 
