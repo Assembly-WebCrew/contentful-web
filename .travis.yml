@@ -17,8 +17,9 @@ jobs:
     - stage: test
       script:
         - yarn test
-        - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
         - npm run sass-lint
+        - '[ "${TRAVIS_BRANCH}" != "master" ] && travis_terminate 0 || :'
+        - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
     - stage: test
       script: yarn e2e
     - stage: build & deploy
