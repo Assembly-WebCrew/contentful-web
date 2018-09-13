@@ -20,3 +20,4 @@ exclude_patterns:
 - "src/scss/socicons.scss"
 - "**/*.spec.ts"
 - "e2e/"
+- "**/karma.conf.js"
