@@ -17,5 +17,6 @@ exclude_patterns:
 - "coverage/"
 - "dist/"
 - "**/font-awesome/"
+- "src/scss/socicons.scss"
 - "**/*.spec.ts"
 - "e2e/"
