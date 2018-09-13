@@ -4,7 +4,8 @@ files:
   include: 'src/**/*.s+(a|c)ss'
   ignore:
     - 'node_modules/**'
-    - 'src/font-awesome/**'
+    - 'src/scss/font-awesome/**'
+    - 'src/scss/socioicons.scss'
 rules:
   # Extends
   extends-before-mixins: 1

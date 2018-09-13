@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlockSectionComponent } from './block-section.component';
 import { ContentBlockComponent } from '../../content-block/content-block.component';
+import { BlockSectionComponent } from './block-section.component';
 
 describe('BlockSectionComponent', () => {
   let component: BlockSectionComponent;
@@ -23,4 +23,16 @@ describe('BlockSectionComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('ngOnInit()', () => {
+    it('should change hasBackground to true', () => {
+      expect(component.hasBackground).toBeFalsy();
+      component.content.featuredImage = {
+        'url': 'image.jpg'
+      };
+      component.ngOnInit();
+      expect(component.hasBackground).toBeTruthy();
+    });
+   });
+
 });

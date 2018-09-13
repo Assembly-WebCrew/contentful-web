@@ -1,6 +1,4 @@
-import {
-  Component, OnInit, ComponentFactoryResolver
-} from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -24,5 +22,4 @@ export class ContentComponent implements OnInit {
       this.content = data.content || {};
     });
   }
-
 }

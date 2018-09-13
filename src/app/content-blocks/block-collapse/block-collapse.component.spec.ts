@@ -23,4 +23,14 @@ describe('BlockCollapseComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('toggle()', () => {
+    it('should change opened state', () => {
+      expect(component.opened).toBeFalsy();
+      component.toggle();
+      expect(component.opened).toBeTruthy();
+      component.toggle();
+      expect(component.opened).toBeFalsy();
+    });
+  });
 });
