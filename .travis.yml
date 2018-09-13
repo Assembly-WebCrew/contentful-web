@@ -18,9 +18,10 @@ jobs:
       script:
         - yarn test
         - npm run sass-lint
+        - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] && travis_terminate 0 || :'
         - '[ "${TRAVIS_BRANCH}" != "master" ] && travis_terminate 0 || :'
         - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
-    - stage: test
+    - stage: test e2e
       script: yarn e2e
     - stage: build & deploy
       if: branch = master and type in (push)
