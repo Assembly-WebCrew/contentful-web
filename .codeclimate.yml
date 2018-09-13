@@ -3,7 +3,7 @@ version: "2"
 plugins:
   shellcheck:
     enabled: true
-  scss-lint:
+  sass-lint:
     enabled: true
   fixme:
     enabled: true
