@@ -14,7 +14,7 @@ export class BlockSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.content);
+    // console.log(this.content);
     if (this.content.featuredImage && this.content.featuredImage.url) {
       this.hasBackground = true;
     }
