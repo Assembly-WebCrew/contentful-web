@@ -76,6 +76,7 @@
             "karmaConfig": "./src/karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
+            "sourceMap": true,
             "scripts": [],
             "styles": [
               "src/styles.scss"
@@ -93,7 +94,10 @@
               "src/tsconfig.app.json",
               "src/tsconfig.spec.json"
             ],
-            "exclude": []
+            "exclude": [
+              "**/*.spec.ts",
+              "**/*.mock.ts"
+          ]
           }
         }
       }
