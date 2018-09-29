@@ -61,6 +61,7 @@ $retina-width: 1680px;
     display: block;
     padding: #{$font-size / 2} #{$font-size * 2};
     overflow-y: hidden;
+    text-align: left;
 
     &:before {
       content: '';
