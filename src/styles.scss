@@ -206,7 +206,19 @@ blockquote {
 
   img {
     max-width: 100%;
+    border: $border-basic $color-accent;
+    border-radius: $border-radius;
+    padding: 10px;
+    background-color: $color-bg;
   }
+
+  iframe {
+    border: $border-basic $color-accent;
+    border-radius: $border-radius;
+    padding: 10px;
+    background-color: $color-bg;
+  }
+
   @include tablet {
     overflow-x: auto; // overflowing tables "fix"
     overflow-y: hidden;
