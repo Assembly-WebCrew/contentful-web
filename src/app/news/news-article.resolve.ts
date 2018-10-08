@@ -14,8 +14,9 @@ export class NewsArticleResolve implements Resolve<any> {
   public async resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<any> {
-    const event = this.contentful.getEvent();
-    const params = route.params.article ? { 'fields.slug': route.params.article, limit: 1 } : { 'fields.event': event && event.name || '', 'fields.published': true };
+    const params = route.params.article ?
+      { 'fields.slug': route.params.article, limit: 1 } :
+      { 'fields.published': true };
     const response = await this.contentful.query<any>({
       query: gql`
         {
@@ -28,7 +29,6 @@ export class NewsArticleResolve implements Resolve<any> {
             ingress
             published
             onFrontpage
-            event
             category
             featuredImage{
               title
