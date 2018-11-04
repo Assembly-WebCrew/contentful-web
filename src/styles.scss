@@ -219,6 +219,16 @@ blockquote {
     background-color: $color-bg;
   }
 
+  .no-border {
+    border: 0;
+  }
+
+  th img,
+  tr img,
+  td img {
+    border: 0;
+  }
+
   @include tablet {
     overflow-x: auto; // overflowing tables "fix"
     overflow-y: hidden;
