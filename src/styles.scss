@@ -220,11 +220,13 @@ blockquote {
   }
 
   .no-border {
-    border: none;
+    border: 0;
   }
 
-  th img, tr img, td img {
-    border: none;
+  th img,
+  tr img,
+  td img {
+    border: 0;
   }
 
   @include tablet {
