@@ -27,6 +27,9 @@ export class BlockNewsComponent implements OnInit {
     if (this.content && this.content.filterByCategory) {
       params['fields.category'] = this.content.filterByCategory;
     }
+    if (this.content && this.content.frontpageFeaturedNewsOnly) {
+      params['fields.onFrontpage'] = true;
+    }
     const maxCount = (this.content && +this.content.itemCount) || 3;
 
     this.contentful.query<any>({
@@ -59,11 +62,6 @@ export class BlockNewsComponent implements OnInit {
             if (this.content && this.content.filterByTag) {
               this.articles = this.articles.filter(a => a.tags && this.content.filterByTag.split(',')
                 .every(tag => a.tags.indexOf(tag) > -1));
-            }
-            if (this.content && this.content.frontpageFeaturedNewsOnly) {
-              this.articles = this.articles.filter((article) => {
-                return article.onFrontpage === true;
-              });
             }
             this.articles = this.articles.slice(0, maxCount);
           }
