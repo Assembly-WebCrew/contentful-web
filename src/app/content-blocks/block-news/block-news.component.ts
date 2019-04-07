@@ -27,6 +27,9 @@ export class BlockNewsComponent implements OnInit {
     if (this.content && this.content.filterByCategory) {
       params['fields.category'] = this.content.filterByCategory;
     }
+    if (this.content && this.content.frontpageFeaturedNewsOnly) {
+      params['fields.onFrontpage'] = true;
+    }
     const maxCount = (this.content && +this.content.itemCount) || 3;
 
     this.contentful.query<any>({
@@ -41,7 +44,6 @@ export class BlockNewsComponent implements OnInit {
         ingress
         published
         onFrontpage
-        event
         category
         featuredImage{
           title
