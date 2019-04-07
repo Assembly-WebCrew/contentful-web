@@ -41,7 +41,6 @@ export class BlockNewsComponent implements OnInit {
         ingress
         published
         onFrontpage
-        event
         category
         featuredImage{
           title
@@ -60,6 +59,11 @@ export class BlockNewsComponent implements OnInit {
             if (this.content && this.content.filterByTag) {
               this.articles = this.articles.filter(a => a.tags && this.content.filterByTag.split(',')
                 .every(tag => a.tags.indexOf(tag) > -1));
+            }
+            if (this.content && this.content.frontpageFeaturedNewsOnly) {
+              this.articles = this.articles.filter((article) => {
+                return article.onFrontpage === true;
+              });
             }
             this.articles = this.articles.slice(0, maxCount);
           }
