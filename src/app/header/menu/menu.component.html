@@ -5,20 +5,28 @@
         {{item.label}}
       </a>
       <ul class="menu-dropdown" [class.sectioned]="isMenuSectioned(item)">
-        <li *ngFor="let subitem of item.items" [class.sectioned]="subitem.__typename === 'Menu'">
+        <li *ngFor="let subitem of item.items; trackBy: trackMenuItemsFn" [class.sectioned]="subitem.__typename === 'Menu'">
           <ng-container *ngIf="subitem.__typename === 'Menu'; else normalSubMenu">
             <ng-container *ngIf="subitem.page; else noLink">
-              <a class="title" [href]="getUrl(subitem.page)" (click)="onNavigation(subitem.page, $event)">
-                {{subitem.label}}
-              </a>
+              <div class="title">
+                <a [href]="getUrl(subitem.page)" (click)="onNavigation(subitem.page, $event)">
+                  {{subitem.label}}
+                </a>
+                <button *ngIf="openedSection !== subitem.label" (click)="openSection(subitem)">&#43;</button>
+                <button *ngIf="openedSection === subitem.label" (click)="openedSection = undefined">&ndash;</button>
+              </div>
             </ng-container>
             <ng-template #noLink>
-              <span class="title">
-                {{subitem.label}}
-              </span>
+              <div class="title">
+                <span>
+                  {{subitem.label}}
+                </span>
+                <button *ngIf="openedSection !== subitem.label" (click)="openSection(subitem)">&#43;</button>
+                <button *ngIf="openedSection === subitem.label" (click)="openedSection = undefined">&ndash;</button>
+              </div>
             </ng-template>
-            <ul class="submenu-section">
-              <li *ngFor="let sectionitem of subitem.items">
+            <ul class="submenu-section" [class.open]="isOpen(subitem)" [class.wrapped]="subitem.items.length > 6">
+              <li *ngFor="let sectionitem of subitem.items; trackBy: trackMenuItemsFn">
                 <a [href]="getUrl(sectionitem)" (click)="onNavigation(sectionitem, $event)">
                   {{sectionitem.title}}
                 </a>

@@ -5,6 +5,8 @@ $menu-dropdown-border-color: rgba($color-accent, .6);
 $menu-dropdown-box-shadow-color: rgba(0, 0, 0, .4);
 $menu-dropdown-before-border-color: rgba($color-accent, .6);
 $menu-dropdown-sectioned-webkit-scrollbar-track-box-shadow-color: rgba(0, 0, 0, .5);
+$menu-dropdown-width: 200px;
+$menu-dropdown-sectioned-width: calc(#{$menu-dropdown-width} * 2);
 
 :host {
   @include component(initial);
@@ -32,10 +34,10 @@ ul {
 
   .menu-item {
     display: inline-block;
-    position: relative;
-    margin: 0 10px;
-    height: $menu-small-height;
     font-size: $font-size;
+    height: $menu-small-height;
+    margin: 0 10px;
+    position: relative;
     text-transform: uppercase;
 
     @include tablet {
@@ -43,29 +45,30 @@ ul {
     }
 
     a {
-      height: 100%;
-      display: flex;
       align-items: center;
+      display: flex;
+      height: 100%;
       padding: 0 10px;
     }
 
     .menu-dropdown {
-      font-family: $font-text;
-      opacity: 0;
-      visibility: hidden;
       background-color: $menu-dropdown-bg-color;
-      padding: 1em;
-      text-align: left;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-left: -100px;
-      width: 200px;
-      transition: opacity.3s .1s, top .3s .1s, visibility .1s .2s;
-      border: $border-basic $menu-dropdown-border-color;
       border-radius: $border-radius;
+      border: $border-basic $menu-dropdown-border-color;
       box-shadow: 0 1px 3px $menu-dropdown-box-shadow-color;
       box-sizing: border-box;
+      font-family: $font-text;
+      left: 50%;
+      margin-left: calc(#{$menu-dropdown-width / -2});
+      max-height: 80vh;
+      opacity: 0;
+      padding: 1em;
+      position: absolute;
+      text-align: left;
+      top: 50%;
+      transition: opacity.3s .1s, top .3s .1s, visibility .1s .2s;
+      visibility: hidden;
+      width: $menu-dropdown-width;
       z-index: -1;
 
       &:after {
@@ -74,10 +77,10 @@ ul {
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
-        position: absolute;
-        top: -18px;
         left: 50%;
         margin-left: -8px;
+        position: absolute;
+        top: -18px;
         z-index: 1;
       }
 
@@ -87,22 +90,23 @@ ul {
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
-        position: absolute;
-        top: -21px;
         left: 50%;
         margin-left: -9px;
+        position: absolute;
+        top: -21px;
       }
 
       li {
         position: relative;
         text-transform: none;
 
-        a,
-        span {
-          height: auto;
-          font-size: $font-size;
-          padding: 10px;
+        >a,
+        >div,
+        >span {
           display: block;
+          font-size: $font-size;
+          height: auto;
+          padding: 10px;
           transition: color .1s;
 
           &:hover {
@@ -112,25 +116,27 @@ ul {
       }
 
       &.sectioned {
-        width: auto;
-        min-width: 500px;
         display: flex;
-        margin-left: -$menu-section-width;
+        flex-direction: column;
+        margin-left: calc(#{$menu-dropdown-sectioned-width} / -2);
+        width: $menu-dropdown-sectioned-width;
 
         &:after,
         &:before {
-          left: $menu-section-width;
+          // left: $menu-section-width;
         }
 
         li.sectioned {
           display: inline-block;
-          width: $menu-section-width;
           font-weight: normal;
+          height: 100%;
+          overflow-y: hidden;
+          width: 100%;
 
           @include tablet {
-            width: 200px;
-            overflow-y: auto;
             max-height: 75vh;
+            overflow-y: auto;
+            width: 100%;
 
             &::-webkit-scrollbar {
               width: .5em;
@@ -147,13 +153,12 @@ ul {
           }
 
           .title {
-            text-transform: uppercase;
+            align-items: center;
             color: $color-no-link;
-            // color: $color-accent;
+            display: flex;
             font-family: $font-title;
-            border-bottom: $border-basic $color-accent;
-            // padding: 0 1.5em 1em;
-            // margin: 0 1em;
+            justify-content: space-between;
+            text-transform: uppercase;
 
             &[href] {
               color: $color-accent;
@@ -162,16 +167,56 @@ ul {
             &[href]:hover {
               color: $color-text;
             }
+
+            a {
+              padding: 0;
+            }
+
+            button {
+              background: $color-accent;
+              border: none;
+              color: $white;
+              font-size: 1.4rem;
+              font-weight: bold;
+              height: 1.4rem;
+              line-height: 1.4rem;
+              padding: 0;
+              text-align: center;
+              width: 1.4rem;
+            }
           }
 
           .submenu-section {
             @include list-styling;
+            display: none;
+            flex-wrap: wrap;
             line-height: 1em;
-            // padding: 0 0 0 1em;
             padding: 0;
 
+            &.open {
+              border-top: 1px solid $color-accent;
+              display: flex;
+              height: 100%;
+              overflow-y: auto;
+            }
+
+            &.wrapped {
+              li {
+                align-content: center;
+                align-items: center;
+                display: flex;
+                max-height: 50vh;
+                width: 50%;
+              }
+
+              >.menu-dropdown {
+                width: 400px;
+              }
+            }
+
             li {
-              padding: .5rem 1em 0;
+              padding: .25rem 1em;
+              width: 100%;
 
               &:first-child {
                 padding-top: .5em;
@@ -187,7 +232,6 @@ ul {
 
               a {
                 border-radius: $border-radius;
-                // padding: .5em;
                 border: $border-basic transparent;
 
                 &:hover {

@@ -46,7 +46,7 @@
     <div class="header-right"></div>
   </ng-container>
   <ng-template #showMobile>
-    <ng-template [ngIf]="!mobileMenuOpen">
+    <ng-container *ngIf="!mobileMenuOpen">
       <div class="logo-container">
         <a [href]="'/' + event?.name">
           <img class="logo" [src]="getLogo(true)" alt="{{event?.logo?.fields?.title}}">
@@ -55,7 +55,7 @@
       <button type="button" class="menu" (click)="onMobileMenuClick()" aria-label="Open menu">
         <i class="fa fa-bars"></i>
       </button>
-    </ng-template>
+    </ng-container>
   </ng-template>
 </div>
 <ng-container *ngIf="isMobile">

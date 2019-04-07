@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter, Renderer2 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output, Renderer2, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { MenuItem, Menu } from '../../models/menu.model';
 
 @Component({
   selector: 'asm-mobile-menu',
@@ -10,14 +10,13 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./mobile-menu.component.scss']
 })
 export class MobileMenuComponent implements OnInit, OnDestroy {
-  @Input() menu: any[];
+  @Input() menu: [ Menu | MenuItem];
   @Output() onClose: EventEmitter<any> = new EventEmitter();
   event: any;
 
   constructor(
     private route: ActivatedRoute,
     private contentful: ContentfulService,
-    private router: Router,
     private renderer: Renderer2) { }
 
   ngOnInit() {
