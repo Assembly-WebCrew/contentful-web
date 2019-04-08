@@ -60,7 +60,7 @@ ul {
       font-family: $font-text;
       left: 50%;
       margin-left: $menu-dropdown-width / -2;
-      max-height: 80vh;
+      max-height: 75vh;
       opacity: 0;
       padding: 1em;
       position: absolute;
@@ -96,6 +96,10 @@ ul {
         top: -21px;
       }
 
+      > ul {
+        overflow-y: scroll;
+      }
+
       li {
         position: relative;
         text-transform: none;
@@ -121,21 +125,12 @@ ul {
         margin-left: $menu-dropdown-sectioned-width / -2;
         width: $menu-dropdown-sectioned-width;
 
-        // &:after,
-        // &:before {
-          // left: $menu-section-width;
-        // }
-
         li.sectioned {
           display: inline-block;
           font-weight: normal;
-          height: 100%;
-          overflow-y: hidden;
           width: 100%;
 
           @include tablet {
-            max-height: 75vh;
-            overflow-y: auto;
             width: 100%;
 
             &::-webkit-scrollbar {
@@ -173,21 +168,18 @@ ul {
             }
 
             button {
+              align-content: center;
               background: $color-accent;
+              border-radius: $border-radius;
               border: none;
               color: $white;
               cursor: pointer;
-              // font-size: 1.4rem;
-              // font-weight: bold;
+              display: flex;
               height: 1.4rem;
-              // line-height: 1.4rem;
+              justify-content: center;
               padding: 0;
               text-align: center;
               width: 1.4rem;
-              display: flex;
-              justify-content: center;
-              align-content: center;
-              border-radius: $border-radius;
 
               &:active {
                 background: $purple;
@@ -214,8 +206,6 @@ ul {
             &.open {
               border-top: 1px solid $color-accent;
               display: flex;
-              height: 100%;
-              overflow-y: auto;
             }
 
             &.wrapped {
@@ -223,7 +213,6 @@ ul {
                 align-content: center;
                 align-items: center;
                 display: flex;
-                max-height: 50vh;
                 width: 50%;
               }
 
