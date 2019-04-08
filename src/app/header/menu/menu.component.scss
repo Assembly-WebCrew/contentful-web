@@ -121,10 +121,10 @@ ul {
         margin-left: calc(#{$menu-dropdown-sectioned-width} / -2);
         width: $menu-dropdown-sectioned-width;
 
-        &:after,
-        &:before {
+        // &:after,
+        // &:before {
           // left: $menu-section-width;
-        }
+        // }
 
         li.sectioned {
           display: inline-block;
