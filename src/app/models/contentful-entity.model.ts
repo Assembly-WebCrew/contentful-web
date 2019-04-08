@@ -1,3 +1,3 @@
-class ContentfulEntity {
+export class ContentfulEntity {
   __typename: string;
 }

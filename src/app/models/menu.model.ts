@@ -1,9 +1,5 @@
+import { ContentfulEntity } from './contentful-entity.model';
 import { Page } from './page.model';
-
-class ContentfulEntity {
-  __typename: string;
-}
-
 
 export class Menu extends ContentfulEntity {
   items?: [MenuItem | Menu];

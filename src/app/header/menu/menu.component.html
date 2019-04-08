@@ -7,24 +7,22 @@
       <ul class="menu-dropdown" [class.sectioned]="isMenuSectioned(item)">
         <li *ngFor="let subitem of item.items; trackBy: trackMenuItemsFn" [class.sectioned]="subitem.__typename === 'Menu'">
           <ng-container *ngIf="subitem.__typename === 'Menu'; else normalSubMenu">
-            <ng-container *ngIf="subitem.page; else noLink">
-              <div class="title">
+            <div class="title">
+              <ng-container *ngIf="subitem.page; else noLink">
                 <a [href]="getUrl(subitem.page)" (click)="onNavigation(subitem.page, $event)">
                   {{subitem.label}}
                 </a>
-                <button *ngIf="openedSection !== subitem.label" (click)="openSection(subitem)">&#43;</button>
-                <button *ngIf="openedSection === subitem.label" (click)="openedSection = undefined">&ndash;</button>
-              </div>
-            </ng-container>
-            <ng-template #noLink>
-              <div class="title">
+              </ng-container>
+              <ng-template #noLink>
                 <span>
                   {{subitem.label}}
                 </span>
-                <button *ngIf="openedSection !== subitem.label" (click)="openSection(subitem)">&#43;</button>
-                <button *ngIf="openedSection === subitem.label" (click)="openedSection = undefined">&ndash;</button>
-              </div>
-            </ng-template>
+              </ng-template>
+              <button (click)="toggleSection(subitem)">
+                <span *ngIf="openedSection !== subitem.label" class="fa fa-fw fa-plus" aria-label="expand section"></span>
+                <span *ngIf="openedSection === subitem.label" class="fa fa-fw fa-minus" aria-label="collapse section"></span>
+              </button>
+            </div>
             <ul class="submenu-section" [class.open]="isOpen(subitem)" [class.wrapped]="subitem.items.length > 6">
               <li *ngFor="let sectionitem of subitem.items; trackBy: trackMenuItemsFn">
                 <a [href]="getUrl(sectionitem)" (click)="onNavigation(sectionitem, $event)">

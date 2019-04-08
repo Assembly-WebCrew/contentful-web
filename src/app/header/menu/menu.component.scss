@@ -6,7 +6,7 @@ $menu-dropdown-box-shadow-color: rgba(0, 0, 0, .4);
 $menu-dropdown-before-border-color: rgba($color-accent, .6);
 $menu-dropdown-sectioned-webkit-scrollbar-track-box-shadow-color: rgba(0, 0, 0, .5);
 $menu-dropdown-width: 200px;
-$menu-dropdown-sectioned-width: calc(#{$menu-dropdown-width} * 2);
+$menu-dropdown-sectioned-width: $menu-dropdown-width * 2;
 
 :host {
   @include component(initial);
@@ -59,7 +59,7 @@ ul {
       box-sizing: border-box;
       font-family: $font-text;
       left: 50%;
-      margin-left: calc(#{$menu-dropdown-width / -2});
+      margin-left: $menu-dropdown-width / -2;
       max-height: 80vh;
       opacity: 0;
       padding: 1em;
@@ -118,7 +118,7 @@ ul {
       &.sectioned {
         display: flex;
         flex-direction: column;
-        margin-left: calc(#{$menu-dropdown-sectioned-width} / -2);
+        margin-left: $menu-dropdown-sectioned-width / -2;
         width: $menu-dropdown-sectioned-width;
 
         // &:after,
@@ -176,13 +176,31 @@ ul {
               background: $color-accent;
               border: none;
               color: $white;
-              font-size: 1.4rem;
-              font-weight: bold;
+              cursor: pointer;
+              // font-size: 1.4rem;
+              // font-weight: bold;
               height: 1.4rem;
-              line-height: 1.4rem;
+              // line-height: 1.4rem;
               padding: 0;
               text-align: center;
               width: 1.4rem;
+              display: flex;
+              justify-content: center;
+              align-content: center;
+              border-radius: $border-radius;
+
+              &:active {
+                background: $purple;
+              }
+
+              &:hover {
+                background: $color-accent-dark;
+                color: $blue-light-2;
+              }
+
+              &:focus {
+                outline-color: rgba($color-text, .3);
+              }
             }
           }
 
@@ -244,7 +262,8 @@ ul {
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus-within {
       >.menu-dropdown {
         opacity: 1;
         top: 100%;

@@ -1,7 +1,4 @@
-class ContentfulEntity {
-  __typename: string;
-}
-
+import { ContentfulEntity } from './contentful-entity.model';
 
 export class Page extends ContentfulEntity {
   contentBlocks: any;

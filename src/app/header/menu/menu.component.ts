@@ -18,36 +18,35 @@ export class MenuComponent implements OnInit {
     private contentful: ContentfulService,
     private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.event = this.route.snapshot.data.event;
   }
 
-  getUrl(item: any) {
+  getUrl(item: MenuItem): string {
     return this.contentful.getUrl(item);
   }
 
-  isMenuSectioned(item: Menu) {
+  isMenuSectioned(item: Menu): boolean {
     return item.__typename === 'Menu' && item.items.some(subitem => subitem.__typename === 'Menu');
   }
 
-  onNavigation(item: any, event: Event) {
+  onNavigation(item: MenuItem, event: Event): void {
     this.contentful.onNavigation(item, event);
   }
 
-  openSection(item: Menu) {
-    this.openedSection = item.label;
+  toggleSection(item: Menu): void {
+    if (this.openedSection === item.label) {
+      this.openedSection = undefined;
+    } else {
+      this.openedSection = item.label;
+    }
   }
 
-  closeSection(item: Menu) {
-    this.openedSection = undefined;
-  }
-
-  isOpen(item: Menu) {
+  isOpen(item: Menu): boolean {
     return this.openedSection === item.label;
   }
 
-
-  trackMenuItemsFn(index: number, item: MenuItem | Menu) {
+  trackMenuItemsFn(index: number, item: MenuItem | Menu): string {
     if (item.__typename === 'Menu') {
       return item['label'];
     } else if (item.__typename === 'MenuItem') {
