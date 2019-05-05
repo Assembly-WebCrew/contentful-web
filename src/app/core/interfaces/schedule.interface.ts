@@ -3,7 +3,7 @@ export class Schedule {
   events: ScheduleEvent[];
 }
 
-export class ScheduleEntity {
+export interface ScheduleEntity {
   description_fi: string;
   description: string;
   key: string;
@@ -13,7 +13,14 @@ export class ScheduleEntity {
   url?: string;
 }
 
-export class ScheduleEvent extends ScheduleEntity {
+export interface ScheduleEvent extends ScheduleEntity {
+  description_fi: string;
+  description: string;
+  key: string;
+  name_fi?: string;
+  name: string;
+  schedule: string;
+  url?: string;
   canceled: boolean;
   cancellation_reason: string;
   categories?: string[];
@@ -29,5 +36,12 @@ export class ScheduleEvent extends ScheduleEntity {
 // in practise same as ScheduleEntity
 // but keeping it separate for code documentation
 // and for possible future additions
-export class ScheduleLocation extends ScheduleEntity {
+export interface ScheduleLocation extends ScheduleEntity {
+  description_fi: string;
+  description: string;
+  key: string;
+  name_fi?: string;
+  name: string;
+  schedule: string;
+  url?: string;
 }

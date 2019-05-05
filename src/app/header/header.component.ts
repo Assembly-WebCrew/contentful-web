@@ -8,7 +8,7 @@ import { map, throttleTime } from 'rxjs/operators';
 
 import { ContentfulService } from '../core/contentful.service';
 import { WINDOW } from '../core/window.service';
-import { Menu } from '../models/menu.model';
+import { Menu } from '../core/interfaces/menu.interface';
 
 @Component({
   selector: 'asm-header',

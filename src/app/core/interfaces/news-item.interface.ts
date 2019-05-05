@@ -1,4 +1,4 @@
-export class NewsItem {
+export interface NewsItem {
   body: string;
   category: string;
   date: Date;
@@ -11,7 +11,7 @@ export class NewsItem {
   title: string;
 }
 
-export class NewsFeaturedImage {
+export interface NewsFeaturedImage {
   title: string;
   url: string;
 }

@@ -1,6 +1,6 @@
-import { ContentfulEntity } from './contentful-entity.model';
+import { ContentfulEntity } from './contentful-entity.interface';
 
-export class Page extends ContentfulEntity {
+export interface Page extends ContentfulEntity {
   contentBlocks: any;
   excludeSitemap: boolean;
   featuredImage: any;

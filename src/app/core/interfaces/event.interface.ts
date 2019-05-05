@@ -1,4 +1,4 @@
-export class AsmEvent {
+export interface AsmEvent {
   defaultBackground: EventDefaultBackground;
   endDate: string;
   eventPlace: string;
@@ -8,7 +8,7 @@ export class AsmEvent {
   startDate: string;
 }
 
-export class EventDefaultBackground {
+export interface EventDefaultBackground {
   fields: {
     file: {
       url: string

@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, Renderer2, OnDestroy } 
 import { ActivatedRoute } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
-import { MenuItem, Menu } from '../../models/menu.model';
+import { MenuItem, Menu } from '../../core/interfaces/menu.interface';
 
 @Component({
   selector: 'asm-mobile-menu',

@@ -1,4 +1,4 @@
-export class Partner {
+export interface Partner {
   importance: number;
   link: string;
   logo: PartnerLogo;
@@ -6,12 +6,12 @@ export class Partner {
   title: string;
 }
 
-export class PartnerGroup {
+export interface PartnerGroup {
   class: string;
   list: Partner[];
   name: string;
 }
 
-export class PartnerLogo {
+export interface PartnerLogo {
   url: string;
 }

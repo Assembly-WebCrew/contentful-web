@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
-import { Menu, MenuItem } from '../../models/menu.model';
+import { Menu, MenuItem } from '../../core/interfaces/menu.interface';
 
 @Component({
   selector: 'asm-menu',
