@@ -2,10 +2,11 @@
 
 $menu-dropdown-bg-color: rgba($color-bg, .9);
 $menu-dropdown-border-color: rgba($color-accent, .6);
-$menu-dropdown-box-shadow-color: rgba(0, 0, 0, .4);
-$menu-dropdown-before-border-color: rgba($color-accent, .6);
-$menu-dropdown-sectioned-webkit-scrollbar-track-box-shadow-color: rgba(0, 0, 0, .5);
+$menu-dropdown-box-shadow-color: rgba($black, .4);
 $menu-dropdown-width: 200px;
+$scrollbar-border-radius: 10px;
+$scrollbar-track-box-shadow-color: rgba($black, .5);
+
 $menu-dropdown-sectioned-width: $menu-dropdown-width * 2;
 
 :host {
@@ -49,6 +50,18 @@ ul {
       display: flex;
       height: 100%;
       padding: 0 10px;
+
+      &:focus {
+        @include gradient($color-accent, $color-accent-dark);
+        display: flex;
+        outline: 0;
+        transition: background .1s .2s ease-in-out;
+        z-index: 1;
+      }
+
+      &:hover {
+        color: $color-accent;
+      }
     }
 
     .menu-dropdown {
@@ -86,7 +99,7 @@ ul {
 
       &:before {
         content: '';
-        border: 10px solid $menu-dropdown-before-border-color;
+        border: 10px solid $menu-dropdown-border-color;
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
@@ -96,8 +109,35 @@ ul {
         top: -21px;
       }
 
-      > ul {
-        overflow-y: scroll;
+      >ul {
+        max-height: 70vh;
+        overflow-y: auto;
+
+        // experimental scrollbar styles, firefox supports these
+        scrollbar-color: $color-accent-dark $scrollbar-track-box-shadow-color;
+        scrollbar-width: thin;
+
+        // webkit scrollbar styles for chrome
+        &::-webkit-scrollbar {
+          border-radius: $scrollbar-border-radius;
+          width: .5em;
+        }
+
+        &::-webkit-scrollbar-track {
+          border-radius: $scrollbar-border-radius;
+          box-shadow: inset 0 0 6px $scrollbar-track-box-shadow-color;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $color-accent-dark;
+          border-radius: $scrollbar-border-radius;
+          box-shadow: inset 0 0 6px $scrollbar-track-box-shadow-color;
+          outline: 1px solid transparent;
+
+          &:hover {
+            background-color: $color-accent;
+          }
+        }
       }
 
       li {
@@ -126,25 +166,25 @@ ul {
         width: $menu-dropdown-sectioned-width;
 
         li.sectioned {
-          display: inline-block;
+          // display: inline-block;
           font-weight: normal;
           width: 100%;
 
           @include tablet {
             width: 100%;
 
-            &::-webkit-scrollbar {
-              width: .5em;
-            }
+            // &::-webkit-scrollbar {
+            //   width: .5em;
+            // }
 
-            &::-webkit-scrollbar-track {
-              -webkit-box-shadow: inset 0 0 6px $menu-dropdown-sectioned-webkit-scrollbar-track-box-shadow-color;
-            }
+            // &::-webkit-scrollbar-track {
+            //   box-shadow: inset 0 0 6px $scrollbar-track-box-shadow-color;
+            // }
 
-            &::-webkit-scrollbar-thumb {
-              background-color: $color-accent-dark;
-              outline: 1px solid $color-accent-dark;
-            }
+            // &::-webkit-scrollbar-thumb {
+            //   background-color: $color-accent-dark;
+            //   outline: 0;
+            // }
           }
 
           .title {
@@ -168,9 +208,9 @@ ul {
             }
 
             button {
-              align-content: center;
+              align-items: center;
               background: $color-accent;
-              border-radius: $border-radius;
+              border-radius: 3px;
               border: none;
               color: $white;
               cursor: pointer;
@@ -251,8 +291,7 @@ ul {
       }
     }
 
-    &:hover,
-    &:focus-within {
+    &:hover {
       >.menu-dropdown {
         opacity: 1;
         top: 100%;
