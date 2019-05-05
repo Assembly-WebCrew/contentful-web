@@ -1,5 +1,7 @@
 @import '../../../common';
 
+$fa-focus-outline-color: rgba($color-text, .3);
+
 :host {
   @include component;
   @include page-content-width;
@@ -53,7 +55,7 @@ h2 {
     }
 
     &:focus {
-      outline-color: rgba($color-text, .3);
+      outline-color: $fa-focus-outline-color;
     }
   }
 

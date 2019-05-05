@@ -14,13 +14,6 @@ export interface ScheduleEntity {
 }
 
 export interface ScheduleEvent extends ScheduleEntity {
-  description_fi: string;
-  description: string;
-  key: string;
-  name_fi?: string;
-  name: string;
-  schedule: string;
-  url?: string;
   canceled: boolean;
   cancellation_reason: string;
   categories?: string[];
@@ -36,12 +29,6 @@ export interface ScheduleEvent extends ScheduleEntity {
 // in practise same as ScheduleEntity
 // but keeping it separate for code documentation
 // and for possible future additions
+// tslint:disable-next-line: no-empty-interface
 export interface ScheduleLocation extends ScheduleEntity {
-  description_fi: string;
-  description: string;
-  key: string;
-  name_fi?: string;
-  name: string;
-  schedule: string;
-  url?: string;
 }

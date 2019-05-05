@@ -8,6 +8,7 @@ $scrollbar-border-radius: 10px;
 $scrollbar-track-box-shadow-color: rgba($black, .5);
 
 $menu-dropdown-sectioned-width: $menu-dropdown-width * 2;
+$title-focus-outline-color: rgba($color-text, .3);
 
 :host {
   @include component(initial);
@@ -114,6 +115,8 @@ ul {
         overflow-y: auto;
 
         // experimental scrollbar styles, firefox supports these
+        // sass-lint:disable no-misspelled-properties
+        // scss-lint:disable NoMisspelledProperties
         scrollbar-color: $color-accent-dark $scrollbar-track-box-shadow-color;
         scrollbar-width: thin;
 
@@ -231,7 +234,7 @@ ul {
               }
 
               &:focus {
-                outline-color: rgba($color-text, .3);
+                outline-color: $title-focus-outline-color;
               }
             }
           }
