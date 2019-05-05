@@ -1,7 +1,7 @@
 @import '../../common';
 
 :host {
-  @include component;
+  @include component(unset);
   min-height: 24px;
 }
 
@@ -21,5 +21,10 @@
     margin: 0;
     margin-left: 4px;
     flex-shrink: 0;
+
+    &:focus,
+    &:hover {
+      color: $color-accent;
+    }
   }
 }
