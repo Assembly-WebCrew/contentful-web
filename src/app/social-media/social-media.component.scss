@@ -22,9 +22,16 @@
     margin-left: 4px;
     flex-shrink: 0;
 
-    &:focus,
     &:hover {
       color: $color-accent;
+    }
+
+    &:focus {
+      @include gradient($color-accent, $color-accent-dark);
+      display: flex;
+      outline: 0;
+      transition: background .1s .2s ease-in-out;
+      z-index: 1;
     }
   }
 }
