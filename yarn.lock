@@ -614,9 +614,10 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@^1.3.0-beta.6:
+apollo-cache-inmemory@1.3.0-verify.4:
   version "1.3.0-verify.4"
   resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.3.0-verify.4.tgz#d8a9631b301de98ebf47d3b935d39212b8498c66"
+  integrity sha512-7iLig2CmpRkl4tOvhKFHTgqRANEKN4qtnVKI9RqSTzUq3AFclfC0vaxTeGGGZBJiIuqVR6+1aYr8egUNTwXWQQ==
   dependencies:
     apollo-cache "^1.2.0-verify.4"
     apollo-utilities "^1.1.0-verify.4"
@@ -634,9 +635,10 @@ apollo-cache@^1.2.0-verify.4:
   dependencies:
     apollo-utilities "^1.1.0-verify.4"
 
-apollo-client@^2.3.7:
+apollo-client@2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.4.2.tgz#d2f044d8740723bf98a6d8d8b9684ee8c36150e6"
+  integrity sha512-g1z23umaVSoKLj9xNl0aAnk2KBF4JeBi7MeKFc9CGTixH7TkqeQUQtxcjrC7j2h4KmDbuhOAHOFUGf8YshN+ag==
   dependencies:
     "@types/zen-observable" "^0.8.0"
     apollo-cache "1.1.17"
@@ -660,9 +662,10 @@ apollo-link-http-common@^0.2.5:
   dependencies:
     apollo-link "^1.2.3"
 
-apollo-link-http@^1.5.4:
+apollo-link-http@1.5.5:
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/apollo-link-http/-/apollo-link-http-1.5.5.tgz#7dbe851821771ad67fa29e3900c57f38cbd80da8"
+  integrity sha512-C5N6N/mRwmepvtzO27dgMEU3MMtRKSqcljBkYNZmWwH11BxkUQ5imBLPM3V4QJXNE7NFuAQAB5PeUd4ligivTQ==
   dependencies:
     apollo-link "^1.2.3"
     apollo-link-http-common "^0.2.5"
