@@ -43,6 +43,7 @@ export class BlockScheduleComponent implements OnInit {
               currentDay = {
                 title: this.weekdays[day],
                 events: [],
+                filteredEvents: [],
                 date: date
               };
               this.days.push(currentDay);
@@ -50,12 +51,14 @@ export class BlockScheduleComponent implements OnInit {
             }
             currentDay.events.push(x);
             if (x.categories && x.categories.length)
-              this.filters.push(...x.categories.map(c => c && c.toLowerCase()));
+              this.filters.push(...x.categories.map(c => c && c.toLowerCase()).filter(c => c));
             if (x.flags && x.flags.length)
-              this.filters.push(...x.flags.map(f => f && f.toLowerCase()));
+              this.filters.push(...x.flags.map(f => f && f.toLowerCase()).filter(f => f));
             this.filters = Array.from(new Set(this.filters).values());
-            this.locationFilters.push(x.location_key);
-            this.locationFilters = Array.from(new Set(this.locationFilters).values());
+            if (x.location_key) {
+              this.locationFilters.push(x.location_key);
+              this.locationFilters = Array.from(new Set(this.locationFilters).values());
+            }
           });
           this.parseFilters();
           this.filterEvents();
