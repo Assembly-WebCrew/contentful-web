@@ -10,7 +10,7 @@
 
 .partner {
   .logo {
-    padding: 15px;
+    padding: 40px;
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
@@ -82,7 +82,7 @@
     align-items: center;
     padding: 10px 0;
     width: 33%;
-    min-width: 13rem;
+    min-width: 300px;
     max-width: 44rem;
 
     .description {
@@ -118,7 +118,7 @@
     }
 
     .logo {
-      padding: 20px;
+      padding: 40px;
       // border-bottom: $border-basic $color-accent;
       border-radius: ($border-radius * 3);
       min-height: 230px;
