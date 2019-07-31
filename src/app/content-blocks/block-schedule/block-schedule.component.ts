@@ -15,7 +15,7 @@ export class BlockScheduleComponent implements OnInit {
   events = [];
   locations = {};
   filters = [];
-  showFilters: boolean = false;
+  showFilters: boolean;
   locationFilters = [];
   showPastEvents: boolean;
   loading: boolean;
