@@ -16,17 +16,23 @@
     </ng-container>
   </ul>
 </div>
-
 <div class="schedule-filters">
-  <div class="filter past" [class.active]="showPastEvents" (click)="onShowPastEventsToggle()">Show past events</div>
   <ul class="filter-list">
+      <li>
+        <div class="filter button" [class.active]="showFilters" (click)="onShowFiltersToggle()">Show filters</div>
+      </li>
+      <li>
+        <div class="filter past" [class.active]="showPastEvents" (click)="onShowPastEventsToggle()">Show past events</div>
+      </li>
+  </ul>
+  <ul *ngIf="showFilters" class="filter-list">
     <li *ngFor="let filter of filters">
       <div class="filter button" [class.active]="filter.active" (click)="onFilterToggle(filter)">
         <i *ngIf="filter.icon" class="fa fa-fw {{filter.icon}}"></i>{{filter.title}}</div>
       </li>
     </ul>
-    <h3 *ngIf="locationFilters.length">Locations</h3>
-    <ul class="filter-list">
+    <h3 *ngIf="locationFilters.length && showFilters">Locations</h3>
+    <ul *ngIf="showFilters" class="filter-list">
       <li *ngFor="let filter of locationFilters">
         <div class="filter button" [class.active]="filter.active" (click)="onFilterToggle(filter)">
           <i *ngIf="filter.icon" class="fa fa-fw {{filter.icon}}"></i>{{filter.title}}</div>

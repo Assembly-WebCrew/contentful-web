@@ -15,6 +15,7 @@ export class BlockScheduleComponent implements OnInit {
   events = [];
   locations = {};
   filters = [];
+  showFilters: boolean = false;
   locationFilters = [];
   showPastEvents: boolean;
   loading: boolean;
@@ -82,6 +83,10 @@ export class BlockScheduleComponent implements OnInit {
   onShowPastEventsToggle() {
     this.showPastEvents = !this.showPastEvents;
     this.filterEvents();
+  }
+
+  onShowFiltersToggle() {
+    this.showFilters = !this.showFilters;
   }
 
   parseFilters() {
