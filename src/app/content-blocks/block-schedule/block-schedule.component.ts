@@ -60,7 +60,7 @@ export class BlockScheduleComponent implements OnInit {
               this.locationFilters.push(x.location_key);
               this.locationFilters = Array.from(new Set(this.locationFilters).values());
             } else {
-              console.warn(`No location for event "${x.name}"`, x)
+              console.warn(`No location for event "${x.name}"`, x);
             }
           });
           this.parseFilters();
@@ -125,7 +125,7 @@ export class BlockScheduleComponent implements OnInit {
       || Date.now() < new Date(((event.end_time || event.start_time) + '').replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2')).getTime();
 
     const hasLocation = (event) => !activeLocations.length || activeLocations.length && activeLocations.some(f => {
-      return (event.location_key || "").toLowerCase() === f.value;
+      return (event.location_key || '').toLowerCase() === f.value;
     });
     const hasFilter = (event) => !active.length || active.length && active.some(f => {
       return event.categories.map(c => c && c.toLowerCase()).includes(f.value)

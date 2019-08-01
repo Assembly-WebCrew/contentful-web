@@ -55,11 +55,11 @@ export class BaseComponent implements OnInit, OnChanges {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        const tree = this.router.parseUrl(event.urlAfterRedirects);
-        if (!tree.fragment) {
+        const urlTree = this.router.parseUrl(event.urlAfterRedirects);
+        if (!urlTree.fragment) {
           this.window.scroll(0, 0);
         } else {
-          const element = this.document.querySelector('#' + tree.fragment);
+          const element = this.document.querySelector('#' + urlTree.fragment);
           if (element) {
             element.scrollIntoView(true);
           }
