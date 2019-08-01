@@ -9,7 +9,7 @@ import { get } from 'lodash';
 import { Observable ,  Subject ,  Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { WINDOW } from '../core/window.service';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'asm-header',

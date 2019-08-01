@@ -9,7 +9,7 @@ import { find } from 'lodash';
 })
 export class ContentBlockComponent implements OnInit {
   @Input() content: any = {};
-  @ViewChild('contentTemplate', { read: ViewContainerRef }) contentTemplate: ViewContainerRef;
+  @ViewChild('contentTemplate', { read: ViewContainerRef, static: true }) contentTemplate: ViewContainerRef;
 
   constructor(private cfResolver: ComponentFactoryResolver) { }
 

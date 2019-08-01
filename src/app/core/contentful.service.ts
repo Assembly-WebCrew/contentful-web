@@ -93,7 +93,7 @@ export class ContentfulService {
   }
 
   query$<T>(options: WatchQueryOptions): Observable<T> {
-    return from<T>(this.query<T>(options)
+    return from(this.query<T>(options)
       .then(result => result.data));
   }
 }
