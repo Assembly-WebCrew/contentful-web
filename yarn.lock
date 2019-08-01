@@ -325,11 +325,6 @@
     semver "6.3.0"
     semver-intersect "1.4.0"
 
-"@types/async@2.0.49":
-  version "2.0.49"
-  resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.49.tgz#92e33d13f74c895cb9a7f38ba97db8431ed14bc0"
-  integrity sha512-Benr3i5odUkvpFkOpzGqrltGdbSs+EVCkEBGXbuR7uT0VzhXKIkhem6PDzHdx5EonA+rfbB3QvP6aDOw5+zp5Q==
-
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -366,7 +361,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*", "@types/node@^12.0.4":
+"@types/node@*", "@types/node@>=6", "@types/node@^12.0.4":
   version "12.6.8"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.8.tgz#e469b4bf9d1c9832aee4907ba8a051494357c12c"
   integrity sha512-aX+gFgA5GHcDi89KG5keey2zf0WfZk/HAQotEamsK2kbey+8yGKcson0hbK8E+v0NArlCJQCqMP161YhV6ZXLg==
@@ -550,6 +545,14 @@
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
+
+"@wry/context@^0.4.0":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@wry/context/-/context-0.4.4.tgz#e50f5fa1d6cfaabf2977d1fda5ae91717f8815f8"
+  integrity sha512-LrKVLove/zw6h2Md/KZyWxIkFM6AoyKp71OqpH9Hiip1csjPVoD3tPxlbQUNxEnHENks3UGgNpSBCAfq9KWuag==
+  dependencies:
+    "@types/node" ">=6"
+    tslib "^1.9.3"
 
 "@wry/equality@^0.1.2":
   version "0.1.9"
@@ -770,23 +773,18 @@ anymatch@^3.0.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apollo-cache-inmemory@1.3.6:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.3.6.tgz#5761268c0f9f9d09df62cf3435046635e29b708b"
-  integrity sha512-ARSMDNFAPS1xLx79PrOFGd+iEFsC/pVusRbirA+p0AHVJSWyZdhW2fNy7RyFA+2pLbCFFgOgS2SoCq+JFu1RTA==
+apollo-cache-inmemory@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.6.2.tgz#bbf2e4e1eacdf82b2d526f5c2f3b37e5acee3c5e"
+  integrity sha512-AyCl3PGFv5Qv1w4N9vlg63GBPHXgMCekZy5mhlS042ji0GW84uTySX+r3F61ZX3+KM1vA4m9hQyctrEGiv5XjQ==
   dependencies:
-    apollo-cache "^1.1.18"
-    apollo-utilities "^1.0.22"
-    optimism "^0.6.6"
+    apollo-cache "^1.3.2"
+    apollo-utilities "^1.3.2"
+    optimism "^0.9.0"
+    ts-invariant "^0.4.0"
+    tslib "^1.9.3"
 
-apollo-cache@1.1.17:
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.17.tgz#1fcca8423125223723b97fd72808be91a1a76490"
-  integrity sha512-7sp24n2HZO4vXgTaKNomLyIfGxG4gDdDkBB0jkRzRi7HhnKmfwhiF/RCiKNbgLdrPX151INdls0KwIVliD0dHQ==
-  dependencies:
-    apollo-utilities "^1.0.21"
-
-apollo-cache@^1.1.18:
+apollo-cache@1.3.2, apollo-cache@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.3.2.tgz#df4dce56240d6c95c613510d7e409f7214e6d26a"
   integrity sha512-+KA685AV5ETEJfjZuviRTEImGA11uNBp/MJGnaCvkgr+BYRrGLruVKBv6WvyFod27WEB2sp7SsG8cNBKANhGLg==
@@ -794,30 +792,21 @@ apollo-cache@^1.1.18:
     apollo-utilities "^1.3.2"
     tslib "^1.9.3"
 
-apollo-client@2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.4.2.tgz#d2f044d8740723bf98a6d8d8b9684ee8c36150e6"
-  integrity sha512-g1z23umaVSoKLj9xNl0aAnk2KBF4JeBi7MeKFc9CGTixH7TkqeQUQtxcjrC7j2h4KmDbuhOAHOFUGf8YshN+ag==
+apollo-client@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.6.3.tgz#9bb2d42fb59f1572e51417f341c5f743798d22db"
+  integrity sha512-DS8pmF5CGiiJ658dG+mDn8pmCMMQIljKJSTeMNHnFuDLV0uAPZoeaAwVFiAmB408Ujqt92oIZ/8yJJAwSIhd4A==
   dependencies:
     "@types/zen-observable" "^0.8.0"
-    apollo-cache "1.1.17"
+    apollo-cache "1.3.2"
     apollo-link "^1.0.0"
-    apollo-link-dedup "^1.0.0"
-    apollo-utilities "1.0.21"
+    apollo-utilities "1.3.2"
     symbol-observable "^1.0.2"
-    zen-observable "^0.8.0"
-  optionalDependencies:
-    "@types/async" "2.0.49"
-
-apollo-link-dedup@^1.0.0:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-1.0.19.tgz#f0f58312c80b9bf0d927a53d5cad56875c679e14"
-  integrity sha512-7dUiOLAcTlnYcRsUc77s7W9ps1A86JWmrx/Un/6K3xiQkDS3IER5CsujWuAOUtWbP72yp18jEhlyHcslpkJwkg==
-  dependencies:
-    apollo-link "^1.2.12"
+    ts-invariant "^0.4.0"
     tslib "^1.9.3"
+    zen-observable "^0.8.0"
 
-apollo-link-http-common@^0.2.5:
+apollo-link-http-common@^0.2.14:
   version "0.2.14"
   resolved "https://registry.yarnpkg.com/apollo-link-http-common/-/apollo-link-http-common-0.2.14.tgz#d3a195c12e00f4e311c417f121181dcc31f7d0c8"
   integrity sha512-v6mRU1oN6XuX8beVIRB6OpF4q1ULhSnmy7ScnHnuo1qV6GaFmDcbdvXqxIkAV1Q8SQCo2lsv4HeqJOWhFfApOg==
@@ -826,15 +815,16 @@ apollo-link-http-common@^0.2.5:
     ts-invariant "^0.4.0"
     tslib "^1.9.3"
 
-apollo-link-http@1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/apollo-link-http/-/apollo-link-http-1.5.5.tgz#7dbe851821771ad67fa29e3900c57f38cbd80da8"
-  integrity sha512-C5N6N/mRwmepvtzO27dgMEU3MMtRKSqcljBkYNZmWwH11BxkUQ5imBLPM3V4QJXNE7NFuAQAB5PeUd4ligivTQ==
+apollo-link-http@^1.5.15:
+  version "1.5.15"
+  resolved "https://registry.yarnpkg.com/apollo-link-http/-/apollo-link-http-1.5.15.tgz#106ab23bb8997bd55965d05855736d33119652cf"
+  integrity sha512-epZFhCKDjD7+oNTVK3P39pqWGn4LEhShAoA1Q9e2tDrBjItNfviiE33RmcLcCURDYyW5JA6SMgdODNI4Is8tvQ==
   dependencies:
-    apollo-link "^1.2.3"
-    apollo-link-http-common "^0.2.5"
+    apollo-link "^1.2.12"
+    apollo-link-http-common "^0.2.14"
+    tslib "^1.9.3"
 
-apollo-link@^1.0.0, apollo-link@^1.2.12, apollo-link@^1.2.3:
+apollo-link@^1.0.0, apollo-link@^1.2.12:
   version "1.2.12"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.12.tgz#014b514fba95f1945c38ad4c216f31bcfee68429"
   integrity sha512-fsgIAXPKThyMVEMWQsUN22AoQI+J/pVXcjRGAShtk97h7D8O+SPskFinCGEkxPeQpE83uKaqafB2IyWdjN+J3Q==
@@ -844,15 +834,7 @@ apollo-link@^1.0.0, apollo-link@^1.2.12, apollo-link@^1.2.3:
     tslib "^1.9.3"
     zen-observable-ts "^0.8.19"
 
-apollo-utilities@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.21.tgz#cb8b5779fe275850b16046ff8373f4af2de90765"
-  integrity sha512-ZcxELlEl+sDCYBgEMdNXJAsZtRVm8wk4HIA58bMsqYfd1DSAJQEtZ93F0GZgYNAGy3QyaoBeZtbb0/01++G8JQ==
-  dependencies:
-    fast-json-stable-stringify "^2.0.0"
-    fclone "^1.0.11"
-
-apollo-utilities@^1.0.21, apollo-utilities@^1.0.22, apollo-utilities@^1.3.0, apollo-utilities@^1.3.2:
+apollo-utilities@1.3.2, apollo-utilities@^1.3.0, apollo-utilities@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.3.2.tgz#8cbdcf8b012f664cd6cb5767f6130f5aed9115c9"
   integrity sha512-JWNHj8XChz7S4OZghV6yc9FNnzEXj285QYp/nLNh943iObycI5GTDO3NGR9Dth12LRrSFMeDOConPfPln+WGfg==
@@ -2936,11 +2918,6 @@ faye-websocket@~0.11.1:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fclone@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/fclone/-/fclone-1.0.11.tgz#10e85da38bfea7fc599341c296ee1d77266ee640"
-  integrity sha1-EOhdo4v+p/xZk0HClu4ddyZu5kA=
-
 figgy-pudding@^3.4.1, figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
@@ -3665,11 +3642,6 @@ immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
   integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
-
-immutable-tuple@^0.4.9:
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/immutable-tuple/-/immutable-tuple-0.4.10.tgz#e0b1625384f514084a7a84b749a3bb26e9179929"
-  integrity sha512-45jheDbc3Kr5Cw8EtDD+4woGRUV0utIrJBZT8XH0TPZRfm8tzT0/sLGGzyyCCFqFMG5Pv5Igf3WY/arn6+8V9Q==
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -5346,12 +5318,12 @@ opn@^5.5.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimism@^0.6.6:
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.6.9.tgz#19258ff8b3be0cea29ac35f06bff818e026e30bb"
-  integrity sha512-xoQm2lvXbCA9Kd7SCx6y713Y7sZ6fUc5R6VYpoL5M6svKJbTuvtNopexK8sO8K4s0EOUYHuPN2+yAEsNyRggkQ==
+optimism@^0.9.0:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.9.6.tgz#5621195486b294c3bfc518d17ac47767234b029f"
+  integrity sha512-bWr/ZP32UgFCQAoSkz33XctHwpq2via2sBvGvO5JIlrU8gaiM0LvoKj3QMle9LWdSKlzKik8XGSerzsdfYLNxA==
   dependencies:
-    immutable-tuple "^0.4.9"
+    "@wry/context" "^0.4.0"
 
 optimist@^0.6.1, optimist@~0.6.0:
   version "0.6.1"

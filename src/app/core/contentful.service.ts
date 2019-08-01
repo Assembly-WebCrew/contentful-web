@@ -1,4 +1,4 @@
-import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
+import { WatchQueryOptions, QueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -81,7 +81,7 @@ export class ContentfulService {
     }
   }
 
-  async query<T>(options: WatchQueryOptions): Promise<{
+  async query<T>(options: QueryOptions): Promise<{
     data: T;
     loading: boolean;
     networkStatus: NetworkStatus;
@@ -89,10 +89,10 @@ export class ContentfulService {
   }> {
     if (!this.client) throw new Error(
       'Make sure that ContentfulService has been initialized before calling .query');
-    return this.client.query<T>(options);
+    return this.client.query<T, unknown>(options);
   }
 
-  query$<T>(options: WatchQueryOptions): Observable<T> {
+  query$<T>(options: QueryOptions): Observable<T> {
     return from(this.query<T>(options)
       .then(result => result.data));
   }
