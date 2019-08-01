@@ -695,10 +695,10 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angulartics2@^6.2.0:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/angulartics2/-/angulartics2-6.3.1.tgz#1e5f82571e182855265aeb733e49097bbb0b4d2e"
-  integrity sha512-uqV8iraCKdFbR5YIg0q8q9BgHCijBATuRf9h1flAF6wZYbAkZTjjsyH8iPXGBGuWPXDGmm8pBtpNEevrDY9J7w==
+angulartics2@^7.5.2:
+  version "7.5.2"
+  resolved "https://registry.yarnpkg.com/angulartics2/-/angulartics2-7.5.2.tgz#58ea8eca811581350f5067ddedecd9f070d82598"
+  integrity sha512-gfQ/kRtrKD0fLOGZsWlcD8obIWTAJGSdiVRp6lH+LxLD8shKnl1/StWlUJeOioUkU0ps4QGRb0tCSlCdnI5DAw==
   dependencies:
     tslib "^1.9.0"
 
