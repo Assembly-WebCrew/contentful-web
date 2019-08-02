@@ -37,6 +37,11 @@ export class ContentfulService {
     return event;
   }
 
+  // get landing page events metadata from backend
+  async getEvents(): Promise<any> {
+    return this.http.get(`${environment.apiUrl}/events`).toPromise();
+  }
+
   // get page url
   getUrl(item) {
     if (item.page) {

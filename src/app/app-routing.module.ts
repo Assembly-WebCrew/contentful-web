@@ -17,8 +17,9 @@ const routes: Routes = [
   // If no event is specified, we will load default event.
   {
     path: '',
-    resolve: { event: EventResolve },
-    component: EventComponent
+    resolve: { events: EventResolve },
+    component: EventComponent,
+    pathMatch: 'full'
   },
   // If the event is known, we will load the page.
   {
