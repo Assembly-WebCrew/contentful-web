@@ -8,12 +8,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventComponent {
   events = [];
+  pastEvents = [];
   logo = '/assets/images/generic-event-logo.png';
 
   constructor(
     private route: ActivatedRoute) {
+    const now = Date.now();
     this.route.data.subscribe((data: { events: any }) => {
-      this.events = data.events ? data.events.sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()) : [];
+      this.events = data.events ? data.events
+        .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
+        .filter(event => {
+          if (new Date(event.endDate).getTime() - now > 0) {
+            return event;
+          }
+          this.pastEvents.push(event);
+        }) : [];
     });
   }
 
