@@ -15,10 +15,10 @@ export class EventResolve implements Resolve<any> {
     if (route.params.event === 'news') {
       event = await this.contentful.getEventMetadata();
       this.router.navigate([`/${event.name}`, 'news']);
-    } else {
+    } else if (route.params.event) {
       event = await this.contentful.getEventMetadata(route.params.event);
-      if (!route.params.event && event)
-        this.router.navigate([`/${event.name}`]);
+    } else {
+      return this.contentful.getEvents();
     }
 
     return event;
