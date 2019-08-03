@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, Renderer2 } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'asm-mobile-menu',
