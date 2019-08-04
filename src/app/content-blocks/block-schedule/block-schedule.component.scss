@@ -16,11 +16,6 @@ $block-schedule-filter-text-shadow-color: rgba($color-bg, .2);
   }
 }
 
-@include mobile {
-  padding: 0;
-  width: 100%;
-}
-
 .schedule-info {
   @include text;
 }

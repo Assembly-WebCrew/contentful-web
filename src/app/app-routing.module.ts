@@ -14,13 +14,14 @@ import { NewsArticleResolve } from './news/news-article.resolve';
 import { MetaResolve } from './meta.resolve';
 
 const routes: Routes = [
-  // If no event is specified, we will load default event.
+  // Show landing page
   {
     path: '',
-    resolve: { event: EventResolve },
-    component: EventComponent
+    resolve: { events: EventResolve },
+    component: EventComponent,
+    pathMatch: 'full'
   },
-  // If the event is known, we will load the page.
+  // If the event is known, we will load the event page.
   {
     path: ':event',
     component: SkeletorComponent,

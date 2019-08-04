@@ -61,7 +61,7 @@ ul {
       left: 50%;
       margin-left: -100px;
       width: 200px;
-      transition: opacity.3s .1s, top .3s .1s, visibility .1s .2s;
+      transition: opacity .3s .1s, top .3s .1s, visibility .1s .2s;
       border: $border-basic $menu-dropdown-border-color;
       border-radius: $border-radius;
       box-shadow: 0 1px 3px $menu-dropdown-box-shadow-color;

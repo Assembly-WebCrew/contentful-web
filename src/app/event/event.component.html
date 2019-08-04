@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="overlay"></div>
+  <div class="header-content">
+    <h1>Welcome to</h1>
+    <div class="logo"><img [src]="logo" alt="ASSEMBLY"></div>
+  </div>
+</div>
+<p>Current and upcoming events</p>
+<div class="events">
+  <a *ngFor="let event of events" class="event" href="/{{event.name}}">
+    <div>
+      <span>{{event.eventTitle}}</span>
+      <span>{{this.getEventDates(event)}}</span>
+    </div>
+    <span class="arrow fa fa-long-arrow-right"></span>
+  </a>
+</div>
+<ng-container *ngIf="pastEvents.length">
+  <p>Past events</p>
+  <div class="events">
+    <a *ngFor="let event of pastEvents" class="event" href="/{{event.name}}">
+      <div>
+        <span>{{event.eventTitle}}</span>
+        <span>{{this.getEventDates(event)}}</span>
+      </div>
+      <span class="arrow fa fa-long-arrow-right"></span>
+    </a>
+  </div>
+</ng-container>

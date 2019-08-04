@@ -1,4 +1,4 @@
-import { WatchQueryOptions } from 'apollo-client/core/watchQueryOptions';
+import { WatchQueryOptions, QueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -35,6 +35,11 @@ export class ContentfulService {
     const event = await this.http.get(`${environment.apiUrl}/event`,
       name && { params: new HttpParams().set('name', name) }).toPromise();
     return event;
+  }
+
+  // get landing page events metadata from backend
+  async getEvents(): Promise<any> {
+    return this.http.get(`${environment.apiUrl}/events`).toPromise();
   }
 
   // get page url
@@ -81,7 +86,7 @@ export class ContentfulService {
     }
   }
 
-  async query<T>(options: WatchQueryOptions): Promise<{
+  async query<T>(options: QueryOptions): Promise<{
     data: T;
     loading: boolean;
     networkStatus: NetworkStatus;
@@ -89,11 +94,11 @@ export class ContentfulService {
   }> {
     if (!this.client) throw new Error(
       'Make sure that ContentfulService has been initialized before calling .query');
-    return this.client.query<T>(options);
+    return this.client.query<T, unknown>(options);
   }
 
-  query$<T>(options: WatchQueryOptions): Observable<T> {
-    return from<T>(this.query<T>(options)
+  query$<T>(options: QueryOptions): Observable<T> {
+    return from(this.query<T>(options)
       .then(result => result.data));
   }
 }

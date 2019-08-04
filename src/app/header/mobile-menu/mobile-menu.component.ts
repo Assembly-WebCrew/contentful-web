@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, Renderer2 } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import gql from 'graphql-tag';
 import * as qs from 'qs';

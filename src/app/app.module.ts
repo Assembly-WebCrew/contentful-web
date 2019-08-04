@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { Angulartics2Module } from 'angulartics2';
+import { ANGULARTICS2_TOKEN } from 'angulartics2';
 import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 
 import { CoreModule } from './core/core.module';
@@ -26,6 +26,7 @@ import { NewsArticleComponent } from './news/news-article/news-article.component
 import { BaseComponent } from './content/base/base.component';
 import { NewsArticleResolve } from './news/news-article.resolve';
 import { DatePipe } from '@angular/common';
+import { AnalyticsModule } from './analytics/analytics.module';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,15 @@ import { DatePipe } from '@angular/common';
     CoreModule,
     ContentBlocksModule,
     AppRoutingModule,
-    Angulartics2Module.forRoot([Angulartics2GoogleTagManager])
+    AnalyticsModule.forRoot([
+      {
+        provide: ANGULARTICS2_TOKEN,
+        useValue: {
+          providers: [Angulartics2GoogleTagManager],
+          settings: {}
+        }
+      }
+    ]),
   ],
   exports: [
     RouterModule
