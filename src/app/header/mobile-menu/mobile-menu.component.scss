@@ -1,5 +1,10 @@
 @import '../../../common';
 
+$button-inner-wrapper-border-color: rgba($color-accent, .6);
+$button-inner-wrapper-before-text-shadow-color: rgba($color-bg, .4);
+$tickets-button-inner-wrapper-border-color: rgba($color-ticket, .6);
+$highlight-button-inner-wrapper-text-shadow-color: rgba($color-bg, .2);
+
 :host {
     @include component(initial, flex);
     position: fixed;
@@ -59,12 +64,116 @@
     }
 }
 
-.bottom {
+.main {
     display: flex;
-    width: 100%;
-    flex-grow: 1;
-    overflow: auto;
+    overflow-y: scroll;
+}
+
+.header {
+
+    .highlight-button {
+        @include skewed;
+        @include header-gradient;
+        align-items: center;
+        border-radius: $border-radius;
+        border: 2px solid $color-bg;
+        box-sizing: border-box;
+        color: $color-accent;
+        cursor: pointer;
+        display: flex;
+        font-size: $font-size-text;
+        height: $menu-small-height;
+    
+
+        .button-inner-wrapper {
+          align-items: center;
+          border-radius: $border-radius;
+          border-left: $border-basic $button-inner-wrapper-border-color;
+          border-top: $border-basic $button-inner-wrapper-border-color;
+          border-bottom: $border-basic $button-inner-wrapper-border-color;
+          box-sizing: border-box;
+          display: flex;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+          text-shadow: 0 -2px $highlight-button-inner-wrapper-text-shadow-color;
+          transform: skew(0deg);
+
+          .icon {
+            @include gradient-top($color-accent);
+            height: 100%;
+            width: 40px;
+            transform: skew(0deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+              margin-bottom: 1px;
+            }
+          }
+
+          .title {
+            display: block;
+            padding: 0 20px;
+            font-style: italic;
+            text-transform: uppercase;
+            margin-bottom: 1px;
+          }
+
+          &:before {
+            display: none;
+            text-align: center;
+            text-shadow: 0 -1px $button-inner-wrapper-before-text-shadow-color;
+            font-family: $font-family-icon;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            bottom: 0;
+            left: -15px;
+            right: -15px;
+            color: $color-text;
+            transition: background .1s .1s ease-in-out;
+            transform: skew(15deg);
+          }
+        }
+
+        &:hover {
+          .button-inner-wrapper {
+            &:before {
+              @include gradient($color-accent, $color-accent-dark);
+              display: flex;
+              z-index: 1;
+              transition: background .1s .2s ease-in-out;
+            }
+          }
+        }
+
+        &.tickets {
+          margin-right: -10px;
+          margin-left: 2px;
+          color: $color-ticket;
+
+          .button-inner-wrapper {
+            border-color: $tickets-button-inner-wrapper-border-color;
+
+            .icon {
+              @include gradient-top($color-ticket);
+            }
+
+            &:before {
+              @include gradient($color-ticket, $color-ticket-alt);
+            }
+        }
+    }
+}
+}
+
+.left {
+    width: 65%;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 a {
@@ -77,6 +186,19 @@ ul {
     font-size: $font-size-mobile-menu-list;
 }
 
+span.fa {
+    font-size: 0.8rem;
+    line-height: 7px;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    background-color: $color-accent;
+    text-align: center;
+    border-radius: $border-radius;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
 .menu {
     text-transform: uppercase;
 
@@ -84,6 +206,7 @@ ul {
   span {
         display: inline-block;
         padding: 10px 0;
+        vertical-align: middle;
     }
 
   .no-link {
