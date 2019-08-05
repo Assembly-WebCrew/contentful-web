@@ -32,8 +32,12 @@ export class ContentfulService {
 
   // get event metadata from backend
   async getEventMetadata(name?: string): Promise<any> {
-    const event = await this.http.get(`${environment.apiUrl}/event`,
+    const event: any = await this.http.get(`${environment.apiUrl}/event`,
       name && { params: new HttpParams().set('name', name) }).toPromise();
+    // Only public events are requestable on production mode
+    if (environment.production && !event.isPublic) {
+      throw new Error(`Requested event '${name}' is not valid`);
+    }
     return event;
   }
 
