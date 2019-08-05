@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'asm-event',
@@ -18,6 +19,9 @@ export class EventComponent {
       this.events = data.events ? data.events
         .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
         .filter(event => {
+          if (environment.production && !event.isPublic) {
+            return false;
+          }
           if (new Date(event.endDate).getTime() - now > 0) {
             return event;
           }
