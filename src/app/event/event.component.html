@@ -7,21 +7,34 @@
 </div>
 <p>Current and upcoming events</p>
 <div class="events">
-  <a *ngFor="let event of events" class="event" href="/{{event.name}}">
-    <div>
-      <span>{{event.eventTitle}}</span>
-      <span>{{this.getEventDates(event)}}</span>
-    </div>
-    <span class="arrow fa fa-long-arrow-right"></span>
-  </a>
+  <ng-container *ngFor="let event of events">
+    <a *ngIf="event.isPublic; else noLink" class="event" href="/{{event.name}}">
+      <div>
+        <span class="title">{{event.eventTitle}}</span>
+        <span>{{this.getEventDates(event)}}</span>
+        <span>{{event.eventPlace}}</span>
+      </div>
+      <span class="arrow fa fa-long-arrow-right"></span>
+    </a>
+    <ng-template #noLink>
+      <div class="event">
+        <div>
+          <span class="title">{{event.eventTitle}}</span>
+          <span>{{this.getEventDates(event)}}</span>
+          <span>{{event.eventPlace}}</span>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
 </div>
 <ng-container *ngIf="pastEvents.length">
   <p>Past events</p>
   <div class="events">
     <a *ngFor="let event of pastEvents" class="event" href="/{{event.name}}">
       <div>
-        <span>{{event.eventTitle}}</span>
+        <span class="title">{{event.eventTitle}}</span>
         <span>{{this.getEventDates(event)}}</span>
+        <span>{{event.eventPlace}}</span>
       </div>
       <span class="arrow fa fa-long-arrow-right"></span>
     </a>

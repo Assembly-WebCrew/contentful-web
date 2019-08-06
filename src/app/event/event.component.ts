@@ -19,13 +19,12 @@ export class EventComponent {
       this.events = data.events ? data.events
         .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
         .filter(event => {
-          if (environment.production && !event.isPublic) {
-            return false;
-          }
           if (new Date(event.endDate).getTime() - now > 0) {
             return event;
           }
-          this.pastEvents.push(event);
+          if (event.isPublic) {
+            this.pastEvents.push(event);
+          }
         }) : [];
     });
   }
