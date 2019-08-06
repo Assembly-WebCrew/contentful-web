@@ -78,8 +78,8 @@
       border: 1px solid $color-accent;
       width: 30%;
       min-width: 300px;
-      height: 100px;
-      color: $color-text;
+      height: 130px;
+      color: $color-accent;
       text-decoration: none;
       margin: 5px;
       font-size: 1.4rem;
@@ -87,12 +87,20 @@
       span {
         display: block;
         padding-bottom: 5px;
+        font-size: 1.2rem;
+
+        &.title {
+          font-size: 1.4rem;
+        }
       }
 
       .arrow {
         font-size: 1.5rem;
       }
+    }
 
+    a.event {
+      color: $color-text;
 
       &:hover {
         @include gradient(rgba($color-accent, .3), $color-bg);
