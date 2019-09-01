@@ -47,4 +47,8 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
     this.contentful.onNavigation(item, event);
     this.onClose.emit();
   }
+
+  onCollapse(item) {
+    item.show = !item.show;
+  }
 }

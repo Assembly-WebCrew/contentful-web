@@ -1,5 +1,10 @@
 @import '../../../common';
 
+$button-inner-wrapper-border-color: rgba($color-accent, .6);
+$button-inner-wrapper-before-text-shadow-color: rgba($color-bg, .4);
+$tickets-button-inner-wrapper-border-color: rgba($color-ticket, .6);
+$highlight-button-inner-wrapper-text-shadow-color: rgba($color-bg, .2);
+
 :host {
     @include component(initial, flex);
     position: fixed;
@@ -59,12 +64,71 @@
     }
 }
 
-.bottom {
+.main {
     display: flex;
-    width: 100%;
-    flex-grow: 1;
-    overflow: auto;
-    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+.header {
+
+    .highlight-button {
+        @include header-gradient;
+        align-items: center;
+        border-radius: $border-radius;
+        border: 2px solid $color-bg;
+        box-sizing: border-box;
+        color: $color-accent;
+        cursor: pointer;
+        display: flex;
+        font-size: $font-size-text;
+        height: $menu-small-height;
+        margin-bottom: 15px;
+
+        .button-inner-wrapper {
+          align-items: center;
+          border-radius: $border-radius;
+          border-left: $border-basic $tickets-button-inner-wrapper-border-color;
+          border-right: $border-basic $tickets-button-inner-wrapper-border-color;
+          border-top: $border-basic $tickets-button-inner-wrapper-border-color;
+          border-bottom: $border-basic $tickets-button-inner-wrapper-border-color;
+          box-sizing: border-box;
+          display: flex;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+          text-shadow: 0 -2px $highlight-button-inner-wrapper-text-shadow-color;
+
+          .icon {
+            @include gradient-top($color-ticket);
+            height: 100%;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+              margin-bottom: 1px;
+            }
+          }
+
+          .title {
+            display: block;
+            padding: 0 20px;
+            text-transform: uppercase;
+            margin-bottom: 1px;
+          }
+
+          &:before {
+            @include gradient($color-ticket, $color-ticket-alt);
+          }
+        }
+
+        &.tickets {
+          margin-right: -10px;
+          margin-left: 40px;
+          color: $color-ticket;
+      }
+  }
 }
 
 a {
@@ -77,13 +141,28 @@ ul {
     font-size: $font-size-mobile-menu-list;
 }
 
+span.fa {
+    font-size: .8rem;
+    line-height: 7px;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    background-color: $color-accent;
+    text-align: center;
+    border-radius: $border-radius;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
 .menu {
     text-transform: uppercase;
+    margin-top: 0;
 
   a,
   span {
         display: inline-block;
         padding: 10px 0;
+        vertical-align: middle;
     }
 
   .no-link {
