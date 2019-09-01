@@ -3,10 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
 import { OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
-import gql from 'graphql-tag';
-import * as qs from 'qs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'asm-mobile-menu',
@@ -16,7 +12,6 @@ import { map } from 'rxjs/operators';
 export class MobileMenuComponent implements OnInit, OnDestroy {
   @Input() menu: any[];
   @Output() onClose: EventEmitter<any> = new EventEmitter();
-  header$: Observable<any>;
   event: any;
 
   constructor(
@@ -28,7 +23,6 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.event = this.route.snapshot.data.event;
     this.renderer.addClass(document.body, 'mobile-menu-open');
-    this.getHeader();
   }
 
   ngOnDestroy() {
@@ -47,82 +41,6 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
     if (this.event && this.event.logo && this.event.logo.fields) {
       return this.event.logo.fields.file.url + '?w=300';
     }
-  }
-
-  getHeader(): void {
-    const params = { 'fields.title': 'Main Menu' };
-    this.header$ = this.contentful.query$<any>({
-      query: gql`
-    {
-      menus(q: "${qs.stringify(params)}") {
-        title
-        highlights {
-          title
-          icon
-          item {
-            title
-            url
-            page {
-              slug
-            }
-          }
-        }
-        page {
-          title
-          url
-          page {
-            slug
-          }
-        }
-        items {
-          ... on MenuItem {
-            title
-            url
-            page {
-              slug
-            }
-          }
-          ... on Menu {
-            label
-            page {
-              title
-              url
-              page {
-                slug
-              }
-            }
-            items {
-              ... on MenuItem {
-                title
-                url
-                page {
-                  slug
-                }
-              }
-              ... on Menu {
-                label
-                page {
-                  title
-                  url
-                  page {
-                    slug
-                  }
-                }
-                items {
-                  ... on MenuItem {
-                    title
-                    url
-                    page {
-                      slug
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }` }).pipe(map((data: any) => data.menus[0]));
   }
 
   onNavigation(item, event: Event) {

@@ -66,13 +66,12 @@ $highlight-button-inner-wrapper-text-shadow-color: rgba($color-bg, .2);
 
 .main {
     display: flex;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .header {
 
     .highlight-button {
-        @include skewed;
         @include header-gradient;
         align-items: center;
         border-radius: $border-radius;
@@ -83,27 +82,26 @@ $highlight-button-inner-wrapper-text-shadow-color: rgba($color-bg, .2);
         display: flex;
         font-size: $font-size-text;
         height: $menu-small-height;
-    
+        margin-bottom: 15px;
 
         .button-inner-wrapper {
           align-items: center;
           border-radius: $border-radius;
-          border-left: $border-basic $button-inner-wrapper-border-color;
-          border-top: $border-basic $button-inner-wrapper-border-color;
-          border-bottom: $border-basic $button-inner-wrapper-border-color;
+          border-left: $border-basic $tickets-button-inner-wrapper-border-color;
+          border-right: $border-basic $tickets-button-inner-wrapper-border-color;
+          border-top: $border-basic $tickets-button-inner-wrapper-border-color;
+          border-bottom: $border-basic $tickets-button-inner-wrapper-border-color;
           box-sizing: border-box;
           display: flex;
           height: 100%;
           overflow: hidden;
           position: relative;
           text-shadow: 0 -2px $highlight-button-inner-wrapper-text-shadow-color;
-          transform: skew(0deg);
 
           .icon {
-            @include gradient-top($color-accent);
+            @include gradient-top($color-ticket);
             height: 100%;
             width: 40px;
-            transform: skew(0deg);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -116,64 +114,21 @@ $highlight-button-inner-wrapper-text-shadow-color: rgba($color-bg, .2);
           .title {
             display: block;
             padding: 0 20px;
-            font-style: italic;
             text-transform: uppercase;
             margin-bottom: 1px;
           }
 
           &:before {
-            display: none;
-            text-align: center;
-            text-shadow: 0 -1px $button-inner-wrapper-before-text-shadow-color;
-            font-family: $font-family-icon;
-            position: absolute;
-            align-items: center;
-            justify-content: center;
-            top: 0;
-            bottom: 0;
-            left: -15px;
-            right: -15px;
-            color: $color-text;
-            transition: background .1s .1s ease-in-out;
-            transform: skew(15deg);
-          }
-        }
-
-        &:hover {
-          .button-inner-wrapper {
-            &:before {
-              @include gradient($color-accent, $color-accent-dark);
-              display: flex;
-              z-index: 1;
-              transition: background .1s .2s ease-in-out;
-            }
+            @include gradient($color-ticket, $color-ticket-alt);
           }
         }
 
         &.tickets {
           margin-right: -10px;
-          margin-left: 2px;
+          margin-left: 40px;
           color: $color-ticket;
-
-          .button-inner-wrapper {
-            border-color: $tickets-button-inner-wrapper-border-color;
-
-            .icon {
-              @include gradient-top($color-ticket);
-            }
-
-            &:before {
-              @include gradient($color-ticket, $color-ticket-alt);
-            }
-        }
-    }
-}
-}
-
-.left {
-    width: 65%;
-    margin-bottom: 20px;
-    flex-grow: 1;
+      }
+  }
 }
 
 a {
@@ -187,7 +142,7 @@ ul {
 }
 
 span.fa {
-    font-size: 0.8rem;
+    font-size: .8rem;
     line-height: 7px;
     width: 26px;
     height: 26px;
@@ -201,6 +156,7 @@ span.fa {
 
 .menu {
     text-transform: uppercase;
+    margin-top: 0;
 
   a,
   span {
