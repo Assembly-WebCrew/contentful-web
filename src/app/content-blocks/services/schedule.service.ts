@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Schedule } from '../../core/interfaces/schedule.interface';
+import { Observable } from 'rxjs';
 
 export class Location {
   name: string;
@@ -13,11 +14,11 @@ export class ScheduleService {
   constructor(
     private http: HttpClient) { }
 
-  getJSON(url: string) {
+  getJSON(url: string): Observable<Schedule> {
     return this.http.get<Schedule>(url);
   }
 
-  getCategoryIcon(category) {
+  getCategoryIcon(category: string): string {
     let icon = '';
     if (category) {
       const y = category.toString().toLowerCase();

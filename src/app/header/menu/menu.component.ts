@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
 import { Menu, MenuItem } from '../../core/interfaces/menu.interface';
+import { AsmEvent } from '../../core/interfaces/event.interface';
 
 @Component({
   selector: 'asm-menu',
@@ -11,9 +12,9 @@ import { Menu, MenuItem } from '../../core/interfaces/menu.interface';
 })
 export class MenuComponent implements OnInit {
   @Input() menu: [Menu | MenuItem];
-  event: any;
+  event: AsmEvent;
 
-  constructor(private router: Router,
+  constructor(
     private contentful: ContentfulService,
     private route: ActivatedRoute) { }
 

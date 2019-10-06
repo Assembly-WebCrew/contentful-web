@@ -1,4 +1,5 @@
 import { ContentfulEntity } from './contentful-entity.interface';
+import { Menu } from './menu.interface';
 
 export interface Page extends ContentfulEntity {
   contentBlocks: any;
@@ -9,4 +10,9 @@ export interface Page extends ContentfulEntity {
   slug: string;
   tags: any; // Tag[]
   title: string;
+}
+
+export interface Footer extends ContentfulEntity {
+  title?: string;
+  items?: Menu;
 }

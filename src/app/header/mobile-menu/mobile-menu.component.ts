@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ContentfulService } from '../../core/contentful.service';
 import { MenuItem, Menu } from '../../core/interfaces/menu.interface';
+import { AsmEvent } from '../../core/interfaces/event.interface';
 
 @Component({
   selector: 'asm-mobile-menu',
@@ -12,7 +13,7 @@ import { MenuItem, Menu } from '../../core/interfaces/menu.interface';
 export class MobileMenuComponent implements OnInit, OnDestroy {
   @Input() menu: [ Menu | MenuItem];
   @Output() onClose: EventEmitter<any> = new EventEmitter();
-  event: any;
+  event: AsmEvent;
 
   constructor(
     private route: ActivatedRoute,
@@ -42,7 +43,7 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
     }
   }
 
-  onNavigation(item: MenuItem, event: MouseEvent) {
+  onNavigation(item: MenuItem, event: Event) {
     this.contentful.onNavigation(item, event);
     this.onClose.emit();
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from '../../environments/environment';
+import { AsmEvent } from '../core/interfaces/event.interface';
 
 @Component({
   selector: 'asm-event',
@@ -8,8 +8,8 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent {
-  events = [];
-  pastEvents = [];
+  events: AsmEvent[] = [];
+  pastEvents: AsmEvent[] = [];
   logo = '/assets/images/generic-event-logo.png';
 
   constructor(
@@ -18,7 +18,7 @@ export class EventComponent {
     this.route.data.subscribe((data: { events: any }) => {
       this.events = data.events ? data.events
         .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
-        .filter(event => {
+        .filter((event: AsmEvent) => {
           if (new Date(event.endDate).getTime() - now > 0) {
             return event;
           }

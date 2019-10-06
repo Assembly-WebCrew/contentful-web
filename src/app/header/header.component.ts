@@ -8,7 +8,8 @@ import { map, throttleTime } from 'rxjs/operators';
 
 import { ContentfulService } from '../core/contentful.service';
 import { WINDOW } from '../core/window.service';
-import { Menu } from '../core/interfaces/menu.interface';
+import { Menu, MenuItem } from '../core/interfaces/menu.interface';
+import { AsmEvent } from '../core/interfaces/event.interface';
 
 @Component({
   selector: 'asm-header',
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   resizeSubject: Subject<number> = new Subject<number>();
   resizeObservable: Observable<number> = this.resizeSubject.asObservable().pipe(throttleTime(200));
   header$: Observable<Menu>;
-  event: any;
+  event: AsmEvent;
   scrolling = false;
   previousScrollPosition: number;
   scrollDirection: string;
@@ -33,14 +34,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     @Inject(WINDOW) private window: Window) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.event = this.route.snapshot.data.event;
     this.subscriptions.push(this.resizeObservable.subscribe(x => this.onWindowResize(x)));
     this.getHeader();
     this.checkMobileState(this.window.innerWidth);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscriptions.forEach(s => s && s.unsubscribe());
   }
 
@@ -120,7 +121,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }` }).pipe(map((data: any) => data.menus[0]));
   }
 
-  getLogo(isMobile: boolean) {
+  getLogo(isMobile: boolean): string {
     if (this.scrolling && !isMobile) {
       return '/assets/images/generic-event-logo.png';
     } else if (this.event && this.event.logo && this.event.logo.fields) {
@@ -128,11 +129,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
-  getUrl(item) {
+  getUrl(item: MenuItem): string {
     return this.contentful.getUrl(item);
   }
 
-  onMobileMenuClick() {
+  onMobileMenuClick(): void {
     this.toggleMobileMenu(true);
   }
 
@@ -157,7 +158,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.resizeSubject.next(width);
   }
 
-  private checkMobileState(width: number) {
+  private checkMobileState(width: number): void {
     this.isMobile = width && width < 1024;
 
     if (!this.isMobile && this.mobileMenuOpen) {
@@ -165,7 +166,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
-  private toggleMobileMenu(state = !this.mobileMenuOpen) {
+  private toggleMobileMenu(state = !this.mobileMenuOpen): void {
     this.mobileMenuOpen = state;
   }
 }

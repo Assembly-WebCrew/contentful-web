@@ -16,13 +16,13 @@ export class BlockZipperContentComponent implements OnInit {
 
   constructor(private contentful: ContentfulService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.image = this.getImage() || '';
     this.link = this.getLink();
     this.icon = this.getIcon();
   }
 
-  getIcon() {
+  getIcon(): string {
     if (this.content && this.content.icon) {
       return this.content.icon;
     } else {
@@ -30,14 +30,14 @@ export class BlockZipperContentComponent implements OnInit {
     }
   }
 
-  getImage() {
+  getImage(): string {
     if (this.content && this.content.image) {
       return 'url(' + this.content.image.url + ')';
     } else
      return 'url(\'/assets/images/assembly-generic-image-1.jpg\')';
   }
 
-  getLink() {
+  getLink(): string {
     if (this.content) {
       if (this.content.linkToPage) {
         return `/${this.contentful.getEvent().name}/${this.content.linkToPage.slug}`;

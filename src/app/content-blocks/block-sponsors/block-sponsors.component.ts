@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import gql from 'graphql-tag';
 import * as qs from 'qs';
 import { ContentfulService } from '../../core/contentful.service';
+import { Partner } from '../../core/interfaces/partner.interface';
 
 @Component({
   selector: 'asm-block-sponsors',
@@ -14,13 +15,13 @@ import { ContentfulService } from '../../core/contentful.service';
 export class BlockSponsorsComponent implements OnInit {
   static blockName = 'BlockSponsors';
   content: any = {};
-  sponsors$: Observable<any>;
+  sponsors$: Observable<Partner>;
   partnerLevel: String = 'main';
 
   constructor(
     private contentful: ContentfulService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.partnerLevel = !this.content.title ? 'main' : 'partner';
     const params = { 'fields.partnerLevel': this.partnerLevel };
     this.sponsors$ = this.contentful.query$<any>({
@@ -34,7 +35,7 @@ export class BlockSponsorsComponent implements OnInit {
         }
         link
       }
-    }` }).pipe(map((data: any) => data.sponsors.map(s => s).sort((a, b) => +b.importance - +a.importance)));
+    }` }).pipe(map((data: any) => data.sponsors.map((s: Partner) => s).sort((a: Partner, b: Partner) => +b.importance - +a.importance)));
   }
 
 }

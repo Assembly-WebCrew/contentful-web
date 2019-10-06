@@ -13,7 +13,7 @@ export class ContentBlockComponent implements OnInit {
 
   constructor(private cfResolver: ComponentFactoryResolver) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const contentType = this.content.__typename;
     if (!contentType) return;
     const ComponentClass = find(contentComponents,

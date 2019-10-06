@@ -3,6 +3,7 @@ export interface AsmEvent {
   endDate: string;
   eventPlace: string;
   eventTitle: string;
+  isPublic?: boolean;
   logo: any;
   name: string;
   startDate: string;

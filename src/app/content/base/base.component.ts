@@ -23,18 +23,18 @@ export class BaseComponent implements OnInit, OnChanges {
     @Inject(WINDOW) private window: Window,
     @Inject(DOCUMENT) private document: Document) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setPageContent();
     this.init = true;
     this.getRouterEvents();
   }
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     if (this.init)
       this.setPageContent();
   }
 
-  getBackground() {
+  getBackground(): string {
     const event = this.contentful.getEvent();
     if (this.content && this.content.featuredImage)
       return 'url(' + this.content.featuredImage.url + '?w=1920&f=top)';
@@ -44,7 +44,7 @@ export class BaseComponent implements OnInit, OnChanges {
       return '';
   }
 
-  setPageContent() {
+  setPageContent(): void {
     if (!this.content) { this.content = {}; }
     if (!this.content.title) { this.content.title = 'Page Not Found'; }
     this.background = this.getBackground();

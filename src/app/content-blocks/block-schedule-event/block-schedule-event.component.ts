@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DatePipe, formatDate } from '@angular/common';
+import { formatDate } from '@angular/common';
 import { ScheduleService } from '../services/schedule.service';
+import { ScheduleLocation } from '../../core/interfaces/schedule.interface';
+import { ScheduleEvent } from '../../core/models/schedule-event.model';
 
 @Component({
   selector: 'asm-block-schedule-event',
@@ -10,24 +12,21 @@ import { ScheduleService } from '../services/schedule.service';
 export class BlockScheduleEventComponent implements OnInit {
   static blockName = 'BlockScheduleEvent';
 
-  @Input() event;
-  @Input() locations;
+  @Input() event: ScheduleEvent;
+  @Input() locations: ScheduleLocation[];
   opened: Boolean = false;
   id: string;
 
-  constructor(private scheduleService: ScheduleService, private datePipe: DatePipe) { }
+  constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
     if (!this.locations)
-      this.locations = {};
+      this.locations = [];
     if (!this.event)
-      this.event = {};
-    if (this.event.start_time)
-      this.event.start_time = this.event.start_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2');
-    if (this.event.end_time)
-      this.event.end_time = this.event.end_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2');
-    if (this.event.original_start_time)
-      this.event.original_start_time = this.event.original_start_time.replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2');
+      this.event = new ScheduleEvent();
+
+    this.event.fixTimes();
+
     this.event.duration = this.getDuration(
       this.event.start_time,
       this.event.end_time
@@ -36,11 +35,11 @@ export class BlockScheduleEventComponent implements OnInit {
     this.event.isMajor = this.event.flags && this.event.flags.includes('major');
   }
 
-  toggle() {
+  toggle(): void {
     this.opened = !this.opened;
   }
 
-  getDuration(start: Date, end: Date) {
+  getDuration(start: Date, end: Date): string {
     if (!start && !end)
       return '';
 
@@ -87,10 +86,10 @@ export class BlockScheduleEventComponent implements OnInit {
     return msg;
   }
 
-  getCategoryIcon() {
+  getCategoryIcon(): string {
     let icon = '';
     if (this.event.categories) {
-      this.event.categories.some(category => {
+      this.event.categories.some((category: string) => {
         icon = this.scheduleService.getCategoryIcon(category);
         return icon;
       });

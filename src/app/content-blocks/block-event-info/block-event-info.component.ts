@@ -18,7 +18,7 @@ export class BlockEventInfoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.event = this.route.snapshot.parent ? this.route.snapshot.parent.data.event : null;
     if (this.event) {
       if (this.event.logo && this.event.logo.fields) {
