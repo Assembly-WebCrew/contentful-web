@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
-import { ScheduleService, Schedule } from '../services/schedule.service';
+import { ScheduleService } from '../services/schedule.service';
 import { BlockScheduleComponent } from './block-schedule.component';
 import { BlockScheduleEventComponent } from '../block-schedule-event/block-schedule-event.component';
 

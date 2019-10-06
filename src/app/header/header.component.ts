@@ -1,15 +1,14 @@
-
-import {map, throttleTime} from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
-import gql from 'graphql-tag';
-import { ContentfulService } from '../core/contentful.service';
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import * as qs from 'qs';
-import { get } from 'lodash';
-import { Observable ,  Subject ,  Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
+import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import gql from 'graphql-tag';
+import * as qs from 'qs';
+import { Observable, Subject, Subscription } from 'rxjs';
+import { map, throttleTime } from 'rxjs/operators';
+
+import { ContentfulService } from '../core/contentful.service';
 import { WINDOW } from '../core/window.service';
-import { OnDestroy } from '@angular/core';
+import { Menu } from '../core/interfaces/menu.interface';
 
 @Component({
   selector: 'asm-header',
@@ -19,7 +18,7 @@ import { OnDestroy } from '@angular/core';
 export class HeaderComponent implements OnInit, OnDestroy {
   resizeSubject: Subject<number> = new Subject<number>();
   resizeObservable: Observable<number> = this.resizeSubject.asObservable().pipe(throttleTime(200));
-  header$: Observable<any>;
+  header$: Observable<Menu>;
   event: any;
   scrolling = false;
   previousScrollPosition: number;
@@ -31,7 +30,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private contentful: ContentfulService,
-    private router: Router,
     private route: ActivatedRoute,
     @Inject(WINDOW) private window: Window) { }
 
@@ -48,7 +46,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   getHeader(): void {
     const params = { 'fields.title': 'Main Menu' };
-    this.header$ = this.contentful.query$<any>({
+    this.header$ = this.contentful.query$<Menu>({
       query: gql`
     {
       menus(q: "${qs.stringify(params)}") {
@@ -122,7 +120,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }` }).pipe(map((data: any) => data.menus[0]));
   }
 
-  getLogo(isMobile) {
+  getLogo(isMobile: boolean) {
     if (this.scrolling && !isMobile) {
       return '/assets/images/generic-event-logo.png';
     } else if (this.event && this.event.logo && this.event.logo.fields) {

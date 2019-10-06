@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ScheduleService, Schedule } from '../services/schedule.service';
+import { ScheduleService } from '../services/schedule.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Schedule } from '../../core/interfaces/schedule.interface';
 
 @Component({
   selector: 'asm-block-schedule',

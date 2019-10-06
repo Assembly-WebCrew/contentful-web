@@ -1,29 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-export interface Schedule {
-  locations: Object;
-  events: Array<number>;
-}
-
-export interface ScheduleEvent {
-  categories?: string[];
-  end_time?: Date;
-  flags?: string[];
-  key: string;
-  location_key?: string;
-  name_fi?: string;
-  name?: string;
-  original_start_time?: Date;
-  start_time?: Date;
-  url?: string;
-}
-
-export interface ScheduleLocation {
-  name: string;
-  name_fi?: string;
-  url?: string;
-}
+import { Schedule } from '../../core/interfaces/schedule.interface';
 
 export class Location {
   name: string;
@@ -35,7 +13,7 @@ export class ScheduleService {
   constructor(
     private http: HttpClient) { }
 
-  getJSON(url) {
+  getJSON(url: string) {
     return this.http.get<Schedule>(url);
   }
 

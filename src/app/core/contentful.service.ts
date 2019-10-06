@@ -1,4 +1,4 @@
-import { WatchQueryOptions, QueryOptions } from 'apollo-client/core/watchQueryOptions';
+import { QueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -7,12 +7,13 @@ import { ApolloClient, NetworkStatus } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import { environment } from '../../environments/environment';
+import { AsmEvent } from './interfaces/event.interface';
 
 @Injectable()
 export class ContentfulService {
   // TODO: Add proper typing for ApolloClient cache
   private client: ApolloClient<any>;
-  private event: { name: string, eventTitle: string, defaultBackground: { fields: { file: { url: string } } } };
+  private event: AsmEvent;
   private retry = 0;
 
   constructor(
@@ -21,12 +22,12 @@ export class ContentfulService {
   }
 
   // get Contentful Schema from api / backend
-  private async getContentfulSchema(event): Promise<any> {
+  private async getContentfulSchema(event: AsmEvent): Promise<any> {
     return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise();
   }
 
   // get event
-  getEvent() {
+  getEvent(): AsmEvent {
     return this.event;
   }
 

@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ScheduleService, Schedule } from '../services/schedule.service';
+import { ScheduleService } from '../services/schedule.service';
 import { BlockScheduleEventComponent } from './block-schedule-event.component';
 
 import { DatePipe } from '@angular/common';
