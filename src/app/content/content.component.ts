@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,10 +10,9 @@ export class ContentComponent implements OnInit {
   content: any = {};
 
   constructor(
-    private route: ActivatedRoute,
-    private cfResolver: ComponentFactoryResolver) { }
+    private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getContent();
   }
 

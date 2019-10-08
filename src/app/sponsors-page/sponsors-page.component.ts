@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../core/contentful.service';
 import gql from 'graphql-tag';
 import { Title } from '@angular/platform-browser';
+import { Partner } from '../core/interfaces/partner.interface';
 
 @Component({
   selector: 'asm-sponsors-page',
@@ -9,17 +10,16 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./sponsors-page.component.scss']
 })
 export class SponsorsPageComponent implements OnInit {
-  mainPartners: any[] = [];
-  otherPartners: any[] = [];
-  mediaPartners: any[] = [];
+  mainPartners: Partner[] = [];
+  otherPartners: Partner[] = [];
+  mediaPartners: Partner[] = [];
   content: any = {
     title: 'Partners',
     tags: ['partners']
   };
 
   constructor(
-    private contentful: ContentfulService,
-    private title: Title) { }
+    private contentful: ContentfulService) { }
 
   ngOnInit() {
     this.contentful.query<any>({
@@ -36,7 +36,7 @@ export class SponsorsPageComponent implements OnInit {
         description
       }
     }` }).then(response => {
-      response.data.sponsors.forEach(sponsor => {
+      response.data.sponsors.forEach((sponsor: Partner) => {
         if (sponsor.partnerLevel === 'main') {
           this.mainPartners.push(sponsor);
         } else if (sponsor.partnerLevel === 'media') {
@@ -51,7 +51,7 @@ export class SponsorsPageComponent implements OnInit {
     });
   }
 
-  getLogo(url) {
+  getLogo(url: string): string {
     if (url) {
       return url + '?w=250&h=100&fit=pad';
     }

@@ -2,10 +2,12 @@
 import {map} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../core/contentful.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
 import * as qs from 'qs';
 import { Observable } from 'rxjs';
+import { Footer } from '../core/interfaces/page.interface';
+import { MenuItem } from '../core/interfaces/menu.interface';
 
 @Component({
   selector: 'asm-footer',
@@ -13,13 +15,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  footer$: Observable<any>;
+  footer$: Observable<Footer>;
   event: any;
   year: number;
 
   constructor(
     private contentful: ContentfulService,
-    private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -49,11 +50,11 @@ export class FooterComponent implements OnInit {
     }` }).pipe(map((data: any) => data.menus[0]));
   }
 
-  onNavigation(item, event: Event) {
+  onNavigation(item: MenuItem, event: Event) {
     this.contentful.onNavigation(item, event);
   }
 
-  getUrl(item) {
+  getUrl(item: MenuItem) {
     return this.contentful.getUrl(item);
   }
 

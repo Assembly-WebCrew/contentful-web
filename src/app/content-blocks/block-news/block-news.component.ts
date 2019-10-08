@@ -17,7 +17,7 @@ export class BlockNewsComponent implements OnInit {
 
   constructor(private contentful: ContentfulService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.newsUrl = ['/', this.contentful.getEvent().name, 'news'];
     this.getNews();
   }
@@ -69,7 +69,7 @@ export class BlockNewsComponent implements OnInit {
       });
   }
 
-  getImage(article: any, i: number) {
+  getImage(article: any, i: number): string {
     if (article.featuredImage && article.featuredImage.url) {
       let height: number;
       if (i === 0) { height = 460;
@@ -81,7 +81,7 @@ export class BlockNewsComponent implements OnInit {
     }
   }
 
-  getLink(slug: string) {
+  getLink(slug: string): any[] {
     return this.newsUrl.concat([slug]);
   }
 }

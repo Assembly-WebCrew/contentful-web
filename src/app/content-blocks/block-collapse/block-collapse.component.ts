@@ -13,13 +13,13 @@ export class BlockCollapseComponent implements OnInit {
   opened: Boolean = false;
   id: string;
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.content.title) {
       this.id = this.content.title.replace(/\s/gi, '-').replace(/[^\w-]/gi, '').toLowerCase();
     }
   }
 
-  toggle() {
+  toggle(): void {
       this.opened = !this.opened;
   }
 

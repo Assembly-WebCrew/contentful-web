@@ -14,11 +14,11 @@ export class BlockCallToActionComponent implements OnInit {
 
   constructor(private contentful: ContentfulService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.link = this.getLink();
   }
 
-  getLink() {
+  getLink(): string {
     if (this.content) {
       if (this.content.page) {
         return `/${this.contentful.getEvent().name}/${this.content.page.slug}`;

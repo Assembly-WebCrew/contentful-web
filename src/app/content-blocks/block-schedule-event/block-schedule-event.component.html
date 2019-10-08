@@ -30,7 +30,7 @@
   </p>
 
   <p>
-    <span class="location">
+    <span class="location" *ngIf="locations && locations[event?.location_key]">
       <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
       {{locations[event.location_key]?.name}}
     </span>

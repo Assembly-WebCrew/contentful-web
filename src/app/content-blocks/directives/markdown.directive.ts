@@ -12,7 +12,7 @@ export class MarkdownDirective implements AfterViewInit {
     this.converter = new Converter({tables: true, headerLevelStart: 2, simplifiedAutoLink: true, strikethrough: true});
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     if (!this.markdownText) {
       this.markdownText = this.el.nativeElement.innerHTML;
     }

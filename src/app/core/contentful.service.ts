@@ -8,6 +8,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import { environment } from '../../environments/environment';
 import { AsmEvent } from './interfaces/event.interface';
+import { MenuItem } from './interfaces/menu.interface';
 
 @Injectable()
 export class ContentfulService {
@@ -48,7 +49,7 @@ export class ContentfulService {
   }
 
   // get page url
-  getUrl(item) {
+  getUrl(item: MenuItem): string {
     if (item.page) {
       return `/${this.event.name}/${item.page.slug}`;
     } else {
@@ -59,18 +60,17 @@ export class ContentfulService {
     }
   }
 
-  onNavigation(item, event: Event) {
+  onNavigation(item: MenuItem, event: Event): void {
     const url: string = this.getUrl(item);
 
     if (url.startsWith('/')) {
       event.preventDefault();
       this.router.navigate([url]);
-      return false;
     }
   }
 
   // initialize apollo-client
-  async initialize(eventName?: string) {
+  async initialize(eventName?: string): Promise<void> {
     if (this.client) return;
 
     try {

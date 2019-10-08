@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { ContentfulService } from './core/contentful.service';
+import { AsmEvent } from './core/interfaces/event.interface';
 
 @Injectable()
 export class MetaResolve implements Resolve<any> {
@@ -16,7 +17,6 @@ export class MetaResolve implements Resolve<any> {
     '/assets/images/assembly-generic-image-8.jpg',
   ];
 
-
   constructor(private contentful: ContentfulService,
     private title: Title,
     private meta: Meta) { }
@@ -28,7 +28,7 @@ export class MetaResolve implements Resolve<any> {
   }
 
   public setMetaTags(url: string, data?: any) {
-    const event = this.contentful.getEvent();
+    const event: AsmEvent = this.contentful.getEvent();
     let title = event.eventTitle || 'Assembly';
     let image = location.origin + this.images[Math.floor(Math.random() * 8)];
     let description = 'Assembly is a bi-annual computer festival, esports event, demoscene and lan party in Helsinki, Finland.';

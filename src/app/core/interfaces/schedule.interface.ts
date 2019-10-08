@@ -1,29 +1,18 @@
+import { ScheduleEvent } from '../models/schedule-event.model';
+
 export class Schedule {
-  locations: ScheduleLocation[];
+  locations: {[key: string]: ScheduleEvent};
   events: ScheduleEvent[];
 }
 
 export interface ScheduleEntity {
-  description_fi: string;
-  description: string;
-  key: string;
+  description_fi?: string;
+  description?: string;
+  key?: string;
   name_fi?: string;
-  name: string;
-  schedule: string;
+  name?: string;
+  schedule?: string;
   url?: string;
-}
-
-export interface ScheduleEvent extends ScheduleEntity {
-  canceled: boolean;
-  cancellation_reason: string;
-  categories?: string[];
-  end_time?: Date;
-  flags?: string[];
-  hidden: boolean;
-  location_key?: string;
-  order: number;
-  original_start_time?: Date;
-  start_time?: Date;
 }
 
 // in practise same as ScheduleEntity
@@ -31,4 +20,21 @@ export interface ScheduleEvent extends ScheduleEntity {
 // and for possible future additions
 // tslint:disable-next-line: no-empty-interface
 export interface ScheduleLocation extends ScheduleEntity {
+}
+
+export interface ScheduleDay {
+  date?: Date;
+  events?: any[];
+  filteredEvents?: any[];
+  title?: string;
+}
+
+export interface ScheduleFilter {
+  active?: boolean;
+  title?: string;
+  value?: any;
+}
+
+export interface ScheduleCategoryFilter extends ScheduleFilter {
+  icon?: string;
 }

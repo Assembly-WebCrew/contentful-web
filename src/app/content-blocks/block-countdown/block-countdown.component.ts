@@ -26,7 +26,7 @@ export class BlockCountdownComponent implements OnInit {
   constructor(
     private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.event = this.route.snapshot.parent ? this.route.snapshot.parent.data.event : null;
     if (this.event) {
       this.startTime = new Date(this.event.startDate).getTime();
@@ -38,7 +38,7 @@ export class BlockCountdownComponent implements OnInit {
   /**
    * Set countdown for event start, if event is on going, show countdown for event ending.
    */
-  private setCountdown() {
+  private setCountdown(): void {
     if (this.event) {
       this.interval = setInterval(() => {
         const now = new Date().getTime();
