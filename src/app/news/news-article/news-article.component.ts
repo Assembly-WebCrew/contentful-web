@@ -8,7 +8,7 @@ import { NewsItem } from '../../core/interfaces/news-item.interface';
   styleUrls: ['./news-article.component.scss']
 })
 export class NewsArticleComponent implements OnInit {
-  article: NewsItem = {};
+  article: NewsItem | any = {};
   content: any = {
     title: 'News'
   };
