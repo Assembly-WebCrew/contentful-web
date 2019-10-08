@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ScheduleService } from '../services/schedule.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Schedule, ScheduleDay, IScheduleEvent, ScheduleFilter, ScheduleLocation } from '../../core/interfaces/schedule.interface';
+import { Component, OnInit } from '@angular/core';
+
+import { Schedule, ScheduleDay, ScheduleFilter, ScheduleLocation } from '../../core/interfaces/schedule.interface';
+import { ScheduleEvent } from '../../core/models/schedule-event.model';
+import { ScheduleService } from '../services/schedule.service';
 
 @Component({
   selector: 'asm-block-schedule',
@@ -13,8 +15,8 @@ export class BlockScheduleComponent implements OnInit {
 
   content: any = {};
   days: ScheduleDay[] = [];
-  events: IScheduleEvent[] = [];
-  locations: ScheduleLocation[] = [];
+  events: ScheduleEvent[] = [];
+  locations: {[key: string]: ScheduleLocation};
   filters = [];
   showFilters: boolean;
   locationFilters = [];
@@ -33,13 +35,15 @@ export class BlockScheduleComponent implements OnInit {
       .getJSON(this.content.scheduleSource)
       .subscribe((data: Schedule) => {
         this.locations = data.locations;
-        this.events = data.events;
+        data.events.forEach((event: ScheduleEvent) => {
+          this.events.push(event as ScheduleEvent);
+        });
         this.loading = false;
         if (this.events) {
           let prevDayNumber: number;
           let currentDay: ScheduleDay;
-          this.events.forEach((x: IScheduleEvent) => {
-            const date = new Date((x.start_time + '').replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2'));
+          this.events.forEach((x: ScheduleEvent) => {
+            const date: Date = this.scheduleService.fixTime(x.start_time);
             const dayNumber = date.getDay();
             if (dayNumber !== prevDayNumber) {
               currentDay = {
@@ -105,13 +109,13 @@ export class BlockScheduleComponent implements OnInit {
         };
       }
     }).sort((a, b) => (a.title + '').localeCompare((b.title + '')));
-    this.locationFilters = this.locationFilters.map(location => {
+    this.locationFilters = this.locationFilters.map((location: string) => {
       let active = [];
       if (this.content.location) {
         active = this.content.location.replace(/,\s+/g, ',').toLowerCase().split(',');
       }
       return {
-        title: this.locations[location].name,
+        title: this.locations[location] ? this.locations[location].name : '',
         value: location,
         active: active.length && active.includes(location.toLowerCase())
       };
@@ -122,13 +126,13 @@ export class BlockScheduleComponent implements OnInit {
     const active = this.filters.filter(f => f.active);
     const activeLocations = this.locationFilters.filter(l => l.active);
 
-    const canShow = (event: IScheduleEvent) => this.showPastEvents
-      || Date.now() < new Date(((event.end_time || event.start_time) + '').replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2')).getTime();
+    const canShow = (event: ScheduleEvent) => this.showPastEvents
+      || Date.now() < this.scheduleService.fixTime(event.end_time || event.start_time).getTime();
 
-    const hasLocation = (event: IScheduleEvent) => !activeLocations.length || activeLocations.length && activeLocations.some(f => {
+    const hasLocation = (event: ScheduleEvent) => !activeLocations.length || activeLocations.length && activeLocations.some(f => {
       return (event.location_key || '').toLowerCase() === f.value;
     });
-    const hasFilter = (event: IScheduleEvent) => !active.length || active.length && active.some(f => {
+    const hasFilter = (event: ScheduleEvent) => !active.length || active.length && active.some(f => {
       return event.categories.map(c => c && c.toLowerCase()).includes(f.value)
         || event.flags.map(c => c && c.toLowerCase()).includes(f.value);
     });

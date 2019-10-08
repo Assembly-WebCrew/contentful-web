@@ -13,25 +13,23 @@ export class BlockScheduleEventComponent implements OnInit {
   static blockName = 'BlockScheduleEvent';
 
   @Input() event: ScheduleEvent;
-  @Input() locations: ScheduleLocation[];
+  @Input() locations: {[key: string]: ScheduleLocation};
   opened: Boolean = false;
   id: string;
 
   constructor(private scheduleService: ScheduleService) { }
 
   ngOnInit() {
-    if (!this.locations)
-      this.locations = [];
     if (!this.event)
       this.event = new ScheduleEvent();
 
-    this.event.fixTimes();
+    this.scheduleService.fixTimes(this.event);
 
     this.event.duration = this.getDuration(
       this.event.start_time,
       this.event.end_time
     );
-    this.event.isRescheduled = this.event.start_time !== this.event.original_start_time;
+    this.event.isRescheduled = this.event.start_time.toISOString() !== this.event.original_start_time.toISOString();
     this.event.isMajor = this.event.flags && this.event.flags.includes('major');
   }
 
@@ -87,13 +85,9 @@ export class BlockScheduleEventComponent implements OnInit {
   }
 
   getCategoryIcon(): string {
-    let icon = '';
     if (this.event.categories) {
-      this.event.categories.some((category: string) => {
-        icon = this.scheduleService.getCategoryIcon(category);
-        return icon;
-      });
+      return this.scheduleService.getCategoryIcon(this.event.categories[0]);
     }
-    return icon;
+    return '';
   }
 }

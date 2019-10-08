@@ -7,11 +7,15 @@ export interface NewsItem {
   onFrontpage?: boolean;
   published?: boolean;
   slug?: string;
-  tags?: string[];
+  tags?: NewsTag[];
   title?: string;
 }
 
 export interface NewsFeaturedImage {
   title?: string;
   url?: string;
+}
+
+export interface NewsTag {
+  title: string;
 }

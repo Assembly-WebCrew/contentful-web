@@ -1,4 +1,6 @@
-export class ScheduleEvent implements ScheduleEvent {
+import { ScheduleEntity } from '../interfaces/schedule.interface';
+
+export class ScheduleEvent implements ScheduleEntity {
   canceled?: boolean;
   cancellation_reason?: string;
   categories?: string[];
@@ -18,19 +20,6 @@ export class ScheduleEvent implements ScheduleEvent {
   original_start_time?: Date;
   schedule?: string;
   start_time?: Date;
+  stream?: string;
   url?: string;
-
-  constructor() {
-
-  }
-
-  fixTimes(): void {
-    this.start_time = this.fixTime(this.start_time);
-    this.end_time = this.fixTime(this.end_time);
-    this.original_start_time = this.fixTime(this.original_start_time);
-  }
-
-  fixTime(time: Date): Date {
-    return time ? new Date(time.toString().replace(/([\+-][0-9]{2})([0-9]{2})$/, '$1:$2')) : undefined;
-  }
 }

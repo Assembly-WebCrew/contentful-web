@@ -1,6 +1,8 @@
+import { ScheduleEvent } from '../models/schedule-event.model';
+
 export class Schedule {
-  locations: ScheduleLocation[];
-  events: IScheduleEvent[];
+  locations: {[key: string]: ScheduleEvent};
+  events: ScheduleEvent[];
 }
 
 export interface ScheduleEntity {
@@ -11,22 +13,6 @@ export interface ScheduleEntity {
   name?: string;
   schedule?: string;
   url?: string;
-}
-
-export interface IScheduleEvent extends ScheduleEntity {
-  canceled?: boolean;
-  cancellation_reason?: string;
-  categories?: string[];
-  duration?: string;
-  end_time?: Date;
-  flags?: string[];
-  hidden?: boolean;
-  isMajor?: boolean;
-  isRescheduled?: boolean;
-  location_key?: string;
-  order?: number;
-  original_start_time?: Date;
-  start_time?: Date;
 }
 
 // in practise same as ScheduleEntity
