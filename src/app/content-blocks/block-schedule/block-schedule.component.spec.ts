@@ -11,7 +11,9 @@ describe('BlockScheduleComponent', () => {
   let fixture: ComponentFixture<BlockScheduleComponent>;
   const scheduleServiceStub = {
     getJSON: () => of({}),
-    getCategoryIcon: () => ''
+    getCategoryIcon: () => '',
+    fixTimes: () => {},
+    fixTime: () => Date
   };
 
   beforeEach(async(() => {

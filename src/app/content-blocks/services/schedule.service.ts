@@ -35,9 +35,11 @@ export class ScheduleService {
   }
 
   fixTimes(scheduleEvent: ScheduleEvent): void {
-    scheduleEvent.start_time = this.fixTime(scheduleEvent.start_time);
-    scheduleEvent.end_time = this.fixTime(scheduleEvent.end_time);
-    scheduleEvent.original_start_time = this.fixTime(scheduleEvent.original_start_time);
+    if (scheduleEvent) {
+      scheduleEvent.start_time = this.fixTime(scheduleEvent.start_time);
+      scheduleEvent.end_time = this.fixTime(scheduleEvent.end_time);
+      scheduleEvent.original_start_time = this.fixTime(scheduleEvent.original_start_time);
+    }
   }
 
   fixTime(time: Date): Date {

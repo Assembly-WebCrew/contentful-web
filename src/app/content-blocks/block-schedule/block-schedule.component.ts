@@ -35,9 +35,11 @@ export class BlockScheduleComponent implements OnInit {
       .getJSON(this.content.scheduleSource)
       .subscribe((data: Schedule) => {
         this.locations = data.locations;
-        data.events.forEach((event: ScheduleEvent) => {
-          this.events.push(event as ScheduleEvent);
-        });
+        if (data.events) {
+          data.events.forEach((event: ScheduleEvent) => {
+            this.events.push(event as ScheduleEvent);
+          });
+        }
         this.loading = false;
         if (this.events) {
           let prevDayNumber: number;
