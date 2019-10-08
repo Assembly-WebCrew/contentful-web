@@ -9,6 +9,7 @@ import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemo
 import { environment } from '../../environments/environment';
 import { AsmEvent } from './interfaces/event.interface';
 import { MenuItem } from './interfaces/menu.interface';
+import { onError } from 'apollo-link-error';
 
 @Injectable()
 export class ContentfulService {
@@ -24,7 +25,11 @@ export class ContentfulService {
 
   // get Contentful Schema from api / backend
   private async getContentfulSchema(event: AsmEvent): Promise<any> {
-    return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise();
+    return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise().catch(
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
   // get event
@@ -35,7 +40,7 @@ export class ContentfulService {
   // get event metadata from backend
   async getEventMetadata(name?: string): Promise<any> {
     const event: any = await this.http.get(`${environment.apiUrl}/event`,
-      name && { params: new HttpParams().set('name', name) }).toPromise();
+      name && { params: new HttpParams().set('name', name) }).toPromise().catch(e => console.log(e));
     // Only public events are requestable on production mode
     if (environment.production && !event.isPublic) {
       throw new Error(`Requested event '${name}' is not valid`);
@@ -45,7 +50,10 @@ export class ContentfulService {
 
   // get landing page events metadata from backend
   async getEvents(): Promise<any> {
-    return this.http.get(`${environment.apiUrl}/events`).toPromise();
+    return this.http.get(`${environment.apiUrl}/events`).toPromise().catch(
+      (error: any) => {
+        console.log(error);
+      });
   }
 
   // get page url
@@ -79,9 +87,29 @@ export class ContentfulService {
         introspectionQueryResultData: await this.getContentfulSchema(this.event)
       });
 
+      const httpLink = new HttpLink({ uri: `${environment.apiUrl}/en/${this.event.name}/graphql` });
+      const link = onError(({ graphQLErrors, networkError }) => {
+        if (graphQLErrors)
+          graphQLErrors.map(({ message, locations, path }) =>
+            console.warn(
+              `[GraphQL error]: Message: ${message}, Location: ${JSON.stringify(locations)}, Path: ${path}`,
+            ),
+          );
+
+        if (networkError) console.error(`[Network error]: ${networkError}`);
+      });
+
       this.client = new ApolloClient({
-        link: new HttpLink({ uri: `${environment.apiUrl}/en/${this.event.name}/graphql` }),
-        cache: new InMemoryCache({ fragmentMatcher })
+        link: link.concat(httpLink),
+        cache: new InMemoryCache({ fragmentMatcher }),
+        defaultOptions: {
+          watchQuery: {
+            errorPolicy: 'all'
+          },
+          query: {
+            errorPolicy: 'all'
+          }
+        }
       });
     } catch (e) {
       console.warn(e);

@@ -23,31 +23,41 @@
       <li class="menu-item" *ngFor="let item of menu">
         <ng-container *ngIf="item.__typename === 'Menu'; else normalMenu">
           <span class="fa" [ngClass]="{'fa-plus': !item.show, 'fa-minus': item.show}" (click)="onCollapse(item)"></span>
-          <a class="submenu-title" [href]="getUrl(item.page)" (click)="onNavigation(item.page, $event)">{{item.label}}</a>
+          <a class="submenu-title" *ngIf="item.page && getUrl(item.page); else noLink" [href]="getUrl(item.page)" (click)="onNavigation(item.page, $event)">{{item.label}}</a>
+          <ng-template #noLink>
+            <span class="no-link">{{item.label}}</span>
+          </ng-template>
           <ul *ngIf="item.show" class="submenu">
             <li *ngFor="let subitem of item.items" [class.sectioned]="subitem.__typename === 'Menu'">
               <ng-container *ngIf="subitem.__typename === 'Menu'; else normalSubMenu">
                 <span class="fa" [ngClass]="{'fa-plus': !subitem.show, 'fa-minus': subitem.show}" (click)="onCollapse(subitem)"></span>
-                <ng-container *ngIf="subitem.page; else noLink">
-                  <a class="submenu-title" [href]="getUrl(subitem.page)" (click)="onNavigation(subitem.page, $event)">{{subitem.label}}</a>
-                </ng-container>
+                <a class="submenu-title" *ngIf="subitem.page && getUrl(subitem.page); else noLink" [href]="getUrl(subitem.page)" (click)="onNavigation(subitem.page, $event)">{{subitem.label}}</a>
                 <ng-template #noLink>
                   <span class="submenu-title no-link">{{subitem.label}}</span>
                 </ng-template>
                 <ul *ngIf="subitem.show" class="submenu">
                   <li *ngFor="let sectionitem of subitem.items">
-                    <a [href]="getUrl(sectionitem)" (click)="onNavigation(sectionitem, $event)">{{sectionitem.title}}</a>
+                    <a *ngIf="getUrl(sectionitem); else noLink" [href]="getUrl(sectionitem)" (click)="onNavigation(sectionitem, $event)">{{sectionitem.title}}</a>
+                    <ng-template #noLink>
+                      <span class="no-link">{{sectionitem.title}}</span>
+                    </ng-template>
                   </li>
                 </ul>
               </ng-container>
               <ng-template #normalSubMenu>
-                <a [href]="getUrl(subitem)" (click)="onNavigation(subitem, $event)">{{subitem.title}}</a>
+                <a *ngIf="getUrl(subitem); else noLink" [href]="getUrl(subitem)" (click)="onNavigation(subitem, $event)">{{subitem.title}}</a>
+                <ng-template #noLink>
+                  <span class="no-link">{{subitem.title}}</span>
+                </ng-template>
               </ng-template>
             </li>
           </ul>
         </ng-container>
         <ng-template #normalMenu>
-          <a [href]="getUrl(item)" (click)="onNavigation(item, $event)">{{item.title}}</a>
+          <a *ngIf="getUrl(item); else noLink" [href]="getUrl(item)" (click)="onNavigation(item, $event)">{{item.title}}</a>
+          <ng-template #noLink>
+            <span class="no-link">{{item.title}}</span>
+          </ng-template>
         </ng-template>
       </li>
     </ul>

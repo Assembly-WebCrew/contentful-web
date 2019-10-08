@@ -21,6 +21,10 @@ ul {
   padding: 0;
 }
 
+.no-link {
+  color: $color-no-link;
+}
+
 .menu {
   font-weight: normal;
   width: 100%;
@@ -42,7 +46,8 @@ ul {
       margin: 0;
     }
 
-    a {
+    a,
+    span {
       height: 100%;
       display: flex;
       align-items: center;
@@ -104,7 +109,9 @@ ul {
           padding: 10px;
           display: block;
           transition: color .1s;
+        }
 
+        a {
           &:hover {
             color: $color-accent;
           }
@@ -149,25 +156,31 @@ ul {
           .title {
             text-transform: uppercase;
             color: $color-no-link;
-            // color: $color-accent;
             font-family: $font-title;
             border-bottom: $border-basic $color-accent;
-            // padding: 0 1.5em 1em;
-            // margin: 0 1em;
 
             &[href] {
-              color: $color-accent;
-            }
+              color: $color-link;
 
-            &[href]:hover {
+              &:hover {
+                color: $color-text;
+              }
+            }
+          }
+
+          a {
+            &[href] {
               color: $color-text;
+
+              &:hover {
+                color: $color-link;
+              }
             }
           }
 
           .submenu-section {
             @include list-styling;
             line-height: 1em;
-            // padding: 0 0 0 1em;
             padding: 0;
 
             li {
@@ -187,7 +200,6 @@ ul {
 
               a {
                 border-radius: $border-radius;
-                // padding: .5em;
                 border: $border-basic transparent;
 
                 &:hover {

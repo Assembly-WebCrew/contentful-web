@@ -3,13 +3,13 @@ import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/cor
 import { ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
 import * as qs from 'qs';
-import { Observable, Subject, Subscription } from 'rxjs';
-import { map, throttleTime } from 'rxjs/operators';
+import { Observable, of, Subject, Subscription } from 'rxjs';
+import { catchError, map, throttleTime } from 'rxjs/operators';
 
 import { ContentfulService } from '../core/contentful.service';
-import { WINDOW } from '../core/window.service';
-import { Menu, MenuItem } from '../core/interfaces/menu.interface';
 import { AsmEvent } from '../core/interfaces/event.interface';
+import { Menu, MenuItem } from '../core/interfaces/menu.interface';
+import { WINDOW } from '../core/window.service';
 
 @Component({
   selector: 'asm-header',
@@ -45,10 +45,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(s => s && s.unsubscribe());
   }
 
+  query(query: any): Observable<any> {
+    return this.contentful.query$<any>({
+      query: query}).pipe(catchError(_ => of('error')));
+  }
+
+
   getHeader(): void {
     const params = { 'fields.title': 'Main Menu' };
-    this.header$ = this.contentful.query$<Menu>({
-      query: gql`
+    const sysId = `sys { id }`;
+    const pageType = `page { slug ${sysId} }`;
+    const pageMenuItem = `page { title url ${pageType} ${sysId} }`;
+    const onMenuItem = `... on MenuItem { title url ${pageType} ${sysId} }`;
+    this.header$ = this.query( gql`
     {
       menus(q: "${qs.stringify(params)}") {
         title
@@ -58,67 +67,29 @@ export class HeaderComponent implements OnInit, OnDestroy {
           item {
             title
             url
-            page {
-              slug
-            }
+            ${pageType}
           }
         }
-        page {
-          title
-          url
-          page {
-            slug
-          }
-        }
+        ${pageMenuItem}
         items {
-          ... on MenuItem {
-            title
-            url
-            page {
-              slug
-            }
-          }
+          ${onMenuItem}
           ... on Menu {
             label
-            page {
-              title
-              url
-              page {
-                slug
-              }
-            }
+            ${pageMenuItem}
             items {
-              ... on MenuItem {
-                title
-                url
-                page {
-                  slug
-                }
-              }
+              ${onMenuItem}
               ... on Menu {
                 label
-                page {
-                  title
-                  url
-                  page {
-                    slug
-                  }
-                }
+                ${pageMenuItem}
                 items {
-                  ... on MenuItem {
-                    title
-                    url
-                    page {
-                      slug
-                    }
-                  }
+                  ${onMenuItem}
                 }
               }
             }
           }
         }
       }
-    }` }).pipe(map((data: any) => data.menus[0]));
+    }`).pipe(map((data: any) => data.menus[0]));
   }
 
   getLogo(isMobile: boolean): string {
