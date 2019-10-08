@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
 import * as qs from 'qs';
 import { Observable } from 'rxjs';
-import { Footer } from '../core/interfaces/page.interface';
 import { MenuItem } from '../core/interfaces/menu.interface';
 
 @Component({
@@ -15,7 +14,7 @@ import { MenuItem } from '../core/interfaces/menu.interface';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  footer$: Observable<Footer>;
+  footer$: Observable<any>;
   event: any;
   year: number;
 
