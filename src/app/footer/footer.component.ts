@@ -1,12 +1,13 @@
-
-import {map} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { ContentfulService } from '../core/contentful.service';
 import { ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
-import * as qs from 'qs';
+import { stringify as qsStringify } from 'qs';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { ContentfulService } from '../core/contentful.service';
 import { MenuItem } from '../core/interfaces/menu.interface';
+
 
 @Component({
   selector: 'asm-footer',
@@ -29,7 +30,7 @@ export class FooterComponent implements OnInit {
     this.footer$ = this.contentful.query$<any>({
       query: gql`
     {
-      menus(q: "${qs.stringify(params)}") {
+      menus(q: "${qsStringify(params)}") {
         title
         items {
           ... on Menu {

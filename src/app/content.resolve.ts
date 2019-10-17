@@ -3,7 +3,7 @@ import { ContentfulService } from './core/contentful.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { get, join } from 'lodash';
-import * as qs from 'qs';
+import { stringify as qsStringify } from 'qs';
 import { MetaResolve } from './meta.resolve';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class ContentResolve implements Resolve<any> {
     const response = await this.contentful.query<any>({
       query: gql`
         {
-          pages(q: "${qs.stringify(params)}") {
+          pages(q: "${qsStringify(params)}") {
             slug
             title
             isFrontpage

@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
-import * as qs from 'qs';
+import { stringify as qsStringify } from 'qs';
 import { Observable, of, Subject, Subscription } from 'rxjs';
 import { catchError, map, throttleTime } from 'rxjs/operators';
 
@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const onMenuItem = `... on MenuItem { title url ${pageType} ${sysId} }`;
     this.header$ = this.query( gql`
     {
-      menus(q: "${qs.stringify(params)}") {
+      menus(q: "${qsStringify(params)}") {
         title
         highlights {
           title
