@@ -36,9 +36,7 @@ export class MenuComponent implements OnInit, AfterViewChecked {
     if (item.__typename === 'MenuItem') {
       item = item as MenuItem;
       item.link = this.contentful.getUrl(item);
-    }
-
-    if (item.__typename === 'Menu') {
+    } else if (item.__typename === 'Menu') {
       item = item as Menu;
       item.link = !!item.page ? this.contentful.getUrl(item.page) : null;
 

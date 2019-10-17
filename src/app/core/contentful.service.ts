@@ -1,15 +1,17 @@
-import { QueryOptions } from 'apollo-client/core/watchQueryOptions';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
-import { ApolloClient, NetworkStatus } from 'apollo-client';
-import { HttpLink } from 'apollo-link-http';
+import { Router } from '@angular/router';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
+import { ApolloClient, NetworkStatus, QueryOptions } from 'apollo-client';
+import { ApolloLink } from 'apollo-link';
+import { onError } from 'apollo-link-error';
+import { HttpLink } from 'apollo-link-http';
+import { GraphQLError } from 'graphql';
+import { from, Observable } from 'rxjs';
+
 import { environment } from '../../environments/environment';
 import { AsmEvent } from './interfaces/event.interface';
 import { MenuItem } from './interfaces/menu.interface';
-import { onError } from 'apollo-link-error';
 
 @Injectable()
 export class ContentfulService {
@@ -18,6 +20,12 @@ export class ContentfulService {
   private event: AsmEvent;
   private retry = 0;
 
+  private logError = (error: any): void => console.error(error);
+  private throwError = (error: any): void => { throw new Error(error); };
+
+  // get event
+  public getEvent = (): AsmEvent => this.event;
+
   constructor(
     private http: HttpClient,
     private router: Router) {
@@ -25,35 +33,26 @@ export class ContentfulService {
 
   // get Contentful Schema from api / backend
   private async getContentfulSchema(event: AsmEvent): Promise<any> {
-    return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise().catch(
-      (error: any) => {
-        console.log(error);
-      }
-    );
-  }
-
-  // get event
-  getEvent(): AsmEvent {
-    return this.event;
+    return this.http.get(`${environment.apiUrl}/${event.name}/schema`).toPromise()
+      .catch((error: any) => this.logError(error));
   }
 
   // get event metadata from backend
   async getEventMetadata(name?: string): Promise<any> {
     const event: any = await this.http.get(`${environment.apiUrl}/event`,
-      name && { params: new HttpParams().set('name', name) }).toPromise().catch(e => console.log(e));
+      name && { params: new HttpParams().set('name', name) }).toPromise()
+      .catch((error: any) => this.logError(error));
     // Only public events are requestable on production mode
     if (environment.production && !event.isPublic) {
-      throw new Error(`Requested event '${name}' is not valid`);
+      this.throwError(`Requested event '${name}' is not valid`);
     }
     return event;
   }
 
   // get landing page events metadata from backend
   async getEvents(): Promise<any> {
-    return this.http.get(`${environment.apiUrl}/events`).toPromise().catch(
-      (error: any) => {
-        console.log(error);
-      });
+    return this.http.get(`${environment.apiUrl}/events`).toPromise()
+      .catch((error: any) => this.logError(error));
   }
 
   // get page url
@@ -87,16 +86,17 @@ export class ContentfulService {
         introspectionQueryResultData: await this.getContentfulSchema(this.event)
       });
 
-      const httpLink = new HttpLink({ uri: `${environment.apiUrl}/en/${this.event.name}/graphql` });
-      const link = onError(({ graphQLErrors, networkError }) => {
-        if (graphQLErrors)
-          graphQLErrors.map(({ message, locations, path }) =>
-            console.warn(
-              `[GraphQL error]: Message: ${message}, Location: ${JSON.stringify(locations)}, Path: ${path}`,
-            ),
-          );
+      const httpLink: HttpLink = new HttpLink({ uri: `${environment.apiUrl}/en/${this.event.name}/graphql` });
 
-        if (networkError) console.error(`[Network error]: ${networkError}`);
+      const link: ApolloLink = onError(({ graphQLErrors, networkError }): void => {
+        if (graphQLErrors) {
+          graphQLErrors.map(({ message, locations, path }: GraphQLError) => {
+            this.logError(`[GraphQL error]: Message: ${message}, Location: ${JSON.stringify(locations)}, Path: ${path}`);
+          });
+        }
+        if (networkError) {
+          this.logError(`[Network error]: ${networkError}`);
+        }
       });
 
       this.client = new ApolloClient({
@@ -111,8 +111,8 @@ export class ContentfulService {
           }
         }
       });
-    } catch (e) {
-      console.warn(e);
+    } catch (error) {
+      this.logError(error);
       if (this.retry > 1) return;
       this.retry++;
       this.router.navigate(['/']);
@@ -125,8 +125,9 @@ export class ContentfulService {
     networkStatus: NetworkStatus;
     stale: boolean;
   }> {
-    if (!this.client) throw new Error(
-      'Make sure that ContentfulService has been initialized before calling .query');
+    if (!this.client) {
+      this.throwError('Make sure that ContentfulService has been initialized before calling .query');
+    }
     return this.client.query<T, unknown>(options);
   }
 
