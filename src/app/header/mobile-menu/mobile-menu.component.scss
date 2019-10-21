@@ -132,8 +132,13 @@ $highlight-button-inner-wrapper-text-shadow-color: rgba($color-bg, .2);
 }
 
 a {
+  color: $color-no-link;
+  text-decoration: none;
+
+  &[href] {
     color: $color-text;
-    text-decoration: none;
+
+  }
 }
 
 ul {

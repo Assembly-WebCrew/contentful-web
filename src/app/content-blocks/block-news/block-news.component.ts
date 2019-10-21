@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../../core/contentful.service';
-import * as qs from 'qs';
+import { stringify as qsStringify } from 'qs';
 import gql from 'graphql-tag';
 
 @Component({
@@ -35,7 +35,7 @@ export class BlockNewsComponent implements OnInit {
     this.contentful.query<any>({
       query: gql`
     {
-      newsItems(q: "${qs.stringify(params)}") {
+      newsItems(q: "${qsStringify(params)}") {
         date
         slug
         title

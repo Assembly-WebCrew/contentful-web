@@ -1,42 +1,58 @@
 <ul class="menu">
-  <li class="menu-item" *ngFor="let item of menu">
+  <li class="menu-item" *ngFor="let item of menu; trackBy: trackItem">
     <ng-container *ngIf="item.__typename === 'Menu'; else normalMenu">
-      <a [href]="getUrl(item.page)" (click)="onNavigation(item.page, $event)">
+      <a class="main-level" [href]="item.link" (click)="onNavigation(item.page, $event)" *ngIf="item.link; else noLink">
         {{item.label}}
       </a>
+      <ng-template #noLink>
+        <span class="main-level no-link">{{item.label}}</span>
+      </ng-template>
       <ul class="menu-dropdown" [class.sectioned]="isMenuSectioned(item)">
-        <li *ngFor="let subitem of item.items" [class.sectioned]="subitem.__typename === 'Menu'">
+        <li *ngFor="let subitem of item.items; trackBy: trackItem" [class.sectioned]="subitem.__typename === 'Menu'">
           <ng-container *ngIf="subitem.__typename === 'Menu'; else normalSubMenu">
-            <ng-container *ngIf="subitem.page; else noLink">
-              <a class="title" [href]="getUrl(subitem.page)" (click)="onNavigation(subitem.page, $event)">
+              <a class="sub-level title" [href]="subitem.link" (click)="onNavigation(subitem.page, $event)" *ngIf="subitem.link; else noLink">
                 {{subitem.label}}
               </a>
-            </ng-container>
             <ng-template #noLink>
-              <span class="title">
+              <span class="sub-level title no-link">
                 {{subitem.label}}
               </span>
             </ng-template>
             <ul class="submenu-section">
-              <li *ngFor="let sectionitem of subitem.items">
-                <a [href]="getUrl(sectionitem)" (click)="onNavigation(sectionitem, $event)">
+              <li *ngFor="let sectionitem of subitem.items; trackBy: trackItem">
+                <a class="section-level" [href]="sectionitem.link" (click)="onNavigation(sectionitem, $event)" *ngIf="sectionitem.link; else noLink">
                   {{sectionitem.title}}
                 </a>
+                <ng-template #noLink>
+                  <span class="section-level no-link">
+                    {{sectionitem.title}}
+                  </span>
+                </ng-template>
               </li>
             </ul>
           </ng-container>
           <ng-template #normalSubMenu>
-            <a [href]="getUrl(subitem)" (click)="onNavigation(subitem, $event)">
+            <a class="sub-level" [href]="subitem.link" (click)="onNavigation(subitem, $event)" *ngIf="subitem.link; else noLink">
               {{subitem.title}}
             </a>
+            <ng-template #noLink>
+              <span class="sub-level no-link">
+                {{subitem.title}}
+              </span>
+            </ng-template>
           </ng-template>
         </li>
       </ul>
     </ng-container>
     <ng-template #normalMenu>
-      <a [href]="getUrl(item)" (click)="onNavigation(item, $event)">
+      <a class="main-level" [href]="item.link" (click)="onNavigation(item, $event)" *ngIf="item.link; else noLink">
         {{item.title}}
       </a>
+      <ng-template #noLink>
+        <span class="main-level no-link">
+          {{item.title}}
+        </span>
+      </ng-template>
     </ng-template>
   </li>
 </ul>

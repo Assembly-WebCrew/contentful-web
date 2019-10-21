@@ -3,7 +3,7 @@ import { ContentfulService } from '../core/contentful.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { get } from 'lodash';
-import * as qs from 'qs';
+import { stringify as qsStringify } from 'qs';
 import { MetaResolve } from '../meta.resolve';
 
 @Injectable()
@@ -20,7 +20,7 @@ export class NewsArticleResolve implements Resolve<any> {
     const response = await this.contentful.query<any>({
       query: gql`
         {
-          newsItems(q: "${qs.stringify(params)}") {
+          newsItems(q: "${qsStringify(params)}") {
             date
             slug
             title

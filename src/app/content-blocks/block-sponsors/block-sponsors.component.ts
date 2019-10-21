@@ -3,7 +3,7 @@ import {map} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import gql from 'graphql-tag';
-import * as qs from 'qs';
+import { stringify as qsStringify } from 'qs';
 import { ContentfulService } from '../../core/contentful.service';
 import { Partner } from '../../core/interfaces/partner.interface';
 
@@ -27,7 +27,7 @@ export class BlockSponsorsComponent implements OnInit {
     this.sponsors$ = this.contentful.query$<any>({
       query: gql`
     {
-      sponsors(q: "${qs.stringify(params)}") {
+      sponsors(q: "${qsStringify(params)}") {
         title
         importance
         logo {
