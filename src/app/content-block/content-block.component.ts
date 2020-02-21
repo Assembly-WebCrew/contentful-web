@@ -1,6 +1,6 @@
-import { contentComponents } from '../content-blocks/content-blocks.module';
 import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { find } from 'lodash';
+import { contentComponents } from '../content-blocks/content-components';
 
 @Component({
   selector: 'asm-content-block',
