@@ -64,7 +64,7 @@ export class BlockScheduleComponent implements OnInit {
               this.filters.push(...x.flags.map(f => f && f.toLowerCase()).filter(f => f));
             this.filters = Array.from(new Set(this.filters).values());
             if (x.location_key) {
-              this.locationFilters.push({title: x.location_key});
+              this.locationFilters.push(x.location_key);
               this.locationFilters = Array.from(new Set(this.locationFilters).values());
             } else {
               console.warn(`No location for event "${x.name}"`, x);
