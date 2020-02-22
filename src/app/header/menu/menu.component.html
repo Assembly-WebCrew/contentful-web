@@ -1,43 +1,72 @@
 <ul class="menu">
   <li class="menu-item" *ngFor="let item of menu; trackBy: trackItem">
     <ng-container *ngIf="item.__typename === 'Menu'; else normalMenu">
-      <a class="main-level" [href]="item.link" (click)="onNavigation(item.page, $event)" *ngIf="item.link; else noLink">
-        {{item.label}}
+      <a
+        class="main-level"
+        [href]="item.link"
+        (click)="onNavigation(item.page, $event)"
+        *ngIf="item.link; else noLink"
+      >
+        {{ item.label }}
       </a>
       <ng-template #noLink>
-        <span class="main-level no-link">{{item.label}}</span>
+        <span class="main-level no-link">{{ item.label }}</span>
       </ng-template>
-      <ul class="menu-dropdown" [class.sectioned]="isMenuSectioned(item)">
-        <li *ngFor="let subitem of item.items; trackBy: trackItem" [class.sectioned]="subitem.__typename === 'Menu'">
-          <ng-container *ngIf="subitem.__typename === 'Menu'; else normalSubMenu">
-              <a class="sub-level title" [href]="subitem.link" (click)="onNavigation(subitem.page, $event)" *ngIf="subitem.link; else noLink">
-                {{subitem.label}}
-              </a>
+      <ul
+        class="menu-dropdown"
+        *ngIf="item.items"
+        [class.sectioned]="isMenuSectioned(item)"
+      >
+        <li
+          *ngFor="let subitem of item.items; trackBy: trackItem"
+          [class.sectioned]="subitem.__typename === 'Menu'"
+        >
+          <ng-container
+            *ngIf="subitem.__typename === 'Menu'; else normalSubMenu"
+          >
+            <a
+              class="sub-level title"
+              [href]="subitem.link"
+              (click)="onNavigation(subitem.page, $event)"
+              *ngIf="subitem.link; else noLink"
+            >
+              {{ subitem.label }}
+            </a>
             <ng-template #noLink>
               <span class="sub-level title no-link">
-                {{subitem.label}}
+                {{ subitem.label }}
               </span>
             </ng-template>
-            <ul class="submenu-section">
+            <ul class="submenu-section" *ngIf="subitem.items">
               <li *ngFor="let sectionitem of subitem.items; trackBy: trackItem">
-                <a class="section-level" [href]="sectionitem.link" (click)="onNavigation(sectionitem, $event)" *ngIf="sectionitem.link; else noLink">
-                  {{sectionitem.title}}
+                <a
+                  class="section-level"
+                  [href]="sectionitem.link"
+                  (click)="onNavigation(sectionitem, $event)"
+                  *ngIf="sectionitem.link; else noLink"
+                >
+                  {{ sectionitem.title }}
                 </a>
                 <ng-template #noLink>
                   <span class="section-level no-link">
-                    {{sectionitem.title}}
+                    {{ sectionitem.title }}
                   </span>
                 </ng-template>
               </li>
             </ul>
           </ng-container>
           <ng-template #normalSubMenu>
-            <a class="sub-level" [href]="subitem.link" (click)="onNavigation(subitem, $event)" *ngIf="subitem.link; else noLink">
-              {{subitem.title}}
+            <a
+              class="sub-level"
+              [href]="subitem.link"
+              (click)="onNavigation(subitem, $event)"
+              *ngIf="subitem.link; else noLink"
+            >
+              {{ subitem.title }}
             </a>
             <ng-template #noLink>
               <span class="sub-level no-link">
-                {{subitem.title}}
+                {{ subitem.title }}
               </span>
             </ng-template>
           </ng-template>
@@ -45,12 +74,17 @@
       </ul>
     </ng-container>
     <ng-template #normalMenu>
-      <a class="main-level" [href]="item.link" (click)="onNavigation(item, $event)" *ngIf="item.link; else noLink">
-        {{item.title}}
+      <a
+        class="main-level"
+        [href]="item.link"
+        (click)="onNavigation(item, $event)"
+        *ngIf="item.link; else noLink"
+      >
+        {{ item.title }}
       </a>
       <ng-template #noLink>
         <span class="main-level no-link">
-          {{item.title}}
+          {{ item.title }}
         </span>
       </ng-template>
     </ng-template>

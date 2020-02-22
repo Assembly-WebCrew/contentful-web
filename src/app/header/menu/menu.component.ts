@@ -1,6 +1,5 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { ContentfulService } from '../../core/contentful.service';
 import { AsmEvent } from '../../core/interfaces/event.interface';
 import { Menu, MenuItem } from '../../core/interfaces/menu.interface';
@@ -47,7 +46,11 @@ export class MenuComponent implements OnInit, AfterViewChecked {
   }
 
   isMenuSectioned(item: Menu): boolean {
-    return item.__typename === 'Menu' && item.items.some(subitem => subitem.__typename === 'Menu');
+    return (
+      item.__typename === 'Menu' &&
+      item.items &&
+      item.items.some(subitem => subitem.__typename === 'Menu')
+    );
   }
 
   onNavigation(item: MenuItem, event: Event): void {
