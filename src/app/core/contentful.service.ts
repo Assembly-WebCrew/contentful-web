@@ -1,17 +1,19 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import { ApolloClient, NetworkStatus, QueryOptions } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { onError } from 'apollo-link-error';
 import { HttpLink } from 'apollo-link-http';
+import { fetch } from 'isomorphic-fetch';
 import { GraphQLError } from 'graphql';
 import { from, Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { AsmEvent } from './interfaces/event.interface';
 import { MenuItem } from './interfaces/menu.interface';
+import { AsyncApiCallHelperService } from './async-api-call.helper.service';
 
 @Injectable()
 export class ContentfulService {
@@ -28,7 +30,8 @@ export class ContentfulService {
 
   constructor(
     private http: HttpClient,
-    private router: Router) {
+    private router: Router,
+    @Inject(AsyncApiCallHelperService) private processor: AsyncApiCallHelperService) {
   }
 
   // get Contentful Schema from api / backend
@@ -86,7 +89,7 @@ export class ContentfulService {
         introspectionQueryResultData: await this.getContentfulSchema(this.event)
       });
 
-      const httpLink: HttpLink = new HttpLink({ uri: `${environment.apiUrl}/en/${this.event.name}/graphql` });
+      const httpLink: HttpLink = new HttpLink({ fetch, uri: `${environment.apiUrl}/en/${this.event.name}/graphql` });
 
       const link: ApolloLink = onError(({ graphQLErrors, networkError }): void => {
         if (graphQLErrors) {
@@ -128,7 +131,13 @@ export class ContentfulService {
     if (!this.client) {
       this.throwError('Make sure that ContentfulService has been initialized before calling .query');
     }
-    return this.client.query<T, unknown>(options);
+    return new Promise(resolve => {
+      this.processor
+      .doTask(this.client.query<T, unknown>(options))
+      .subscribe(result => {
+        resolve(result);
+      });
+    });
   }
 
   query$<T>(options: QueryOptions): Observable<T> {

@@ -3,6 +3,8 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from '@angular/r
 import { Title, Meta } from '@angular/platform-browser';
 import { ContentfulService } from './core/contentful.service';
 import { AsmEvent } from './core/interfaces/event.interface';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, Inject } from '@angular/core';
 
 @Injectable()
 export class MetaResolve implements Resolve<any> {
@@ -16,10 +18,14 @@ export class MetaResolve implements Resolve<any> {
     '/assets/images/assembly-generic-image-7.jpg',
     '/assets/images/assembly-generic-image-8.jpg',
   ];
+  isBrowser: boolean;
 
   constructor(private contentful: ContentfulService,
     private title: Title,
-    private meta: Meta) { }
+    private meta: Meta,
+    @Inject(PLATFORM_ID) platformId: string) {
+      this.isBrowser = isPlatformBrowser(platformId);
+    }
 
   public async resolve(route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<any> {
@@ -30,7 +36,11 @@ export class MetaResolve implements Resolve<any> {
   public setMetaTags(url: string, data?: any) {
     const event: AsmEvent = this.contentful.getEvent();
     let title = event.eventTitle || 'Assembly';
-    let image = location.origin + this.images[Math.floor(Math.random() * 8)];
+    let origin = '';
+    if (this.isBrowser) {
+      origin = location.origin;
+    }
+    let image = origin + this.images[Math.floor(Math.random() * 8)];
     let description = 'Assembly is a bi-annual computer festival, esports event, demoscene and lan party in Helsinki, Finland.';
     let type = 'website';
     let publishedDate = '';
