@@ -45,7 +45,7 @@ import { AnalyticsModule } from './analytics/analytics.module';
     BaseComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     CoreModule,
     ContentBlocksModule,
