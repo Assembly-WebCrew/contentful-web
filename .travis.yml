@@ -38,5 +38,6 @@ jobs:
         - rsync -avW --delete-before dist/prod/ ${TRAVIS_BRANCH}:/var/www/assembly/stg
 notifications:
   slack:
+    if: branch = master
     secure: GmaJWbbIbvQxHV+jSK1V1HGWtEy15MGD7UajsDm5YYxHFH0gqbGEBV6t5TahL/S0feZfMrQwqI+ZpWMOB+pVY404+gLfczredFp4nRuGaum3+BNWQjMVdKqh2Kv851Y8yUsZqg9jeY/C4Sv/gEzzdfek76dnV5/Yl185zEZPC0/dCzekVa60u6i1fBut2ll+I1aQjyY3HlEj6krjaEYx7ptY+xrJWqyf9SkStDvxYEWKX3biGFbhofNLeumimNRN4oGZVOVFCPaLH4Pl7DGvkHlEK05BKJZe+b2YWI+efSPFUt15gcImpf/MDpc+lkYtXuM1nuIRjAU6S4HgQLK2wRv2HXxaAbA0Ar24LzOkKzqJRA/ciyRwKJUUfsN36LH3I0DS+ZJzV5q5PJptrrBge0g1WLzLdUa9YkySTIxFtmOhMNRt5DpAoHXXm98UQPo7gP9tNenYxWurRntjHYOzFmtIKpxB//kPIOFQRoEHjgMM1J1/HxVwQ9LeuYEP37jHroWp/++aCKZJdDN5Ua4WqXnavBlXmSuaWyaTIn8jAZIz4tk0y1PWsgOt/2VC1/TJC4o53HNal5t/kVaQvIzC2FiYNVtN9M4MNhxeEST/VeaG7MgiD3VLNVTPAL79HdxcwFF+7HHLHLHKKoMwZpoJMXCH8iduyjlYnKDzBORtdEc=
     on_pull_requests: false
