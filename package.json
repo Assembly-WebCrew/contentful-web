@@ -64,7 +64,7 @@
     "karma-cli": "2.0.0",
     "karma-coverage-istanbul-reporter": "2.1.0",
     "karma-jasmine": "2.0.1",
-    "karma-jasmine-html-reporter": "1.4.2",
+    "karma-jasmine-html-reporter": "1.5.4",
     "protractor": "5.4.2",
     "sass-lint": "1.13.1",
     "ts-node": "8.10.2",
