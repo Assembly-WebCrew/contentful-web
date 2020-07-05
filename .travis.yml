@@ -1,13 +1,9 @@
-dist: trusty
+dist: xenial
 language: node_js
 node_js:
   - '10'
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
   ssh_known_hosts: moukari.assembly.org
 before_script:
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
