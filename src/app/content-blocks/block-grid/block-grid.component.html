@@ -1,10 +1,11 @@
 <ul class="grid-filters" *ngIf="filters.length > 1">
   <li *ngFor="let filter of filters">
-    <button class="filter" (click)="onToggleFilter(filter)">{{filter.title}}</button>
+    <button class="filter" (click)="onToggleFilter(filter)"
+      [class.active]="activeFilters.has(filter)">{{filter}}</button>
   </li>
 </ul>
 <div class="grid-items">
-  <div class="grid-item" *ngFor="let page of content?.pages" style.background-image="url({{page.featuredImage?.url}})">
+  <div class="grid-item" *ngFor="let page of pages" style.background-image="url({{page.featuredImage?.url}})">
     <a [routerLink]="getUrl(page.slug)">
       <div class="mask"></div>
       <div class="content">
