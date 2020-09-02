@@ -1,0 +1,85 @@
+@import '../../../common';
+
+:host {
+  @include component;
+  @include page-content-width;
+
+
+  .grid-items {
+    display: flex;
+    flex-wrap: wrap;
+
+    .grid-item {
+      border: 2px solid $color-bg;
+      background: transparent url('/assets/images/grid-picture.jpg') no-repeat center center;
+      background-size: cover;
+      flex: 25%;
+      width: 25%;
+      height: 21.5vw;
+      flex-grow: 0;
+      position: relative;
+
+      @include desktop {
+        height: 345px;
+      }
+
+      @include screen-small {
+        flex: 50%;
+        width: 50%;
+        height: 45vw;
+        flex-grow: 0;
+      }
+
+      @media (max-width: 500px) {
+        flex: 100%;
+        width: 100%;
+        height: 90vw;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        &:hover {
+          .mask {
+            opacity: .6;
+          }
+        }
+      }
+
+      .mask {
+        background-color: $color-grid-mask;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .3;
+        transition: opacity .5s ease;
+      }
+
+      .content {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        white-space: normal;
+        width: 80%;
+
+        h2 {
+          text-transform: uppercase;
+          text-align: center;
+          color: $white;
+          font-size: $font-size-h3;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

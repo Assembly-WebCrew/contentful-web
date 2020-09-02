@@ -70,6 +70,19 @@ export class ContentResolve implements Resolve<any> {
                   url
                 }
               }
+              ... on BlockGrid {
+                pages {
+                  slug
+                  title
+                  tags {
+                    title
+                  }
+                  featuredImage{
+                    title
+                    url
+                  }
+                }
+              }
               ... on BlockSchedule {
                 scheduleSource
                 tag
