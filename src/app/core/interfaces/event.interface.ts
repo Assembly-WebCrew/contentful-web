@@ -7,6 +7,7 @@ export interface AsmEvent {
   logo: any;
   name: string;
   startDate: string;
+  ticketsLink?: string;
 }
 
 export interface EventDefaultBackground {
