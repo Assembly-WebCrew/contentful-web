@@ -1,8 +1,8 @@
 <ul class="grid-filters" *ngIf="filters.length > 1">
   <li *ngFor="let filter of filters">
     <button class="filter" (click)="onToggleFilter(filter)" [class.active]="activeFilters.has(filter)">
-      {{filter}}
       <span *ngIf="getFilterIcon(filter)" class="icon fa {{getFilterIcon(filter)}}" aria-hidden="true"></span>
+      <span class="text">{{filter}}</span>
     </button>
   </li>
 </ul>
