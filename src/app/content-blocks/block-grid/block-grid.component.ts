@@ -43,7 +43,7 @@ export class BlockGridComponent implements OnInit {
     let icon = '';
     if (filter) {
       const tag = filter.toString().toLowerCase();
-      if (tag === 'gaming' || tag === 'esports') {
+      if (tag === 'esports') {
         icon = 'fa-gamepad';
       } else if (tag === 'demoscene') {
         icon = 'fa-plug';
