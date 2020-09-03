@@ -1,7 +1,9 @@
 <ul class="grid-filters" *ngIf="filters.length > 1">
   <li *ngFor="let filter of filters">
-    <button class="filter" (click)="onToggleFilter(filter)"
-      [class.active]="activeFilters.has(filter)">{{filter}}</button>
+    <button class="filter" (click)="onToggleFilter(filter)" [class.active]="activeFilters.has(filter)">
+      {{filter}}
+      <span *ngIf="getFilterIcon(filter)" class="icon fa {{getFilterIcon(filter)}}" aria-hidden="true"></span>
+    </button>
   </li>
 </ul>
 <div class="grid-items">
@@ -9,6 +11,12 @@
     <a [routerLink]="getUrl(page.slug)">
       <div class="mask"></div>
       <div class="content">
+        <div class="tags" *ngIf="page.tags && page.tags.length">
+          <ng-container *ngFor="let tag of page.tags">
+            <span *ngIf="getFilterIcon(tag.title)" class="icon fa {{getFilterIcon(tag.title)}}"
+              aria-hidden="true"></span>
+          </ng-container>
+        </div>
         <h2>{{page.title}}</h2>
       </div>
     </a>

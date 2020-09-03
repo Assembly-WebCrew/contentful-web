@@ -24,6 +24,13 @@
       }
 
       @include screen-small {
+        flex: 33%;
+        width: 33%;
+        height: 30vw;
+        flex-grow: 0;
+      }
+
+      @include mobile {
         flex: 50%;
         width: 50%;
         height: 45vw;
@@ -57,7 +64,6 @@
       }
 
       .content {
-        position: relative;
         display: inline-block;
         vertical-align: middle;
         white-space: normal;
@@ -72,6 +78,7 @@
           text-align: center;
           color: $white;
           font-size: $font-size-h3;
+          text-shadow: 1px 1px 5px $color-bg;
 
           @media (max-width: 400px) {
             font-size: $font-size-h4;
@@ -79,6 +86,20 @@
 
           &:before {
             display: none;
+          }
+        }
+
+        .tags {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 5px;
+          color: $white;
+          font-size: 1.5rem;
+
+          .icon {
+            text-shadow: 1px 2px 5px $color-bg;
+            padding: 0 5px;
           }
         }
       }
@@ -117,6 +138,8 @@
       border: 0;
       transform: skew(-15deg);
       transition: background-color .5s ease;
+      overflow: hidden;
+      vertical-align: middle;
 
       @include screen-small {
         padding: .5rem;
@@ -130,6 +153,11 @@
 
       &.active {
         background-color: $color-accent;
+      }
+
+      .icon {
+        margin-left: 5px;
+        transform: skew(15deg) translateY(-2px);
       }
     }
   }

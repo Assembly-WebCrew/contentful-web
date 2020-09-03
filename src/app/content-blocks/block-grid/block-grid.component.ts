@@ -39,6 +39,25 @@ export class BlockGridComponent implements OnInit {
     }
   }
 
+  getFilterIcon(filter: string): string {
+    let icon = '';
+    if (filter) {
+      const tag = filter.toString().toLowerCase();
+      if (tag === 'gaming' || tag === 'esports') {
+        icon = 'fa-gamepad';
+      } else if (tag === 'demoscene') {
+        icon = 'fa-plug';
+      } else if (tag === 'creative') {
+        icon = 'fa-lightbulb-o ';
+      } else if (tag === 'activation') {
+        icon = 'fa-users';
+      } else if (tag === 'open stage') {
+        icon = 'fa-bullhorn';
+      }
+    }
+    return icon;
+  }
+
   onToggleFilter(filter: string) {
     if (this.activeFilters.has(filter)) {
       this.activeFilters.delete(filter);
