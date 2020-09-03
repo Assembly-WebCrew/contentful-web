@@ -9,7 +9,7 @@
     </button>
 </div>
 <div class="header">
-    <a href="//tickets.assembly.org" class="highlight-button tickets" target="_blank">
+    <a *ngIf="event?.ticketsLink" href="{{event?.ticketsLink}}" class="highlight-button tickets" target="_blank">
       <div class="button-inner-wrapper">
         <span class="icon">
           <i class="fa fa-ticket"></i>
