@@ -90,6 +90,7 @@ $search-container-button-text-shadow-color: rgba($color-bg, .2);
     flex-shrink: 0;
     max-width: 100%;
     width: $width-page-content;
+    margin-right: 15px;
 
     .header-inner {
       display: flex;
@@ -180,7 +181,7 @@ $search-container-button-text-shadow-color: rgba($color-bg, .2);
           }
 
           &.tickets {
-            margin-right: 16px;
+            margin-right: 2px;
             margin-left: 2px;
             color: $color-ticket;
 
@@ -251,7 +252,7 @@ $search-container-button-text-shadow-color: rgba($color-bg, .2);
         flex-grow: 1;
         height: $menu-small-height;
         justify-content: space-between;
-        margin: 0 27px 0 -15px;
+        margin: 0 13px 0 -15px;
         padding: 0 20px;
         transform: skew(-15deg);
 
