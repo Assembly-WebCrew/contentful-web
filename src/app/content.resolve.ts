@@ -129,6 +129,19 @@ export class ContentResolve implements Resolve<any> {
                       }
                     }
                   }
+                  ... on BlockGrid {
+                    pages {
+                      slug
+                      title
+                      tags {
+                        title
+                      }
+                      featuredImage{
+                        title
+                        url
+                      }
+                    }
+                  }
                 }
                 featuredImage{
                   title

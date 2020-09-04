@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../../core/contentful.service';
+import { Page } from '../../core/interfaces/page.interface';
 
 @Component({
   selector: 'asm-block-grid',
@@ -58,6 +59,13 @@ export class BlockGridComponent implements OnInit {
     return icon;
   }
 
+  getPageBackground(page: Partial<Page>) {
+    if (page.featuredImage && page.featuredImage.url) {
+      return 'url(' + page.featuredImage.url + '?h=345)';
+    }
+    return undefined;
+  }
+
   onToggleFilter(filter: string) {
     if (this.activeFilters.has(filter)) {
       this.activeFilters.delete(filter);
@@ -67,5 +75,9 @@ export class BlockGridComponent implements OnInit {
     this.pages = this.content.pages.filter(page => {
       return this.activeFilters.size === 0 || (page.tags && page.tags.some(tag => this.activeFilters.has(tag.title)));
     });
+  }
+
+  trackItem(index: number, item: Partial<Page>): number | string {
+    return item.slug || index;
   }
 }

@@ -7,7 +7,8 @@
   </li>
 </ul>
 <div class="grid-items">
-  <div class="grid-item" *ngFor="let page of pages" style.background-image="url({{page.featuredImage?.url}})">
+  <div class="grid-item" *ngFor="let page of pages; trackBy: trackItem"
+    [style.background-image]="getPageBackground(page)">
     <a [routerLink]="getUrl(page.slug)">
       <div class="mask"></div>
       <div class="content">
