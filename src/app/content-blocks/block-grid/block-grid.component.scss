@@ -24,6 +24,13 @@
       }
 
       @include screen-small {
+        flex: 33%;
+        width: 33%;
+        height: 30vw;
+        flex-grow: 0;
+      }
+
+      @include mobile {
         flex: 50%;
         width: 50%;
         height: 45vw;
@@ -57,7 +64,6 @@
       }
 
       .content {
-        position: relative;
         display: inline-block;
         vertical-align: middle;
         white-space: normal;
@@ -72,6 +78,7 @@
           text-align: center;
           color: $white;
           font-size: $font-size-h3;
+          text-shadow: 1px 1px 5px $color-bg;
 
           @media (max-width: 400px) {
             font-size: $font-size-h4;
@@ -79,6 +86,20 @@
 
           &:before {
             display: none;
+          }
+        }
+
+        .tags {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 5px;
+          color: $white;
+          font-size: 1.5rem;
+
+          .icon {
+            text-shadow: 1px 2px 5px $color-bg;
+            padding: 0 5px;
           }
         }
       }
@@ -104,25 +125,22 @@
     }
 
     .filter {
+      height: 55px;
       min-width: 150px;
-      padding: .8rem;
+      padding: 0;
       text-transform: uppercase;
       font-family: $font-title;
       font-size: $font-size-h4;
       background: $color-accent-dark;
-      border-radius: 0;
       cursor: pointer;
       color: $white;
       outline: none;
       border: 0;
       transform: skew(-15deg);
       transition: background-color .5s ease;
-
-      @include screen-small {
-        padding: .5rem;
-        font-size: $font-size-h5;
-        min-width: 100px;
-      }
+      overflow: hidden;
+      vertical-align: middle;
+      border-radius: 3px;
 
       &:hover {
         background-color: $color-accent;
@@ -130,6 +148,33 @@
 
       &.active {
         background-color: $color-accent;
+
+        .icon {
+          background-color: $yellow;
+          color: black;
+        }
+      }
+
+      .icon {
+        width: 50px;
+        height: 100%;
+        background-color: $color-accent;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        text-align: center;
+      }
+
+      .text {
+        display: inline-block;
+        padding: 0 .5em;
+      }
+
+      @include screen-small {
+        min-width: 100px;
+        font-size: $font-size-h5;
       }
     }
   }
