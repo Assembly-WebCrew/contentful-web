@@ -1,6 +1,7 @@
 <div class="section-header">
-    <div class="title-border-left"></div>
-    <h2>{{content?.title}}</h2>
-    <div class="title-border-right"></div>
+  <div class="title-border-left"></div>
+  <h2 [id]="id">{{content?.title}}</h2>
+  <div class="title-border-right"></div>
 </div>
-<asm-content-block *ngFor="let content of content?.items" [content]="content" class="{{content.__typename}}"></asm-content-block>
+<asm-content-block *ngFor="let content of content?.items" [content]="content" class="{{content.__typename}}">
+</asm-content-block>
