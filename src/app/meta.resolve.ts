@@ -6,16 +6,6 @@ import { AsmEvent } from './core/interfaces/event.interface';
 
 @Injectable()
 export class MetaResolve implements Resolve<any> {
-  images: string[] = [
-    '/assets/images/assembly-generic-image-1.jpg',
-    '/assets/images/assembly-generic-image-2.jpg',
-    '/assets/images/assembly-generic-image-3.jpg',
-    '/assets/images/assembly-generic-image-4.jpg',
-    '/assets/images/assembly-generic-image-5.jpg',
-    '/assets/images/assembly-generic-image-6.jpg',
-    '/assets/images/assembly-generic-image-7.jpg',
-    '/assets/images/assembly-generic-image-8.jpg',
-  ];
 
   constructor(private contentful: ContentfulService,
     private title: Title,
@@ -30,7 +20,7 @@ export class MetaResolve implements Resolve<any> {
   public setMetaTags(url: string, data?: any) {
     const event: AsmEvent = this.contentful.getEvent();
     let title = event.eventTitle || 'Assembly';
-    let image = location.origin + this.images[Math.floor(Math.random() * 8)];
+    let image = location.origin + '/assets/images/some-image.jpg';
     let description = 'Assembly is a bi-annual computer festival, esports event, demoscene and lan party in Helsinki, Finland.';
     let type = 'website';
     let publishedDate = '';
@@ -49,7 +39,7 @@ export class MetaResolve implements Resolve<any> {
       } else {
         title = 'News - ' + event.eventTitle;
       }
-      if (data && data.date ) {
+      if (data && data.date) {
         publishedDate = data.date;
       }
       type = 'article';
@@ -71,7 +61,7 @@ export class MetaResolve implements Resolve<any> {
 
     this.meta.updateTag({ property: 'og:url', content: 'https://www.assembly.org' + url });
 
-    this.meta.updateTag({ property: 'og:type', content: type});
+    this.meta.updateTag({ property: 'og:type', content: type });
 
     if (publishedDate !== '') { this.meta.updateTag({ property: 'og:published_time', content: publishedDate }); }
   }
