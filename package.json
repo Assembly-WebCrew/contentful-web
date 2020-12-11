@@ -67,7 +67,7 @@
     "karma-jasmine-html-reporter": "1.5.4",
     "protractor": "5.4.4",
     "sass-lint": "1.13.1",
-    "ts-node": "8.10.2",
+    "ts-node": "9.1.1",
     "tslint": "5.20.1",
     "typescript": "3.5.3",
     "typescript-tslint-plugin": "0.5.5"
