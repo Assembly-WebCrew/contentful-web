@@ -2580,15 +2580,15 @@ core-js-compat@^3.1.1:
     browserslist "^4.8.5"
     semver "7.0.0"
 
+core-js@3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.14.0.tgz#62322b98c71cc2018b027971a69419e2425c2a6c"
+  integrity sha512-3s+ed8er9ahK+zJpp9ZtuVcDoFzHNiZsPbNAAE4KXgrRHbjSqqNN6xGSXq6bq7TZIbKj4NLrLb6bJ5i+vSVjHA==
+
 core-js@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.2.1.tgz#cd41f38534da6cc59f7db050fe67307de9868b09"
   integrity sha512-Qa5XSVefSVPRxy2XfUC13WbvqkxhkwB3ve+pgCQveNgYzbM/UxZeu1dcOX/xr4UmfUd+muuvsaxilQzCyUurMw==
-
-core-js@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
-  integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
 
 core-js@^2.4.0:
   version "2.6.11"
